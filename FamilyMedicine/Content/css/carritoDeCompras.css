@@ -1,0 +1,165 @@
+﻿.grupoCarrito{
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding-top: 30px;
+}
+
+
+.ContenedorDeExamenes {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px 20px;
+    box-shadow: rgba(0, 0, 0, 0.10) 0px 3px 6px, rgba(0, 0, 0, 0.13) 0px 3px 6px;
+    margin: 25px auto;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.flexClass {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.divExamenCotenido{
+    width:350px
+}
+
+.tituloDeExamen {
+    text-align: start;
+    padding: 5px;
+    font-size: 20px;
+    color: #325D88;
+    margin: 0;
+}
+
+.descripcionExamen {
+    text-align: start;
+    padding: 5px;
+    font-size: 13px;
+    color: #333333;
+    margin: 0;
+}
+
+.laboratorioExamen {
+    text-align: start;
+    padding: 5px;
+    font-size: 10px;
+    color: #000000b2;
+    font-weight: bold;
+}
+
+.precioMonto {
+    text-align: center;
+    padding: 5px;
+    font-size: 20px;
+    color: #333333;
+    font-weight: bold;
+}
+
+.eliminarExamen {
+    text-align: start;
+    padding: 5px;
+    font-size: 20px;
+    color: #325D88;
+    font-weight: bold;
+    border: none;
+    background: none;
+}
+
+
+/*------------------contenido Precios Pago------------------------*/
+
+.contenidoPreciosPago {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 350px;
+    min-height: 20vh;
+    margin: 20px;
+    box-shadow: rgba(0, 0, 0, 0.10) 0px 3px 6px, rgba(0, 0, 0, 0.13) 0px 3px 6px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.tituloResumen {
+    text-align: start;
+    padding: 5px;
+    font-size: 20px;
+    color: #333333;
+    margin: 0;
+    font-weight: 600;
+}
+
+.grupoCarritoInfomacion {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contentenedorDelNumeroDeProductos {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1px 1px;
+}
+
+.numeroDeProductosOdeCargosExtra {
+    text-align: start;
+    padding: 5px;
+    font-size: 18px;
+    color: #333333;
+    margin: 0;
+    font-weight: 600;
+}
+
+.textNormalCarrito {
+    text-align: start;
+    padding: 5px;
+    font-size: 18px;
+    color: #333333;
+    margin: 0;
+    font-weight: lighter;
+}
+
+.contendorPrecioTotalDeLosProductos {
+    text-align: start;
+    padding: 5px;
+    font-size: 18px;
+    color: #151515;
+    margin: 0;
+    font-weight: 600;
+}
+
+.pagoPorPaypal {
+    text-align: center;
+    padding: 5px;
+    font-size: 18px;
+    color: #325D88;
+    margin: 0;
+
+    font-weight: bold;
+    border: none;
+    background: none;
+    box-shadow: rgba(0, 0, 0, 0.10) 0px 3px 6px, rgba(0, 0, 0, 0.13) 0px 3px 6px;
+
+    width: 200px;
+    border-radius: 10px;
+    margin: 10px auto;
+    padding: 7px;
+}
+
+.grupoDeCuponDescuento {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
