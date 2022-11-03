@@ -134,6 +134,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="img\laboratorio.png" />
+    <Content Include="img\pexels-chokniti-khongchum-2280571.jpg" />
+    <Content Include="img\pexels-pixabay-256262.jpg" />
+    <Content Include="img\pexels-polina-tankilevitch-3735769.jpg" />
+    <Content Include="img\pexels-tima-miroshnichenko-9574410.jpg" />
+    <Content Include="img\tubo.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
