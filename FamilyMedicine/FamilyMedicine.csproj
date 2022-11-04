@@ -137,6 +137,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="img\laboratorio-icon.png" />
+    <Content Include="img\expediente.jpg" />
+    <Content Include="img\laboratorio.jpg" />
+    <Content Include="img\compra.jpg" />
+    <Content Include="img\microscopio.jpg" />
+    <Content Include="img\tubo-icon.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
