@@ -31,5 +31,12 @@ namespace FamilyMedicine.Controllers
         {
             return View();
         }
+
+        public ActionResult RegistrarCita()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
     }
 }
