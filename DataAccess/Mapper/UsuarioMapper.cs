@@ -84,16 +84,16 @@ namespace DataAccess.Mapper
         {
             var usuario = new Usuario()
             {
-                identificacion = int.Parse(row["Id"].ToString()),
+                identificacion = int.Parse(row["UsuarioId"].ToString()),
                 Nombre = row["Nombre"].ToString(),
-                Correo = row["Nombre"].ToString(),
-                Telefono = row["Nombre"].ToString(),
-                Clave = row["Nombre"].ToString(),
-                Foto = row["Nombre"].ToString(),
-                Estado = row["Nombre"].ToString(),
-                RolId = int.Parse(row["Id"].ToString()),
-                LaboratorioId = int.Parse(row["Id"].ToString()),
-                MembresiaId = int.Parse(row["Id"].ToString()),
+                Correo = row["Correo"].ToString(),
+                Telefono = row["Telefono"].ToString(),
+                Clave = row["Clave"].ToString(),
+                Foto = row["Foto"].ToString(),
+                Estado = row["Estado"].ToString(),
+                RolId = int.Parse(row["RolId"].ToString()),
+                LaboratorioId = int.Parse(row["LaboratorioId"].ToString()),
+                MembresiaId = int.Parse(row["MemebresiaId"].ToString()),
             };
             return usuario;
         }
