@@ -10,7 +10,7 @@
 
     <div class="divContenedorDeTodosLosExamenes">
 
-        <section class="ContenedorDeExamenes">
+        <section id="idCarritoContenedorDeExamenes" class="ContenedorDeExamenes">
             <div class="flexClass divExamenCotenido">
                 <h2 class="tituloDeExamen">Examen de Sangre </h2>
                 <p class="descripcionExamen">Evaluar el funcionamiento de diferentes órganos del cuerpo, como el hígado, los riñones, el corazón o la tiroides. Diagnosticar trastornos hemorrágicos o de la coagulación. Averiguar si el sistema inmunitario está teniendo problemas para combatir las infecciones</p>
@@ -25,26 +25,9 @@
                 </select>
                 <span class="precioMonto">₡12000</span>
             </div>
-            <button class="eliminarExamen"><i class="fa-solid fa-trash"></i></button>
+            <button type="submit" id="remove" class="eliminarExamen"><i class="fa-solid fa-trash"></i></button>
         </section>
 
-        <section class="ContenedorDeExamenes">
-            <div class="flexClass divExamenCotenido">
-                <h2 class="tituloDeExamen">Examen de Sangre </h2>
-                <p class="descripcionExamen">Evaluar el funcionamiento de diferentes órganos del cuerpo, como el hígado, los riñones, el corazón o la tiroides. Diagnosticar trastornos hemorrágicos o de la coagulación. Averiguar si el sistema inmunitario está teniendo problemas para combatir las infecciones</p>
-                <span class="laboratorioExamen">CLINICOCR</span>
-            </div>
-            <div class="flexClass">
-                <select class="form-select" aria-label="Default select example">
-                    <option value="" disabled selected hidden>Numero de examenes</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                </select>
-                <span class="precioMonto">₡12000</span>
-            </div>
-            <button class="eliminarExamen"><i class="fa-solid fa-trash"></i></button>
-        </section>
     </div>
 
     <!--CONTENEDOR DE PAGOS-->
@@ -87,3 +70,10 @@
     </section>
 
 </hgroup>
+
+
+<script type="text/javascript">
+    document.getElementById("remove").onclick = function () {
+        document.getElementById("idCarritoContenedorDeExamenes").remove();
+    }
+</script>
