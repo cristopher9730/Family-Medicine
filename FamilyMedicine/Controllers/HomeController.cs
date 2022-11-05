@@ -38,5 +38,12 @@ namespace FamilyMedicine.Controllers
 
             return View();
         }
+
+        public ActionResult RegistrarUsuario()
+        {
+            ViewBag.Message = "Registrese con nosotros";
+
+            return View();
+        }
     }
 }
