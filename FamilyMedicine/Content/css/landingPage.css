@@ -1,0 +1,199 @@
+﻿body {
+    background: #f6f6f650;
+    background: -webkit-linear-gradient(to right, #f6f6f650, color: #325D8840);
+    background: linear-gradient(to right, #f6f6f650, color: #325D8840);
+}
+
+.body-content {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.bg-primary {
+    --bs-bg-opacity: 1;
+    background-color: none !important;
+    background: #7ce1ff !important;
+    background: -webkit-linear-gradient(to right, #7ce1ff,  #50aafa) !important;
+    background: linear-gradient(to right, #7ce1ff, #50aafa) !important;
+}
+
+/**=======================BANNER 1==============================*/
+
+.contentBannerPrincipal {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px 20px;
+
+    height: 86vh;
+}
+
+.contenedorInfoPrincipal {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    width:45%;
+
+    padding: 20px
+}
+
+.seoTitleB1 {
+    text-align: start;
+    padding: 5px;
+    font-size: 80px;
+    font-weight: bold;
+    margin: 0;
+    background: -webkit-linear-gradient(#7ce1ff, #50aafa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    font-family: 'Lemon/Milk', sans-serif;
+    font-family: 'Lemon/Milk light', sans-serif;
+    letter-spacing: 10px;
+}
+
+.discripccionBanner1 {
+    text-align: start;
+    padding: 5px;
+    font-size: 18px;
+    margin: 0;
+    background: -webkit-linear-gradient(#7ce1ff, #50aafa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Montserrat';
+}
+
+.botonPrincipal {
+    text-align: center;
+    padding:5px;
+    font-size: 24px;
+    margin: 0;
+    color: #ffffff;
+
+    background: #7ce1ff !important;
+    background: -webkit-linear-gradient(to right, #7ce1ff, #50aafa) !important;
+    background: linear-gradient(to right, #7ce1ff, #50aafa) !important;
+
+    text-decoration: none;
+    border-radius: 10px;
+    transition: 333ms;
+    box-shadow: rgba(0, 0, 0, 0.10) 0px 3px 6px, rgba(0, 0, 0, 0.13) 0px 3px 6px;
+
+    width: 220px;
+    cursor: pointer;
+}
+
+.botonPrincipal:hover {
+    transform: scale(1.1);
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.contenidoImg{
+    width: 45%;
+    position: relative;
+    transition: 666ms;
+}
+
+.contenidoImg:hover {
+    transform: scale(1.1);
+}
+
+.backgroundBanner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 90%;
+    height: 250px;
+
+    background: #7ce1ff !important;
+    background: -webkit-linear-gradient(to right, #7ce1ff, #50aafa) !important;
+    background: linear-gradient(to right, #7ce1ff, #50aafa) !important;
+
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+    border-top-left-radius: 105%;
+    border-top-right-radius: 45%;
+    border-bottom-left-radius: 45%;
+    border-bottom-right-radius: 105%;
+}
+
+.imgBanner1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 85%;
+}
+
+
+/*===============================banner 2========================================*/
+
+.contenedorServicios {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    gap: 5px 5px;
+}
+
+.faSolidIcono {
+    text-align: start;
+    padding: 10px;
+    font-size: 25px;
+    margin: 10px 0px 10px 0px;
+    background: -webkit-linear-gradient(#7ce1ff, #50aafa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    border-radius: 10px;
+}
+
+
+.faSolidIconoTipo2 {
+    text-align: start;
+    padding: 5px;
+    font-size: 25px;
+    margin: 10px 0px 10px 0px;
+    background: -webkit-linear-gradient(#7ce1ff, #50aafa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-radius: 50%;
+    border: 2px solid #7ce1ff;
+}
+
+/*=======================imgDoctor==============*/
+
+.imgDoctor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 250px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    border-radius: 10px;
+}
+
+.textoNombre {
+    background: #7ce1ff !important;
+    background: -webkit-linear-gradient(to right, #7ce1ff, #50aafa) !important;
+    background: linear-gradient(to right, #7ce1ff, #50aafa) !important;
+
+    text-align: center;
+    padding: 5px;
+    font-size: 18px;
+    margin: 0px;
+    color: #ffffff;
+    width: 250px;
+
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+

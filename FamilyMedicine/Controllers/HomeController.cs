@@ -36,5 +36,11 @@ namespace FamilyMedicine.Controllers
         {
             return View();
         }
+
+        public ActionResult LandingPage()
+        {
+            return View();
+        }
+        
     }
 }

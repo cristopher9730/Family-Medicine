@@ -129,10 +129,19 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\carritoDeCompras.css" />
+    <Content Include="Content\css\landingPage.css" />
     <Content Include="Content\css\Login.css" />
     <Content Include="Content\imgs\logos\lgoBlanco.png" />
     <Content Include="Content\imgs\logos\logoConColor.png" />
     <Content Include="Content\imgs\logos\logoNegro.png" />
+    <Content Include="Content\imgs\otros\dclinico.png" />
+    <Content Include="Content\imgs\otros\dclinico2.png" />
+    <Content Include="Content\imgs\otros\doctorB2.png" />
+    <Content Include="Content\imgs\otros\doctores-medicos.png" />
+    <Content Include="Content\imgs\otros\doctores\d4.png" />
+    <Content Include="Content\imgs\otros\doctores\dc2.png" />
+    <Content Include="Content\imgs\otros\doctores\dc3.png" />
+    <Content Include="Content\imgs\otros\doctores\dchouse.png" />
     <Content Include="Content\imgs\vectoriales\medicos.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -167,6 +176,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\CarritoDeCompras.cshtml" />
+    <Content Include="Views\Home\LandingPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
