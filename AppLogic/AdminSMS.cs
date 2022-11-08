@@ -13,9 +13,6 @@ namespace AppLogic
     {
         public void EnviarSMS(Usuario usuario)
         {
-
-            // Find your Account SID and Auth Token at twilio.com/console
-            // and set the environment variables. See http://twil.io/secure
             string accountSid = "AC4d8f6c80ee0e98023f83c79b1eb01349";
             string authToken = "574535f6f7faff66758fab15a401c41d";
 

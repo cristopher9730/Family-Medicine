@@ -1,4 +1,5 @@
-﻿using DTO;
+﻿using AppLogic;
+using DTO;
 using Microsoft.Ajax.Utilities;
 using System;
 using System.Collections.Generic;
@@ -11,9 +12,11 @@ namespace FamilyMedicine_API.Controllers
 {
     public class UsuarioController : ApiController
     {
+        [HttpPost]
         public string RegistrarUsuario(Usuario usuario)
         {
-            return "TBD";
+            AdminUsuario adminUsuario = new AdminUsuario();
+            return adminUsuario.CrearUsuario(usuario);
         }
 
         public string ActualizarUsuario(Usuario usuario)
@@ -26,12 +29,13 @@ namespace FamilyMedicine_API.Controllers
             return "TBD";
         }
 
-        public string ObtenerListaUsusarios()
+        public List<Usuario> ObtenerListaUsusarios()
         {
-            return "TBD";
+            AdminUsuario adminUsuario = new AdminUsuario();
+            return adminUsuario.DevolverTodosUsuarios();
         }
 
-        public string ObtenerUnUsuarios(int UsuarioId)
+        public string ObtenerUnUsuario(int UsuarioId)
         {
             return "TBD";
         }

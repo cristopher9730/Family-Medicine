@@ -30,6 +30,8 @@ namespace DataAccess.Mapper
             operacion.AddIntergerParam("RolId", usuario.RolId);
             operacion.AddIntergerParam("LaboratorioId", usuario.LaboratorioId);
             operacion.AddIntergerParam("MembresiaId", usuario.MembresiaId);
+            operacion.AddVarcharParam("Codigo", usuario.Codigo);
+
 
             return operacion;
 
@@ -54,6 +56,7 @@ namespace DataAccess.Mapper
             operacion.AddIntergerParam("RolId", usuario.RolId);
             operacion.AddIntergerParam("LaboratorioId", usuario.LaboratorioId);
             operacion.AddIntergerParam("MembresiaId", usuario.MembresiaId);
+            operacion.AddVarcharParam("Codigo", usuario.Codigo);
 
             return operacion;
         }
@@ -94,6 +97,7 @@ namespace DataAccess.Mapper
                 RolId = int.Parse(row["RolId"].ToString()),
                 LaboratorioId = int.Parse(row["LaboratorioId"].ToString()),
                 MembresiaId = int.Parse(row["MemebresiaId"].ToString()),
+                Codigo = row["Codigo"].ToString(),
             };
             return usuario;
         }

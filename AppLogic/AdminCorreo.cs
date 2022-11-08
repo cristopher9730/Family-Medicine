@@ -5,7 +5,8 @@ using System.Linq;
 using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
-
+using Mandrill;
+using Mandrill.Model;
 
 namespace AppLogic
 {
@@ -23,13 +24,21 @@ namespace AppLogic
             emailBody.AppendLine(string.Format("<br/>Tu codigo de seguridad:"));
             emailBody.AppendLine(string.Format("<br/> Es un placer servirle!"));
 
-            EnviarEmail(usuario.Correo, emailSubject, emailBody.ToString());
+            EnviarEmailAsync(usuario.Correo, emailSubject, emailBody.ToString());
         }
 
-        private string EnviarEmail(string toEmail, string emailSubject, string emailBody)
+        private string EnviarEmailAsync(string toEmail, string emailSubject, string emailBody)
         {
+            var apiKey = ConfigurationManager.AppSettings["api_key_correos"];
+            var client = new MandrillApi(apiKey);
+            var message = new MandrillMessage("FamilyMedicine", toEmail, emailSubject, emailBody);
+            var response = client.Messages.SendAsync(message).Result;
 
-                return "TBD";
+            if (response != null)
+                return "OK";
+            else
+                return "Error";
+
         }
 
     }
