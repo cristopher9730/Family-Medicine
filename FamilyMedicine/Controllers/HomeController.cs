@@ -41,6 +41,11 @@ namespace FamilyMedicine.Controllers
         {
             return View();
         }
+
+        public ActionResult forgotPassword()
+        {
+            return View();
+        }
         
     }
 }
