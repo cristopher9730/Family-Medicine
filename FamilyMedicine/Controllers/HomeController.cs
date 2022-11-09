@@ -45,5 +45,11 @@ namespace FamilyMedicine.Controllers
 
             return View();
         }
+        public ActionResult RegistrarExamen()
+        {
+            ViewBag.Message = "Registrar examen";
+
+            return View();
+        }
     }
 }
