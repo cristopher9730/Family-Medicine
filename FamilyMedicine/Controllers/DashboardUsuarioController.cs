@@ -13,5 +13,11 @@ namespace FamilyMedicine.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public ActionResult Prueba()
+        {
+            JsonResult result = Json(new { result = "OK", data = "Prueba recibida"}); 
+            return result;
+        }
     }
 }
