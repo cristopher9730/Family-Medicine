@@ -18,7 +18,6 @@ namespace DTO
         public int RolId { get; set; }
         public int LaboratorioId { get; set; }
         public int MembresiaId { get; set; }
-        public string Codigo { get; set; }
 
     }
 }
