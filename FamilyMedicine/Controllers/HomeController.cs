@@ -46,6 +46,10 @@ namespace FamilyMedicine.Controllers
         {
             return View();
         }
-        
+
+        public ActionResult DashboardUsuario()
+        {
+            return View();
+        }
     }
 }
