@@ -1,4 +1,10 @@
-﻿.container,
+﻿.bg-primary {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
+    padding: 3px 10px 3px 10px !important;
+}
+
+.container,
 .container-fluid,
 .container-xxl,
 .container-xl,
@@ -21,14 +27,12 @@
 .ContenedorDeDashboard {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: flex-start;
-
     height: 100vh;
+    padding-top: 10px;
 }
 
 /*--------------NAV---------------------------*/
-
 .contenedorDeNav {
     display: flex;
     flex-direction: column;
@@ -36,31 +40,57 @@
     align-items: center;
     background-color: #325D88;
     height: 100vh;
-    width: 120px;
+    width: 135px;
+    padding-top: 10px;
 }
 
 .contenedorDeOpcionesDelNav {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
     gap: 10px 10px;
-    transition: 544ms;
 
+    transition: 544ms;
+    width: 135px;
     padding: 3px 10px 3px 10px;
+    text-decoration: none;
 }
 
 .contenedorDeOpcionesDelNav:hover {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 10px 10px;
 
+    transition: 544ms;
+    width: 135px;
+    padding: 3px 10px 3px 10px;
+
+    text-decoration: none;
     background-color: #447eb8;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-    transform: scale(1.020);
+    text-decoration: none;
 }
+
+
+.active{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px 10px;
+
+    transition: 544ms;
+    width: 135px;
+    padding: 3px 10px 3px 10px;
+
+    text-decoration: none;
+    background-color: #4d81ba;
+    text-decoration: none;
+}
+
 
 
 .ContenedorDeNombre {
@@ -70,6 +100,14 @@
     font-weight: 500;
 
     margin: 0;
+}
+
+.fa-solid {
+    color: #ffffff;
+    font-size: 17px !important;
+    margin: 0;
+    width: 20px;
+    text-align: center;
 }
 
 .ContenedorDeNombre:hover {
@@ -83,5 +121,6 @@
 
 .contenedorDeHeader {
     width: 100%;
-    min-width: 1070px;
+    height: 100vh;
+    background-color: #000000;
 }
