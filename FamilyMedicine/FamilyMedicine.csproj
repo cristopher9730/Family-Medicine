@@ -231,6 +231,7 @@
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\RegistrarCita.cshtml" />
     <Content Include="Views\Home\RegistrarUsuario.cshtml" />
+    <Content Include="Views\Home\RegistrarExamen.cshtml" />
     <Content Include="Views\Home\OTP.cshtml" />
   </ItemGroup>
   <ItemGroup>
