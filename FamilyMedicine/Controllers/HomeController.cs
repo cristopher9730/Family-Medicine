@@ -38,5 +38,10 @@ namespace FamilyMedicine.Controllers
 
             return View();
         }
+
+        public ActionResult RegistrarUsuarioTest()
+        {
+            return View();
+        }
     }
 }
