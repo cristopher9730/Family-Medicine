@@ -187,6 +187,9 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\Login.css" />
+    <Content Include="Content\imgs\Labs\Lab1.jpg" />
+    <Content Include="Content\imgs\Labs\Lab2.jpg" />
+    <Content Include="Content\imgs\Labs\Lab3.jpg" />
     <Content Include="Content\imgs\logos\lgoBlanco.png" />
     <Content Include="Content\imgs\logos\logoConColor.png" />
     <Content Include="Content\imgs\logos\logoNegro.png" />
@@ -232,6 +235,8 @@
     <Content Include="Views\Home\RegistrarCita.cshtml" />
     <Content Include="Views\Home\RegistrarUsuario.cshtml" />
     <Content Include="Views\Home\OTP.cshtml" />
+    <Content Include="Views\Shared\_LayoutBusqueda.cshtml" />
+    <Content Include="Views\Home\Busqueda.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
