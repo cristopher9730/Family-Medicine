@@ -232,6 +232,7 @@
     <Content Include="Views\Home\RegistrarCita.cshtml" />
     <Content Include="Views\Home\RegistrarUsuario.cshtml" />
     <Content Include="Views\Home\OTP.cshtml" />
+    <Content Include="Views\Home\RegistrarLaboratorio.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
