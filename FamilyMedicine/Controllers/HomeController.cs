@@ -51,20 +51,5 @@ namespace FamilyMedicine.Controllers
 
             return View();
         }
-
-        public ActionResult CarritoDeCompras()
-        {
-            return View();
-        }
-
-        public ActionResult LandingPage()
-        {
-            return View();
-        }
-
-        public ActionResult forgotPassword()
-        {
-            return View();
-        }
     }
 }
