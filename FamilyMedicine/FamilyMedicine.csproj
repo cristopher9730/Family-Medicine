@@ -118,6 +118,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DashboardAdminLaboratorioController.cs" />
     <Compile Include="Controllers\DashboardUsuarioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -184,6 +185,11 @@
     <Content Include="Views\Home\LandingPage.cshtml" />
     <Content Include="Views\Home\forgotPassword.cshtml" />
     <Content Include="Views\DashboardUsuario\DashboardUsuario.cshtml" />
+    <Content Include="Views\DashboardAdminLaboratorio\DashAdminLabRegistrarPersonal.cshtml" />
+    <Content Include="Views\DashboardAdminLaboratorio\DashAdminLabRegistrarExamen.cshtml" />
+    <Content Include="Views\DashboardAdminLaboratorio\DashAdminLabRegistrarCitas.cshtml" />
+    <Content Include="Views\DashboardAdminLaboratorio\DashAdminLabDatosLaboratorio.cshtml" />
+    <Content Include="Views\DashboardAdminLaboratorio\DashAdminLabHistorialVentas.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
