@@ -61,7 +61,7 @@ svg {
     gap: 10px 10px;
 
     transition: 544ms;
-    width: 135px;
+    width: 140px;
     padding: 3px 10px 3px 10px;
     text-decoration: none;
 }
@@ -74,7 +74,7 @@ svg {
     gap: 10px 10px;
 
     transition: 544ms;
-    width: 135px;
+    width: 140px;
     padding: 3px 10px 3px 10px;
 
     text-decoration: none;
@@ -92,7 +92,7 @@ svg {
     gap: 10px 10px;
 
     transition: 544ms;
-    width: 135px;
+    width: 140px;
     padding: 3px 10px 3px 10px;
 
     text-decoration: none;
@@ -126,12 +126,12 @@ svg {
     font-weight: 500;
 }
 
-/*--------------HEADER CONTENEDOR---------------------------*//*--------------HEADER CONTENEDOR---------------------------*/
+/*--------------HEADER CONTENEDOR--------------------*//*--------------HEADER CONTENEDOR--------------------*/
 
 .contenedorDeHeader {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
 
     width: 100%;
