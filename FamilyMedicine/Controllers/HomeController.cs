@@ -32,20 +32,28 @@ namespace FamilyMedicine.Controllers
             return View();
         }
 
-        public ActionResult CarritoDeCompras()
+        public ActionResult RegistrarCita()
         {
+            ViewBag.Message = "Your contact page.";
+
             return View();
         }
 
-        public ActionResult LandingPage()
+        public ActionResult RegistrarUsuario()
         {
+            ViewBag.Message = "Registrese con nosotros";
+
             return View();
         }
-
-        public ActionResult forgotPassword()
+        public ActionResult RegistrarExamen()
         {
+            ViewBag.Message = "Registrar examen";
+
             return View();
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> develop
     }
 }

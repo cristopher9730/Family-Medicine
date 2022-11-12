@@ -30,6 +30,8 @@ namespace DataAccess.Mapper
             operacion.AddIntergerParam("RolId", usuario.RolId);
             operacion.AddIntergerParam("LaboratorioId", usuario.LaboratorioId);
             operacion.AddIntergerParam("MembresiaId", usuario.MembresiaId);
+            operacion.AddVarcharParam("Codigo", usuario.Codigo);
+
 
             return operacion;
 
@@ -54,6 +56,7 @@ namespace DataAccess.Mapper
             operacion.AddIntergerParam("RolId", usuario.RolId);
             operacion.AddIntergerParam("LaboratorioId", usuario.LaboratorioId);
             operacion.AddIntergerParam("MembresiaId", usuario.MembresiaId);
+            operacion.AddVarcharParam("Codigo", usuario.Codigo);
 
             return operacion;
         }
@@ -84,16 +87,17 @@ namespace DataAccess.Mapper
         {
             var usuario = new Usuario()
             {
-                identificacion = int.Parse(row["Id"].ToString()),
+                identificacion = int.Parse(row["UsuarioId"].ToString()),
                 Nombre = row["Nombre"].ToString(),
-                Correo = row["Nombre"].ToString(),
-                Telefono = row["Nombre"].ToString(),
-                Clave = row["Nombre"].ToString(),
-                Foto = row["Nombre"].ToString(),
-                Estado = row["Nombre"].ToString(),
-                RolId = int.Parse(row["Id"].ToString()),
-                LaboratorioId = int.Parse(row["Id"].ToString()),
-                MembresiaId = int.Parse(row["Id"].ToString()),
+                Correo = row["Correo"].ToString(),
+                Telefono = row["Telefono"].ToString(),
+                Clave = row["Clave"].ToString(),
+                Foto = row["Foto"].ToString(),
+                Estado = row["Estado"].ToString(),
+                RolId = int.Parse(row["RolId"].ToString()),
+                LaboratorioId = int.Parse(row["LaboratorioId"].ToString()),
+                MembresiaId = int.Parse(row["MemebresiaId"].ToString()),
+                Codigo = row["Codigo"].ToString(),
             };
             return usuario;
         }

@@ -1,0 +1,100 @@
+﻿
+
+@{
+    ViewBag.Title = "RegistrarCita";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<fieldset class="mt-4">
+
+    <div class="card mb-3 m-2" style="width: 20%; float:left">
+        <h3 class="card-header">Registrar Cita</h3>
+        <div class="card-body">
+            <h5 class="card-title">Registro de Citas</h5>
+            <h6 class="card-subtitle text-muted">Ingrese los datos para registrar la Cita</h6>
+        </div>
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <label for="startDate">Fecha</label>
+                    <input id="startDate" class="form-control" type="date" />
+                </div>
+
+                <div class="form-group">
+                    <label for="hora">Hora de la Cita:</label>
+                    <input id="hora" class="form-control" type="time" />
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleSelect1" class="form-label mt-4">Laboratorio</label>
+                    <select class="form-select" id="exampleSelect1">
+                        <option>Laboratorio 1</option>
+                        <option>Laboratorio 2</option>
+                        <option>Laboratorio 3</option>
+                        <option>Laboratorio 4</option>
+                        <option>Laboratorio 5</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-form-label mt-4" for="inputDefault">Cupo</label>
+                    <input type="number" class="form-control" placeholder="Default input" id="inputDefault">
+                </div>
+
+                <div class="form-group form-switch">
+                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Estado</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Registrar</button>
+
+            </form>
+        </div>
+    </div>
+
+    <div class="card mb-3 m-2" style="width: 75%; float:right">
+        <h3 class="card-header">Citas Registradas</h3>
+        <div class="card-body">
+            <h5 class="card-title">Lista de Citas Registradas</h5>
+        </div>
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Id Cita</th>
+                        <th scope="col">Fecha Cita</th>
+                        <th scope="col">Horas de atención</th>
+                        <th scope="col">Cupos disponibles</th>
+                        <th scope="col">Estado de la Cita</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table-primary">
+                        <th scope="row">12346854654</th>
+                        <td>01-01-2023</td>
+                        <td>09:00 am</td>
+                        <td>10</td>
+                        <td>ACTIVA</td>
+                    </tr>
+                    <tr class="table-secondary">
+                        <th scope="row">12346854654</th>
+                        <td>01-01-2023</td>
+                        <td>09:00 am</td>
+                        <td>10</td>
+                        <td>ACTIVA</td>
+                    </tr>
+                    <tr class="table-primary">
+                        <th scope="row">12346854654</th>
+                        <td>01-01-2023</td>
+                        <td>09:00 am</td>
+                        <td>10</td>
+                        <td>ACTIVA</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</fieldset>
+

@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Registro";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card border-secondary mb-3" style="width: 30%; float:right">
+    <div class="card-header" style="max-width: 25rem;">
+        <h4 class="card-title">Registro</h4>
+    </div>
+    <div class="card-body">
+        <div class="form-group">
+            <div class="form-group">
+                <div class="form-group">
+                    <label for="txtNombre" class="form-label mt-4">Nombre</label>
+                    <input type="text" class="form-control" id="txtNombre" placeholder="Ingrese el nombre" />
+                </div>
+                <div class="form-group">
+                    <label for="txtCorreo" class="form-label mt-4">Correo</label>
+                    <input type="email" class="form-control" id="txtCorreo" aria-describedby="emailHelp" placeholder="Ingrese el correo">
+                </div>
+                <div class="form-group">
+                    <label for="txtTelefono" class="form-label mt-4">Ingrese el numero de telefono</label>
+                    <input type="text" class="form-control" id="txtTelefono" placeholder="Ingrese el telefono" />
+                </div>
+                <div class="form-group">
+                    <label for="txtClave" class="form-label mt-4">Clave</label>
+                    <input type="password" class="form-control" id="txtClave" placeholder="Ingrese la clave">
+                </div>
+                <div class="form-group">
+                    <label for="Foto" class="form-label mt-4">Ingrese la foto</label>
+                    <input class="form-control" type="file" id="Foto">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-outline-primary" id="btnRigistrarse">Registrarse</button>
+        </div>
+    </div>
+</div>
+    
+
