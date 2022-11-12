@@ -26,7 +26,6 @@ namespace AppLogic
         public static bool SendGmail(Usuario usuario, String asunto, String contenido)
         {
 
-           
             string from = "familymedicine.vncds@gmail.com";
             if (usuario.Correo == null)
                 throw new ArgumentException("usuario sin correo");
