@@ -188,6 +188,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DashboardUsuarioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -198,6 +199,8 @@
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\DashboardCss\DashboardCliente.css" />
+    <Content Include="Content\css\DashboardCss\DashBoardGeneral.css" />
     <Content Include="Content\css\Login.css" />
     <Content Include="Content\imgs\Labs\Lab1.jpg" />
     <Content Include="Content\imgs\Labs\Lab2.jpg" />
@@ -205,6 +208,7 @@
     <Content Include="Content\imgs\logos\lgoBlanco.png" />
     <Content Include="Content\imgs\logos\logoConColor.png" />
     <Content Include="Content\imgs\logos\logoNegro.png" />
+    <Content Include="Content\imgs\otros\clientes\dchouse.png" />
     <Content Include="Content\imgs\vectoriales\medicos.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -252,6 +256,8 @@
     <Content Include="Views\Home\Busqueda.cshtml" />
     <Content Include="Views\Home\RegistrarLaboratorio.cshtml" />
     <Content Include="Views\Home\RegistrarExamen.cshtml" />
+    <Content Include="Views\DashboardUsuario\DashBoardCitas.cshtml" />
+    <Content Include="Views\Shared\_DashboardLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
