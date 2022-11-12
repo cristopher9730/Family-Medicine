@@ -13,6 +13,12 @@ namespace FamilyMedicine.Controllers
         {
             return View();
         }
+
+        public ActionResult DashBoardCitas()
+        {
+            return View();
+        }
+
         [HttpPost]
         public ActionResult Prueba()
         {

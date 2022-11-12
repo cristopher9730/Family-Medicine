@@ -187,6 +187,8 @@
     <Content Include="Views\Home\LandingPage.cshtml" />
     <Content Include="Views\Home\forgotPassword.cshtml" />
     <Content Include="Views\DashboardUsuario\DashboardUsuario.cshtml" />
+    <Content Include="Views\Shared\_DashboardLayout.cshtml" />
+    <Content Include="Views\DashboardUsuario\DashBoardCitas.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

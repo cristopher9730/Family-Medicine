@@ -27,6 +27,7 @@ svg {
     margin-right: 10px !important;
 }
 
+
 /*=====================================
                   dashboard
  ========================================*/
@@ -83,25 +84,6 @@ svg {
     text-decoration: none;
 }
 
-
-.active{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 10px 10px;
-
-    transition: 544ms;
-    width: 140px;
-    padding: 3px 10px 3px 10px;
-
-    text-decoration: none;
-    background-color: #4d81ba;
-    text-decoration: none;
-}
-
-
-
 .ContenedorDeNombre {
     color: #ffffff;
     font-size: 17px;
@@ -149,14 +131,92 @@ svg {
     overflow:hidden;
 }
 
-.contenedorDeHeaderDos {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+/*=================Contenedor General del dash=================*/
 
-    width: 100%;
-    height: 100vh;
-    background-color: #325D88;
-    gap: 10px 10px;
+.divContenedorDelDashUno {
+    height: 88vh;
+    width: 99%;
+
+    background-color: #ffffff;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 10px 0px 0px;
+}
+
+.divContenedorDelDashDos {
+    height: 88vh;
+    width: 50%;
+
+    background-color: #ffffff;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 10px 0px 0px;
+}
+
+.divContenedorDelDashTres {
+    height: 88vh;
+    width: 410px;
+
+    background-color: #ffffff;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 10px 0px 0px;
+}
+
+
+
+/*==============TABS=======================*/
+.divContenedorDelDashTab {
+    border-radius: 10px;
+    margin: 10px 0px 0px 0px;
+}
+
+/*---------------------botones del tab-----------*/
+.nav-tabs {
+    border-bottom: none !important;
+}
+
+.nav-tabs .nav-link {
+    margin-bottom: calc(-1 * var(--bs-nav-tabs-border-width));
+    background: #ffffff !important;
+    color: #325D88 !important;
+    margin-right: 5px;
+
+    border: 2px solid #ffffff !important;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    transition: 355ms;
+}
+
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
+    color: #ffffff !important;
+    background-color: #325D88 !important;
+    border: 2px solid #ffffff;
+    transition: 355ms;
+}
+
+
+/*---------------------Contenido del tab----------------*/
+
+.tab-pane {
+    padding: 10px;
+    height: 80vh;
+    width: 99%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border-top-left-radius: 0px;
+    transition: 255ms;
+}
+
+.tab-content {
+    background-color: #ffffff;
+    width: 99%;
+    border-radius: 10px;
+    border-radius: 10px;
+    border-top-left-radius: 0px;
 }
