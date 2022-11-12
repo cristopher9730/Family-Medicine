@@ -42,7 +42,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Crud\UsuarioCrudFactory.cs" />
     <Compile Include="Crud\CrudFactory.cs" />
     <Compile Include="Dao\SqlOperation.cs" />
