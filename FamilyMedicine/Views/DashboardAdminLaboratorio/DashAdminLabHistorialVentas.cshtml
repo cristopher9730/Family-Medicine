@@ -34,5 +34,91 @@
     </section>
 
     <section class="contenedorDeHeader">
+        <fieldset class="m-2">
+
+            <div class="card mb-3" style="width: 30%; float:left">
+                <h3 class="card-header">Buscar Cita</h3>
+                <div class="card-body">
+                    <form>
+
+                        <div class="form-group">
+                            <label class="col-form-label mt-1" for="inputDefault">Buscar por id de cliente</label>
+                            <input type="text" class="form-control" placeholder="Digite el id del cliente" id="inputDefault">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleSelect2" class="form-label mt-4">Buscar por Mes</label>
+                            <select class="form-select" id="exampleSelect2">
+                                <option>Enero</option>
+                                <option>Febrero</option>
+                                <option>Marzo</option>
+                                <option>Abril</option>
+                                <option>Junio</option>
+                                <option>Julio</option>
+                                <option>Agosto</option>
+                                <option>Setiembre</option>
+                                <option>Octubre</option>
+                                <option>Noviembre</option>
+                                <option>Diciembre</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-form-label mt-4" for="inputDefault">Buscar por nombre del examen</label>
+                            <input type="text" class="form-control" placeholder="Digite una palabra clave" id="inputDefault">
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+            <div class="card mb-3" style="width: 69%; float:right">
+                <h3 class="card-header">Historial de Ventas</h3>
+                <div class="card-body">
+                    <h5 class="card-title">Lista de citas vendidas</h5>
+                </div>
+                <div class="card-body">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Id del Cliente</th>
+                                <th scope="col">Tipo de Examen</th>
+                                <th scope="col">Descripcion resultados</th>
+                                <th scope="col">Fecha de resultados</th>
+                                <th scope="col">Fecha de la cita</th>
+                                <th scope="col">Precio de la cita</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="table-primary">
+                                <th scope="row">12346854654</th>
+                                <td>Leucocitos</td>
+                                <td>Leucocitos status = muy mal</td>
+                                <td>2022-2-2</td>
+                                <td>2022-2-4</td>
+                                <td>15000</td>
+                            </tr>
+                            <tr class="table-secondary">
+                                <th scope="row">12346854654</th>
+                                <td>Leucocitos</td>
+                                <td>Leucocitos status = muy mal</td>
+                                <td>2022-2-2</td>
+                                <td>2022-2-4</td>
+                                <td>15000</td>
+                            </tr>
+                            <tr class="table-primary">
+                                <th scope="row">12346854654</th>
+                                <td>Leucocitos</td>
+                                <td>Leucocitos status = muy mal</td>
+                                <td>2022-2-2</td>
+                                <td>2022-2-4</td>
+                                <td>15000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </fieldset>
     </section>
 </section>

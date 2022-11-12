@@ -12,5 +12,15 @@ namespace FamilyMedicine.Controllers
         {
             return View();
         }
+
+        public ActionResult DashAdminLabDatosLaboratorio()
+        { 
+            return View();
+        }
+
+        public ActionResult DashAdminLabHistorialVentas()
+        {
+            return View();
+        }
     }
 }
