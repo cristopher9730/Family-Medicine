@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewBag.Title = "DashAdminLabRegistrarCitas";
+    
+}
+
+<link rel="stylesheet" href="~/Content/css/DashBoard.css" />
+
+<script src="https://kit.fontawesome.com/e77fc0ae51.js" crossorigin="anonymous"></script>
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+
+<fieldset>
+    <section class="ContenedorDeDashboard">
+        <section class="contenedorDeNav">
+            <a href="" class="mb-2 contenedorDeOpcionesDelNav">
+                <i class="fa-solid fa-user"></i>
+                <p class="ContenedorDeNombre">Registrar Personal Tecnico</p>
+            </a>
+            <a href="" class="mb-2 contenedorDeOpcionesDelNav">
+                <i class="fa-solid fa-flask-vial"></i>
+                <p class="ContenedorDeNombre">Registrar Producto</p>
+            </a>
+            <a href="" class="mb-2 contenedorDeOpcionesDelNav active">
+                <i class="fa-solid fa-calendar-days"></i>
+                <p class="ContenedorDeNombre">Registrar Citas</p>
+            </a>
+            <a href="" class="mb-2 contenedorDeOpcionesDelNav">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <p class="ContenedorDeNombre">Datos del laboratorio </p>
+            </a>
+            <a href="" class="mb-2 contenedorDeOpcionesDelNav">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <p class="ContenedorDeNombre">Ver historial de ventas </p>
+            </a>
+        </section>
+
+        <section class="contenedorDeHeader">
+            <div class="card mb-3" style="width: 100%">
+                <h3 class="card-header">Datos del Laboratorio</h3>
+                <div class="card-body">
+                    <p class="card-text">Informacion basica</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <label class="col-form-label" for="inputDefault">Nombre del Laboratorio</label>
+                        <input type="text" class="form-control" placeholder="Laboratorio Paez" id="inputDefault">
+                    </li>
+                    <li class="list-group-item">
+                        <label class="col-form-label" for="inputDefault">Nombre comercial</label>
+                        <input type="text" class="form-control" placeholder="Hermanos Paez S.A." id="inputDefault">
+                    </li>
+                    <li class="list-group-item">
+                        <label class="col-form-label" for="inputDefault">Correo electronico</label>
+                        <input type="text" class="form-control" placeholder="laboratorios@paez.com" id="inputDefault">
+                    </li>
+                    <li class="list-group-item">
+                        <label class="col-form-label" for="inputDefault">Telefono</label>
+                        <input type="text" class="form-control" placeholder="2224-2224" id="inputDefault">
+                    </li>
+                    <li class="list-group-item">
+                        <label class="col-form-label" for="inputDefault">Cedula juridica</label>
+                        <input type="text" class="form-control" placeholder="213181313065030520 Juridica" id="inputDefault">
+                    </li>
+                    <li class="list-group-item">
+                        <label class="col-form-label" for="inputDefault">Pagina web</label>
+                        <input type="text" class="form-control" placeholder="www.laboratoriospaez.com" id="inputDefault">
+                    </li>
+                    <li class="list-group-item">
+                        <label class="col-form-label" for="inputDefault">Redes sociales</label>
+                        <input type="text" class="form-control" placeholder="instagram/laboratoriospaez" id="inputDefault">
+                    </li>
+                    <li class="list-group-item">
+                        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </section>
+</fieldset>

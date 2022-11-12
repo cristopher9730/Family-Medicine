@@ -1,0 +1,92 @@
+﻿
+@{
+    ViewBag.Title = "DashboardAdminLaboratorio";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/css/DashBoard.css" />
+
+<script src="https://kit.fontawesome.com/e77fc0ae51.js" crossorigin="anonymous"></script>
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+
+<section class="ContenedorDeDashboard">
+    <section class="contenedorDeNav">
+        <a href="" class="mb-2 contenedorDeOpcionesDelNav">
+            <i class="fa-solid fa-user"></i>
+            <p class="ContenedorDeNombre">Registrar Personal Tecnico</p>
+        </a>
+        <a href="" class="mb-2 contenedorDeOpcionesDelNav">
+            <i class="fa-solid fa-flask-vial"></i>
+            <p class="ContenedorDeNombre">Registrar Producto</p>
+        </a>
+        <a href="" class="mb-2 contenedorDeOpcionesDelNav active">
+            <i class="fa-solid fa-calendar-days"></i>
+            <p class="ContenedorDeNombre">Registrar Citas</p>
+        </a>
+        <a href="" class="mb-2 contenedorDeOpcionesDelNav">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <p class="ContenedorDeNombre">Datos del laboratorio </p>
+        </a>
+        <a href="" class="mb-2 contenedorDeOpcionesDelNav">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <p class="ContenedorDeNombre">Ver historial de ventas </p>
+        </a>
+    </section>
+
+    <section class="contenedorDeHeader">
+        <div class="card m-3" style="width: 30%; float:left">
+
+            <div class="form-group m-3">
+                <label class="form-label" for="inputDefault">Ingrese el correo</label>
+                <input type="text" class="form-control" placeholder="Default input" id="inputDefault">
+            </div>
+            <div class="form-group m-3">
+                <label for="exampleSelect1" class="form-label">Elija el tipo de rol</label>
+                <select class="form-select" id="exampleSelect1">
+                    <option>1 - Admin</option>
+                    <option>2 - Personal Técnico</option>
+                    <option>3 - Dar de baja del laboratorio</option>
+                </select>
+            </div>
+            <div class="form-group m-3">
+                <button type="submit" class="btn btn-primary mt-2">Guardar Cambios</button>
+            </div>
+        </div>
+        <div class="card m-3" style="width: 65%; float:right">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Correo</th>
+                        <th scope="col">Telefono</th>
+                        <th scope="col">Estado</th>
+                        <th scope="col">Rol</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table-primary">
+                        <th scope="row">Jacinto</th>
+                        <td>jacinto@labpaez.com</td>
+                        <td>83838383</td>
+                        <td>PENDIENTE</td>
+                        <td>Tecnico</td>                        
+                    </tr>
+                    <tr class="table-secondary">
+                        <th scope="row">Jacinto</th>
+                        <td>jacinto@labpaez.com</td>
+                        <td>83838383</td>
+                        <td>PENDIENTE</td>
+                        <td>Tecnico</td>
+                    </tr>
+                    <tr class="table-primary">
+                        <th scope="row">Jacinto</th>
+                        <td>jacinto@labpaez.com</td>
+                        <td>83838383</td>
+                        <td>PENDIENTE</td>
+                        <td>Tecnico</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</section>
