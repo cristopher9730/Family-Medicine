@@ -16,7 +16,8 @@ namespace FamilyMedicine_API.Controllers
         {
             try
             {
-                AdminCorreo adminCorreo = new AdminCorreo();
+
+               AdminCorreo adminCorreo = new AdminCorreo();
                 adminCorreo.EviarEmailBienvenida(usuario);
                 return Ok();
             }

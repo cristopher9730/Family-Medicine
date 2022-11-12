@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Mandrill;
 using Mandrill.Model;
+using System;
 
 namespace AppLogic
 {
@@ -14,31 +15,47 @@ namespace AppLogic
     {
         
 
-        public void EviarEmailBienvenida(Usuario usuario)
+        public void  EviarEmailBienvenida(Usuario usuario)
         {
-            StringBuilder emailBody = new StringBuilder();
+            string asunto = "Bienvenido a Family Medicine";
+            string contenido = "Confirme su identidad con el siguiente token: " + usuario.Codigo;
+            SendGmail(usuario, asunto, contenido);
 
-            var emailSubject = string.Format("Hemos");
-
-            emailBody.AppendLine(string.Format("Estimado {0}, Bienvenido a FamilyMedicine!", usuario.Nombre));
-            emailBody.AppendLine(string.Format("<br/>Tu codigo de seguridad:"));
-            emailBody.AppendLine(string.Format("<br/> Es un placer servirle!"));
-
-            EnviarEmailAsync(usuario.Correo, emailSubject, emailBody.ToString());
         }
 
-        private string EnviarEmailAsync(string toEmail, string emailSubject, string emailBody)
+        public static bool SendGmail(Usuario usuario, String asunto, String contenido)
         {
-            var apiKey = ConfigurationManager.AppSettings["api_key_correos"];
-            var client = new MandrillApi(apiKey);
-            var message = new MandrillMessage("FamilyMedicine", toEmail, emailSubject, emailBody);
-            var response = client.Messages.SendAsync(message).Result;
 
-            if (response != null)
-                return "OK";
-            else
-                return "Error";
+           
+            string from = "familymedicine.vncds@gmail.com";
+            if (usuario.Correo == null)
+                throw new ArgumentException("usuario sin correo");
 
+            var gmailClient = new System.Net.Mail.SmtpClient
+            {
+                Host = "smtp.gmail.com",
+                Port = 587,
+                EnableSsl = true,
+                UseDefaultCredentials = false,
+                Credentials = new System.Net.NetworkCredential(from, "qqaltlxjosoxqlal")
+            };
+
+            using (var msg = new System.Net.Mail.MailMessage(from, usuario.Correo, asunto, contenido))
+            {
+
+                msg.To.Add(usuario.Correo);
+
+                try
+                {
+                    gmailClient.Send(msg);
+                    return true;
+                }
+                catch (Exception e)
+                {
+                    throw e;
+
+                }
+            }
         }
 
     }
