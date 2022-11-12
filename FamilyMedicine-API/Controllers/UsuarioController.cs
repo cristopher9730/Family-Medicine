@@ -29,6 +29,7 @@ namespace FamilyMedicine_API.Controllers
             return "TBD";
         }
 
+        [HttpGet]
         public List<Usuario> ObtenerListaUsusarios()
         {
             AdminUsuario adminUsuario = new AdminUsuario();

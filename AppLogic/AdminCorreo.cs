@@ -15,7 +15,7 @@ namespace AppLogic
     {
         
 
-        public void  EviarEmailBienvenida(Usuario usuario)
+        public void EviarEmailBienvenida(Usuario usuario)
         {
             string asunto = "Bienvenido a Family Medicine";
             string contenido = "Confirme su identidad con el siguiente token: " + usuario.Codigo;
