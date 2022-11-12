@@ -22,5 +22,10 @@ namespace FamilyMedicine.Controllers
         {
             return View();
         }
+
+        public ActionResult DashAdminLabRegistrarPersonal()
+        {
+            return View();
+        }
     }
 }

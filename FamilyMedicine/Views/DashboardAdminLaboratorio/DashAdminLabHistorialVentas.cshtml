@@ -37,43 +37,20 @@
         <fieldset class="m-2">
 
             <div class="card mb-3" style="width: 30%; float:left">
-                <h3 class="card-header">Buscar Cita</h3>
+                <h3 class="card-header">Generar Reporte de ventas</h3>
                 <div class="card-body">
                     <form>
 
                         <div class="form-group">
-                            <label class="col-form-label mt-1" for="inputDefault">Buscar por id de cliente</label>
-                            <input type="text" class="form-control" placeholder="Digite el id del cliente" id="inputDefault">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="exampleSelect2" class="form-label mt-4">Buscar por Mes</label>
-                            <select class="form-select" id="exampleSelect2">
-                                <option>Enero</option>
-                                <option>Febrero</option>
-                                <option>Marzo</option>
-                                <option>Abril</option>
-                                <option>Junio</option>
-                                <option>Julio</option>
-                                <option>Agosto</option>
-                                <option>Setiembre</option>
-                                <option>Octubre</option>
-                                <option>Noviembre</option>
-                                <option>Diciembre</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Enter a date before 1989-10-30:</label>
+                            <label class="col-form-label mt-3">Fecha de inicio del reporte</label>
                             <input type="date" name="myDate" max="1989-10-29">
 
-                            <label>Enter a date after 2001-01-01:</label>
+                            <label class="col-form-label mt-3">Fecha final del reporte</label>
                             <input type="date" name="myDate" min="2001-01-02">
                         </div>
 
-                        <div class="form-group">
-                            <label class="col-form-label mt-4" for="inputDefault">Buscar por nombre del examen</label>
-                            <input type="text" class="form-control" placeholder="Digite una palabra clave" id="inputDefault">
+                        <div class="mt-2">
+                            <button type="submit" class="btn btn-primary">Crear reporte</button>
                         </div>
 
                     </form>
@@ -81,7 +58,7 @@
             </div>
 
             <div class="card mb-3" style="width: 69%; float:right">
-                <h3 class="card-header">Historial de Ventas</h3>
+                <h3 class="card-header">Vista previa del reporte</h3>
                 <div class="card-body">
                     <h5 class="card-title">Lista de citas vendidas</h5>
                 </div>
