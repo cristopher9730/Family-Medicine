@@ -15,7 +15,7 @@ namespace AppLogic
     {
         
 
-        public void  EviarEmailBienvenida(Usuario usuario)
+        public void EviarEmailBienvenida(Usuario usuario)
         {
             string asunto = "Bienvenido a Family Medicine";
             string contenido = "Confirme su identidad con el siguiente token: " + usuario.Codigo;
@@ -26,7 +26,6 @@ namespace AppLogic
         public static bool SendGmail(Usuario usuario, String asunto, String contenido)
         {
 
-           
             string from = "familymedicine.vncds@gmail.com";
             if (usuario.Correo == null)
                 throw new ArgumentException("usuario sin correo");

@@ -29,7 +29,7 @@ namespace DataAccess.Mapper
             operacion.AddVarcharParam("Estado", usuario.Estado);
             operacion.AddIntergerParam("RolId", usuario.RolId);
             operacion.AddIntergerParam("LaboratorioId", usuario.LaboratorioId);
-            operacion.AddIntergerParam("MembresiaId", usuario.MembresiaId);
+            operacion.AddIntergerParam("MemebresiaId", usuario.MembresiaId);
             operacion.AddVarcharParam("Codigo", usuario.Codigo);
 
 
@@ -55,7 +55,7 @@ namespace DataAccess.Mapper
             operacion.AddVarcharParam("Estado", usuario.Estado);
             operacion.AddIntergerParam("RolId", usuario.RolId);
             operacion.AddIntergerParam("LaboratorioId", usuario.LaboratorioId);
-            operacion.AddIntergerParam("MembresiaId", usuario.MembresiaId);
+            operacion.AddIntergerParam("MemebresiaId", usuario.MembresiaId);
             operacion.AddVarcharParam("Codigo", usuario.Codigo);
 
             return operacion;
@@ -87,7 +87,7 @@ namespace DataAccess.Mapper
         {
             var usuario = new Usuario()
             {
-                identificacion = int.Parse(row["UsuarioId"].ToString()),
+                UsuarioId = int.Parse(row["UsuarioId"].ToString()),
                 Nombre = row["Nombre"].ToString(),
                 Correo = row["Correo"].ToString(),
                 Telefono = row["Telefono"].ToString(),
