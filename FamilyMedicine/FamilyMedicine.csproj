@@ -189,6 +189,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DashboardUsuarioController.cs" />
+    <Compile Include="Controllers\DashboardAdminLaboratorioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -258,11 +259,15 @@
     <Content Include="Views\Home\RegistrarExamen.cshtml" />
     <Content Include="Views\DashboardUsuario\DashBoardCitas.cshtml" />
     <Content Include="Views\Shared\_DashboardLayout.cshtml" />
+    <Content Include="Views\DashboardAdminLaboratorio\DashAdminLabDatosLaboratorio.cshtml" />
+    <Content Include="Views\DashboardAdminLaboratorio\DashAdminLabHistorialVentas.cshtml" />
+    <Content Include="Views\DashboardAdminLaboratorio\DashAdminLabRegistrarCitas.cshtml" />
+    <Content Include="Views\DashboardAdminLaboratorio\DashAdminLabRegistrarExamen.cshtml" />
+    <Content Include="Views\DashboardAdminLaboratorio\DashAdminLabRegistrarPersonal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-	<Folder Include="Scripts\Views\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
