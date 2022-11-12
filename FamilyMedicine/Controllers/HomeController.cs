@@ -51,5 +51,12 @@ namespace FamilyMedicine.Controllers
 
             return View();
         }
+
+        public ActionResult Busqueda()
+        {
+            ViewBag.Message = "Busqueda";
+
+            return View();
+        }
     }
 }
