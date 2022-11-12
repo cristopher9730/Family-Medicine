@@ -69,5 +69,13 @@ namespace DataAccess.Crud
             throw new NotImplementedException();
         }
 
+        public T ValidarLoginUsuario(string correo, string clave)
+        {
+            var atributos = dao.EjecProcedimientoAlmacenadoConConsulta(mapper.DeclaracionValidarLogin(correo,clave));
+            var objsUsuario = mapper.ConstruirObjetos(atributos);
+            var user = objsUsuario.
+;
+        }
+
     }
 }

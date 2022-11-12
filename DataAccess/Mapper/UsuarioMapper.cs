@@ -80,6 +80,18 @@ namespace DataAccess.Mapper
             return operacion;
         }
 
+        public SqlOperation DeclaracionValidarLogin(string correo, string clave)
+        {
+            var operacion = new SqlOperation()
+            {
+                NombreProcedimiento = "SP_ValidarLogin"
+            };
+
+            operacion.AddVarcharParam("Correo", correo);
+            operacion.AddVarcharParam("Clave", clave);
+            return operacion;
+        }
+
         #endregion
 
         #region Metodos de IObjectMapper
