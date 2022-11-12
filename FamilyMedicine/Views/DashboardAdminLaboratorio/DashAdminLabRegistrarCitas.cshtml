@@ -1,146 +1,117 @@
 ﻿
 @{
     ViewBag.Title = "DashAdminLabRegistrarCitas";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
 }
 
 <link rel="stylesheet" href="~/Content/css/DashBoard.css" />
-
-<script src="https://kit.fontawesome.com/e77fc0ae51.js" crossorigin="anonymous"></script>
 <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 
-<section class="ContenedorDeDashboard">
-    <section class="contenedorDeNav">
-        <a href="" class="mb-2 contenedorDeOpcionesDelNav">
-            <i class="fa-solid fa-user"></i>
-            <p class="ContenedorDeNombre">Registrar Personal Tecnico</p>
-        </a>
-        <a href="" class="mb-2 contenedorDeOpcionesDelNav">
-            <i class="fa-solid fa-flask-vial"></i>
-            <p class="ContenedorDeNombre">Registrar Producto</p>
-        </a>
-        <a href="" class="mb-2 contenedorDeOpcionesDelNav active">
-            <i class="fa-solid fa-calendar-days"></i>
-            <p class="ContenedorDeNombre">Registrar Citas</p>
-        </a>
-        <a href="" class="mb-2 contenedorDeOpcionesDelNav">
-            <i class="fa-solid fa-cart-shopping"></i>
-            <p class="ContenedorDeNombre">Datos del laboratorio </p>
-        </a>
-        <a href="" class="mb-2 contenedorDeOpcionesDelNav">
-            <i class="fa-solid fa-cart-shopping"></i>
-            <p class="ContenedorDeNombre">Ver historial de ventas </p>
-        </a>
-    </section>
+<div class="divContenedorDelDashUno">
+    <fieldset class="m-2">
 
-    <section class="contenedorDeHeader">
+        <div class="card mb-3" style="width: 30%; float:left">
+            <h3 class="card-header">Registrar Cita</h3>
+            <div class="card-body">
+                <form>
 
-        <fieldset class="m-2">
+                    <div class="form-group">
+                        <label for="exampleSelect2" class="form-label">Escoja el Examen para la Cita</label>
+                        <select class="form-select" id="examenesId">
+                            <option>Leucocitos</option>
+                            <option>Hemoglobina</option>
+                            <option>Orina</option>
+                            <option>Heces</option>
+                            <option>Tiroides T1</option>
+                            <option>Colonoscopia</option>
+                            <option>Doping</option>
+                        </select>
+                    </div>
 
-            <div class="card mb-3" style="width: 30%; float:left">
-                <h3 class="card-header">Registrar Cita</h3>
-                <div class="card-body">
-                    <form>
+                    <div class="form-group">
+                        <label for="exampleSelect2" class="form-label">Dias de la cita</label>
+                        <select multiple="" class="form-select" id="exampleSelect2">
+                            <option>Lunes</option>
+                            <option>Martes</option>
+                            <option>Miercoles</option>
+                            <option>Jueves</option>
+                            <option>Viernes</option>
+                            <option>Sabado</option>
+                            <option>Domingo</option>
+                        </select>
+                    </div>
 
-                        <div class="form-group">
-                            <label for="exampleSelect2" class="form-label">Escoja el Examen para la Cita</label>
-                            <select class="form-select" id="examenesId">
-                                <option>Leucocitos</option>
-                                <option>Hemoglobina</option>
-                                <option>Orina</option>
-                                <option>Heces</option>
-                                <option>Tiroides T1</option>
-                                <option>Colonoscopia</option>
-                                <option>Doping</option>
-                            </select>
-                        </div>
+                    <div class="form-group mt-2">
+                        <label for="hora">Hora de la Cita:</label>
+                        <input id="hora" class="form-control" type="time" />
+                    </div>
 
-                        <div class="form-group">
-                            <label for="exampleSelect2" class="form-label">Dias de la cita</label>
-                            <select multiple="" class="form-select" id="exampleSelect2">
-                                <option>Lunes</option>
-                                <option>Martes</option>
-                                <option>Miercoles</option>
-                                <option>Jueves</option>
-                                <option>Viernes</option>
-                                <option>Sabado</option>
-                                <option>Domingo</option>
-                            </select>
-                        </div>
+                    <div class="form-group">
+                        <label class="col-form-label" for="inputDefault">Cupo</label>
+                        <input type="number" class="form-control" id="inputDefault">
+                    </div>
 
-                        <div class="form-group mt-2">
-                            <label for="hora">Hora de la Cita:</label>
-                            <input id="hora" class="form-control" type="time" />
-                        </div>
+                    <div class="form-group form-switch">
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Estado</label>
+                    </div>
 
-                        <div class="form-group">
-                            <label class="col-form-label" for="inputDefault">Cupo</label>
-                            <input type="number" class="form-control" id="inputDefault">
-                        </div>
+                    <div class="mt-1">
+                        <button type="submit" class="btn btn-primary">Registrar</button>
+                    </div>
 
-                        <div class="form-group form-switch">
-                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-                            <label class="form-check-label" for="flexSwitchCheckDefault">Estado</label>
-                        </div>
-
-                        <div class="mt-1">
-                            <button type="submit" class="btn btn-primary">Registrar</button>
-                        </div>
-
-                    </form>
-                </div>
+                </form>
             </div>
+        </div>
 
-            <div class="card mb-3" style="width: 69%; float:right">
-                <h3 class="card-header">Citas Registradas</h3>
-                <div class="card-body">
-                    <h5 class="card-title">Lista de Citas Registradas</h5>
-                </div>
-                <div class="card-body">
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th scope="col">Id Cita</th>
-                                <th scope="col">Nombre del Examen</th>
-                                <th scope="col">Fecha Cita</th>
-                                <th scope="col">Horas de atención</th>
-                                <th scope="col">Cupos disponibles</th>
-                                <th scope="col">Estado de la Cita</th>
-
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="table-primary">
-                                <th scope="row">12346854654</th>
-                                <td>Leucocitos</td>
-                                <td>Lun - Mar - Vie</td>
-                                <td>09:00 am</td>
-                                <td>10</td>
-                                <td>ACTIVA</td>
-                            </tr>
-                            <tr class="table-secondary">
-                                <th scope="row">12346854654</th>
-                                <td>Leucocitos</td>
-                                <td>Lun - Mar - Vie</td>
-                                <td>09:00 am</td>
-                                <td>10</td>
-                                <td>ACTIVA</td>
-                            </tr>
-                            <tr class="table-primary">
-                                <th scope="row">12346854654</th>
-                                <td>Leucocitos</td>
-                                <td>Lun - Mar - Vie</td>
-                                <td>09:00 am</td>
-                                <td>10</td>
-                                <td>ACTIVA</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+        <div class="card mb-3" style="width: 69%; float:right">
+            <h3 class="card-header">Citas Registradas</h3>
+            <div class="card-body">
+                <h5 class="card-title">Lista de Citas Registradas</h5>
             </div>
-        </fieldset>
+            <div class="card-body">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id Cita</th>
+                            <th scope="col">Nombre del Examen</th>
+                            <th scope="col">Fecha Cita</th>
+                            <th scope="col">Horas de atención</th>
+                            <th scope="col">Cupos disponibles</th>
+                            <th scope="col">Estado de la Cita</th>
 
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="table-primary">
+                            <th scope="row">12346854654</th>
+                            <td>Leucocitos</td>
+                            <td>Lun - Mar - Vie</td>
+                            <td>09:00 am</td>
+                            <td>10</td>
+                            <td>ACTIVA</td>
+                        </tr>
+                        <tr class="table-secondary">
+                            <th scope="row">12346854654</th>
+                            <td>Leucocitos</td>
+                            <td>Lun - Mar - Vie</td>
+                            <td>09:00 am</td>
+                            <td>10</td>
+                            <td>ACTIVA</td>
+                        </tr>
+                        <tr class="table-primary">
+                            <th scope="row">12346854654</th>
+                            <td>Leucocitos</td>
+                            <td>Lun - Mar - Vie</td>
+                            <td>09:00 am</td>
+                            <td>10</td>
+                            <td>ACTIVA</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </fieldset>
+</div>
 
-
-    </section>
-</section>
+<script src="https://kit.fontawesome.com/e77fc0ae51.js" crossorigin="anonymous"></script>
