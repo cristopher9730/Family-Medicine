@@ -190,6 +190,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DashboardAdminAppController.cs" />
     <Compile Include="Controllers\DashboardUsuarioController.cs" />
+    <Compile Include="Controllers\DashboardAdminLaboratorioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -259,6 +260,11 @@
     <Content Include="Views\Home\RegistrarExamen.cshtml" />
     <Content Include="Views\DashboardUsuario\DashBoardCitas.cshtml" />
     <Content Include="Views\Shared\_DashboardLayout.cshtml" />
+    <Content Include="Views\DashboardAdminLaboratorio\DashAdminLabDatosLaboratorio.cshtml" />
+    <Content Include="Views\DashboardAdminLaboratorio\DashAdminLabHistorialVentas.cshtml" />
+    <Content Include="Views\DashboardAdminLaboratorio\DashAdminLabRegistrarCitas.cshtml" />
+    <Content Include="Views\DashboardAdminLaboratorio\DashAdminLabRegistrarExamen.cshtml" />
+    <Content Include="Views\DashboardAdminLaboratorio\DashAdminLabRegistrarPersonal.cshtml" />
     <Content Include="Views\Shared\_DashboardAdminAppLayout.cshtml" />
     <Content Include="Views\DashboardAdminApp\LaboratoriosRegistrados.cshtml" />
     <Content Include="Views\DashboardAdminApp\Usuarios.cshtml" />

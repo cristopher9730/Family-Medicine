@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "DashAdminLabRegistrarCitas";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+
+
+}
+
+<style>
+    /*Este style contien la clase de nav activo las opciones A1, A2, A3... etc estan en el layout*/
+    .A9 {
+        background-color: #4d81ba;
+        text-decoration: none;
+    }
+</style>
+
+<link rel="stylesheet" href="~/Content/css/DashBoard.css" />
+
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+
+<div class="divContenedorDelDashDos">
+    <div class="card mb-3" style="width: 100%">
+        <h3 class="card-header">Datos del Laboratorio</h3>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <label class="col-form-label" for="inputDefault">Nombre del Laboratorio</label>
+                <input type="text" class="form-control" placeholder="Laboratorio Paez" id="inputDefault">
+            </li>
+            <li class="list-group-item">
+                <label class="col-form-label" for="inputDefault">Nombre comercial</label>
+                <input type="text" class="form-control" placeholder="Hermanos Paez S.A." id="inputDefault">
+            </li>
+            <li class="list-group-item">
+                <label class="col-form-label" for="inputDefault">Correo electronico</label>
+                <input type="text" class="form-control" placeholder="laboratorios@paez.com" id="inputDefault">
+            </li>
+            <li class="list-group-item">
+                <label class="col-form-label" for="inputDefault">Telefono</label>
+                <input type="text" class="form-control" placeholder="2224-2224" id="inputDefault">
+            </li>
+            <li class="list-group-item">
+                <label class="col-form-label" for="inputDefault">Cedula juridica</label>
+                <input type="text" class="form-control" placeholder="213181313065030520 Juridica" id="inputDefault">
+            </li>
+            <li class="list-group-item">
+                <label class="col-form-label" for="inputDefault">Pagina web</label>
+                <input type="text" class="form-control" placeholder="www.laboratoriospaez.com" id="inputDefault">
+            </li>
+            <li class="list-group-item">
+                <label class="col-form-label" for="inputDefault">Redes sociales</label>
+                <input type="text" class="form-control" placeholder="instagram/laboratoriospaez" id="inputDefault">
+            </li>
+            <li class="list-group-item">
+                <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script src="https://kit.fontawesome.com/e77fc0ae51.js" crossorigin="anonymous"></script>

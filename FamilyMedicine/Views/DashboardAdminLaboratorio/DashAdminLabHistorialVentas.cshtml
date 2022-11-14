@@ -1,0 +1,95 @@
+﻿
+@{
+    ViewBag.Title = "DashboardAdminLaboratorio";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<style>
+    /*Este style contien la clase de nav activo las opciones A1, A2, A3... etc estan en el layout*/
+    .A8 {
+        background-color: #4d81ba;
+        text-decoration: none;
+    }
+</style>
+
+<link rel="stylesheet" href="~/Content/css/DashBoard.css" />
+
+<script src="https://kit.fontawesome.com/e77fc0ae51.js" crossorigin="anonymous"></script>
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+
+<div class="divContenedorDelDashUno">
+    <fieldset class="m-2">
+
+        <div class="card mb-3" style="width: 30%; float:left">
+            <h3 class="card-header">Generar Reporte de ventas</h3>
+            <div class="card-body">
+
+                <form>
+
+                    <div class="form-group">
+                        <label class="form-label mt-3">Fecha de inicio del reporte</label>
+                        <input type="date" name="myDate" max="1989-10-29">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label mt-3">Fecha final del reporte</label>
+                        <input type="date" name="myDate" min="2001-01-02">
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary mt-2">Crear reporte</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+        <div class="card mb-3" style="width: 69%; float:right">
+            <h3 class="card-header">Vista previa del reporte</h3>
+            <div class="card-body">
+                <h5 class="card-title">Lista de citas vendidas</h5>
+            </div>
+            <div class="card-body">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id del Cliente</th>
+                            <th scope="col">Tipo de Examen</th>
+                            <th scope="col">Descripcion resultados</th>
+                            <th scope="col">Fecha de resultados</th>
+                            <th scope="col">Fecha de la cita</th>
+                            <th scope="col">Precio de la cita</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="table-primary">
+                            <th scope="row">12346854654</th>
+                            <td>Leucocitos</td>
+                            <td>Leucocitos status = muy mal</td>
+                            <td>2022-2-2</td>
+                            <td>2022-2-4</td>
+                            <td>15000</td>
+                        </tr>
+                        <tr class="table-secondary">
+                            <th scope="row">12346854654</th>
+                            <td>Leucocitos</td>
+                            <td>Leucocitos status = muy mal</td>
+                            <td>2022-2-2</td>
+                            <td>2022-2-4</td>
+                            <td>15000</td>
+                        </tr>
+                        <tr class="table-primary">
+                            <th scope="row">12346854654</th>
+                            <td>Leucocitos</td>
+                            <td>Leucocitos status = muy mal</td>
+                            <td>2022-2-2</td>
+                            <td>2022-2-4</td>
+                            <td>15000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </fieldset>    
+</div> 
