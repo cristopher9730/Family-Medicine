@@ -25,10 +25,10 @@
             <div class="collapse navbar-collapse" id="navbarColor01">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a> @Html.ActionLink("Laboratorios", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</a>
+                        <a> @Html.ActionLink("Laboratorios", "Busqueda", "Home", new { area = "" }, new { @class = "nav-link" })</a>
                     </li>
                     <li class="nav-item">
-                        <a> @Html.ActionLink("Exámenes", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</a>
+                        <a> @Html.ActionLink("Exámenes", "Busqueda", "Home", new { area = "" }, new { @class = "nav-link" })</a>
                     </li>
                 </ul>
                 <div class="d-flex">
@@ -41,7 +41,6 @@
                         </li>
                         <li class="nav-item">
                             <a> @Html.ActionLink("Iniciar Sesión", "Login", "Home", new { area = "" }, new { @class = "nav-link" }) </a>
-                            <a> @Html.ActionLink("Registro", "RegistrarUsuario", "Home", new { area = "" }, new { @class = "nav-link" }) </a>
                         </li>
                     </ul>
                 </div>
