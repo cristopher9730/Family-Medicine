@@ -1,8 +1,13 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
+using DTO;
+using AppLogic;
 
 namespace FamilyMedicine.Controllers
 {
@@ -29,6 +34,8 @@ namespace FamilyMedicine.Controllers
 
         public ActionResult Login()
         {
+            ViewBag.Message = "Login";
+
             return View();
         }
 

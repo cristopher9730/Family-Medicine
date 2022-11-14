@@ -8,32 +8,32 @@
 
 <section class="loginSectionContenedor">
 
-    <form data-aos="fade-up"
-     data-aos-duration="3000" class="was-validated" id="formContenedorId">
+    <form action="@Url.Action("Login","Acceso")" method="post" id="formContenedorId">
         <div class="mb-3 mt-3">
             <div class="input-group has-validation">
                 <span class="input-group-text" id="inputGroupPrepend"><i class="fa-solid faColor fa-user"></i></span>
-                <input type="text" class="form-control" placeholder="Usuario" id="validacionDeUsuario" aria-describedby="inputGroupPrepend" required>
-                <div class="invalid-feedback">
-                    Por favor, ingrese su usuario
-                </div>
+                <input type="text" name="Correo" class="form-control" placeholder="Correo" id="validacionDeUsuario" aria-describedby="inputGroupPrepend" required>
+                
             </div>
         </div>
         <div class="mb-3">
             <div class="input-group has-validation">
                 <span class="input-group-text" id="inputGroupPrepend"><i class="fa-solid  faColor fa-lock"></i></span>
-                <input type="password" class="form-control" placeholder="Contraseña" id="validacionDePassword" aria-describedby="inputGroupPrepend" required>
-                <div class="invalid-feedback">
-                    Por favor, ingrese su contraseña
-                </div>
+                <input type="password" name="Clave" class="form-control" placeholder="Contraseña" id="validacionDePassword" aria-describedby="inputGroupPrepend" required>
             </div>
+            @if (ViewData["Mensaje"] != null)
+            {
+                <div class="alert alert-warning" role="alert">
+                    @ViewData["Mensaje"]
+                </div>
+            }
         </div>
-        <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+        <button type="submit" class="btn login_btn">Iniciar sesión</button>
     </form>
 
 
     <img data-aos="fade-down"
-     data-aos-duration="3000" class="imagenLogin" src="~/Content/imgs/vectoriales/medicos.png" alt="Imagen Login Family medice" />
+         data-aos-duration="3000" class="imagenLogin" src="~/Content/imgs/vectoriales/medicos.png" alt="Imagen Login Family medice" />
 
 </section>
 

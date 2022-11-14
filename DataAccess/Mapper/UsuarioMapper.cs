@@ -112,7 +112,28 @@ namespace DataAccess.Mapper
             }
             return lstResultados;
         }
-        
+
         #endregion
+
+        /*
+ Este metodo toma un objeto usuario y crea una variable operacion que es de tipo SqlOperation. 
+La variable SqlOperation va a guardar datos que puedan ser leidos por el objeto command, que se utiliza en SqlDao
+A partir de usuario, se obtienen los atributos correo y clave, los cuales se almacenan como parametro (@ + nombreParametro) junto con el nombre del procedimiento almacenado
+El metodo devuelve en si lo que hace es recibir un objeto usuario y lo convierte a una operacion de Sql 
+ */
+        public SqlOperation Login(Usuario oUsuario)
+        {
+            var operation = new SqlOperation()
+            {
+                NombreProcedimiento = "SP_ValidarLogin"
+            };
+
+            operation.AddVarcharParam("Correo", oUsuario.Correo);
+            operation.AddVarcharParam("Clave", oUsuario.Clave);
+
+            return operation;
+
+        }
+
     }
 }
