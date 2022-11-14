@@ -1,7 +1,7 @@
 ﻿
 @{
     ViewBag.Title = "LaboratoriosRegistrados";
-    Layout = "~/Views/Shared/_DashboardAdminApp.cshtml";
+    Layout = "~/Views/Shared/_DashboardAdminAppLayout.cshtml";
 }
 
 <style>
@@ -17,6 +17,33 @@
 <div class="divContenedorDelDashUno">
 
     <h3 class="mb-3">Laboratorios Registrados</h3>
+
+    <div class="container mb-3">
+        <div class="d-flex flex-row align-items-center">
+            <div class="d-flex align-items-center me-2">
+                <h5 class="m-0">
+                    Monto de suscripción:
+                </h5>
+            </div>
+            <div class="input-group w-auto">
+                <span class="input-group-text">$</span>
+                <input type="number" class="form-control me-2" placeholder="100">
+            </div>
+            <div>
+                <button class="btn btn-primary">Modificar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mb-3">
+        <div class="d-flex flex-row align-items-center">
+            <div class="d-flex align-items-center me-2">
+                <h5 class="m-0">
+                    Ganancias totales: $300
+                </h5>
+            </div>
+        </div>
+    </div>
 
     <table class="table table-hover">
         <thead>

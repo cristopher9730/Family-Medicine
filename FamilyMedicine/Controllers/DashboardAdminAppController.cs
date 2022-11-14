@@ -13,5 +13,15 @@ namespace FamilyMedicine.Controllers
         {
             return View();
         }
+
+        public ActionResult Usuarios()
+        {
+            return View();
+        }
+
+        public ActionResult Actividades()
+        {
+            return View();
+        }
     }
 }
