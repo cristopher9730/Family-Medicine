@@ -38,16 +38,6 @@ namespace PRUEBAS_LOGIN.Controllers
 
          */
 
-        public ActionResult Login()
-        {
-            if (Session["RolId"].Equals(5))
-            {
-                return RedirectToAction("DashAdminLabDatosLaboratorio", "DashboardAdminLaboratorioController");
-
-            }
-            return View();
-
-        }
 
         [HttpPost]
         public ActionResult Login(Usuario oUsuario)
@@ -91,10 +81,10 @@ namespace PRUEBAS_LOGIN.Controllers
             {
 
                 ViewData["Mensaje"] = "usuario no encontrado";
-                return RedirectToAction("Login", "Home");
+                //return RedirectToAction("Login", "Home");
                 
                 //ViewBag.Message = "Login";
-                //return View();
+                return View();
             }
 
         }
