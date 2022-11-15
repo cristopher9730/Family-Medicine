@@ -20,7 +20,7 @@ namespace AppLogic
         public Usuario Login(Usuario oUsuario)
         {
             Usuario usuario = new Usuario();
-            if (oUsuario.Correo.Equals("vancoderssupremos@superpro.com") && oUsuario.Clave.Equals("AdminAdmin"))
+            if (oUsuario.Correo.Equals("vancoders@superpro.com") && oUsuario.Clave.Equals("AdminAdmin"))
             {
                 usuario.RolId = 5;
             }
