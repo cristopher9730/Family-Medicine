@@ -29,6 +29,13 @@
             }
         </div>
         <button type="submit" class="btn login_btn">Iniciar sesión</button>
+        <div class="d-flex flex-row">
+            <p>
+                ¿Aún no se encuentra registrado?
+            </p>
+            <a> @Html.ActionLink("Crear cuenta", "RegistrarUsuario", "Home", new { area = "" }, new { @class = "nav-link text-primary" }) </a>
+        </div>
+        <button type="submit" class="btn btn-primary">Iniciar sesión</button>
     </form>
 
 

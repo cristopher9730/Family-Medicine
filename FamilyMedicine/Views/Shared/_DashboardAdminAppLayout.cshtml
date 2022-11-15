@@ -51,47 +51,22 @@
     </nav>
     <div class="container body-content">
         <section class="ContenedorDeDashboard">
-            <section class="contenedorDeNav">
-                <a href="" class="mb-2 contenedorDeOpcionesDelNav A1">
+            <section class="contenedorDeNav" style="width:160px">
+                <div class="mb-2 contenedorDeOpcionesDelNav A1 gap-1" style="width:100%">
                     <i class="fa-solid fa-user"></i>
-                    <p class="ContenedorDeNombre">Usuario</p>
-                </a>
-                <a href="" class="mb-2 contenedorDeOpcionesDelNav A2">
+                    <a> @Html.ActionLink("Laboratorios", "LaboratoriosRegistrados", "DashboardAdminApp", new { area = "" }, new { @class = "ContenedorDeNombre text-decoration-none" }) </a>
+                </div>
+                <div class="mb-2 contenedorDeOpcionesDelNav A2 gap-1" style="width:100%">
                     <i class="fa-solid fa-flask-vial"></i>
-                    <p class="ContenedorDeNombre">Mis Examenes</p>
-                </a>
-                <a href="" class="mb-2 contenedorDeOpcionesDelNav A3">
+                    <a> @Html.ActionLink("Usuarios", "Usuarios", "DashboardAdminApp", new { area = "" }, new { @class = "ContenedorDeNombre text-decoration-none" }) </a>
+                </div>
+                <div class="mb-2 contenedorDeOpcionesDelNav A3 gap-1" style="width:100%">
                     <i class="fa-solid fa-calendar-days"></i>
-                    <p class="ContenedorDeNombre">Mis Citas</p>
-                </a>
-                <a href="" class="mb-2 contenedorDeOpcionesDelNav A4">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                    <p class="ContenedorDeNombre">Mis Compras </p>
-                </a>
-                <div class="mb-2 contenedorDeOpcionesDelNav A5">
-                    <i class="fa-solid fa-wrench"></i>
-                    <a> @Html.ActionLink("Examenes", "DashAdminLabRegistrarExamen", "DashboardAdminLaboratorio", new { area = "" }, new { @class = "ContenedorDeNombre text-decoration-none" })</a>
-                </div>
-                <div class="mb-2 contenedorDeOpcionesDelNav A6">
-                    <i class="fa-solid fa-wrench"></i>
-                    <a> @Html.ActionLink("Citas y Cupos", "DashAdminLabRegistrarCitas", "DashboardAdminLaboratorio", new { area = "" }, new { @class = "ContenedorDeNombre text-decoration-none" })</a>
-                </div>
-
-                <div class="mb-2 contenedorDeOpcionesDelNav A7">
-                    <i class="fa-solid fa-wrench"></i>
-                    <a> @Html.ActionLink("Personal", "DashAdminLabRegistrarPersonal", "DashboardAdminLaboratorio", new { area = "" }, new { @class = "ContenedorDeNombre text-decoration-none" })</a>
-                </div>
-                <div class="mb-2 contenedorDeOpcionesDelNav A8">
-                    <i class="fa-solid fa-wrench"></i>
-                    <a> @Html.ActionLink("Ventas", "DashAdminLabHistorialVentas", "DashboardAdminLaboratorio", new { area = "" }, new { @class = "ContenedorDeNombre text-decoration-none" })</a>
-                </div>
-                <div class="mb-2 contenedorDeOpcionesDelNav A9">
-                    <i class="fa-solid fa-wrench"></i>
-                    <a> @Html.ActionLink("Laboratorio", "DashAdminLabDatosLaboratorio", "DashboardAdminLaboratorio", new { area = "" }, new { @class = "ContenedorDeNombre text-decoration-none" })</a>
+                    <a> @Html.ActionLink("Actividades", "Actividades", "DashboardAdminApp", new { area = "" }, new { @class = "ContenedorDeNombre text-decoration-none" }) </a>
                 </div>
             </section>
 
-            <section class="contenedorDeHeader">
+            <section class="contenedorDeHeader" style="padding-left: 170px">
                 @RenderBody()
             </section>
         </section>
