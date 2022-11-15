@@ -143,6 +143,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminCorreo.cs" />
+    <Compile Include="AdminLogin.cs" />
     <Compile Include="AdminSMS.cs" />
     <Compile Include="AdminUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
