@@ -1,0 +1,182 @@
+﻿/*BOOSTRAP=----===================*/
+
+thead,
+tbody,
+tfoot,
+tr,
+td,
+th {
+    border-color: inherit;
+    border-style: none !important;
+    border-width: 0;
+}
+
+thead {
+    background-color: #325D88;
+    color: #ffffff;
+}
+
+/*BOOSTRAP=----===================*/
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+
+/*TAB CON SCROLL 1----===================*/
+
+.ContenedorDeDashboardTabOverFlow {
+    min-height: 80vh;
+    max-height: 80vh;
+    overflow-y: auto !important;
+}
+
+    .ContenedorDeDashboardTabOverFlow::-webkit-scrollbar {
+        width: 6px;
+        padding: 10px;
+    }
+
+    .ContenedorDeDashboardTabOverFlow::-webkit-scrollbar-track {
+        background-color: #ffffff;
+    }
+
+    .ContenedorDeDashboardTabOverFlow::-webkit-scrollbar-thumb {
+        background-color: #325D88;
+    }
+
+
+/*TAB CON SCROLL 2----===================*/
+
+.ContenedorPequeDeDashboardTabOverFlow {
+    min-height: 80vh;
+    max-height: 80vh;
+    padding: 10px;
+    min-width: 45vw;
+    overflow-y: auto !important;
+}
+
+    .ContenedorPequeDeDashboardTabOverFlow::-webkit-scrollbar {
+        width: 6px;
+        padding: 10px;
+    }
+
+    .ContenedorPequeDeDashboardTabOverFlow::-webkit-scrollbar-track {
+        background-color: #ffffff;
+    }
+
+    .ContenedorPequeDeDashboardTabOverFlow::-webkit-scrollbar-thumb {
+        background-color: #325D88;
+    }
+
+
+#resultado, #precio {
+    font-weight: bold;
+}
+
+#resultado{
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#resultado:hover {
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+
+/*EXAMENES*/
+
+.ContenedorDeExamenes {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    gap: 20px 20px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.flexClass {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.divExamenCotenido {
+    width: 350px
+}
+
+.tituloDeExamen {
+    text-align: start;
+    padding: 5px;
+    font-size: 20px;
+    color: #325D88;
+    margin: 0;
+}
+
+.descripcionExamen {
+    text-align: start;
+    padding: 5px;
+    font-size: 13px;
+    color: #333333;
+    margin: 0;
+}
+
+.laboratorioExamen {
+    text-align: start;
+    padding: 5px;
+    font-size: 10px;
+    color: #000000b2;
+    font-weight: bold;
+}
+
+
+.buttonCita {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    background-color: #325D88;
+    text-align: start;
+    padding: 7px;
+    border: none;
+
+    margin: 5px;
+
+    border-radius: 10px
+}
+
+.colorButton {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.buttonCita:hover {
+    text-align: start;
+    background-color: #325D88;
+    font-weight: bold;
+    border: none;
+}
+
+
+
+/*ALERT--------------------*/
+
+.swal2-container {
+    z-index: 99999999;
+}
+
+.format-pre pre {
+    background: #ffffff;
+    color: #444444;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-align: center;
+}
