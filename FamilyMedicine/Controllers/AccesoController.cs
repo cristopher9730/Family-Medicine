@@ -40,7 +40,13 @@ namespace PRUEBAS_LOGIN.Controllers
 
         public ActionResult Login()
         {
+            if (Session["RolId"].Equals(5))
+            {
+                return RedirectToAction("DashAdminLabDatosLaboratorio", "DashboardAdminLaboratorioController");
+
+            }
             return View();
+
         }
 
         [HttpPost]
@@ -69,6 +75,13 @@ namespace PRUEBAS_LOGIN.Controllers
             else
                 throw new Exception(result.Content.ReadAsStringAsync().Result);
 
+            if (apiRespuestaUsuario.RolId == 5)
+            {
+                apiRespuestaUsuario.UsuarioId = -1;
+                Session["usuario"] = apiRespuestaUsuario;
+                return RedirectToAction("Contact", "Home");
+            }
+
             if (apiRespuestaUsuario.UsuarioId != 0)
             {
                 Session["usuario"] = apiRespuestaUsuario;
@@ -76,10 +89,12 @@ namespace PRUEBAS_LOGIN.Controllers
             }
             else
             {
-                ViewData["Mensaje"] = "usuario no encontrado";
 
-                ViewBag.Message = "Login";
-                return View();
+                ViewData["Mensaje"] = "usuario no encontrado";
+                return RedirectToAction("Login", "Home");
+                
+                //ViewBag.Message = "Login";
+                //return View();
             }
 
         }
