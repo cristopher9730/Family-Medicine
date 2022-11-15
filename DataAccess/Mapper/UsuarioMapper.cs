@@ -29,7 +29,9 @@ namespace DataAccess.Mapper
             operacion.AddVarcharParam("Estado", usuario.Estado);
             operacion.AddIntergerParam("RolId", usuario.RolId);
             operacion.AddIntergerParam("LaboratorioId", usuario.LaboratorioId);
-            operacion.AddIntergerParam("MembresiaId", usuario.MembresiaId);
+            operacion.AddIntergerParam("MemebresiaId", usuario.MembresiaId);
+            operacion.AddVarcharParam("Codigo", usuario.Codigo);
+
 
             return operacion;
 
@@ -53,7 +55,8 @@ namespace DataAccess.Mapper
             operacion.AddVarcharParam("Estado", usuario.Estado);
             operacion.AddIntergerParam("RolId", usuario.RolId);
             operacion.AddIntergerParam("LaboratorioId", usuario.LaboratorioId);
-            operacion.AddIntergerParam("MembresiaId", usuario.MembresiaId);
+            operacion.AddIntergerParam("MemebresiaId", usuario.MembresiaId);
+            operacion.AddVarcharParam("Codigo", usuario.Codigo);
 
             return operacion;
         }
@@ -84,7 +87,7 @@ namespace DataAccess.Mapper
         {
             var usuario = new Usuario()
             {
-                identificacion = int.Parse(row["UsuarioId"].ToString()),
+                UsuarioId = int.Parse(row["UsuarioId"].ToString()),
                 Nombre = row["Nombre"].ToString(),
                 Correo = row["Correo"].ToString(),
                 Telefono = row["Telefono"].ToString(),
@@ -94,6 +97,7 @@ namespace DataAccess.Mapper
                 RolId = int.Parse(row["RolId"].ToString()),
                 LaboratorioId = int.Parse(row["LaboratorioId"].ToString()),
                 MembresiaId = int.Parse(row["MemebresiaId"].ToString()),
+                Codigo = row["Codigo"].ToString(),
             };
             return usuario;
         }
@@ -108,7 +112,28 @@ namespace DataAccess.Mapper
             }
             return lstResultados;
         }
-        
+
         #endregion
+
+        /*
+ Este metodo toma un objeto usuario y crea una variable operacion que es de tipo SqlOperation. 
+La variable SqlOperation va a guardar datos que puedan ser leidos por el objeto command, que se utiliza en SqlDao
+A partir de usuario, se obtienen los atributos correo y clave, los cuales se almacenan como parametro (@ + nombreParametro) junto con el nombre del procedimiento almacenado
+El metodo devuelve en si lo que hace es recibir un objeto usuario y lo convierte a una operacion de Sql 
+ */
+        public SqlOperation Login(Usuario oUsuario)
+        {
+            var operation = new SqlOperation()
+            {
+                NombreProcedimiento = "SP_ValidarLogin"
+            };
+
+            operation.AddVarcharParam("Correo", oUsuario.Correo);
+            operation.AddVarcharParam("Clave", oUsuario.Clave);
+
+            return operation;
+
+        }
+
     }
 }

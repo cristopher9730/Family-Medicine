@@ -27,24 +27,35 @@
             <div class="collapse navbar-collapse" id="navbarColor01">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a> @Html.ActionLink("Laboratorios", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</a>
+                        <a> @Html.ActionLink("Laboratorios", "Busqueda", "Home", new { area = "" }, new { @class = "nav-link" })</a>
                     </li>
                     <li class="nav-item">
-                        <a> @Html.ActionLink("Exámenes", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</a>
-                    </li>
-                    <li class="nav-item">
-                        <a> @Html.ActionLink("Quines somos", "LandingPage", "Home", new { area = "" }, new { @class = "nav-link" })</a>
+                        <a> @Html.ActionLink("Exámenes", "Busqueda", "Home", new { area = "" }, new { @class = "nav-link" })</a>
                     </li>
                 </ul>
                 <div class="d-flex">
                     <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <a> @Html.ActionLink("Iniciar Sesión", "Login", "Home", new { area = "" }, new { @class = "nav-link" }) </a>
+                        <li>
+                            <form class="d-flex">
+                                <input class="form-control me-sm-2" type="text" placeholder="Search">
+                                <a> @Html.ActionLink("Buscar", "Busqueda", "Home", new { area = "" }, new { @class = "btn btn-secondary my-2 my-sm-0" })</a>
+                            </form>
                         </li>
-                    </ul>
-                    <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a> @Html.ActionLink("Carrito de Compras", "CarritoDeCompras", "Home", new { area = "" }, new { @class = "nav-link" }) </a>
+                            @if (Session["usuario"] != null)
+                            {
+                                <a> @Html.ActionLink("Mi Cuenta", "Login", "Home", new { area = "" }, new { @class = "nav-link" }) </a>
+                            }
+                            else
+                            {
+                                <a> @Html.ActionLink("Iniciar Sesión", "Login", "Home", new { area = "" }, new { @class = "nav-link" }) </a>
+                            }
+
+                        </li>
+                        <li class="nav-item">
+                            <a href="@Url.Action("Login", "Home")" class="nav-link" style="font-size:20px">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -60,16 +71,37 @@
                 </a>
                 <a href="" class="mb-2 contenedorDeOpcionesDelNav A2">
                     <i class="fa-solid fa-flask-vial"></i>
-                    <p class="ContenedorDeNombre">Examenes</p>
+                    <p class="ContenedorDeNombre">Mis Examenes</p>
                 </a>
                 <a href="" class="mb-2 contenedorDeOpcionesDelNav A3">
                     <i class="fa-solid fa-calendar-days"></i>
-                    <p class="ContenedorDeNombre">Citas</p>
+                    <p class="ContenedorDeNombre">Mis Citas</p>
                 </a>
                 <a href="" class="mb-2 contenedorDeOpcionesDelNav A4">
                     <i class="fa-solid fa-cart-shopping"></i>
-                    <p class="ContenedorDeNombre">Compras </p>
+                    <p class="ContenedorDeNombre">Mis Compras </p>
                 </a>
+                <div class="mb-2 contenedorDeOpcionesDelNav A5">
+                    <i class="fa-solid fa-wrench"></i>
+                    <a> @Html.ActionLink("Examenes", "DashAdminLabRegistrarExamen", "DashboardAdminLaboratorio", new { area = "" }, new { @class = "ContenedorDeNombre text-decoration-none" })</a>
+                </div>
+                <div class="mb-2 contenedorDeOpcionesDelNav A6">
+                    <i class="fa-solid fa-wrench"></i>
+                    <a> @Html.ActionLink("Citas y Cupos", "DashAdminLabRegistrarCitas", "DashboardAdminLaboratorio", new { area = "" }, new { @class = "ContenedorDeNombre text-decoration-none" })</a>
+                </div>
+
+                <div class="mb-2 contenedorDeOpcionesDelNav A7">
+                    <i class="fa-solid fa-wrench"></i>
+                    <a> @Html.ActionLink("Personal", "DashAdminLabRegistrarPersonal", "DashboardAdminLaboratorio", new { area = "" }, new { @class = "ContenedorDeNombre text-decoration-none" })</a>
+                </div>
+                <div class="mb-2 contenedorDeOpcionesDelNav A8">
+                    <i class="fa-solid fa-wrench"></i>
+                    <a> @Html.ActionLink("Ventas", "DashAdminLabHistorialVentas", "DashboardAdminLaboratorio", new { area = "" }, new { @class = "ContenedorDeNombre text-decoration-none" })</a>
+                </div>
+                <div class="mb-2 contenedorDeOpcionesDelNav A9">
+                    <i class="fa-solid fa-wrench"></i>
+                    <a> @Html.ActionLink("Laboratorio", "DashAdminLabDatosLaboratorio", "DashboardAdminLaboratorio", new { area = "" }, new { @class = "ContenedorDeNombre text-decoration-none" })</a>
+                </div>
             </section>
 
             <section class="contenedorDeHeader">

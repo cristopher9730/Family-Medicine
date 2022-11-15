@@ -1,4 +1,5 @@
-﻿using DTO;
+﻿using AppLogic;
+using DTO;
 using Microsoft.Ajax.Utilities;
 using System;
 using System.Collections.Generic;
@@ -6,14 +7,24 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using static System.Net.WebRequestMethods;
 
 namespace FamilyMedicine_API.Controllers
 {
     public class UsuarioController : ApiController
     {
+        [HttpPost]
         public string RegistrarUsuario(Usuario usuario)
         {
-            return "TBD";
+            Random generator = new Random();
+            String otp = generator.Next(100000, 1000000).ToString("D6");
+            usuario.Codigo = otp;
+         
+            AdminUsuario adminUsuario = new AdminUsuario();
+            AdminCorreo adminCorreo = new AdminCorreo();
+            adminCorreo.EviarEmailBienvenida(usuario);
+            return adminUsuario.CrearUsuario(usuario);
+
         }
 
         public string ActualizarUsuario(Usuario usuario)
@@ -26,12 +37,14 @@ namespace FamilyMedicine_API.Controllers
             return "TBD";
         }
 
-        public string ObtenerListaUsusarios()
+        [HttpGet]
+        public List<Usuario> ObtenerListaUsusarios()
         {
-            return "TBD";
+            AdminUsuario adminUsuario = new AdminUsuario();
+            return adminUsuario.DevolverTodosUsuarios();
         }
 
-        public string ObtenerUnUsuarios(int UsuarioId)
+        public string ObtenerUnUsuario(int UsuarioId)
         {
             return "TBD";
         }

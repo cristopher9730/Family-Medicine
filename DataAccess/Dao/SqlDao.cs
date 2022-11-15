@@ -83,5 +83,54 @@ namespace DataAccess.Dao
             return lstResult;
 
         }
+
+        /**
+ Esta seccion de codigo es para ejecutar las operaciones de SQL que envia el Mapper. 
+Este ejemplo tambien sirve para ejectuar operaciones de SQL que no devuelven una lista completa.
+La logica es asignar los parametros de operation a command y luego ejecutar el metodo de ExecuteReader 
+Exectute reader guarda todo lo que retorne el query de SQL. 
+Reader tiene varios metodos, entre los cuales tiene un getSqlInt que devuelve el valor de la columna X (en este caso 0) y lo convierte a un Int 
+Se puede cambiar el tipo de dato en la firma por cualquier tipo. 
+ * */
+
+        public int ExectuteStoreProcedureWithQueryLogin(SqlOperation operation)
+        {
+            var connection = new SqlConnection(this.connectionString);
+            var command = new SqlCommand();
+
+            var correo = operation.Parametros[0];
+            var clave = operation.Parametros[1];
+
+            command.Connection = connection;
+            command.CommandText = operation.NombreProcedimiento;
+            command.CommandType = CommandType.StoredProcedure;
+
+            foreach (var param in operation.Parametros)
+            {
+                command.Parameters.Add(param);
+            }
+
+            connection.Open();
+
+            var reader = command.ExecuteReader();
+            //var dicc = new Dictionary<string, object>();
+            int idUsuario = 0;
+
+            if (reader.HasRows)
+            {
+
+                while (reader.Read())
+                {
+
+                    try
+                    {
+                        idUsuario = (int)reader.GetSqlInt32(0);
+                    }
+                    catch (Exception ex) { return 0; }
+
+                }
+            }
+            return idUsuario;
+        }
     }
 }
