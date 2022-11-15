@@ -206,7 +206,7 @@ svg {
 .tab-pane {
     padding: 10px;
     height: 80vh;
-    width: 99%;
+    width: 100%;
     background-color: #ffffff;
     border-radius: 10px;
     border-top-left-radius: 0px;

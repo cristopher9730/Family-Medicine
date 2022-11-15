@@ -2,13 +2,17 @@
 @{ ViewBag.Title = "DashBoardCitas";
                 Layout = "~/Views/Shared/_DashboardLayout.cshtml"; }
 
+<link rel="stylesheet" href="~/Content/css/DashboardCss/DashboardCitas.css" />
+
 <style>
     /*Este style contien la clase de nav activo las opciones A1, A2, A3... etc estan en el layout*/
-    .A3 {
+    .A2 {
         background-color: #4d81ba;
         text-decoration: none;
     }
 </style>
+
+<script src="https://kit.fontawesome.com/e77fc0ae51.js" crossorigin="anonymous"></script>
 
 
 
@@ -16,25 +20,361 @@
 
     <ul class="nav nav-tabs" role="tablist">
         <li class="nav-item" role="presentation">
-            <a class="nav-link" data-bs-toggle="tab" href="#home" aria-selected="true" role="tab">Registrar producto</a>
+            <a class="nav-link" data-bs-toggle="tab" href="#home" aria-selected="true" role="tab">Resultados de examenes</a>
         </li>
         <li class="nav-item" role="presentation">
-            <a class="nav-link" data-bs-toggle="tab" href="#profile" aria-selected="false" tabindex="-1" role="tab">Publicar Resultados</a>
+            <a class="nav-link" data-bs-toggle="tab" href="#profile" aria-selected="false" tabindex="-1" role="tab">Proximas citas pagadas</a>
         </li>
     </ul>
 
     <div id="myTabContent" class="tab-content">
         <div class="tab-pane fade show active" id="home" role="tabpanel">
-            <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+            <div class="ContenedorDeDashboardTabOverFlow">
+                <table class="table table-hover" style=" min-width: 88vw; border-radius: 10px;">
+                    <thead>
+                        <tr>
+                            <th scope="col">TIPO</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Fecha de compra</th>
+                            <th scope="col">Fecha de cita</th>
+                            <th scope="col">Resultado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Aplicado</th>
+                            <td>Examen de sangre</td>
+                            <td id="precio">₡12000</td>
+                            <td>2022-11-17</td>
+                            <td>2022-11-27</td>
+                            <td id="resultado">Ver Resultado</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Aplicado</th>
+                            <td>Examen de sangre</td>
+                            <td id="precio">₡12000</td>
+                            <td>2022-11-17</td>
+                            <td>2022-11-27</td>
+                            <td id="resultado">Ver Resultado</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Aplicado</th>
+                            <td>Examen de sangre</td>
+                            <td id="precio">₡12000</td>
+                            <td>2022-11-17</td>
+                            <td>2022-11-27</td>
+                            <td id="resultado">Ver Resultado</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Perdido</th>
+                            <td>Examen de sangre</td>
+                            <td id="precio">₡12000</td>
+                            <td>2022-11-17</td>
+                            <td>2022-11-27</td>
+                            <td id="resultado">Ver Resultado</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Aplicado</th>
+                            <td>Examen de sangre</td>
+                            <td id="precio">₡12000</td>
+                            <td>2022-11-17</td>
+                            <td>2022-11-27</td>
+                            <td id="resultado">Ver Resultado</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Aplicado</th>
+                            <td>Examen de sangre</td>
+                            <td id="precio">₡12000</td>
+                            <td>2022-11-17</td>
+                            <td>2022-11-27</td>
+                            <td id="resultado">Ver Resultado</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Aplicado</th>
+                            <td>Examen de sangre</td>
+                            <td id="precio">₡12000</td>
+                            <td>2022-11-17</td>
+                            <td>2022-11-27</td>
+                            <td id="resultado">Ver Resultado</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Perdido</th>
+                            <td>Examen de sangre</td>
+                            <td id="precio">₡12000</td>
+                            <td>2022-11-17</td>
+                            <td>2022-11-27</td>
+                            <td id="resultado">Ver Resultado</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Aplicado</th>
+                            <td>Examen de sangre</td>
+                            <td id="precio">₡12000</td>
+                            <td>2022-11-17</td>
+                            <td>2022-11-27</td>
+                            <td id="resultado">Ver Resultado</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Aplicado</th>
+                            <td>Examen de sangre</td>
+                            <td id="precio">₡12000</td>
+                            <td>2022-11-17</td>
+                            <td>2022-11-27</td>
+                            <td id="resultado">Ver Resultado</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Aplicado</th>
+                            <td>Examen de sangre</td>
+                            <td id="precio">₡12000</td>
+                            <td>2022-11-17</td>
+                            <td>2022-11-27</td>
+                            <td id="resultado">Ver Resultado</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Perdido</th>
+                            <td>Examen de sangre</td>
+                            <td id="precio">₡12000</td>
+                            <td>2022-11-17</td>
+                            <td>2022-11-27</td>
+                            <td id="resultado">Ver Resultado</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Aplicado</th>
+                            <td>Examen de sangre</td>
+                            <td id="precio">₡12000</td>
+                            <td>2022-11-17</td>
+                            <td>2022-11-27</td>
+                            <td id="resultado">Ver Resultado</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Aplicado</th>
+                            <td>Examen de sangre</td>
+                            <td id="precio">₡12000</td>
+                            <td>2022-11-17</td>
+                            <td>2022-11-27</td>
+                            <td id="resultado">Ver Resultado</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Aplicado</th>
+                            <td>Examen de sangre</td>
+                            <td id="precio">₡12000</td>
+                            <td>2022-11-17</td>
+                            <td>2022-11-27</td>
+                            <td id="resultado">Ver Resultado</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Perdido</th>
+                            <td>Examen de sangre</td>
+                            <td id="precio">₡12000</td>
+                            <td>2022-11-17</td>
+                            <td>2022-11-27</td>
+                            <td id="resultado">Ver Resultado</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Aplicado</th>
+                            <td>Examen de sangre</td>
+                            <td id="precio">₡12000</td>
+                            <td>2022-11-17</td>
+                            <td>2022-11-27</td>
+                            <td id="resultado">Ver Resultado</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Aplicado</th>
+                            <td>Examen de sangre</td>
+                            <td id="precio">₡12000</td>
+                            <td>2022-11-17</td>
+                            <td>2022-11-27</td>
+                            <td id="resultado">Ver Resultado</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Aplicado</th>
+                            <td>Examen de sangre</td>
+                            <td id="precio">₡12000</td>
+                            <td>2022-11-17</td>
+                            <td>2022-11-27</td>
+                            <td id="resultado">Ver Resultado</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Perdido</th>
+                            <td>Examen de sangre</td>
+                            <td id="precio">₡12000</td>
+                            <td>2022-11-17</td>
+                            <td>2022-11-27</td>
+                            <td id="resultado">Ver Resultado</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Aplicado</th>
+                            <td>Examen de sangre</td>
+                            <td id="precio">₡12000</td>
+                            <td>2022-11-17</td>
+                            <td>2022-11-27</td>
+                            <td id="resultado">Ver Resultado</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Aplicado</th>
+                            <td>Examen de sangre</td>
+                            <td id="precio">₡12000</td>
+                            <td>2022-11-17</td>
+                            <td>2022-11-27</td>
+                            <td id="resultado">Ver Resultado</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Aplicado</th>
+                            <td>Examen de sangre</td>
+                            <td id="precio">₡12000</td>
+                            <td>2022-11-17</td>
+                            <td>2022-11-27</td>
+                            <td id="resultado">Ver Resultado</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Perdido</th>
+                            <td>Examen de sangre</td>
+                            <td id="precio">₡12000</td>
+                            <td>2022-11-17</td>
+                            <td>2022-11-27</td>
+                            <td id="resultado">Ver Resultado</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Aplicado</th>
+                            <td>Examen de sangre</td>
+                            <td id="precio">₡12000</td>
+                            <td>2022-11-17</td>
+                            <td>2022-11-27</td>
+                            <td id="resultado">Ver Resultado</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Aplicado</th>
+                            <td>Examen de sangre</td>
+                            <td id="precio">₡12000</td>
+                            <td>2022-11-17</td>
+                            <td>2022-11-27</td>
+                            <td id="resultado">Ver Resultado</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Aplicado</th>
+                            <td>Examen de sangre</td>
+                            <td id="precio">₡12000</td>
+                            <td>2022-11-17</td>
+                            <td>2022-11-27</td>
+                            <td id="resultado">Ver Resultado</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Perdido</th>
+                            <td>Examen de sangre</td>
+                            <td id="precio">₡12000</td>
+                            <td>2022-11-17</td>
+                            <td>2022-11-27</td>
+                            <td id="resultado">Ver Resultado</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Aplicado</th>
+                            <td>Examen de sangre</td>
+                            <td id="precio">₡12000</td>
+                            <td>2022-11-17</td>
+                            <td>2022-11-27</td>
+                            <td id="resultado">Ver Resultado</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Aplicado</th>
+                            <td>Examen de sangre</td>
+                            <td id="precio">₡12000</td>
+                            <td>2022-11-17</td>
+                            <td>2022-11-27</td>
+                            <td id="resultado">Ver Resultado</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Aplicado</th>
+                            <td>Examen de sangre</td>
+                            <td id="precio">₡12000</td>
+                            <td>2022-11-17</td>
+                            <td>2022-11-27</td>
+                            <td id="resultado">Ver Resultado</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Perdido</th>
+                            <td>Examen de sangre</td>
+                            <td id="precio">₡12000</td>
+                            <td>2022-11-17</td>
+                            <td>2022-11-27</td>
+                            <td id="resultado">Ver Resultado</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
 
         <div class="tab-pane fade" id="profile" role="tabpanel">
-            <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.</p>
+            <div class="ContenedorPequeDeDashboardTabOverFlow">
+
+                <section id="idCarritoContenedorDeExamenes" class="ContenedorDeExamenes">
+                    <div class="flexClass divExamenCotenido">
+                        <h2 class="tituloDeExamen">Examen de Sangre </h2>
+                        <p class="descripcionExamen">Evaluar el funcionamiento de diferentes órganos del cuerpo, como el hígado, los riñones, el corazón o la tiroides. Diagnosticar trastornos hemorrágicos o de la coagulación. Averiguar si el sistema inmunitario está teniendo problemas para combatir las infecciones</p>
+                        <span class="laboratorioExamen">CLINICOCR</span>
+                    </div>
+                    <div class="flexClass">
+                        <button type="submit" id="remove" class="buttonCita colorButton"><i class="fa-solid colorButton fa-calendar-days"></i>Fecha de cita</button>
+                        <button type="submit" id="remove" class="buttonCita colorButton"><i class="fa-solid colorButton fa-qrcode"></i>Codigo QR</button>
+                    </div>
+                </section>
+
+                <section id="idCarritoContenedorDeExamenes" class="ContenedorDeExamenes">
+                    <div class="flexClass divExamenCotenido">
+                        <h2 class="tituloDeExamen">Examen de Sangre </h2>
+                        <p class="descripcionExamen">Evaluar el funcionamiento de diferentes órganos del cuerpo, como el hígado, los riñones, el corazón o la tiroides. Diagnosticar trastornos hemorrágicos o de la coagulación. Averiguar si el sistema inmunitario está teniendo problemas para combatir las infecciones</p>
+                        <span class="laboratorioExamen">CLINICOCR</span>
+                    </div>
+                    <div class="flexClass">
+                        <button type="submit" id="remove" class="buttonCita colorButton"><i class="fa-solid colorButton fa-calendar-days"></i>Fecha de cita</button>
+                        <button type="submit" id="remove" class="buttonCita colorButton"><i class="fa-solid colorButton fa-qrcode"></i>Codigo QR</button>
+                    </div>
+                </section>
+
+                <section id="idCarritoContenedorDeExamenes" class="ContenedorDeExamenes">
+                    <div class="flexClass divExamenCotenido">
+                        <h2 class="tituloDeExamen">Examen de Sangre </h2>
+                        <p class="descripcionExamen">Evaluar el funcionamiento de diferentes órganos del cuerpo, como el hígado, los riñones, el corazón o la tiroides. Diagnosticar trastornos hemorrágicos o de la coagulación. Averiguar si el sistema inmunitario está teniendo problemas para combatir las infecciones</p>
+                        <span class="laboratorioExamen">CLINICOCR</span>
+                    </div>
+                    <div class="flexClass">
+                        <button type="submit" id="remove" class="buttonCita colorButton"><i class="fa-solid colorButton fa-calendar-days"></i>Fecha de cita</button>
+                        <button type="submit" id="remove" class="buttonCita colorButton"><i class="fa-solid colorButton fa-qrcode"></i>Codigo QR</button>
+                    </div>
+                </section>
+
+
+                <section id="idCarritoContenedorDeExamenes" class="ContenedorDeExamenes">
+                    <div class="flexClass divExamenCotenido">
+                        <h2 class="tituloDeExamen">Examen de Sangre </h2>
+                        <p class="descripcionExamen">Evaluar el funcionamiento de diferentes órganos del cuerpo, como el hígado, los riñones, el corazón o la tiroides. Diagnosticar trastornos hemorrágicos o de la coagulación. Averiguar si el sistema inmunitario está teniendo problemas para combatir las infecciones</p>
+                        <span class="laboratorioExamen">CLINICOCR</span>
+                    </div>
+                    <div class="flexClass">
+                        <button type="submit" id="remove" class="buttonCita colorButton"><i class="fa-solid colorButton fa-calendar-days"></i>Fecha de cita</button>
+                        <button type="submit" id="remove" class="buttonCita colorButton"><i class="fa-solid colorButton fa-qrcode"></i>Codigo QR</button>
+                    </div>
+                </section>
+
+
+                <section id="idCarritoContenedorDeExamenes" class="ContenedorDeExamenes">
+                    <div class="flexClass divExamenCotenido">
+                        <h2 class="tituloDeExamen">Examen de Sangre </h2>
+                        <p class="descripcionExamen">Evaluar el funcionamiento de diferentes órganos del cuerpo, como el hígado, los riñones, el corazón o la tiroides. Diagnosticar trastornos hemorrágicos o de la coagulación. Averiguar si el sistema inmunitario está teniendo problemas para combatir las infecciones</p>
+                        <span class="laboratorioExamen">CLINICOCR</span>
+                    </div>
+                    <div class="flexClass">
+                        <button type="submit" id="remove" class="buttonCita colorButton"><i class="fa-solid colorButton fa-calendar-days"></i>Fecha de cita</button>
+                        <button type="submit" id="remove" class="buttonCita colorButton"><i class="fa-solid colorButton fa-qrcode"></i>Codigo QR</button>
+                    </div>
+                </section>
+
+            </div>
         </div>
     </div>
-
 </div>
+
+
 
 
 <!--
