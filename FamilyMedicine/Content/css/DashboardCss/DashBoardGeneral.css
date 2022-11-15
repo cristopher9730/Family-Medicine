@@ -20,14 +20,6 @@
     margin-left: 0% !important;
 }
 
-img,
-svg {
-    vertical-align: middle;
-    margin-left: 10px !important;
-    margin-right: 10px !important;
-}
-
-
 /*=====================================
                   dashboard
  ========================================*/
@@ -206,7 +198,7 @@ svg {
 .tab-pane {
     padding: 10px;
     height: 80vh;
-    width: 99%;
+    width: 100%;
     background-color: #ffffff;
     border-radius: 10px;
     border-top-left-radius: 0px;
@@ -220,3 +212,5 @@ svg {
     border-radius: 10px;
     border-top-left-radius: 0px;
 }
+
+
