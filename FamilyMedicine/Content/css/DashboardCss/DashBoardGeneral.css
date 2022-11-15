@@ -20,14 +20,6 @@
     margin-left: 0% !important;
 }
 
-img,
-svg {
-    vertical-align: middle;
-    margin-left: 10px !important;
-    margin-right: 10px !important;
-}
-
-
 /*=====================================
                   dashboard
  ========================================*/
@@ -220,3 +212,5 @@ svg {
     border-radius: 10px;
     border-top-left-radius: 0px;
 }
+
+
