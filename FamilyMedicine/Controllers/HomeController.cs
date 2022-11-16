@@ -170,5 +170,12 @@ namespace FamilyMedicine.Controllers
 
             return View();
         }
+
+        public ActionResult OTP()
+        {
+            ViewBag.Message = "OTP";
+
+            return View();
+        }
     }
 }
