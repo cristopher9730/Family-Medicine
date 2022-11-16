@@ -192,6 +192,7 @@
     <Compile Include="Controllers\AccesoController.cs" />
     <Compile Include="Controllers\DashboardUsuarioController.cs" />
     <Compile Include="Controllers\DashboardAdminLaboratorioController.cs" />
+    <Compile Include="Controllers\FooterController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -262,8 +263,6 @@
     <Content Include="Views\Home\OTP.cshtml" />
     <Content Include="Views\Shared\_LayoutBusqueda.cshtml" />
     <Content Include="Views\Home\Busqueda.cshtml" />
-    <Content Include="Views\Home\RegistrarLaboratorio.cshtml" />
-    <Content Include="Views\Home\RegistrarExamen.cshtml" />
     <Content Include="Views\DashboardUsuario\DashBoardCitas.cshtml" />
     <Content Include="Views\Shared\_DashboardLayout.cshtml" />
     <Content Include="Views\DashboardAdminLaboratorio\DashAdminLabDatosLaboratorio.cshtml" />
@@ -276,6 +275,10 @@
     <Content Include="Views\DashboardAdminApp\Usuarios.cshtml" />
     <Content Include="Views\DashboardAdminApp\Actividades.cshtml" />
     <Content Include="Views\DashboardUsuario\DashboardUsuario.cshtml" />
+    <Content Include="Views\DashboardUsuario\RegistrarLaboratorio.cshtml" />
+    <Content Include="Views\Footer\Contactenos.cshtml" />
+    <Content Include="Views\Footer\TerminosCondiciones.cshtml" />
+    <Content Include="Views\Footer\PreguntasFrecuentes.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
