@@ -25,21 +25,29 @@
             <h3 class="card-header">Generar Reporte de ventas</h3>
             <div class="card-body">
 
-                <form>
+                <form class="was-validated">
 
-                    <div class="form-group">
-                        <label class="form-label mt-3">Fecha de inicio del reporte</label>
-                        <input type="date" name="myDate" max="1989-10-29">
+                    <div class="mb-3 w-100">
+                        <div class="form-group has-validation w-100 d-flex flex-column">
+                            <label class="form-label" for="txtInicio" id="inputGroupPrepend">Fecha de inicio del reporte</label>
+                            <input type="date" class="form-control w-100" id="txtInicio" aria-describedby="inputGroupPrepend" style="min-width:318px" required>
+                            <div class="invalid-feedback">
+                                Por favor, seleccione una fecha
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label class="form-label mt-3">Fecha final del reporte</label>
-                        <input type="date" name="myDate" min="2001-01-02">
-                    </div>
+                    <div class="mb-3 w-100">
+                        <div class="form-group has-validation w-100 d-flex flex-column">
+                            <label class="form-label" for="txtNombre" id="inputGroupPrepend">Fecha final del reporte</label>
+                            <input type="date" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" style="min-width:318px" required>
+                            <div class="invalid-feedback">
+                                Por favor, seleccione una fecha
+                            </div>
+                        </div>
+                    </div>                 
 
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-primary mt-2">Crear reporte</button>
-                    </div>
+                    <button type="submit" class="btn btn-primary mt-3 ">Crear reporte</button>
                 </form>
 
             </div>

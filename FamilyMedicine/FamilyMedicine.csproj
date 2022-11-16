@@ -304,6 +304,8 @@
     <Content Include="Views\Home\CarritoDeCompras.cshtml" />
     <Content Include="Views\Laboratorios\CicloLab.cshtml" />
     <Content Include="Views\Home\LandingPage.cshtml" />
+    <Content Include="Views\Home\BusquedaExamen.cshtml" />
+    <Content Include="Views\DashboardAdminLaboratorio\Cupones.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

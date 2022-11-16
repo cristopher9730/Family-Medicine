@@ -42,6 +42,9 @@
             </p>
             <a> @Html.ActionLink("Crear cuenta", "RegistrarUsuario", "Home", new { area = "" }, new { @class = "nav-link text-primary" }) </a>
         </div>
+        <div class="d-flex flex-row mb-3">
+            <a> @Html.ActionLink("Recuperar Contraseña", "forgotPassword", "Home", new { area = "" }, new { @class = "nav-link text-primary" }) </a>
+        </div>
         <button type="submit" class="btn btn-primary login_btn">Iniciar sesión</button>
     </form>
 
