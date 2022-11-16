@@ -56,6 +56,11 @@ namespace FamilyMedicine.Controllers
                 {
                     return RedirectToAction("LaboratoriosRegistrados", "DashboardAdminApp");
 
+                } 
+                if (rol.RolId == 1 || rol.RolId == 0 || rol.RolId == 2)
+                {
+                    return RedirectToAction("DashboardUsuario", "DashboardUsuario");
+
                 }
             }
             return View();
@@ -93,7 +98,26 @@ namespace FamilyMedicine.Controllers
             {
                 apiRespuestaUsuario.UsuarioId = -1;
                 Session["usuario"] = apiRespuestaUsuario;
-                return RedirectToAction("Contact", "Home");
+                return RedirectToAction("Index", "Home");
+            } else if ( apiRespuestaUsuario.RolId == 1 )
+            {
+                apiRespuestaUsuario.UsuarioId = 1;
+                Session["usuario"] = apiRespuestaUsuario;
+                Session["rolAdmin"] = apiRespuestaUsuario.RolId;
+                return RedirectToAction("Index", "Home");
+            }
+            else if ( apiRespuestaUsuario.RolId == 0 )
+            {
+                apiRespuestaUsuario.UsuarioId = 1;
+                Session["usuario"] = apiRespuestaUsuario;
+                return RedirectToAction("Index", "Home");
+            }
+            else if ( apiRespuestaUsuario.RolId == 2)
+            {
+                apiRespuestaUsuario.UsuarioId = 1;
+                Session["usuario"] = apiRespuestaUsuario;
+                Session["rolTecnico"] = apiRespuestaUsuario.RolId;
+                return RedirectToAction("Index", "Home");
             }
 
             if (apiRespuestaUsuario.UsuarioId != 0)
