@@ -99,20 +99,20 @@ namespace FamilyMedicine.Controllers
                 apiRespuestaUsuario.UsuarioId = -1;
                 Session["usuario"] = apiRespuestaUsuario;
                 return RedirectToAction("Index", "Home");
-            } else if ( apiRespuestaUsuario.RolId == 1 )
+            } else if ( apiRespuestaUsuario.RolId == 2 )
             {
                 apiRespuestaUsuario.UsuarioId = 1;
                 Session["usuario"] = apiRespuestaUsuario;
                 Session["rolAdmin"] = apiRespuestaUsuario.RolId;
                 return RedirectToAction("Index", "Home");
             }
-            else if ( apiRespuestaUsuario.RolId == 0 )
+            else if ( apiRespuestaUsuario.RolId == 1 )
             {
                 apiRespuestaUsuario.UsuarioId = 1;
                 Session["usuario"] = apiRespuestaUsuario;
                 return RedirectToAction("Index", "Home");
             }
-            else if ( apiRespuestaUsuario.RolId == 2)
+            else if ( apiRespuestaUsuario.RolId == 3)
             {
                 apiRespuestaUsuario.UsuarioId = 1;
                 Session["usuario"] = apiRespuestaUsuario;
@@ -195,23 +195,30 @@ namespace FamilyMedicine.Controllers
             return View();
         }
 
+        public ActionResult BusquedaExamen()
+        {
+            ViewBag.Message = "Busqueda Exámen";
+
+            return View();
+        }
+
         public ActionResult forgotPassword()
         {
-            ViewBag.Message = "Busqueda";
+            ViewBag.Message = "Recuperar Contraseña";
 
             return View();
         }
 
         public ActionResult CarritoDeCompras()
         {
-            ViewBag.Message = "Busqueda";
+            ViewBag.Message = "Carrito de Compras";
 
             return View();
         }
 
         public ActionResult LandingPage()
         {
-            ViewBag.Message = "Busqueda";
+            ViewBag.Message = "Sobre Nosotros";
 
             return View();
         }

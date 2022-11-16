@@ -31,5 +31,10 @@ namespace FamilyMedicine.Controllers
         {
             return View();
         }
+
+        public ActionResult Cupones()
+        {
+            return View();
+        }
     }
 }

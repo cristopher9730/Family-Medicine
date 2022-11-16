@@ -30,7 +30,7 @@
                         <a> @Html.ActionLink("Laboratorios", "Busqueda", "Home", new { area = "" }, new { @class = "nav-link" })</a>
                     </li>
                     <li class="nav-item">
-                        <a> @Html.ActionLink("Exámenes", "Busqueda", "Home", new { area = "" }, new { @class = "nav-link" })</a>
+                        <a> @Html.ActionLink("Exámenes", "BusquedaExamen", "Home", new { area = "" }, new { @class = "nav-link" })</a>
                     </li>
                 </ul>
                 <div class="d-flex ">
@@ -39,7 +39,7 @@
                             <form class="d-flex w-auto">
                                 <input class="form-control me-sm-2" type="text" placeholder="Buscar Exámen">
                               
-                                <a href="@Url.Action("Busqueda", "Home")" class="btn btn-secondary my-2 my-sm-0" style="width:35%">
+                                <a href="@Url.Action("BusquedaExamen", "Home")" class="btn btn-secondary my-2 my-sm-0" style="width:35%">
                                     Buscar
                                 </a>
                             </form>
@@ -56,7 +56,7 @@
 
                         </li>
                         <li class="nav-item">
-                            <a href="@Url.Action("Login", "Home")" class="nav-link" style="font-size:20px">
+                            <a href="@Url.Action("CarritoDeCompras", "Home")" class="nav-link" style="font-size:20px">
                                 <i class="fa-solid fa-cart-shopping"></i>
                             </a>
                         </li>
@@ -98,6 +98,14 @@
                     <div class="mb-2 contenedorDeOpcionesDelNav A6 gap-1" style="width:100%">
                         <i class="fa-solid fa-wrench w-25"></i>
                         <a> @Html.ActionLink("Citas y Cupos", "DashAdminLabRegistrarCitas", "DashboardAdminLaboratorio", new { area = "" }, new { @class = "ContenedorDeNombre text-decoration-none" })</a>
+                    </div>
+                }
+
+                @if (Session["rolTecnico"] != null || Session["rolAdmin"] != null)
+                {
+                    <div class="mb-2 contenedorDeOpcionesDelNav A10 gap-1" style="width:100%">
+                        <i class="fa-solid fa-wrench w-25"></i>
+                        <a> @Html.ActionLink("Cupones", "Cupones", "DashboardAdminLaboratorio", new { area = "" }, new { @class = "ContenedorDeNombre text-decoration-none" })</a>
                     </div>
                 }
 

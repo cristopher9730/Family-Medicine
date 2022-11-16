@@ -26,15 +26,15 @@ namespace AppLogic
             }
             else if (oUsuario.Correo.Equals("admin@vancoders.com") && oUsuario.Clave.Equals("contrasena"))
             {
-                usuario.RolId = 1;
+                usuario.RolId = 2;
             }
             else if (oUsuario.Correo.Equals("tecnico@vancoders.com") && oUsuario.Clave.Equals("contrasena"))
             {
-                usuario.RolId = 2;
+                usuario.RolId = 3;
             }
             else if (oUsuario.Correo.Equals("usuario@vancoders.com") && oUsuario.Clave.Equals("contrasena"))
             {
-                usuario.RolId = 0;
+                usuario.RolId = 1;
             }
             else {
                 UsuarioCrudFactory usuarioCrud = new UsuarioCrudFactory();
