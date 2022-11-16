@@ -13,8 +13,8 @@ namespace AppLogic
 {
     public class AdminCorreo
     {
-        
 
+        
         public void EviarEmailBienvenida(Usuario usuario)
         {
             string asunto = "Bienvenido a Family Medicine";
