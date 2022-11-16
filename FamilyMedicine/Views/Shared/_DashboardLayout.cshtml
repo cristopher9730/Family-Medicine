@@ -69,39 +69,42 @@
         <section class="ContenedorDeDashboard">
             <section class="contenedorDeNav" style="width:160px">
                 <div class="mb-2 contenedorDeOpcionesDelNav A1 gap-1" style="width:100%">
-                    <i class="fa-solid fa-user"></i>
+                    <i class="fa-solid fa-user w-25"></i>
                     <a> @Html.ActionLink("Usuario", "DashboardUsuario", "DashboardUsuario", new { area = "" }, new { @class = "ContenedorDeNombre text-decoration-none" }) </a>
                 </div>
                 <div class="mb-2 contenedorDeOpcionesDelNav A2 gap-1" style="width:100%">
-                    <i class="fa-solid fa-flask-vial"></i>
+                    <i class="fa-solid fa-flask-vial w-25"></i>
                     <a> @Html.ActionLink("Mis Exámenes", "DashBoardCitas", "DashboardUsuario", new { area = "" }, new { @class = "ContenedorDeNombre text-decoration-none" }) </a>
                 </div>
 
-                <a href="" class="mb-2 contenedorDeOpcionesDelNav A4 gap-1" style="width:100%" >
-                    <i class="fa-solid fa-cart-shopping"></i>
-                    <p class="ContenedorDeNombre">Mis Compras </p>
-                </a>
+                @if (Session["rolTecnico"] == null && Session["rolAdmin"] == null)
+                {
+                    <div class="mb-2 contenedorDeOpcionesDelNav A3 gap-1" style="width:100%">
+                        <i class="fa-solid fa-flask-vial w-25"></i>
+                        <a> @Html.ActionLink("Registrar Laboratorio", "RegistrarLaboratorio", "DashboardUsuario", new { area = "" }, new { @class = "ContenedorDeNombre text-decoration-none" })</a>
+                    </div>
+                }
 
                 @if (Session["rolTecnico"] != null || Session["rolAdmin"] != null)
                 {
-                    <div class="mb-2 contenedorDeOpcionesDelNav A5 gap-1" style="width:100%" >
-                        <i class="fa-solid fa-wrench"></i>
+                    <div class="mb-2 contenedorDeOpcionesDelNav A5 gap-1" style="width:100%">
+                        <i class="fa-solid fa-wrench w-25"></i>
                         <a> @Html.ActionLink("Examenes", "DashAdminLabRegistrarExamen", "DashboardAdminLaboratorio", new { area = "" }, new { @class = "ContenedorDeNombre text-decoration-none" })</a>
                     </div>
                 }
 
                 @if (Session["rolTecnico"] != null || Session["rolAdmin"] != null)
                 {
-                    <div class="mb-2 contenedorDeOpcionesDelNav A6 gap-1" style="width:100%" >
-                        <i class="fa-solid fa-wrench"></i>
+                    <div class="mb-2 contenedorDeOpcionesDelNav A6 gap-1" style="width:100%">
+                        <i class="fa-solid fa-wrench w-25"></i>
                         <a> @Html.ActionLink("Citas y Cupos", "DashAdminLabRegistrarCitas", "DashboardAdminLaboratorio", new { area = "" }, new { @class = "ContenedorDeNombre text-decoration-none" })</a>
                     </div>
                 }
 
                 @if (Session["rolAdmin"] != null)
                 {
-                    <div class="mb-2 contenedorDeOpcionesDelNav A7 gap-1" style="width:100%" >
-                        <i class="fa-solid fa-wrench"></i>
+                    <div class="mb-2 contenedorDeOpcionesDelNav A7 gap-1" style="width:100%">
+                        <i class="fa-solid fa-wrench w-25"></i>
                         <a> @Html.ActionLink("Personal", "DashAdminLabRegistrarPersonal", "DashboardAdminLaboratorio", new { area = "" }, new { @class = "ContenedorDeNombre text-decoration-none" })</a>
                     </div>
                 }
@@ -109,7 +112,7 @@
                 @if (Session["rolAdmin"] != null)
                 {
                     <div class="mb-2 contenedorDeOpcionesDelNav A8 gap-1" style="width:100%">
-                        <i class="fa-solid fa-wrench"></i>
+                        <i class="fa-solid fa-wrench w-25"></i>
                         <a> @Html.ActionLink("Ventas", "DashAdminLabHistorialVentas", "DashboardAdminLaboratorio", new { area = "" }, new { @class = "ContenedorDeNombre text-decoration-none" })</a>
                     </div>
                 }
@@ -117,17 +120,17 @@
                 @if (Session["rolAdmin"] != null)
                 {
                     <div class="mb-2 contenedorDeOpcionesDelNav A9 gap-1" style="width:100%">
-                        <i class="fa-solid fa-wrench"></i>
+                        <i class="fa-solid fa-wrench w-25"></i>
                         <a> @Html.ActionLink("Laboratorio", "DashAdminLabDatosLaboratorio", "DashboardAdminLaboratorio", new { area = "" }, new { @class = "ContenedorDeNombre text-decoration-none" })</a>
                     </div>
                 }
-                
-                <div class="mb-2 contenedorDeOpcionesDelNav A3 gap-1" style="width:100%">
+
+                <div class="mb-2 contenedorDeOpcionesDelNav gap-1" style="width:100%">
                     <i class="fa-solid fa-right-from-bracket"></i>
                     <a> @Html.ActionLink("Cerrar Sesión", "Logout", "Home", new { area = "" }, new { @class = "ContenedorDeNombre text-decoration-none" }) </a>
                 </div>
-                
-                
+
+
             </section>
 
             <section class="contenedorDeHeader" style="padding-left: 170px">
