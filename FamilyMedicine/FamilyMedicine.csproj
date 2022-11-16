@@ -263,8 +263,6 @@
     <Content Include="Views\Home\OTP.cshtml" />
     <Content Include="Views\Shared\_LayoutBusqueda.cshtml" />
     <Content Include="Views\Home\Busqueda.cshtml" />
-    <Content Include="Views\Home\RegistrarLaboratorio.cshtml" />
-    <Content Include="Views\Home\RegistrarExamen.cshtml" />
     <Content Include="Views\DashboardUsuario\DashBoardCitas.cshtml" />
     <Content Include="Views\Shared\_DashboardLayout.cshtml" />
     <Content Include="Views\DashboardAdminLaboratorio\DashAdminLabDatosLaboratorio.cshtml" />

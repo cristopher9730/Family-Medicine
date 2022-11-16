@@ -24,9 +24,47 @@
         </li>
     </ul>
 
-    <div id="myTabContent" class="tab-content">
+    <div id="myTabContent" class="tab-content" style="min-width:345px">
         <div class="tab-pane fade show active" id="home" role="tabpanel">
-            <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+            <h4>Registrar Laboratorio</h4>
+
+            <form class="was-validated">
+                <div class="mb-3 w-100">
+                    <div class="form-group has-validation w-100 d-flex flex-column">
+                        <label class="form-label" for="txtNombre" id="inputGroupPrepend">Nombre del Exámen</label>
+                        <input type="text" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
+                        <div class="invalid-feedback">
+                            Por favor, ingrese el nombre del exámen
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3 w-100">
+                    <div class="form-group has-validation w-100 d-flex flex-column">
+                        <label class="form-label" for="txtDescripción" id="inputGroupPrepend">Descripción del Exámen</label>
+                        <textarea type="text" class="form-control w-100" id="txtDescripcion" aria-describedby="inputGroupPrepend" rows="3" required></textarea>
+                        <div class="invalid-feedback">
+                            Por favor, ingrese la descripción del exámen
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3 w-100">
+                    <div class="form-group has-validation w-100 d-flex flex-column">
+                        <label class="form-label" for="txtPrecio" id="inputGroupPrepend">Precio</label>
+                        <div class="input-group">
+                            <span class="input-group-text">₡</span>
+                            <input type="number" class="form-control w-100" id="txtPrecio" aria-describedby="inputGroupPrepend" required>
+                        </div>
+                        <div class="invalid-feedback">
+                            Por favor, ingrese el precio
+                        </div>
+                    </div>
+                </div>
+
+                
+                <button type="submit" class="btn btn-primary mt-3 ">Registrar</button>
+            </form>
         </div>
 
 
