@@ -170,5 +170,27 @@ namespace FamilyMedicine.Controllers
 
             return View();
         }
+
+        public ActionResult forgotPassword()
+        {
+            ViewBag.Message = "Busqueda";
+
+            return View();
+        }
+
+        public ActionResult CarritoDeCompras()
+        {
+            ViewBag.Message = "Busqueda";
+
+            return View();
+        }
+
+        public ActionResult LandingPage()
+        {
+            ViewBag.Message = "Busqueda";
+
+            return View();
+        }
+
     }
 }

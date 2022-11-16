@@ -193,6 +193,7 @@
     <Compile Include="Controllers\DashboardUsuarioController.cs" />
     <Compile Include="Controllers\DashboardAdminLaboratorioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LaboratoriosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -203,17 +204,35 @@
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\carritoDeCompras.css" />
     <Content Include="Content\css\DashboardCss\DashboardCitas.css" />
     <Content Include="Content\css\DashboardCss\DashboardCliente.css" />
     <Content Include="Content\css\DashboardCss\DashBoardGeneral.css" />
+    <Content Include="Content\css\forgotPassword.css" />
+    <Content Include="Content\css\Laboratorios.css" />
+    <Content Include="Content\css\landingPage.css" />
     <Content Include="Content\css\Login.css" />
+    <Content Include="Content\imgs\Labs\cicloLab\CL1.jpg" />
+    <Content Include="Content\imgs\Labs\cicloLab\CL2.jpg" />
+    <Content Include="Content\imgs\Labs\cicloLab\CL3.jpg" />
+    <Content Include="Content\imgs\Labs\cicloLab\CL4.png" />
+    <Content Include="Content\imgs\vectoriales\items.png" />
     <Content Include="Content\imgs\Labs\Lab1.jpg" />
+    <Content Include="Content\imgs\Labs\Lab1Blanco.png" />
     <Content Include="Content\imgs\Labs\Lab2.jpg" />
     <Content Include="Content\imgs\Labs\Lab3.jpg" />
     <Content Include="Content\imgs\logos\lgoBlanco.png" />
     <Content Include="Content\imgs\logos\logoConColor.png" />
     <Content Include="Content\imgs\logos\logoNegro.png" />
     <Content Include="Content\imgs\otros\clientes\dchouse.png" />
+    <Content Include="Content\imgs\otros\clinica\c4.jpg" />
+    <Content Include="Content\imgs\otros\clinica\cl.jpg" />
+    <Content Include="Content\imgs\otros\clinica\cl2.jpg" />
+    <Content Include="Content\imgs\otros\clinica\cl3.jpg" />
+    <Content Include="Content\imgs\otros\dclinico.png" />
+    <Content Include="Content\imgs\otros\dclinico2.png" />
+    <Content Include="Content\imgs\otros\doctorB2.png" />
+    <Content Include="Content\imgs\otros\doctores-medicos.png" />
     <Content Include="Content\imgs\vectoriales\medicos.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -238,6 +257,8 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\Views\carritoDeComprasjs.js" />
+    <Content Include="Scripts\Views\recuperarPass.js" />
     <Content Include="Scripts\Views\Usuarios.js" />
     <Content Include="Scripts\Views\dashboardUsuario\DashboardCitasFechas.js" />
     <Content Include="Scripts\Views\dashboardUsuario\DashboardCitasQR.js" />
@@ -276,6 +297,10 @@
     <Content Include="Views\DashboardAdminApp\Usuarios.cshtml" />
     <Content Include="Views\DashboardAdminApp\Actividades.cshtml" />
     <Content Include="Views\DashboardUsuario\DashboardUsuario.cshtml" />
+    <Content Include="Views\Home\forgotPassword.cshtml" />
+    <Content Include="Views\Home\CarritoDeCompras.cshtml" />
+    <Content Include="Views\Laboratorios\CicloLab.cshtml" />
+    <Content Include="Views\Home\LandingPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
