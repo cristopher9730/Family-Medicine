@@ -25,5 +25,11 @@ namespace FamilyMedicine.Controllers
             JsonResult result = Json(new { result = "OK", data = "Prueba recibida" });
             return result;
         }
+
+        public ActionResult RegistrarLaboratorio()
+        {
+            return View();
+        }
+
     }
 }

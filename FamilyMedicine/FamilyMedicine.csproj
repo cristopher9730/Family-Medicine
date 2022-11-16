@@ -276,6 +276,7 @@
     <Content Include="Views\DashboardAdminApp\Usuarios.cshtml" />
     <Content Include="Views\DashboardAdminApp\Actividades.cshtml" />
     <Content Include="Views\DashboardUsuario\DashboardUsuario.cshtml" />
+    <Content Include="Views\DashboardUsuario\RegistrarLaboratorio.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
