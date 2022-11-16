@@ -192,6 +192,7 @@
     <Compile Include="Controllers\AccesoController.cs" />
     <Compile Include="Controllers\DashboardUsuarioController.cs" />
     <Compile Include="Controllers\DashboardAdminLaboratorioController.cs" />
+    <Compile Include="Controllers\FooterController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -277,6 +278,9 @@
     <Content Include="Views\DashboardAdminApp\Actividades.cshtml" />
     <Content Include="Views\DashboardUsuario\DashboardUsuario.cshtml" />
     <Content Include="Views\DashboardUsuario\RegistrarLaboratorio.cshtml" />
+    <Content Include="Views\Footer\Contactenos.cshtml" />
+    <Content Include="Views\Footer\TerminosCondiciones.cshtml" />
+    <Content Include="Views\Footer\PreguntasFrecuentes.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
