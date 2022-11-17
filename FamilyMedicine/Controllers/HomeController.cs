@@ -57,7 +57,7 @@ namespace FamilyMedicine.Controllers
                     return RedirectToAction("LaboratoriosRegistrados", "DashboardAdminApp");
 
                 } 
-                if (rol.RolId == 1 || rol.RolId == 0 || rol.RolId == 2)
+                if (rol.RolId == 1 || rol.RolId == 2 || rol.RolId == 3)
                 {
                     return RedirectToAction("DashboardUsuario", "DashboardUsuario");
 
