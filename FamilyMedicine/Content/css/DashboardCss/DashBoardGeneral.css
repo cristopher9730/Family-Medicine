@@ -214,3 +214,20 @@
 }
 
 
+.swal2-container {
+    z-index: 99999999;
+}
+
+.format-pre pre {
+    background: #ffffff;
+    color: #444444;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.datetimepicker {
+    margin: 0% auto;
+}
