@@ -11,7 +11,7 @@
     }
 </style>
 
-<link rel="stylesheet" href="~/Content/css/DashBoard.css" />
+<link rel="stylesheet" href="~/Content/css/DashboardCss/DashBoardGeneral.css" />
 <link rel="stylesheet" href="~/Content/css/DashboardCss/DashboardCitas.css" />
 <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 
@@ -51,7 +51,7 @@
 
                     <div class="form-group mt-2">
                         <label for="hora">Hora de la Cita:</label>
-                        <input id="hora" class="form-control" type="time" />
+                        <input id="hora" class="form-control" type="time" required/>
                     </div>
 
                     <div class="form-group">
@@ -65,7 +65,7 @@
                     </div>
 
                     <div class="mt-1">
-                        <button type="submit" class="btn btn-primary">Registrar</button>
+                        <button onclick="myfuncionGeneralRegistrar()" type="submit" class="btn btn-primary">Registrar</button>
                     </div>
 
                 </form>

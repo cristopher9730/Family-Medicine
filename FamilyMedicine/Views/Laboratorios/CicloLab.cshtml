@@ -3,6 +3,7 @@
     ViewBag.Title = "CicloLab";
 }
 
+<link rel="stylesheet" href="~/Content/css/sweetalert.css" />
 <link rel="stylesheet" href="~/Content/css/Laboratorios.css" />
 <link rel="stylesheet" href="~/Content/css/DashboardCss/DashboardCitas.css" />
 
@@ -58,28 +59,28 @@
                 <td>El análisis de sangre es el hemograma completo.</td>
                 <td id="precio">₡12000</td>
                 <td>Lunes-Martes-Miercoles</td>
-                <td class="irAExamen">Agregar al carrito</td>
+                <td class="irAExamen" onclick="myfuncionGeneralCarrito()"> Agregar al carrito </td>
             </tr>
             <tr>
                 <td>Examen de sangre</td>
                 <td>El análisis de sangre es el hemograma completo.</td>
                 <td id="precio">₡12000</td>
                 <td>Lunes-Martes-Miercoles</td>
-                <td class="irAExamen">Agregar al carrito</td>
+                <td onclick="myfuncionGeneralCarrito()" class="irAExamen">Agregar al carrito</td>
             </tr>
             <tr>
                 <td>Examen de sangre</td>
                 <td>El análisis de sangre es el hemograma completo.</td>
                 <td id="precio">₡12000</td>
                 <td>Lunes-Martes-Miercoles</td>
-                <td class="irAExamen">Agregar al carrito</td>
+                <td onclick="myfuncionGeneralCarrito()" class="irAExamen">Agregar al carrito</td>
             </tr>
             <tr>
                 <td>Examen de sangre</td>
                 <td>El análisis de sangre es el hemograma completo.</td>
                 <td id="precio">₡12000</td>
                 <td>Lunes-Martes-Miercoles</td>
-                <td class="irAExamen">Agregar al carrito</td>
+                <td onclick="myfuncionGeneralCarrito()" class="irAExamen">Agregar al carrito</td>
             </tr>
             <tr>
                 <td>Examen de sangre</td>
@@ -112,3 +113,8 @@
         </tbody>
     </table>
 </section>
+
+
+
+<script src="~/Scripts/Views/dashboardUsuario/DashboardValidacion.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

@@ -213,6 +213,7 @@
     <Content Include="Content\css\Laboratorios.css" />
     <Content Include="Content\css\landingPage.css" />
     <Content Include="Content\css\Login.css" />
+    <Content Include="Content\css\sweetalert.css" />
     <Content Include="Content\imgs\Labs\cicloLab\CL1.jpg" />
     <Content Include="Content\imgs\Labs\cicloLab\CL2.jpg" />
     <Content Include="Content\imgs\Labs\cicloLab\CL3.jpg" />

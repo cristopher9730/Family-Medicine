@@ -28,14 +28,14 @@
 }
 
 
-function myfuncionGeneralCrear(ReporteCreado) {
+function myfuncionGeneralCrear() {
     Swal.fire({
-        title: ReporteCreado,
+        title: "Crear",
         showDenyButton: true,
         showCancelButton: true,
         cancelButtonText: "Cancelar",
-        confirmButtonText: 'Guardar',
-        denyButtonText: `No guardar`,
+        confirmButtonText: 'Crear',
+        denyButtonText: `No crear`,
         confirmButtonColor: "#325D88",
     }).then((result) => {
         /* Read more about isConfirmed, isDenied below */
@@ -55,4 +55,42 @@ function myfuncionGeneralCrear(ReporteCreado) {
             });
         }
     })
+}
+
+function myfuncionGeneralRegistrar() {
+    Swal.fire({
+        title: "Registrar",
+        showDenyButton: true,
+        showCancelButton: true,
+        cancelButtonText: "Cancelar",
+        confirmButtonText: 'Registrar',
+        denyButtonText: `No registrar`,
+        confirmButtonColor: "#325D88",
+    }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+            Swal.fire({
+                title: 'Registrado!',
+                icon: 'success',
+                confirmButtonColor: "#325D88",
+                confirmButtonText: 'Hecho',
+            });
+        } else if (result.isDenied) {
+            Swal.fire({
+                title: 'No se registrado',
+                icon: 'info',
+                confirmButtonColor: "#325D88",
+                confirmButtonText: 'Hecho',
+            });
+        }
+    })
+}
+
+function myfuncionGeneralCarrito() {
+    Swal.fire({
+        title: 'Agregado al carrito',
+        icon: 'success',
+        confirmButtonColor: "#325D88",
+        confirmButtonText: 'Hecho',
+    });
 }

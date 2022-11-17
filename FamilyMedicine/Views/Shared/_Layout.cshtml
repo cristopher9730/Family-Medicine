@@ -7,7 +7,7 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <link rel="shortcut icon" href="~/Content/imgs/logos/logoConColor.png" />
-
+    <link rel="stylesheet" href="~/Content/css/sweetalert.css" />
 
     <script src="https://kit.fontawesome.com/e77fc0ae51.js" crossorigin="anonymous"></script>
 </head>
@@ -50,7 +50,7 @@
                             }
 
                         </li>
-                        <li class="nav-item">            
+                        <li class="nav-item">
                             <a href="@Url.Action("CarritoDeCompras", "Home")" class="nav-link" style="font-size:20px">
                                 <i class="fa-solid fa-cart-shopping"></i>
                             </a>
@@ -70,6 +70,8 @@
         </footer>
     </div>
 
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
