@@ -14,7 +14,7 @@
     }
 </style>
 
-<link rel="stylesheet" href="~/Content/css/DashBoard.css" />
+<link rel="stylesheet" href="~/Content/css/DashboardCss/DashBoardGeneral.css" />
 
 <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 
@@ -52,7 +52,7 @@
             <label class="col-form-label" for="inputDefault">Telefono</label>
 
             <div class="col-sm-10">
-                <input type="text" class="form-control" placeholder="2224-2224" id="inputDefault">
+                <input type="text" class="form-control" required placeholder="2224-2224" id="inputDefault">
             </div>
         </div>
 
@@ -80,11 +80,13 @@
                 <input type="text" class="form-control" placeholder="instagram/laboratoriospaez" id="inputDefault">
             </div>
         </div>
-
-        <button type="submit" class="btn btn-primary mt-3">Guardar Cambios</button>
+        <button onclick="myfuncionGeneral()" type="submit" class="btn btn-primary mt-3">Guardar Cambios</button>
     </form>
 
 
 </div>
 
+
+<script src="~/Scripts/Views/dashboardUsuario/DashboardValidacion.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://kit.fontawesome.com/e77fc0ae51.js" crossorigin="anonymous"></script>
