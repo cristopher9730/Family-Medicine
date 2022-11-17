@@ -1,0 +1,104 @@
+﻿.contenedorDePerfil{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+
+    height:85vh;
+    width: 410px;
+
+    background-color: #ffffff;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+    border-radius: 10px;
+    margin: 10px;
+    padding: 20px;
+}
+
+/*--------------DATOS GENERALES---------------------------*/
+
+.cotenedorDeDatos {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    gap: 20px 20px;
+}
+
+/*---titutlos-----*/
+.titleGeneral {
+    text-align: center;
+    padding: 5px;
+    font-size: 25px;
+    margin: 0;
+    font-weight: bold;
+    color: #333333;
+    font-family: 'Montserrat';
+}
+
+.tituloGeneralDos {
+    text-align: center;
+    padding: 5px;
+    font-size: 20px;
+    margin: 0;
+    font-weight: 300;
+    color: #333333;
+    font-family: 'Montserrat';
+}
+
+.tituloGeneralTres {
+    text-align: left;
+    font-size: 15px;
+    margin: 0;
+    font-weight: 600;
+    color: #333333;
+    font-family: 'Montserrat';
+}
+/*---titutlos-----*/
+.datoGeneralImage {
+    width: 110px;
+    border: 2px solid #325D88;
+    border-radius: 50%;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.imgDashBoard{
+    width: 110px;
+}
+
+.datoGeneral {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.numeroDeCuenta {
+    text-align: center;
+    padding: 5px;
+    font-size: 20px;
+    margin: 0;
+    font-weight: bold;
+    color: #333333;
+    font-family: 'Montserrat';
+}
+
+/*-------------SWEET ALERT-=-----------*/
+.swal2-container {
+    z-index: 99999999;
+}
+
+.format-pre pre {
+    background: #ffffff;
+    color: #444444;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.datetimepicker {
+    margin: 0% auto;
+}

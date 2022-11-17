@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "OTP";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div style="height:40vw">
+    <div class="row align-items-center h-100">
+        <div class="col-6 mx-auto">
+            <div class="jumbotron">
+                <div class="card text-white bg-primary mt-4 mx-auto" style="max-width: 20rem;">
+                    <div class="card-header">Por favor ingrese su codigo de 6 digitos</div>
+                    <div class="card-body">
+
+                        <p class="card-text">Se envio un codigo al correo registrado</p>
+                        @*<p class="card-text">Se envio un codigo al numero registrado</p>*@
+                        <div class="input-group mb-3">
+                            <input type="number" class="form-control" placeholder="Codigo de verificacion" aria-label="Codigo de verificacion" aria-describedby="button-addon2">
+                            <button class="btn btn-outline-light" type="button" id="button-addon2">Verificar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

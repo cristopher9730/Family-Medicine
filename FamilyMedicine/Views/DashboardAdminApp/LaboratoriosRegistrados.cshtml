@@ -1,0 +1,102 @@
+﻿
+@{
+    ViewBag.Title = "LaboratoriosRegistrados";
+    Layout = "~/Views/Shared/_DashboardAdminAppLayout.cshtml";
+}
+
+<style>
+    /*Este style contien la clase de nav activo las opciones A1, A2, A3... etc estan en el layout*/
+    .A1 {
+        background-color: #4d81ba;
+        text-decoration: none;
+    }
+</style>
+
+<link rel="stylesheet" href="~/Content/css/DashboardCss/DashboardCitas.css" />
+
+<div class="divContenedorDelDashUno">
+
+    <h3 class="mb-3">Laboratorios Registrados</h3>
+
+    <div class="container mb-3">
+        <div class="d-flex flex-row align-items-center">
+            <div class="d-flex align-items-center me-2">
+                <h5 class="m-0">
+                    Monto de suscripción:
+                </h5>
+            </div>
+            <div class="input-group w-auto">
+                <span class="input-group-text">$</span>
+                <input type="number" class="form-control me-2" placeholder="100">
+            </div>
+            <div>
+                <button onclick="myfuncionGeneral()" class="btn btn-primary">Modificar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mb-3">
+        <div class="d-flex flex-row align-items-center">
+            <div class="d-flex align-items-center me-2">
+                <h5 class="m-0">
+                    Porcentaje del IVA:
+                </h5>
+            </div>
+            <div class="input-group w-auto">
+                <span class="input-group-text">%</span>
+                <input type="number" class="form-control me-2" placeholder="13">
+            </div>
+            <div>
+                <button onclick="myfuncionGeneral()" class="btn btn-primary">Modificar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mb-3">
+        <div class="d-flex flex-row align-items-center">
+            <div class="d-flex align-items-center me-2">
+                <h5 class="m-0">
+                    Ganancias totales: $300
+                </h5>
+            </div>
+        </div>
+    </div>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Cedula Jurídica</th>
+                <th scope="col">Página web</th>
+                <th scope="col">Télefono</th>
+                <th scope="col">Correo Electrónico</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Ciclo Lab</th>
+                <td>3-101-342687</td>
+                <td>ciclolab.com</td>
+                <td>24468762</td>
+                <td>ciclolab@gmail.com</td>
+            </tr>
+            <tr>
+                <th scope="row">Alchemy Lab</th>
+                <td>3-101-568725</td>
+                <td>alchemylab.com</td>
+                <td>24464587</td>
+                <td>alchemylab@gmail.com</td>
+            </tr>
+            <tr>
+                <th scope="row">The Lab</th>
+                <td>3-101-597428</td>
+                <td>thelab.com</td>
+                <td>24462156</td>
+                <td>thelab@gmail.com</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+

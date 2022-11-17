@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "Usuarios";
+    Layout = "~/Views/Shared/_DashboardAdminAppLayout.cshtml";
+}
+
+<style>
+    /*Este style contien la clase de nav activo las opciones A1, A2, A3... etc estan en el layout*/
+    .A2 {
+        background-color: #4d81ba;
+        text-decoration: none;
+    }
+</style>
+
+<link rel="stylesheet" href="~/Content/css/DashboardCss/DashboardCitas.css" />
+
+<div class="divContenedorDelDashUno">
+
+    <h3 class="mb-3">Usuarios</h3>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Cedula</th>
+                <th scope="col">Télefono</th>
+                <th scope="col">Correo Electrónico</th>
+                <th scope="col">Estado</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Roberto Solano Vargas</th>
+                <td>105670854</td>
+                <td>88265471</td>
+                <td>rsolano@gmail.com</td>
+                <td>Activo</td>
+            </tr>
+            <tr>
+                <th scope="row">Hugo Valerio Campos</th>
+                <td>204560852</td>
+                <td>85642158</td>
+                <td>hvalerio@gmail.com</td>
+                <td>Activo</td>
+            </tr>
+            <tr>
+                <th scope="row">Carolina Barrantes Soto</th>
+                <td>308710689</td>
+                <td>64265187</td>
+                <td>carobarrantes@gmail.com</td>
+                <td>Activo</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+

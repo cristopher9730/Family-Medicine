@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewBag.Title = "Registro";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/css/Login.css" />
+<script src="https://kit.fontawesome.com/e77fc0ae51.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+<section class="loginSectionContenedor mt-5 mb-5">
+
+    <form data-aos="fade-up"
+          data-aos-duration="3000" class="was-validated" id="formContenedorId">
+        <h4>Ingrese sus Datos</h4>
+        <div class="mb-3 w-100">
+            <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
+                <label class="form-label" for="txtNombre" id="inputGroupPrepend">Nombre Completo</label>
+                <input type="text" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
+                <div class="invalid-feedback">
+                    Por favor, ingrese su nombre completo
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3 w-100">
+            <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
+                <label class="form-label" for="txtCorreo" id="inputGroupPrepend">Correo Eléctronico</label>
+                <input type="email" class="form-control w-100" id="txtCorreo" aria-describedby="inputGroupPrepend" required>
+                <div class="invalid-feedback">
+                    Por favor, ingrese su correo eléctronico
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3 w-100">
+            <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
+                <label class="form-label" for="txtTelefono" id="inputGroupPrepend">Teléfono</label>
+                <input type="number" class="form-control w-100" id="txtTelefono" aria-describedby="inputGroupPrepend" required>
+                <div class="invalid-feedback">
+                    Por favor, ingrese su teléfono
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3 w-100">
+            <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
+                <label class="form-label" for="txtClave" id="inputGroupPrepend">Contraseña</label>
+                <input type="password" class="form-control w-100" id="txtClave" aria-describedby="inputGroupPrepend" required>
+                <div class="invalid-feedback">
+                    Por favor, ingrese su contraseña
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3 w-100">
+            <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
+                <label class="form-label" for="Foto" id="inputGroupPrepend">Seleccione su foto de perfil</label>
+                <input class="form-control w-100" type="file" id="Foto" aria-describedby="inputGroupPrepend">
+            </div>
+        </div>
+
+
+        @*<button type="submit" class="btn btn-primary">Crear Cuenta</button>*@
+        <a> @Html.ActionLink("Crear Cuenta", "OTP", "Home", new { area = "" }, new { @class = "btn btn-primary" })</a>
+    </form>
+
+
+    <img data-aos="fade-down"
+         data-aos-duration="3000" class="imagenLogin" src="~/Content/imgs/vectoriales/medicos.png" alt="Imagen Login Family medice" />
+
+</section>
+
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<script src="~/Scripts/Views/Usuarios.js"></script>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+<script>
+    AOS.init({
+        once: true,
+    });
+</script>

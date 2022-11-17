@@ -1,0 +1,180 @@
+﻿
+@{
+    ViewBag.Title = "DashAdminLabRegistrarExamen";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+<style>
+    /*Este style contien la clase de nav activo las opciones A1, A2, A3... etc estan en el layout*/
+    .A5 {
+        background-color: #4d81ba;
+        text-decoration: none;
+    }
+</style>
+
+
+
+<div class="divContenedorDelDashTab">
+
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" data-bs-toggle="tab" href="#home" aria-selected="true" role="tab">Registrar Examen</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" data-bs-toggle="tab" href="#profile" aria-selected="false" tabindex="-1" role="tab">Publicar Resultados</a>
+        </li>
+    </ul>
+
+    <div id="myTabContent" class="tab-content" style="min-width:345px">
+        <div class="tab-pane fade show active" id="home" role="tabpanel">
+            <h4>Registrar Exámen</h4>
+
+            <form class="was-validated">
+                <div class="mb-3 w-100">
+                    <div class="form-group has-validation w-100 d-flex flex-column">
+                        <label class="form-label" for="txtNombre" id="inputGroupPrepend">Nombre del Exámen</label>
+                        <input type="text" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
+                        <div class="invalid-feedback">
+                            Por favor, ingrese el nombre del exámen
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3 w-100">
+                    <div class="form-group has-validation w-100 d-flex flex-column">
+                        <label class="form-label" for="txtNombre" id="inputGroupPrepend">Tipo de Exámen</label>
+                        <input type="text" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
+                        <div class="invalid-feedback">
+                            Por favor, ingrese el tipo del exámen
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3 w-100">
+                    <div class="form-group has-validation w-100 d-flex flex-column">
+                        <label class="form-label" for="txtDescripción" id="inputGroupPrepend">Descripción del Exámen</label>
+                        <textarea type="text" class="form-control w-100" id="txtDescripcion" aria-describedby="inputGroupPrepend" rows="3" required></textarea>
+                        <div class="invalid-feedback">
+                            Por favor, ingrese la descripción del exámen
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3 w-100">
+                    <div class="form-group has-validation w-100 d-flex flex-column">
+                        <label class="form-label" for="txtPrecio" id="inputGroupPrepend">Precio</label>
+                        <div class="input-group">
+                            <span class="input-group-text">₡</span>
+                            <input type="number" class="form-control w-100" id="txtPrecio" aria-describedby="inputGroupPrepend" required>
+                            <div class="invalid-feedback">
+                                Por favor, ingrese el precio
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <button type="submit" class="btn btn-primary mt-3 ">Registrar</button>
+            </form>
+        </div>
+
+
+        <div class="tab-pane fade" id="profile" role="tabpanel">
+            <div class="tab-pane fade show active" id="home" role="tabpanel">
+                <h4>Publicar Resultados</h4>
+
+                <div class="tab-pane fade show active" id="home" role="tabpanel">
+                    <fieldset class="m-2">
+                        <div class="card mb-3" style="width: 30%; float:left">
+
+                            
+
+                            <div class="card-body">
+                                <form>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder="Buscar codigo cita" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                        <button class="btn btn-primary" type="button" id="button-addon2">Buscar</button>
+                                    </div>
+                                    <div class="mb-3 w-100">
+                                        <div class="form-group has-validation w-100 d-flex flex-column">
+                                            <label class="form-label" for="txtDescripción" id="inputGroupPrepend">Descripción del Exámen</label>
+                                            <textarea type="text" class="form-control w-100" id="txtDescripcion" aria-describedby="inputGroupPrepend" rows="3" required></textarea>
+                                            <div class="invalid-feedback">
+                                                Por favor, ingrese la descripción del exámen
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 w-100">
+                                        <label for="exampleSelect2" class="form-label">Estado de la cita</label>
+                                        <select class="form-select" id="citaEstado">
+                                            <option>PENDIENTE</option>
+                                            <option>COMPLETADO</option>
+                                            <option>NO ASISTIO</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary mt-2">Guardar Cambios</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="card mb-3" style="width: 69%; float:right">
+
+                            <div class="card-body">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Nombre Paciente</th>
+                                            <th scope="col">Correo</th>
+                                            <th scope="col">Descripcion Resultados</th>
+                                            <th scope="col">Estado</th>
+                                            <th scope="col">Fecha publicacion</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">Jacinto</th>
+                                            <td>jacinto@labpaez.com</td>
+                                            <td>
+                                                <p>Examen: Hemoglobina</p>
+                                                <p>Resultado: Hb = 13,5</p>
+                                            </td>
+                                            <td>Completado</td>
+                                            <td>11/10/2022</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Jacinto</th>
+                                            <td>jacinto@labpaez.com</td>
+                                            <td>
+                                                <p>Examen: Hemoglobina</p>
+                                                <p>Resultado: Hb = 13,5</p>
+                                            </td>
+                                            <td>Completado</td>
+                                            <td>11/10/2022</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Jacinto</th>
+                                            <td>jacinto@labpaez.com</td>
+                                            <td>
+                                                <p>Examen: Hemoglobina</p>
+                                                <p>Resultado: Hb = 13,5</p>
+                                            </td>
+                                            <td>Completado</td>
+                                            <td>11/10/2022</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Buscar cita por palabra clave" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                    <button class="btn btn-outline-dark" type="button" id="button-addon2">Buscar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -3,35 +3,70 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Family Medicine</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <link rel="shortcut icon" href="~/Content/imgs/logos/logoConColor.png" />
+
+
+    <script src="https://kit.fontawesome.com/e77fc0ae51.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" title="more options">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+
+            <a href="@Url.Action("Index", "Home")" title="Widget View" class="links">
+                <img width="100px" alt="Widget View" src="@Url.Content("~/Content/imgs/logos/lgoBlanco.png")">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a> @Html.ActionLink("Laboratorios", "Busqueda", "Home", new { area = "" }, new { @class = "nav-link" })</a>
+                    </li>
+                    <li class="nav-item">
+                        <a> @Html.ActionLink("Exámenes", "BusquedaExamen", "Home", new { area = "" }, new { @class = "nav-link" })</a>
+                    </li>
                 </ul>
+                <div class="d-flex">
+                    <ul class="navbar-nav me-auto">
+                        <li>
+                            <form class="d-flex">
+                                <input class="form-control me-sm-2" type="text" placeholder="Buscar Exámen">
+                                <a> @Html.ActionLink("Buscar", "BusquedaExamen", "Home", new { area = "" }, new { @class = "btn btn-secondary my-2 my-sm-0" })</a>
+                            </form>
+                        </li>
+                        <li class="nav-item">
+                            @if (Session["usuario"] != null)
+                            {
+                                <a> @Html.ActionLink("Mi Cuenta", "Login", "Home", new { area = "" }, new { @class = "nav-link" }) </a>
+                            }
+                            else
+                            {
+                                <a> @Html.ActionLink("Iniciar Sesión", "Login", "Home", new { area = "" }, new { @class = "nav-link" }) </a>
+                            }
+
+                        </li>
+                        <li class="nav-item">            
+                            <a href="@Url.Action("CarritoDeCompras", "Home")" class="nav-link" style="font-size:20px">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
+    </nav>
     <div class="container body-content">
         @RenderBody()
+
         <hr />
+
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Family Medicine</p>
         </footer>
     </div>
 
