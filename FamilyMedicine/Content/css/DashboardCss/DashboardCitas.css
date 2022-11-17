@@ -21,9 +21,14 @@ tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
+@media (prefers-reduced-motion: reduce) {
+    .form-control {
+        transition: none;
+        margin: 0 auto;
+    }
+}
 
 /*TAB CON SCROLL 1----===================*/
-
 .ContenedorDeDashboardTabOverFlow {
     min-height: 80vh;
     max-height: 80vh;
@@ -179,4 +184,8 @@ tr:nth-child(even) {
     font-weight: bold;
     font-family: sans-serif;
     text-align: center;
+}
+
+.datetimepicker{
+    margin: 0% auto;
 }
