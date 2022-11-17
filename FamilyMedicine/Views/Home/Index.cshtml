@@ -2,15 +2,22 @@
     ViewBag.Title = "Home Page";
 }
 
+<style>
+    .textoDeInicio {
+        color: #ffffff !important;
+        text-shadow: #00000050 2px 2px 10px !important;
+    }
+</style>
+
 <script src="https://kit.fontawesome.com/8ce25482e7.js" crossorigin="anonymous"></script>
 
 <div class="carousel mb-4">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="~/img/laboratorio.jpg" class="d-block w-100" style="opacity:0.80 !important; border-radius: 5px" alt="...">
+            <img loading="lazy" src="~/img/laboratorio.jpg" class="d-block w-100" style="opacity:0.80 !important; border-radius: 5px" alt="...">
             <div class="carousel-caption d-none d-md-block">
-                <h1 class="text-black"><strong>Family Medicine</strong></h1>
-                <h2 class="text-black text-center"><strong>Los mejores laboratorios en un solo lugar</strong></h2>
+                <h1 class="text-black textoDeInicio"><strong>Family Medicine</strong></h1>
+                <h2 class="text-black text-center textoDeInicio"><strong>Los mejores laboratorios en un solo lugar</strong></h2>
             </div> 
         </div>
     </div>  
@@ -19,7 +26,7 @@
 <div class="container shadow mb-5" style="border-radius: 5px">
     <div class="row align-items-center justify-content-center">
         <div class="col-3 col-sm-2 text-center">
-            <img src="~/img/laboratorio-icon.png" class="w-75 p-2" alt="...">
+            <img loading="lazy" src="~/img/laboratorio-icon.png" class="w-75 p-2" alt="...">
         </div>
         <div class="col-5">
             <h2>
@@ -38,7 +45,7 @@
 <div class="container shadow mb-5" style="border-radius: 5px">
     <div class="row align-items-center justify-content-center">
         <div class="col-3 col-sm-2 text-center">
-            <img src="~/img/tubo-icon.png" class="w-75 p-2" alt="...">
+            <img loading="lazy" src="~/img/tubo-icon.png" class="w-75 p-2" alt="...">
         </div>
         <div class="col-5">
             <h2>
@@ -84,7 +91,7 @@
             </div>
             <div class="card-body" style="min-height:326px">
                 <div class="text-center mb-2">
-                    <img src="~/img/expediente.jpg" class="w-100" alt="..." style="border-radius: 5px; max-height: 190px">
+                    <img loading="lazy" src="~/img/expediente.jpg" class="w-100" alt="..." style="border-radius: 5px; max-height: 190px">
                 </div>
                 <p class="card-text">Consultá tu historial de resultados, de forma segura y confidencial, en cualquier momento.</p>
             </div>
@@ -97,7 +104,7 @@
             </div>
             <div class="card-body" style="min-height:326px">
                 <div class="text-center mb-2">
-                    <img src="~/img/microscopio.jpg" class="w-100" alt="..." style="border-radius: 5px; max-height: 190px">
+                    <img loading="lazy" src="~/img/microscopio.jpg" class="w-100" alt="..." style="border-radius: 5px; max-height: 190px">
                 </div>
                 <p class="card-text">Podés acceder a una gran variedad de laboratorios ubicados por todo el país y escoger el que más se ajuste a tus necesidades.</p>
             </div>

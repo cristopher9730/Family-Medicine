@@ -19,13 +19,13 @@
         </div>
         <div class="card-body">
             <div class="text-center mb-2" style="max-height:10rem">
-                <img src="~/Content/imgs/Labs/Lab1.jpg" class="w-100" alt="..." style="border-radius: 5px; max-height: 190px">
+                <img loading="lazy" src="~/Content/imgs/Labs/Lab1.jpg" class="w-100" alt="..." style="border-radius: 5px; max-height: 190px">
             </div>
             <div class="container" style="min-height:5rem">
                 <p class="card-text">Más de 30 años realizando diferentes exámenes con los mejores precios del mercado.</p>
             </div>
 
-            <a> @Html.ActionLink("Ver más", "CicloLab", "Laboratorios", new { area = "" }, new { @class = "text-decoration-none btn btn-outline-primary" }) </a>
+            <a class="btn btn-outline-primary" href="">Ver más</a>
         </div>
     </div>
 
@@ -35,13 +35,13 @@
         </div>
         <div class="card-body">
             <div class="text-center mb-2" style="max-height:10rem">
-                <img src="~/Content/imgs/Labs/Lab2.jpg" class="w-100" alt="..." style="border-radius: 5px; max-height: 190px">
+                <img loading="lazy" src="~/Content/imgs/Labs/Lab2.jpg" class="w-100" alt="..." style="border-radius: 5px; max-height: 190px">
             </div>
             <div class="container" style="min-height:5rem">
                 <p class="card-text">El mejor laboratorio del mercado con diferentes sedes por todo el país.</p>
             </div>
 
-            <p><a class="btn btn-outline-primary" href="">Ver más</a></p>
+            <a class="btn btn-outline-primary" href="">Ver más</a>
         </div>
     </div>
 
@@ -51,13 +51,13 @@
         </div>
         <div class="card-body">
             <div class="text-center mb-2" style="max-height:10rem">
-                <img src="~/Content/imgs/Labs/Lab3.jpg" class="w-100" alt="..." style="border-radius: 5px; max-height: 190px">
+                <img loading="lazy" src="~/Content/imgs/Labs/Lab3.jpg" class="w-100" alt="..." style="border-radius: 5px; max-height: 190px">
             </div>
             <div class="container" style="min-height:5rem">
                 <p class="card-text">Desde 1988 ofreciendo el mejor servicio del mercado.</p>
             </div>
 
-            <p><a class="btn btn-outline-primary" href="">Ver más</a></p>
+            <a> @Html.ActionLink("Ver más", "CicloLab", "Laboratorios", new { area = "" }, new { @class = "text-decoration-none btn btn-outline-primary" })</a>
         </div>
     </div>
 

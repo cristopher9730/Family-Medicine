@@ -213,6 +213,7 @@
     <Content Include="Content\css\Laboratorios.css" />
     <Content Include="Content\css\landingPage.css" />
     <Content Include="Content\css\Login.css" />
+    <Content Include="Content\css\sweetalert.css" />
     <Content Include="Content\imgs\Labs\cicloLab\CL1.jpg" />
     <Content Include="Content\imgs\Labs\cicloLab\CL2.jpg" />
     <Content Include="Content\imgs\Labs\cicloLab\CL3.jpg" />
@@ -276,7 +277,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
