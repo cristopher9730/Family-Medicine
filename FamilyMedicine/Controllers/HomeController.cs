@@ -74,7 +74,7 @@ namespace FamilyMedicine.Controllers
             Usuario apiRespuestaUsuario;
             AdminLogin adminLogin = new AdminLogin();
 
-            var urlPrincipal = "https://localhost:44391";
+            var urlPrincipal = "https://familymedicinebackup.azurewebsites.net/";
 
             var url = urlPrincipal + "/api/Login/ValidarUsaurio";
 

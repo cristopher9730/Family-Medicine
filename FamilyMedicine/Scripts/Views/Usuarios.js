@@ -25,7 +25,7 @@
                 'Content-Type': "application/json"
             },
             method: "POST",
-            url: "https://localhost:44391/api/Usuario/RegistrarUsuario",
+            url: "https://familymedicineapibackup.azurewebsites.net/api/Usuario/RegistrarUsuario",
             contentType: "application/json",
             data: JSON.stringify(usuario),
             hasContent: true
