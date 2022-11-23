@@ -22,6 +22,8 @@ namespace DataAccess.Mapper
             var usuario =(Usuario)entidadDTO;
 
             operacion.AddVarcharParam("Nombre", usuario.Nombre);
+            operacion.AddVarcharParam("PrimerApellido", usuario.PrimerApellido);
+            operacion.AddVarcharParam("SegundoApellido", usuario.SegundoApellido);
             operacion.AddVarcharParam("Correo", usuario.Correo);
             operacion.AddVarcharParam("Telefono", usuario.Telefono);
             operacion.AddVarcharParam("Clave", usuario.Clave);
@@ -29,7 +31,7 @@ namespace DataAccess.Mapper
             operacion.AddVarcharParam("Estado", usuario.Estado);
             operacion.AddIntergerParam("RolId", usuario.RolId);
             operacion.AddIntergerParam("LaboratorioId", usuario.LaboratorioId);
-            operacion.AddIntergerParam("MemebresiaId", usuario.MembresiaId);
+            operacion.AddIntergerParam("MembresiaId", usuario.MembresiaId);
             operacion.AddVarcharParam("Codigo", usuario.Codigo);
 
 
@@ -48,6 +50,8 @@ namespace DataAccess.Mapper
 
             operacion.AddIntergerParam("UsuarioId", usuario.UsuarioId);
             operacion.AddVarcharParam("Nombre", usuario.Nombre);
+            operacion.AddVarcharParam("PrimerApellido", usuario.PrimerApellido);
+            operacion.AddVarcharParam("SegundoApellido", usuario.SegundoApellido);
             operacion.AddVarcharParam("Correo", usuario.Correo);
             operacion.AddVarcharParam("Telefono", usuario.Telefono);
             operacion.AddVarcharParam("Clave", usuario.Clave);
@@ -89,6 +93,8 @@ namespace DataAccess.Mapper
             {
                 UsuarioId = int.Parse(row["UsuarioId"].ToString()),
                 Nombre = row["Nombre"].ToString(),
+                PrimerApellido = row["Primer_Apellido"].ToString(),
+                SegundoApellido = row["Segundo_Apellido"].ToString(),
                 Correo = row["Correo"].ToString(),
                 Telefono = row["Telefono"].ToString(),
                 Clave = row["Clave"].ToString(),
