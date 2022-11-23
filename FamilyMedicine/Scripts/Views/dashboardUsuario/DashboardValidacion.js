@@ -94,3 +94,22 @@ function myfuncionGeneralCarrito() {
         confirmButtonText: 'Hecho',
     });
 }
+
+function myFunctionFile() {
+    Swal.fire({
+        title: 'Agregado al carrito',
+        input: 'file',
+        icon: 'success',
+        confirmButtonColor: "#325D88",
+        confirmButtonText: 'Hecho',
+    });
+}
+
+function verPassword() {
+    var x = document.getElementById("contrasenaUsuario");
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
+    }
+}

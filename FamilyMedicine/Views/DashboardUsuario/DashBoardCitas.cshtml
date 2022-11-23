@@ -7,8 +7,9 @@
 <style>
     /*Este style contien la clase de nav activo las opciones A1, A2, A3... etc estan en el layout*/
     .A2 {
-        background-color: #4d81ba;
+        box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
         text-decoration: none;
+        background-color: #f3f3f363;
     }
 </style>
 
@@ -25,8 +26,17 @@
 
     <div id="myTabContent" class="tab-content">
         <div class="tab-pane fade show active" id="home" role="tabpanel">
+
+            <div>
+                <form class="d-flex" style="padding: 10px">
+                    <input class="form-control me-sm-2" type="text" id="searchTerm" onkeyup="doSearch()" placeholder="Buscar informacion">
+                </form>
+                <p class='noSearch hide'></p>         
+            </div>
+            
+
             <div class="ContenedorDeDashboardTabOverFlow">
-                <table class="table table-hover" style=" min-width: 88vw; border-radius: 10px;">
+                <table id="datos" class="table table-hover" style=" min-width: 82vw; border-radius: 10px;">
                     <thead>
                         <tr>
                             <th scope="col">TIPO</th>
@@ -37,262 +47,30 @@
                             <th scope="col">Resultado</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody>  
                         <tr>
-                            <th scope="row">Aplicado</th>
-                            <td>Examen de sangre</td>
-                            <td id="precio">₡12000</td>
+                            <td scope="row">Aplicado</td>
+                            <td>Examen de dopaje</td>
+                            <td id="precio">₡17000</td>
                             <td>2022-11-17</td>
-                            <td>2022-11-27</td>
+                            <td>2023-01-07</td>
                             <td id="resultado" onclick="myFunctionResultado()">Ver Resultado</td>
                         </tr>
                         <tr>
-                            <th scope="row">Aplicado</th>
-                            <td>Examen de sangre</td>
-                            <td id="precio">₡12000</td>
+                            <td scope="row">Aplicado</td>
+                            <td>Examen de covid</td>
+                            <td id="precio">₡7000</td>
                             <td>2022-11-17</td>
-                            <td>2022-11-27</td>
-                            <td id="resultado">Ver Resultado</td>
+                            <td>2021-12-25</td>
+                            <td id="resultado" onclick="myFunctionResultado()">Ver Resultado</td>
                         </tr>
                         <tr>
-                            <th scope="row">Aplicado</th>
+                            <td scope="row">Aplicado</td>
                             <td>Examen de sangre</td>
-                            <td id="precio">₡12000</td>
+                            <td id="precio">₡22000</td>
                             <td>2022-11-17</td>
-                            <td>2022-11-27</td>
-                            <td id="resultado">Ver Resultado</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Perdido</th>
-                            <td>Examen de sangre</td>
-                            <td id="precio">₡12000</td>
-                            <td>2022-11-17</td>
-                            <td>2022-11-27</td>
-                            <td id="resultado">Ver Resultado</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Aplicado</th>
-                            <td>Examen de sangre</td>
-                            <td id="precio">₡12000</td>
-                            <td>2022-11-17</td>
-                            <td>2022-11-27</td>
-                            <td id="resultado">Ver Resultado</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Aplicado</th>
-                            <td>Examen de sangre</td>
-                            <td id="precio">₡12000</td>
-                            <td>2022-11-17</td>
-                            <td>2022-11-27</td>
-                            <td id="resultado">Ver Resultado</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Aplicado</th>
-                            <td>Examen de sangre</td>
-                            <td id="precio">₡12000</td>
-                            <td>2022-11-17</td>
-                            <td>2022-11-27</td>
-                            <td id="resultado">Ver Resultado</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Perdido</th>
-                            <td>Examen de sangre</td>
-                            <td id="precio">₡12000</td>
-                            <td>2022-11-17</td>
-                            <td>2022-11-27</td>
-                            <td id="resultado">Ver Resultado</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Aplicado</th>
-                            <td>Examen de sangre</td>
-                            <td id="precio">₡12000</td>
-                            <td>2022-11-17</td>
-                            <td>2022-11-27</td>
-                            <td id="resultado">Ver Resultado</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Aplicado</th>
-                            <td>Examen de sangre</td>
-                            <td id="precio">₡12000</td>
-                            <td>2022-11-17</td>
-                            <td>2022-11-27</td>
-                            <td id="resultado">Ver Resultado</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Aplicado</th>
-                            <td>Examen de sangre</td>
-                            <td id="precio">₡12000</td>
-                            <td>2022-11-17</td>
-                            <td>2022-11-27</td>
-                            <td id="resultado">Ver Resultado</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Perdido</th>
-                            <td>Examen de sangre</td>
-                            <td id="precio">₡12000</td>
-                            <td>2022-11-17</td>
-                            <td>2022-11-27</td>
-                            <td id="resultado">Ver Resultado</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Aplicado</th>
-                            <td>Examen de sangre</td>
-                            <td id="precio">₡12000</td>
-                            <td>2022-11-17</td>
-                            <td>2022-11-27</td>
-                            <td id="resultado">Ver Resultado</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Aplicado</th>
-                            <td>Examen de sangre</td>
-                            <td id="precio">₡12000</td>
-                            <td>2022-11-17</td>
-                            <td>2022-11-27</td>
-                            <td id="resultado">Ver Resultado</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Aplicado</th>
-                            <td>Examen de sangre</td>
-                            <td id="precio">₡12000</td>
-                            <td>2022-11-17</td>
-                            <td>2022-11-27</td>
-                            <td id="resultado">Ver Resultado</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Perdido</th>
-                            <td>Examen de sangre</td>
-                            <td id="precio">₡12000</td>
-                            <td>2022-11-17</td>
-                            <td>2022-11-27</td>
-                            <td id="resultado">Ver Resultado</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Aplicado</th>
-                            <td>Examen de sangre</td>
-                            <td id="precio">₡12000</td>
-                            <td>2022-11-17</td>
-                            <td>2022-11-27</td>
-                            <td id="resultado">Ver Resultado</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Aplicado</th>
-                            <td>Examen de sangre</td>
-                            <td id="precio">₡12000</td>
-                            <td>2022-11-17</td>
-                            <td>2022-11-27</td>
-                            <td id="resultado">Ver Resultado</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Aplicado</th>
-                            <td>Examen de sangre</td>
-                            <td id="precio">₡12000</td>
-                            <td>2022-11-17</td>
-                            <td>2022-11-27</td>
-                            <td id="resultado">Ver Resultado</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Perdido</th>
-                            <td>Examen de sangre</td>
-                            <td id="precio">₡12000</td>
-                            <td>2022-11-17</td>
-                            <td>2022-11-27</td>
-                            <td id="resultado">Ver Resultado</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Aplicado</th>
-                            <td>Examen de sangre</td>
-                            <td id="precio">₡12000</td>
-                            <td>2022-11-17</td>
-                            <td>2022-11-27</td>
-                            <td id="resultado">Ver Resultado</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Aplicado</th>
-                            <td>Examen de sangre</td>
-                            <td id="precio">₡12000</td>
-                            <td>2022-11-17</td>
-                            <td>2022-11-27</td>
-                            <td id="resultado">Ver Resultado</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Aplicado</th>
-                            <td>Examen de sangre</td>
-                            <td id="precio">₡12000</td>
-                            <td>2022-11-17</td>
-                            <td>2022-11-27</td>
-                            <td id="resultado">Ver Resultado</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Perdido</th>
-                            <td>Examen de sangre</td>
-                            <td id="precio">₡12000</td>
-                            <td>2022-11-17</td>
-                            <td>2022-11-27</td>
-                            <td id="resultado">Ver Resultado</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Aplicado</th>
-                            <td>Examen de sangre</td>
-                            <td id="precio">₡12000</td>
-                            <td>2022-11-17</td>
-                            <td>2022-11-27</td>
-                            <td id="resultado">Ver Resultado</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Aplicado</th>
-                            <td>Examen de sangre</td>
-                            <td id="precio">₡12000</td>
-                            <td>2022-11-17</td>
-                            <td>2022-11-27</td>
-                            <td id="resultado">Ver Resultado</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Aplicado</th>
-                            <td>Examen de sangre</td>
-                            <td id="precio">₡12000</td>
-                            <td>2022-11-17</td>
-                            <td>2022-11-27</td>
-                            <td id="resultado">Ver Resultado</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Perdido</th>
-                            <td>Examen de sangre</td>
-                            <td id="precio">₡12000</td>
-                            <td>2022-11-17</td>
-                            <td>2022-11-27</td>
-                            <td id="resultado">Ver Resultado</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Aplicado</th>
-                            <td>Examen de sangre</td>
-                            <td id="precio">₡12000</td>
-                            <td>2022-11-17</td>
-                            <td>2022-11-27</td>
-                            <td id="resultado">Ver Resultado</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Aplicado</th>
-                            <td>Examen de sangre</td>
-                            <td id="precio">₡12000</td>
-                            <td>2022-11-17</td>
-                            <td>2022-11-27</td>
-                            <td id="resultado">Ver Resultado</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Aplicado</th>
-                            <td>Examen de sangre</td>
-                            <td id="precio">₡12000</td>
-                            <td>2022-11-17</td>
-                            <td>2022-11-27</td>
-                            <td id="resultado">Ver Resultado</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Perdido</th>
-                            <td>Examen de sangre</td>
-                            <td id="precio">₡12000</td>
-                            <td>2022-11-17</td>
-                            <td>2022-11-27</td>
-                            <td id="resultado">Ver Resultado</td>
+                            <td>2026-12-13</td>
+                            <td id="resultado" onclick="myFunctionResultado()">Ver Resultado</td>
                         </tr>
                     </tbody>
                 </table>
@@ -309,7 +87,8 @@
                         <span class="laboratorioExamen">CLINICOCR</span>
                     </div>
                     <div class="flexClass">
-                        <button type="submit" onclick="myFunctionDate()" id="remove" class="buttonCita colorButton"><i class="fa-solid colorButton fa-calendar-days"></i>Agendar cita</button>
+
+                        <button type="submit" onclick="location.href='/AgendarCitas/AgendarCitas'" id="remove" class="buttonCita colorButton"><i class="fa-solid colorButton fa-calendar-days"></i>Agendar cita</button>
                         <button type="submit" onclick="myFunctionQR()" id="remove" class="buttonCita colorButton"><i class="fa-solid colorButton fa-qrcode"></i>Codigo QR</button>
                     </div>
                 </section>
@@ -325,56 +104,6 @@
                         <button type="submit" onclick="myFunctionQR()" id="remove" class="buttonCita colorButton"><i class="fa-solid colorButton fa-qrcode"></i>Codigo QR</button>
                     </div>
                 </section>
-                <section id="idCarritoContenedorDeExamenes" class="ContenedorDeExamenes">
-                    <div class="flexClass divExamenCotenido">
-                        <h2 class="tituloDeExamen">Examen de Sangre </h2>
-                        <p class="descripcionExamen">Evaluar el funcionamiento de diferentes órganos del cuerpo, como el hígado, los riñones, el corazón o la tiroides. Diagnosticar trastornos hemorrágicos o de la coagulación. Averiguar si el sistema inmunitario está teniendo problemas para combatir las infecciones</p>
-                        <span class="laboratorioExamen">CLINICOCR</span>
-                    </div>
-                    <div class="flexClass">
-                        <button type="submit" onclick="myFunctionDate()" id="remove" class="buttonCita colorButton"><i class="fa-solid colorButton fa-calendar-days"></i>Agendar cita</button>
-                        <button type="submit" onclick="myFunctionQR()" id="remove" class="buttonCita colorButton"><i class="fa-solid colorButton fa-qrcode"></i>Codigo QR</button>
-                    </div>
-                </section>
-
-
-                <section id="idCarritoContenedorDeExamenes" class="ContenedorDeExamenes">
-                    <div class="flexClass divExamenCotenido">
-                        <h2 class="tituloDeExamen">Examen de Sangre </h2>
-                        <p class="descripcionExamen">Evaluar el funcionamiento de diferentes órganos del cuerpo, como el hígado, los riñones, el corazón o la tiroides. Diagnosticar trastornos hemorrágicos o de la coagulación. Averiguar si el sistema inmunitario está teniendo problemas para combatir las infecciones</p>
-                        <span class="laboratorioExamen">CLINICOCR</span>
-                    </div>
-                    <div class="flexClass">
-                        <button type="submit" onclick="myFunctionDateAgendada()" id="remove" class="buttonCita colorButton"><i class="fa-solid colorButton fa-calendar-days"></i>Fecha de cita</button>
-                        <button type="submit" onclick="myFunctionQR()" id="remove" class="buttonCita colorButton"><i class="fa-solid colorButton fa-qrcode"></i>Codigo QR</button>
-                    </div>
-                </section>
-
-                <section id="idCarritoContenedorDeExamenes" class="ContenedorDeExamenes">
-                    <div class="flexClass divExamenCotenido">
-                        <h2 class="tituloDeExamen">Examen de Sangre </h2>
-                        <p class="descripcionExamen">Evaluar el funcionamiento de diferentes órganos del cuerpo, como el hígado, los riñones, el corazón o la tiroides. Diagnosticar trastornos hemorrágicos o de la coagulación. Averiguar si el sistema inmunitario está teniendo problemas para combatir las infecciones</p>
-                        <span class="laboratorioExamen">CLINICOCR</span>
-                    </div>
-                    <div class="flexClass">
-                        <button type="submit" onclick="myFunctionDateAgendada()" id="remove" class="buttonCita colorButton"><i class="fa-solid colorButton fa-calendar-days"></i>Fecha de cita</button>
-                        <button type="submit" onclick="myFunctionQR()" id="remove" class="buttonCita colorButton"><i class="fa-solid colorButton fa-qrcode"></i>Codigo QR</button>
-                    </div>
-                </section>
-
-
-                <section id="idCarritoContenedorDeExamenes" class="ContenedorDeExamenes">
-                    <div class="flexClass divExamenCotenido">
-                        <h2 class="tituloDeExamen">Examen de Sangre </h2>
-                        <p class="descripcionExamen">Evaluar el funcionamiento de diferentes órganos del cuerpo, como el hígado, los riñones, el corazón o la tiroides. Diagnosticar trastornos hemorrágicos o de la coagulación. Averiguar si el sistema inmunitario está teniendo problemas para combatir las infecciones</p>
-                        <span class="laboratorioExamen">CLINICOCR</span>
-                    </div>
-                    <div class="flexClass">
-                        <button type="submit" onclick="myFunctionDate()" id="remove" class="buttonCita colorButton"><i class="fa-solid colorButton fa-calendar-days"></i>Agendar cita</button>
-                        <button type="submit" onclick="myFunctionQR()" id="remove" class="buttonCita colorButton"><i class="fa-solid colorButton fa-qrcode"></i>Codigo QR</button>
-                    </div>
-                </section>
-
             </div>
         </div>
     </div>
