@@ -1,7 +1,5 @@
 ﻿body {
-    background: #f6f6f650;
-    background: -webkit-linear-gradient(to right, #f6f6f650, color: #325D8840);
-    background: linear-gradient(to right, #f6f6f650, color: #325D8840);
+    background: #f9f9f940;
 }
 
 .body-content {
@@ -12,28 +10,22 @@
 .bg-primary {
     --bs-bg-opacity: 1;
     background-color: none !important;
-    background: #7ce1ff !important;
-    background: -webkit-linear-gradient(to right, #7ce1ff, #50aafa) !important;
-    background: linear-gradient(to right, #7ce1ff, #50aafa) !important;
+    background: #325D88 !important;
 }
 
 .my-2 {
-    background: #7ce1ff !important;
-    background: -webkit-linear-gradient(to right, #7ce1ff, #50aafa) !important;
-    background: linear-gradient(to right, #7ce1ff, #50aafa) !important;
-
+    background: #325D88 !important;
     color: #ffffff;
     border: 2px solid #ffffff;
+    transition: 300ms;
 }
 
 
-.my-2:hover {
-    background: #7ce1ff !important;
-    background: -webkit-linear-gradient(to right, #7ce1ff, #50aafa) !important;
-    background: linear-gradient(to right, #7ce1ff, #50aafa) !important;
-    color: #ffffff;
-    border: 2px solid #ffffff;
-}
+    .my-2:hover {
+        background: #ffffff !important;
+        color: #325D88;
+        border: 2px solid #ffffff;
+    }
 
 /**=======================BANNER 1==============================*/
 
@@ -61,9 +53,7 @@
     font-size: 80px;
     font-weight: bold;
     margin: 0;
-    background: -webkit-linear-gradient(#7ce1ff, #50aafa);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #325D88;
     font-family: 'Lemon/Milk', sans-serif;
     font-family: 'Lemon/Milk light', sans-serif;
     letter-spacing: 10px;
@@ -74,9 +64,7 @@
     padding: 5px;
     font-size: 18px;
     margin: 0;
-    background: -webkit-linear-gradient(#7ce1ff, #50aafa);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #325D88;
     font-family: 'Montserrat';
 }
 
@@ -86,9 +74,7 @@
     font-size: 24px;
     margin: 0;
     color: #ffffff;
-    background: #7ce1ff !important;
-    background: -webkit-linear-gradient(to right, #7ce1ff, #50aafa) !important;
-    background: linear-gradient(to right, #7ce1ff, #50aafa) !important;
+    background: #325D88 !important;
     text-decoration: none;
     border-radius: 10px;
     transition: 333ms;
@@ -120,9 +106,9 @@
     transform: translate(-50%, -50%);
     width: 90%;
     height: 250px;
-    background: #7ce1ff !important;
-    background: -webkit-linear-gradient(to right, #7ce1ff, #50aafa) !important;
-    background: linear-gradient(to right, #7ce1ff, #50aafa) !important;
+    background: #325D88 !important;
+    background: -webkit-linear-gradient(to bottom, #325D88, #ffffff) !important;
+    background: linear-gradient(to bottom, #325D88, #ffffff) !important;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
     border-top-left-radius: 105%;
     border-top-right-radius: 45%;
@@ -154,9 +140,7 @@
     padding: 10px;
     font-size: 25px;
     margin: 10px 0px 10px 0px;
-    background: -webkit-linear-gradient(#7ce1ff, #50aafa);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #325D88;
     box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
     border-radius: 10px;
 }
@@ -167,11 +151,9 @@
     padding: 5px;
     font-size: 25px;
     margin: 10px 0px 10px 0px;
-    background: -webkit-linear-gradient(#7ce1ff, #50aafa);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #325D88;
     border-radius: 50%;
-    border: 2px solid #7ce1ff;
+    border: 2px solid #325D88;
 }
 
 /*=======================imgDoctor==============*/
@@ -195,9 +177,7 @@
     }
 
 .textoNombre {
-    background: #7ce1ff !important;
-    background: -webkit-linear-gradient(to right, #7ce1ff, #50aafa) !important;
-    background: linear-gradient(to right, #7ce1ff, #50aafa) !important;
+    background: #325D88 !important;
     text-align: center;
     padding: 5px;
     font-size: 18px;

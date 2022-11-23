@@ -18,5 +18,10 @@ namespace FamilyMedicine.Controllers
         {
             return View();
         }
+
+        public ActionResult recuperarContrasenna()
+        {
+            return View();
+        }
     }
 }

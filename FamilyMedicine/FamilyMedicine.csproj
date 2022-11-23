@@ -307,7 +307,7 @@
     <Content Include="Views\Footer\Contactenos.cshtml" />
     <Content Include="Views\Footer\TerminosCondiciones.cshtml" />
     <Content Include="Views\Footer\PreguntasFrecuentes.cshtml" />
-    <Content Include="Views\Home\forgotPassword.cshtml" />
+    <Content Include="Views\IniciarSecion\recuperarContrasenna.cshtml" />
     <Content Include="Views\CarritoDeCompras\CarritoDeCompras.cshtml" />
     <Content Include="Views\Laboratorios\CicloLab.cshtml" />
     <Content Include="Views\Home\LandingPage.cshtml" />
