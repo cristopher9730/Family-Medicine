@@ -188,6 +188,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AgendarCitasController.cs" />
     <Compile Include="Controllers\DashboardAdminAppController.cs" />
     <Compile Include="Controllers\AccesoController.cs" />
     <Compile Include="Controllers\DashboardUsuarioController.cs" />
@@ -259,6 +260,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\Views\AgendarCitas\AgendarCitas.js" />
     <Content Include="Scripts\Views\carritoDeComprasjs.js" />
     <Content Include="Scripts\Views\dashboardUsuario\DashboardValidacion.js" />
     <Content Include="Scripts\Views\recuperarPass.js" />
@@ -307,10 +309,12 @@
     <Content Include="Views\Home\LandingPage.cshtml" />
     <Content Include="Views\Home\BusquedaExamen.cshtml" />
     <Content Include="Views\DashboardAdminLaboratorio\Cupones.cshtml" />
+    <Content Include="Views\AgendarCitas\AgendarCitas.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Scripts\Views\carritoDeCompras\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

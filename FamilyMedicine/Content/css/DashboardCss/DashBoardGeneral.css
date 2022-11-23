@@ -20,6 +20,15 @@
     margin-left: 0% !important;
 }
 
+body {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+
+
+
+
 /*=====================================
                   dashboard
  ========================================*/
@@ -29,21 +38,30 @@
     flex-direction: row;
     align-items: flex-start;
     height: 90vh;
-    padding-top: 10px;
+    padding-top: 0px;
 }
 
+.modal-dialog {
+    background-color: #ffffff !important;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px !important; 
+    border-radius: 10px;
+}
 /*--------------NAV---------------------------*/
 .contenedorDeNav {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    background-color: #325D88;
+
+    background-color: #ffffff;
     height: 70vh;
-    width: 135px;
-    padding-top: 10px;
-    position: fixed;
-    z-index: 123123;
+    width: 270px;
+
+    margin: 10px;
+    z-index: 4567;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .contenedorDeOpcionesDelNav {
@@ -51,53 +69,56 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    gap: 10px 10px;
 
+    gap: 10px 10px;
     transition: 544ms;
     width: 140px;
-    padding: 3px 10px 3px 10px;
+    padding: 10px;
+
     text-decoration: none;
+    border-radius: 7px;
 }
 
-.contenedorDeOpcionesDelNav:hover {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 10px 10px;
+    .contenedorDeOpcionesDelNav:hover {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
 
-    transition: 544ms;
-    width: 140px;
-    padding: 3px 10px 3px 10px;
+        gap: 10px 10px;
+        transition: 544ms;
+        width: 140px;
+        padding: 10px;
+        background-color: #f3f3f363;
 
-    text-decoration: none;
-    background-color: #447eb8;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-    text-decoration: none;
-}
+        text-decoration: none;
+        border-radius: 7px;
+        box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+        text-decoration: none;
+    }
 
 .ContenedorDeNombre {
-    color: #ffffff;
-    font-size: 17px;
+    color: #325D88;
+    font-size: 19px;
     font-family: 'Montserrat';
-    font-weight: 500;
+    font-weight: bold;
+    margin: 0;
+}
 
+.ContenedorDeNombre:hover {
+    color: #325D88;
+    font-size: 19px;
+    font-family: 'Montserrat';
+    font-weight: 600;
     margin: 0;
 }
 
 .fa-solid {
-    color: #ffffff;
+    color: #325D88;
     font-size: 17px !important;
     margin: 0;
     width: 20px;
     text-align: center;
-}
-
-.ContenedorDeNombre:hover {
-     color: #ffffff;
-    font-size: 17px;
-    font-family: 'Montserrat';
-    font-weight: 500;
 }
 
 /*--------------HEADER CONTENEDOR--------------------*//*--------------HEADER CONTENEDOR--------------------*/
@@ -113,7 +134,7 @@
     background-color: #325D88;
     gap: 10px 10px;
 
-    padding-left: 155px;
+    padding-left: 290px !important;
 
     position: fixed;
     z-index: 2131;
@@ -126,7 +147,7 @@
 /*=================Contenedor General del dash=================*/
 
 .divContenedorDelDashUno {
-    height: 88vh;
+    height: 97vh;
     width: 99%;
 
     background-color: #ffffff;
@@ -134,6 +155,9 @@
     border-radius: 10px;
     padding: 10px;
     margin: 10px 10px 0px 0px;
+
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
 }
 
 .divContenedorDelDashDos {
@@ -145,6 +169,9 @@
     border-radius: 10px;
     padding: 10px;
     margin: 10px 10px 0px 0px;
+
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
 }
 
 .divContenedorDelDashTres {
@@ -156,6 +183,9 @@
     border-radius: 10px;
     padding: 10px;
     margin: 10px 10px 0px 0px;
+
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
 }
 
 
@@ -164,6 +194,7 @@
 .divContenedorDelDashTab {
     border-radius: 10px;
     margin: 10px 0px 0px 0px;
+    width: 100%;
 }
 
 /*---------------------botones del tab-----------*/
@@ -173,31 +204,32 @@
 
 .nav-tabs .nav-link {
     margin-bottom: calc(-1 * var(--bs-nav-tabs-border-width));
-    background: #ffffff !important;
-    color: #325D88 !important;
+    background: #325D88 !important;
+    color: #ffffff !important;
     margin-right: 5px;
 
     border: 2px solid #ffffff !important;
+    border-bottom: none !important;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 
     transition: 355ms;
 }
 
-.nav-tabs .nav-link.active,
-.nav-tabs .nav-item.show .nav-link {
-    color: #ffffff !important;
-    background-color: #325D88 !important;
-    border: 2px solid #ffffff;
-    transition: 355ms;
-}
+    .nav-tabs .nav-link.active,
+    .nav-tabs .nav-item.show .nav-link {
+        color: #325D88 !important;
+        background-color: #ffffff !important;
+        border: 2px solid #ffffff;
+        transition: 355ms;
+    }
 
 
 /*---------------------Contenido del tab----------------*/
 
 .tab-pane {
     padding: 10px;
-    height: 80vh;
+    height: 91.5vh;
     width: 100%;
     background-color: #ffffff;
     border-radius: 10px;
@@ -208,6 +240,7 @@
 .tab-content {
     background-color: #ffffff;
     width: 99%;
+    height: 99%;
     border-radius: 10px;
     border-radius: 10px;
     border-top-left-radius: 0px;
