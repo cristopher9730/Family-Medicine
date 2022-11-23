@@ -10,6 +10,9 @@ namespace DTO
     {
         public int UsuarioId { get; set; }
         public string Nombre { get; set; }
+        public string PrimerApellido { get; set; }
+        public string SegundoApellido { get; set; }
+
         public string Correo { get; set; }
         public string Telefono { get; set; }
         public string Clave { get; set; }
