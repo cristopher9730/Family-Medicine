@@ -20,7 +20,7 @@
             <section class="contenedorDeNav">
                 <div class="mb-2 contenedorDeOpcionesDelNav A6 gap-1" style="width:100%">
                     <i class="fa-solid fa-arrow-left"></i>
-                    <a> @Html.ActionLink("Inicio", "DashboardUsuario", "DashboardUsuario", new { area = "" }, new { @class = "ContenedorDeNombre text-decoration-none" }) </a>
+                    <a> @Html.ActionLink("Inicio", "Index", "Home", new { area = "" }, new { @class = "ContenedorDeNombre text-decoration-none" }) </a>
                 </div>
                 <div class="mb-2 contenedorDeOpcionesDelNav A1 gap-1" style="width:100%">
                     <i class="fa-solid fa-user"></i>
@@ -89,7 +89,7 @@
 
                 <div class="mb-2 contenedorDeOpcionesDelNav gap-1" style="width:100%">
                     <i class="fa-solid fa-right-from-bracket"></i>
-                    <a> @Html.ActionLink("Cerrar Sesión", "Logout", "Home", new { area = "" }, new { @class = "ContenedorDeNombre text-decoration-none" }) </a>
+                    <a> @Html.ActionLink("Cerrar Sesión", "Logout", "IniciarSecion", new { area = "" }, new { @class = "ContenedorDeNombre text-decoration-none" }) </a>
                 </div>
 
 
