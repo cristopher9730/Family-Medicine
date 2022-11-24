@@ -19,12 +19,21 @@
 
     <h3 class="mb-3">Usuarios</h3>
 
-    <table class="table table-hover">
+    <div>
+        <form class="d-flex" style="padding: 10px">
+            <input class="form-control me-sm-2" type="text" id="searchTerm" onkeyup="doSearch()" placeholder="Buscar información">
+        </form>
+        <p class='noSearch hide'></p>
+    </div>
+
+    <table id="datos" class="table table-hover">
         <thead>
             <tr>
                 <th scope="col">Nombre</th>
-                <th scope="col">Cedula</th>
-                <th scope="col">Télefono</th>
+                <th scope="col">Apellido 1</th>
+                <th scope="col">Apellido 2</th>
+                <th scope="col">Cédula</th>
+                <th scope="col">Teléfono</th>
                 <th scope="col">Correo Electrónico</th>
                 <th scope="col">Estado</th>
 
@@ -32,21 +41,27 @@
         </thead>
         <tbody>
             <tr>
-                <th scope="row">Roberto Solano Vargas</th>
+                <td scope="row">Roberto</td>
+                <td>Solano</td>
+                <td>Vargas</td>
                 <td>105670854</td>
                 <td>88265471</td>
                 <td>rsolano@gmail.com</td>
                 <td>Activo</td>
             </tr>
             <tr>
-                <th scope="row">Hugo Valerio Campos</th>
-                <td>204560852</td>
-                <td>85642158</td>
-                <td>hvalerio@gmail.com</td>
+                <td>Hugo</td>
+                <td>Soto</td>
+                <td>Vargas</td>
+                <td>105670854</td>
+                <td>88265471</td>
+                <td>rsolano@gmail.com</td>
                 <td>Activo</td>
             </tr>
             <tr>
-                <th scope="row">Carolina Barrantes Soto</th>
+                <td scope="row">Carolina</td>
+                <td>Solano</td>
+                <td>Arguedas</td>
                 <td>308710689</td>
                 <td>64265187</td>
                 <td>carobarrantes@gmail.com</td>
@@ -57,3 +72,4 @@
 
 </div>
 
+<script src="~/Scripts/Views/DashboardAdminApp/Usuarios.js"></script>
