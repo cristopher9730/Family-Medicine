@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    internal class Membresia
+    internal class Rol
     {
     }
 }
