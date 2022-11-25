@@ -1,7 +1,7 @@
 ﻿
 @{
     ViewBag.Title = "DashAdminLabRegistrarExamen";
-    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+    /*Layout = "~/Views/Shared/_DashboardLayout.cshtml";*/
 }
 <style>
     /*Este style contien la clase de nav activo las opciones A1, A2, A3... etc estan en el layout*/
@@ -41,20 +41,107 @@
 
                 <div class="mb-3 w-100">
                     <div class="form-group has-validation w-100 d-flex flex-column">
-                        <label class="form-label" for="txtNombre" id="inputGroupPrepend">Tipo de Exámen</label>
+                        <label class="form-label" for="txtDescripción" id="inputGroupPrepend">Codigo del examen</label>
                         <input type="text" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
                         <div class="invalid-feedback">
-                            Por favor, ingrese el tipo del exámen
-                        </div>
-                    </div>
-                </div>
+                            Por favor, ingrese el codigo del exámen
+                            <div class="mt-2 mb-2">
+                                <script type='text/javascript'>
+                                    function addFields() {
+                                        // Generate a dynamic number of inputs
+                                        var number = document.getElementById("member").value;
+                                        // Get the element where the inputs will be added to
+                                        var container = document.getElementById("container");
+                                        // Remove every children it had before
+                                        while (container.hasChildNodes()) {
+                                            container.removeChild(container.lastChild);
+                                        }
+                                        for (i = 0; i < number; i++) {
+                                            container.appendChild(document.createTextNode("Componente #" + (i + 1) + "   "));
+                                            container.appendChild(document.createElement("br"));
 
-                <div class="mb-3 w-100">
-                    <div class="form-group has-validation w-100 d-flex flex-column">
-                        <label class="form-label" for="txtDescripción" id="inputGroupPrepend">Descripción del Exámen</label>
-                        <textarea type="text" class="form-control w-100" id="txtDescripcion" aria-describedby="inputGroupPrepend" rows="3" required></textarea>
-                        <div class="invalid-feedback">
-                            Por favor, ingrese la descripción del exámen
+                                            // Append a node with a random text
+                                            container.appendChild(document.createTextNode("Nombre del componente "));
+                                            // Create an <input> element, set its type and name attributes
+                                            var input = document.createElement("input");
+                                            input.type = "text";
+                                            input.name = "member" + i;
+                                            container.appendChild(input);
+                                            input.className = "form-group"
+
+                                            container.appendChild(document.createTextNode("Medida de referencia "));
+
+                                            var input = document.createElement("input");
+                                            input.type = "text";
+                                            input.name = "member" + i;
+                                            container.appendChild(input);
+                                            input.className = "form-group"
+                                            // Append a line break
+                                            container.appendChild(document.createElement("br"));
+                                        }
+                                    }
+                                </script>
+                                <p class="mt-2">Componentes</p>
+                                <input type="text" id="member" name="member" value="">Componentes <br />
+                                <a href="#" id="filldetails" onclick="addFields()">Fill Details</a>
+                                <div id="container" />
+                            </div>
+                            <div class="mt-2 mb-2">
+                                <script type='text/javascript'>
+                                    function addFields1() {
+                                        // Generate a dynamic number of inputs
+                                        var number = document.getElementById("member1").value;
+                                        // Get the element where the inputs will be added to
+                                        var container = document.getElementById("container1");
+                                        // Remove every children it had before
+                                        while (container.hasChildNodes()) {
+                                            container.removeChild(container.lastChild);
+                                        }
+                                        for (i = 0; i < number; i++) {
+                                            container.appendChild(document.createTextNode("Horario " + (i + 1) + "   "));
+                                            container.appendChild(document.createElement("br"));
+
+                                            // Append a node with a random text
+                                            container.appendChild(document.createTextNode("Dia de la semana"));
+                                            // Create an <input> element, set its type and name attributes
+                                            var input = document.createElement("input");
+                                            input.type = "text";
+                                            input.name = "member1" + i;
+                                            container.appendChild(input);
+                                            input.className = "form-group"
+
+                                            container.appendChild(document.createTextNode("Rango de horas"));
+
+                                            var input = document.createElement("input");
+                                            input.type = "text";
+                                            input.name = "member1" + i;
+                                            container.appendChild(input);
+                                            input.className = "form-group"
+
+                                            var input = document.createElement("input");
+                                            input.type = "text";
+                                            input.name = "member1" + i;
+                                            container.appendChild(input);
+                                            input.className = "form-group"
+
+                                            container.appendChild(document.createTextNode("Cupos por dia"));
+                                            // Create an <input> element, set its type and name attributes
+                                            var input = document.createElement("input");
+                                            input.type = "number";
+                                            input.name = "member1" + i;
+                                            container.appendChild(input);
+                                            input.className = "form-group"
+
+                                            // Append a line break
+                                            container.appendChild(document.createElement("br"));
+                                        }
+                                    }
+                                </script>
+                                <p class="mt-2">Componentes</p>
+                                <input type="text" id="member1" name="member1" value="">Horario de atencion<br />
+                                <a href="#" id="filldetails1" onclick="addFields1()">Fill Details</a>
+                                <div id="container1" />
+                            </div>
                         </div>
                     </div>
                 </div>
