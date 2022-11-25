@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    internal class Compra
+    public class Compra : EntidadBase
     {
+        public int ClienteId { get; set; }
+        public List<Productos> CantidadProdocutos { get; set; }
+        public Cita Cita { get; set; }
+        public string FechaPedido { get; set; }
+        public string Promociones { get; set; }
     }
 }
