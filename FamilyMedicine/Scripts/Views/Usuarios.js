@@ -1,5 +1,4 @@
 ﻿function Usuarios() {
-    var otp;
     this.InitView = function () {
         $("#btnRegistrarse").click(function () {
             var vista = new Usuarios();
@@ -10,6 +9,8 @@
     this.RegistrarUsuario = function () {
         var usuario = {}
         usuario.Nombre = $("#txtNombre").val();
+        usuario.PrimerApellido = $("#txtPrimerApellido").val();
+        usuario.SegundoApellido = $("#txtSegundoApellido").val();
         usuario.Correo = $("#txtCorreo").val();
         usuario.Telefono = $("#txtTelefono").val();
         usuario.Clave = $("#txtClave").val();
@@ -31,6 +32,7 @@
             hasContent: true
         }).done(function (info) {
             alert('Usuario Creado correctamente');
+            window.location.href = "/IniciarSesion/OTP";
         }
         ).fail(function (info) {
             alert('hubo un problema al crear usuario');
