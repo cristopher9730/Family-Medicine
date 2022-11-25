@@ -253,6 +253,7 @@
     <Content Include="img\tubo-icon.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include=".editorconfig" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -266,12 +267,15 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\Views\AgendarCitas\AgendarCitas.js" />
     <Content Include="Scripts\Views\carritoDeComprasjs.js" />
+    <Content Include="Scripts\Views\ConsumoApi\ApiCarrito.js" />
     <Content Include="Scripts\Views\dashboardUsuario\DashboardValidacion.js" />
+    <Content Include="Scripts\Views\jquery-3.2.1.js" />
     <Content Include="Scripts\Views\recuperarPass.js" />
     <Content Include="Scripts\Views\Usuarios.js" />
     <Content Include="Scripts\Views\dashboardUsuario\DashboardCitasFechas.js" />
     <Content Include="Scripts\Views\dashboardUsuario\DashboardCitasQR.js" />
     <Content Include="Scripts\Views\dashboardUsuario\DashboardCitasResultado.js" />
+    <Content Include="Scripts\Views\ValidacionGeneralParaLasPaginas.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -314,6 +318,7 @@
     <Content Include="Views\Busquedas\BusquedaExamen.cshtml" />
     <Content Include="Views\DashboardAdminLaboratorio\Cupones.cshtml" />
     <Content Include="Views\AgendarCitas\AgendarCitas.cshtml" />
+    <Content Include="Scripts\Views\ConsumoApi\jsconfig.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
