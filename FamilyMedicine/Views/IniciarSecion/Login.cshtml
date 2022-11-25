@@ -13,7 +13,7 @@
         <div class="mb-3 mt-3">
             <div class="input-group has-validation">
                 <span class="input-group-text" id="inputGroupPrepend"><i class="fa-solid faColor fa-user"></i></span>
-                <input type="email" name="Correo" class="form-control" placeholder="Correo eléctronico" id="validacionDeUsuario" aria-describedby="inputGroupPrepend" required>
+                <input type="email" name="Correo" pattern="^[a-zA-Z0-9._+-]+@("@")[a-zA-Z0-9.-]+\.[a-zA-Z]{2,9}$" class="form-control" placeholder="Correo eléctronico" id="validacionDeUsuario" aria-describedby="inputGroupPrepend" required>
                 <div class="invalid-feedback">
                     Por favor, ingrese su correo eléctronico
                 </div>

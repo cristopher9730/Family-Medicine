@@ -1,0 +1,25 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "nombre": "EBOLA",
+      "descripcion": "Evaluar el funcionamiento de diferentes órganos del cuerpo, como el hígado, los riñones, el corazón o la tiroides. Diagnosticar trastornos hemorrágicos o de la coagulación. Averiguar si el sistema inmunitario está teniendo problemas para combatir las infecciones",
+      "clinica": "CLINICOCR",
+      "precio": 500
+    },
+    {
+      "id": 2,
+      "nombre": "VIH",
+      "descripcion": "Evaluar el funcionamiento de diferentes órganos del cuerpo, como el hígado, los riñones, el corazón o la tiroides. Diagnosticar trastornos hemorrágicos o de la coagulación. Averiguar si el sistema inmunitario está teniendo problemas para combatir las infecciones",
+      "clinica": "CLINICOCR",
+      "precio": 500
+    },
+    {
+      "id": 3,
+      "nombre": "GRIPE AVIAR",
+      "descripcion": "Evaluar el funcionamiento de diferentes órganos del cuerpo, como el hígado, los riñones, el corazón o la tiroides. Diagnosticar trastornos hemorrágicos o de la coagulación. Averiguar si el sistema inmunitario está teniendo problemas para combatir las infecciones",
+      "clinica": "FARMACIAS SIMILARES",
+      "precio": 6666
+    }
+  ]
+}
