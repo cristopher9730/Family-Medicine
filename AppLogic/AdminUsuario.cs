@@ -44,7 +44,8 @@ namespace AppLogic
         public Usuario DevolverUnUsuario(Usuario usuarioId)
         {
             UsuarioCrudFactory usuarioCrud = new UsuarioCrudFactory();
-            return usuarioCrud.ListarUnUsuario(usuarioid);
+            //return usuarioCrud.ListarUnUsuario(usuarioid);
+            return null;
         }
 
     }
