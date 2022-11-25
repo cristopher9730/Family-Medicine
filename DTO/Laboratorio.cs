@@ -17,5 +17,6 @@ namespace DTO
         public string Correo { get; set; }
         public string Fotografias { get; set; }
         public string Estado { get; set; }
+
     }
 }

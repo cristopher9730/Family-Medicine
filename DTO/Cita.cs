@@ -16,5 +16,6 @@ namespace DTO
         public string Estado { get; set; }
         public int PersonaEmpleadoId { get; set; }
         public int PersonaClienteId { get; set; }
+
     }
 }
