@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    internal class Rol
+    public class Rol : EntidadBase
     {
+        public int RolId { get; set; }
+        public string NombreRol { get; set; }
+        public string Descripcion { get; set; }
     }
 }
