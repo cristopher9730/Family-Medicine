@@ -268,6 +268,7 @@
     <Content Include="Scripts\Views\AgendarCitas\AgendarCitas.js" />
     <Content Include="Scripts\Views\carritoDeComprasjs.js" />
     <Content Include="Scripts\Views\ConsumoApi\ApiCarrito.js" />
+    <Content Include="Scripts\Views\DashboardAdminApp\BusquedaEnTabla.js" />
     <Content Include="Scripts\Views\dashboardUsuario\DashboardValidacion.js" />
     <Content Include="Scripts\Views\jquery-3.2.1.js" />
     <Content Include="Scripts\Views\recuperarPass.js" />
@@ -288,7 +289,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\LandingViejo.cshtml" />
     <Content Include="Views\IniciarSecion\Login.cshtml" />
     <Content Include="Views\Registros\RegistrarCita.cshtml" />
     <Content Include="Views\Registros\RegistrarUsuario.cshtml" />
@@ -314,7 +315,7 @@
     <Content Include="Views\IniciarSecion\recuperarContrasenna.cshtml" />
     <Content Include="Views\CarritoDeCompras\CarritoDeCompras.cshtml" />
     <Content Include="Views\Laboratorios\CicloLab.cshtml" />
-    <Content Include="Views\Home\LandingPage.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Busquedas\BusquedaExamen.cshtml" />
     <Content Include="Views\DashboardAdminLaboratorio\Cupones.cshtml" />
     <Content Include="Views\AgendarCitas\AgendarCitas.cshtml" />

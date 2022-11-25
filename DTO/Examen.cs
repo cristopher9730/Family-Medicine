@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace DTO
 {
+    internal class Examen
     public class Examen
     {
         public int Identificador { get; set; }
