@@ -266,6 +266,7 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\Views\AgendarCitas\AgendarCitas.js" />
     <Content Include="Scripts\Views\carritoDeComprasjs.js" />
+    <Content Include="Scripts\Views\DashboardAdminApp\BusquedaEnTabla.js" />
     <Content Include="Scripts\Views\dashboardUsuario\DashboardValidacion.js" />
     <Content Include="Scripts\Views\recuperarPass.js" />
     <Content Include="Scripts\Views\Usuarios.js" />

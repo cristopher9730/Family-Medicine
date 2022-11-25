@@ -63,34 +63,41 @@
         </div>
     </div>
 
-    <table class="table table-hover">
+    <div>
+        <form class="d-flex" style="padding: 10px">
+            <input class="form-control me-sm-2" type="text" id="searchTerm" onkeyup="doSearch()" placeholder="Buscar información">
+        </form>
+        <p class='noSearch hide'></p>
+    </div>
+
+    <table id="datos" class="table table-hover">
         <thead>
             <tr>
                 <th scope="col">Nombre</th>
-                <th scope="col">Cedula Jurídica</th>
+                <th scope="col">Cédula jurídica</th>
                 <th scope="col">Página web</th>
-                <th scope="col">Télefono</th>
-                <th scope="col">Correo Electrónico</th>
+                <th scope="col">Teléfono</th>
+                <th scope="col">Correo electrónico</th>
 
             </tr>
         </thead>
         <tbody>
             <tr>
-                <th scope="row">Ciclo Lab</th>
+                <td scope="row">Ciclo Lab</td>
                 <td>3-101-342687</td>
                 <td>ciclolab.com</td>
                 <td>24468762</td>
                 <td>ciclolab@gmail.com</td>
             </tr>
             <tr>
-                <th scope="row">Alchemy Lab</th>
+                <td scope="row">Alchemy Lab</td>
                 <td>3-101-568725</td>
                 <td>alchemylab.com</td>
                 <td>24464587</td>
                 <td>alchemylab@gmail.com</td>
             </tr>
             <tr>
-                <th scope="row">The Lab</th>
+                <td scope="row">The Lab</td>
                 <td>3-101-597428</td>
                 <td>thelab.com</td>
                 <td>24462156</td>
@@ -101,3 +108,4 @@
 
 </div>
 
+<script src="~/Scripts/Views/DashboardAdminApp/BusquedaEnTabla.js"></script>
