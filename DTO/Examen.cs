@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    internal class Examen
     public class Examen
     {
         public int Identificador { get; set; }
