@@ -270,7 +270,6 @@
     <Content Include="Scripts\Views\ConsumoApi\ApiCarrito.js" />
     <Content Include="Scripts\Views\DashboardAdminApp\BusquedaEnTabla.js" />
     <Content Include="Scripts\Views\dashboardUsuario\DashboardValidacion.js" />
-    <Content Include="Scripts\Views\jquery-3.2.1.js" />
     <Content Include="Scripts\Views\recuperarPass.js" />
     <Content Include="Scripts\Views\Usuarios.js" />
     <Content Include="Scripts\Views\dashboardUsuario\DashboardCitasFechas.js" />
