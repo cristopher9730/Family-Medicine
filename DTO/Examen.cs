@@ -14,6 +14,6 @@ namespace DTO
         public string Descripcion { get; set; }
         public string Estado { get; set; }
         public int LaboratorioId { get; set; }
-
+        public string Descripccion { get; set; }
     }
 }

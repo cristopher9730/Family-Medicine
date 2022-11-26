@@ -213,6 +213,7 @@
     <Content Include="Content\css\carritoDeCompras.css" />
     <Content Include="Content\css\DashboardCss\DashboardCitas.css" />
     <Content Include="Content\css\DashboardCss\DashboardCliente.css" />
+    <Content Include="Content\css\DashboardCss\DashBoardExamenes.css" />
     <Content Include="Content\css\DashboardCss\DashBoardGeneral.css" />
     <Content Include="Content\css\forgotPassword.css" />
     <Content Include="Content\css\Laboratorios.css" />
@@ -268,7 +269,8 @@
     <Content Include="Scripts\Views\AgendarCitas\AgendarCitas.js" />
     <Content Include="Scripts\Views\carritoDeComprasjs.js" />
     <Content Include="Scripts\Views\ConsumoApi\ApiCarrito.js" />
-    <Content Include="Scripts\Views\DashboardAdminApp\BusquedaEnTabla.js" />
+    <Content Include="Scripts\Views\ControlAcciones.js" />
+    <Content Include="Scripts\Views\DashboardAdminApp\Usuarios.js" />
     <Content Include="Scripts\Views\dashboardUsuario\DashboardValidacion.js" />
     <Content Include="Scripts\Views\recuperarPass.js" />
     <Content Include="Scripts\Views\Usuarios.js" />
