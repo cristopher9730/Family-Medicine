@@ -10,9 +10,9 @@ namespace FamilyMedicine_API.Controllers
 {
     public class ExamenController : ApiController
     {
-        [HttpGet]
+        /*[HttpGet]
         public List<Examen> devolverExamen()
-        {                 
+        {
             Examen examen = new Examen()
             {
                 Identificador = 1,
@@ -23,6 +23,6 @@ namespace FamilyMedicine_API.Controllers
             };
 
             return examen;
-        }  
+        }  */
     }
 }
