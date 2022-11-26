@@ -268,7 +268,9 @@
     <Content Include="Scripts\Views\AgendarCitas\AgendarCitas.js" />
     <Content Include="Scripts\Views\carritoDeComprasjs.js" />
     <Content Include="Scripts\Views\ConsumoApi\ApiCarrito.js" />
+    <Content Include="Scripts\Views\ControlAcciones.js" />
     <Content Include="Scripts\Views\DashboardAdminApp\BusquedaEnTabla.js" />
+    <Content Include="Scripts\Views\DashboardAdminApp\Usuarios.js" />
     <Content Include="Scripts\Views\dashboardUsuario\DashboardValidacion.js" />
     <Content Include="Scripts\Views\recuperarPass.js" />
     <Content Include="Scripts\Views\Usuarios.js" />
