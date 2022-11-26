@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 namespace DTO
 {
     public class Examen : EntidadBase
-    public class Examen
     {
         public int ExamenId { get; set; }
         public string NombreExamen { get; set; }
