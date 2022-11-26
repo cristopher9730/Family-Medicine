@@ -13,5 +13,6 @@ namespace DTO
         public Cita Cita { get; set; }
         public string FechaPedido { get; set; }
         public string Promociones { get; set; }
+        public string Estado { get; set; }
     }
 }
