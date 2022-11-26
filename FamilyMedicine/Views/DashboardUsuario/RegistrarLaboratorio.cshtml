@@ -52,7 +52,7 @@
                 <div class="mb-3 w-100">
                     <div class="form-group has-validation w-100 d-flex flex-column">
                         <label class="form-label" for="txtCorreo" id="inputGroupPrepend">Correo Eléctronico</label>
-                        <input type="email" class="form-control w-100" id="txtCorreo" aria-describedby="inputGroupPrepend" required>
+                        <input type="email" pattern="^[a-zA-Z0-9._+-]+@("@")[a-zA-Z0-9.-]+\.[a-zA-Z]{2,9}$" class="form-control w-100" id="txtCorreo" aria-describedby="inputGroupPrepend" required>
                         <div class="invalid-feedback">
                             Por favor, ingrese el correo eléctronico
                         </div>
@@ -95,6 +95,16 @@
 
                 <div class="mb-3 w-100">
                     <div class="form-group has-validation w-100 d-flex flex-column">
+                        <label class="form-label" for="txtPagina" id="inputGroupPrepend">Razon social</label>
+                        <input type="text" class="form-control w-100" id="txtPagina" aria-describedby="inputGroupPrepend" required>
+                        <div class="invalid-feedback">
+                            Por favor, ingrese una razon social
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3 w-100">
+                    <div class="form-group has-validation w-100 d-flex flex-column">
                         <label class="form-label" for="txtRedSocial" id="inputGroupPrepend">Red Social</label>
                         <input type="text" class="form-control w-100" id="txtRedSocial" aria-describedby="inputGroupPrepend" required>
                         <div class="invalid-feedback">
@@ -103,7 +113,7 @@
                     </div>
                 </div>
 
-                
+
                 <div class="form-group row mt-3">
 
                     <label class="col-form-label" for="Foto" id="inputGroupPrepend">Seleccione el Logo</label>

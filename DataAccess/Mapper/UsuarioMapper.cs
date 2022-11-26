@@ -72,7 +72,11 @@ namespace DataAccess.Mapper
 
         public SqlOperation DeclaracionRecuperarPorId(int id)
         {
-            throw new NotImplementedException();
+            var operacion = new SqlOperation()
+            {
+                NombreProcedimiento = "SP_DevolverUsuario"
+            };
+            return operacion;
         }
 
         public SqlOperation DeclaracionRecuperarTodos()
@@ -100,9 +104,9 @@ namespace DataAccess.Mapper
                 Clave = row["Clave"].ToString(),
                 Foto = row["Foto"].ToString(),
                 Estado = row["Estado"].ToString(),
-                RolId = int.Parse(row["RolId"].ToString()),
-                LaboratorioId = int.Parse(row["LaboratorioId"].ToString()),
-                MembresiaId = int.Parse(row["MembresiaId"].ToString()),
+                RolId = int.Parse(row["LaboratorioId"].ToString()),
+                LaboratorioId = int.Parse(row["MembresiaId"].ToString()),
+                MembresiaId = int.Parse(row["RolId"].ToString()),
                 Codigo = row["Codigo"].ToString(),
             };
             return usuario;

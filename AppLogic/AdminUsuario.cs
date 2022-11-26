@@ -30,9 +30,12 @@ namespace AppLogic
             return "Usuario actualizado correctamente en base de datos";
         }
 
-        public string EliminarUsuario()
+        public string EliminarUsuario(Usuario usuario)
         {
-            return "TBD";
+            UsuarioCrudFactory usuarioCrud = new UsuarioCrudFactory();
+            usuarioCrud.Eliminar(usuario);
+            return "Usuario eliminado correctamente en base de datos";
+
         }
 
         public List<Usuario> DevolverTodosUsuarios()
@@ -44,8 +47,8 @@ namespace AppLogic
         public Usuario DevolverUnUsuario(Usuario usuarioId)
         {
             UsuarioCrudFactory usuarioCrud = new UsuarioCrudFactory();
-            //return usuarioCrud.ListarUnUsuario(usuarioid);
-            return null;
+             
+            return usuarioCrud.ListarPorID<Usuario>(usuarioId.UsuarioId);
         }
 
     }

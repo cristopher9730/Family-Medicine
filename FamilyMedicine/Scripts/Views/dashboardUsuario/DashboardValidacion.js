@@ -113,3 +113,55 @@ function verPassword() {
         x.type = "password";
     }
 }
+
+
+/* CAMBIOS DE IMAGENES GENERALES PARA PERFIL, LOGOS E IMAGENES DE LABORATORIO*/
+
+function showPreview(event) {
+    if (event.target.files.length > 0) {
+        var src = URL.createObjectURL(event.target.files[0]);
+        var preview = document.getElementById("file-ip-1-preview");
+        preview.src = src;
+        preview.style.display = "block";
+    }
+}
+
+/*----------------------------------DE LABORATORIO*/
+
+function showPreviewLab1(event) {
+    if (event.target.files.length > 0) {
+        var src = URL.createObjectURL(event.target.files[0]);
+        var preview = document.getElementById("labImg1");
+        preview.src = src;
+        preview.style.display = "block";
+    }
+}
+
+function showPreviewLab2(event) {
+    if (event.target.files.length > 0) {
+        var src = URL.createObjectURL(event.target.files[0]);
+        var preview = document.getElementById("labImg2");
+        preview.src = src;
+        preview.style.display = "block";
+    }
+}
+
+function showPreviewLab3(event) {
+    if (event.target.files.length > 0) {
+        var src = URL.createObjectURL(event.target.files[0]);
+        var preview = document.getElementById("labImg3");
+        preview.src = src;
+        preview.style.display = "block";
+    }
+}
+
+
+function showPreviewLab4(event) {
+    if (event.target.files.length > 0) {
+        var src = URL.createObjectURL(event.target.files[0]);
+        var preview = document.getElementById("labImg4");
+        preview.src = src;
+        preview.style.display = "block";
+    }
+}
+

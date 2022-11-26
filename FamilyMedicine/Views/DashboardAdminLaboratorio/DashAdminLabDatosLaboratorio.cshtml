@@ -12,15 +12,296 @@
         box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
         text-decoration: none;
         background-color: #f3f3f363;
-        ;
     }
 </style>
 
 <link rel="stylesheet" href="~/Content/css/DashboardCss/DashBoardGeneral.css" />
 <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+<link rel="stylesheet" href="~/Content/css/DashboardCss/DashboardCliente.css" />
 
-<div class="divContenedorDelDashTres">
-    <h4>Datos del Laboratorio</h4>
+
+<div class="divContenedorDelDashTab">
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" data-bs-toggle="tab" href="#home" aria-selected="true" role="tab">Informacion</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" data-bs-toggle="tab" href="#profile" aria-selected="false" tabindex="-1" role="tab">Imagenes</a>
+        </li>
+    </ul>
+
+    <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade show active" id="home" role="tabpanel">
+            <div class="ContenedorPequeDeDashboardTabOverFlow">
+                <section class="contenedorUsuario">
+                    <section class="cotenedorDeDatos">
+                        <div class="datoGeneralImagePeque">
+                            <img id="file-ip-1-previewPeque" src="~/Content/imgs/Labs/Lab3.jpg" class="imgDashBoardPeque" />
+                            <button data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="buttonHiddenEditorPeque"><i style="color: #ffffff" class="fa-solid fa-pen-to-square"></i></button>
+                        </div>
+
+                        <div class="datoGeneral">
+                            <h2 class="titleGeneral">Mi Perfil</h2>
+                            <section class="ContenedorDeDashboardFleROW" style="gap: 1px">
+                                <p class="tituloGeneralDos">Numero de laboratorio: </p>
+                                <span class="textoGeneralUSO">73</span>
+                            </section>
+
+                            <section class="ContenedorDeDashboardFleROW" style="gap: 1px">
+                                <p class="tituloGeneralDos">Nombre: </p>
+                                <span class="textoGeneralUSO">The Lab</span>
+                            </section>
+
+                            <section class="ContenedorDeDashboardFleROW" style="gap: 1px">
+                                <p class="tituloGeneralDos">Correo: </p>
+                                <span class="textoGeneralUSO">thelab@gmail.com</span>
+                            </section>
+
+                            <section class="ContenedorDeDashboardFleROW" style="gap: 1px">
+                                <p class="tituloGeneralDos">Telefono: </p>
+                                <span class="textoGeneralUSO">2224-2224</span>
+                            </section>
+
+                            <section class="ContenedorDeDashboardFleROW" style="gap: 1px">
+                                <p class="tituloGeneralDos">Cedula juridica: </p>
+                                <span class="textoGeneralUSO">3-123-895170</span>
+                            </section>
+
+                            <section class="ContenedorDeDashboardFleROW" style="gap: 1px">
+                                <p class="tituloGeneralDos">Pagina web: </p>
+                                <span class="textoGeneralUSO">thelab.com</span>
+                            </section>
+
+                            <section class="ContenedorDeDashboardFleROW" style="gap: 1px">
+                                <p class="tituloGeneralDos">Razon social: </p>
+                                <span class="textoGeneralUSO">Laboratorios para examenes</span>
+                            </section>
+
+                            <section class="ContenedorDeDashboardFleROW" style="gap: 1px">
+                                <p class="tituloGeneralDos">Red social: </p>
+                                <span class="textoGeneralUSO">@("@")thelab</span>
+                            </section>
+
+                            <button data-bs-toggle="modal" data-bs-target="#form" style="padding-top: 10px;" type="button" class="btn btn-primary mt-1">Editar</button>
+                        </div>
+                    </section>
+                </section>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="profile" role="tabpanel">
+            <div class="ContenedorPequeDeDashboardTabOverFlow">
+                <section class="ContenedorDeDashboardFleROW" style="gap: 10px 10px; margin: 10px auto;">
+                    <div class="datoGeneralImage">
+                        <img id="labImg1" src="~/Content/imgs/Labs/cicloLab/CL1.jpg" class="imgDashBoard" />
+                        <button data-bs-toggle="modal" data-bs-target="#staticBackdropLab1" class="buttonHiddenEditor"><i style="color: #ffffff" class="fa-solid fa-pen-to-square"></i></button>
+                    </div>
+
+                    <div class="datoGeneralImage">
+                        <img id="labImg2" src="~/Content/imgs/Labs/cicloLab/CL2.jpg" class="imgDashBoard" />
+                        <button data-bs-toggle="modal" data-bs-target="#staticBackdropLab2" class="buttonHiddenEditor"><i style="color: #ffffff" class="fa-solid fa-pen-to-square"></i></button>
+                    </div>
+                </section>
+
+                <section class="ContenedorDeDashboardFleROW" style="gap: 10px 10px; margin: 10px auto;">
+                    <div class="datoGeneralImage">
+                        <img id="labImg3" src="~/Content/imgs/Labs/cicloLab/CL3.jpg" class="imgDashBoard" />
+                        <button data-bs-toggle="modal" data-bs-target="#staticBackdropLab3" class="buttonHiddenEditor"><i style="color: #ffffff" class="fa-solid fa-pen-to-square"></i></button>
+                    </div>
+
+                    <div class="datoGeneralImage">
+                        <img id="labImg4" src="~/Content/imgs/Labs/cicloLab/CL4.png" class="imgDashBoard" />
+                        <button data-bs-toggle="modal" data-bs-target="#staticBackdropLab4" class="buttonHiddenEditor"><i style="color: #ffffff" class="fa-solid fa-pen-to-square"></i></button>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<section class="contenedorUsuario">
+    <!--====================================FORMULARIOS POPUS===================================-->
+    <!---------------------------------------FORM PARA EL CAMBIO DE IMAGEN---------------------------------->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Cambiar foto de perfil</h5>
+                </div>
+                <form>
+                    <div class="modal-body">
+                        <label for="formFileMultiple" class="form-label">Elije tu foto</label>
+                        <input type="file" id="file-ip-1" required class="form-control" accept="image/*" onchange="showPreview(event);">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Enviar</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!---------------------------------------FORM PARA EL CAMBIO DE IMAGEN lab------------------------------------>
+    <div class="modal fade" id="staticBackdropLab1" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Cambiar foto de laboratorio 1</h5>
+                </div>
+                <form>
+                    <div class="modal-body">
+                        <label for="formFileMultiple" class="form-label">Elije tu foto</label>
+                        <input type="file" id="file-ip-1" required class="form-control" accept="image/*" onclick="showPreviewLab1(event);">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Enviar</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="staticBackdropLab2" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Cambiar foto de laboratorio 2</h5>
+                </div>
+                <form>
+                    <div class="modal-body">
+                        <label for="formFileMultiple" class="form-label">Elije tu foto</label>
+                        <input type="file" id="file-ip-1" required class="form-control" accept="image/*" onchange="showPreviewLab2(event);">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Enviar</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="staticBackdropLab3" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Cambiar foto de laboratorio 3</h5>
+                </div>
+                <form>
+                    <div class="modal-body">
+                        <label for="formFileMultiple" class="form-label">Elije tu foto</label>
+                        <input type="file" id="file-ip-1" required class="form-control" accept="image/*" onchange="showPreviewLab3(event);">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Enviar</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="staticBackdropLab4" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Cambiar foto de laboratorio 4</h5>
+                </div>
+                <form>
+                    <div class="modal-body">
+                        <label for="formFileMultiple" class="form-label">Elije tu foto</label>
+                        <input type="file" id="file-ip-1" required class="form-control" accept="image/*"  onchange="showPreviewLab4(event);">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Enviar</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!---------------------------------FORMULARIO PARA EDITAR EL PERFIL-------------------------------------->
+    <div class="modal fade" id="form" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form data-aos="fade-up" class="was-validated mb-1 mt-1 formContenedorId" id="formContenedorId">
+                    <div>
+                        <label for="staticEmail" class=" tituloGeneralTres">Nombre laboratorio</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control formPupUp" id="" value="The lab">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="staticEmail" class=" tituloGeneralTres">Correo</label>
+                        <div class="col-sm-10">
+                            <input type="email" pattern="^[a-zA-Z0-9._+-]+@("@")[a-zA-Z0-9.-]+\.[a-zA-Z]{2,9}$" class="form-control formPupUp" id="" value="thelab@gmail.com">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="staticEmail" class=" tituloGeneralTres">Telefono</label>
+                        <div class="col-sm-10">
+                            <input type="tel" class="form-control formPupUp" id="" value="2224-2224">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="staticEmail" class=" tituloGeneralTres">Cedula juridica</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control formPupUp" id="" value="3-123-895170">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="staticEmail" class=" tituloGeneralTres">Razon social</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control formPupUp" id="" value="Laboratorios para examenes">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="staticEmail" class=" tituloGeneralTres">Pagina web</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control formPupUp" id="" value="thelab.com">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="staticEmail" class=" tituloGeneralTres">Red social</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control formPupUp" id="" value="@("@")thelab">
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button onclick="myfuncionGeneral()" type="button" class="btn btn-primary data-bs-dismiss=" modal" mt-1">Guardar</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="~/Scripts/Views/dashboardUsuario/DashboardValidacion.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://kit.fontawesome.com/e77fc0ae51.js" crossorigin="anonymous"></script>
+
+
+<!--
+<h4>Datos del Laboratorio</h4>
     <form class="form-group mt-2">
         <div class="form-group row mt-3">
             <label class="col-form-label" for="inputDefault">Nombre del Laboratorio</label>
@@ -84,10 +365,4 @@
         <button onclick="myfuncionGeneral()" type="submit" class="btn btn-primary mt-3">Guardar Cambios</button>
     </form>
 
-
-</div>
-
-
-<script src="~/Scripts/Views/dashboardUsuario/DashboardValidacion.js"></script>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="https://kit.fontawesome.com/e77fc0ae51.js" crossorigin="anonymous"></script>
+-->
