@@ -36,7 +36,7 @@ namespace AppLogic
             return "TBD";
         }
 
-        public List<Usuario> DevolverTodosExamenes()
+        public List<Examen> DevolverTodosExamenes()
         {
             ExamenCrudFactory examenCrud = new ExamenCrudFactory();
             return examenCrud.ListarTodos<Examen>();
