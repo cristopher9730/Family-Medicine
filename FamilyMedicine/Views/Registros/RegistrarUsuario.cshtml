@@ -10,18 +10,20 @@
 
 <section class="loginSectionContenedor mt-5 mb-5">
 
-    <form data-aos="fade-up"
+    <form data-aos="fade-up" name="formValidacion"
           data-aos-duration="3000" class="was-validated" id="formContenedorId">
         <h4>Ingrese sus Datos</h4>
-        <div class="mb-3 w-100">
-            <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
-                <label class="form-label" for="txtNombre" id="inputGroupPrepend">Nombre</label>
-                <input type="text" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
-                <div class="invalid-feedback">
-                    Por favor, ingrese su nombre completo
+
+        <section class="contenedorInputsRow">
+            <div class="mb-3 w-100 contenedorDeInputs">
+                <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
+                    <label class="form-label" for="txtNombre" id="inputGroupPrepend">Nombre</label>
+                    <input type="text" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
+                    <div class="invalid-feedback">
+                        Por favor, ingrese su nombre completo
+                    </div>
                 </div>
             </div>
-        </div>
 
         <div class="mb-3 w-100">
             <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
@@ -63,17 +65,18 @@
             </div>
         </div>
 
-        <div class="mb-3 w-100">
-            <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
-                <label class="form-label" for="txtClave" id="inputGroupPrepend">Contraseña</label>
-                <input type="password" class="form-control w-100" id="txtClave" aria-describedby="inputGroupPrepend" required>
-                <div class="invalid-feedback">
-                    Por favor, ingrese su contraseña
+            <div class="mb-3 w-100 contenedorDeInputs">
+                <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
+                    <label class="form-label" for="txtClave" id="inputGroupPrepend">Contraseña</label>
+                    <input type="password" class="form-control w-100" id="txtClave" aria-describedby="inputGroupPrepend" required>
+                    <div class="invalid-feedback">
+                        Por favor, ingrese su contraseña
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="mb-3 w-100">
+        <div class="mb-3 w-100 contenedorDeInputs">
             <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
                 <label class="form-label" for="Foto" id="inputGroupPrepend">Seleccione su foto de perfil</label>
                 <input class="form-control w-100" type="file" id="Foto" aria-describedby="inputGroupPrepend">
@@ -90,8 +93,10 @@
 
 </section>
 
-<script src="~/Scripts/jquery-3.4.1.js"></script>
+<script src="~/Scripts/Views/jquery-3.2.1.js"></script>
+<script src="~/Scripts/Views/ValidacionGeneralParaLasPaginas.js"></script>
 <script src="~/Scripts/Views/Usuarios.js"></script>
+<script src="~/Scripts/Views/dashboardUsuario/DashboardValidacion.js"></script>
 
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>

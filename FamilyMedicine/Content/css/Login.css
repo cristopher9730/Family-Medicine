@@ -1,4 +1,12 @@
-﻿.contenedorDeInput{
+﻿/*==============================================BOOSTRAP*/
+.align-items-center {
+    align-items: center !important;
+    width: 300px !important;
+    margin: 0 auto;
+}
+
+/*==============================================BOOSTRAP*/
+.contenedorDeInput{
     display: flex;
     flex-direction:row;
     gap: 10px 10px;
@@ -11,11 +19,11 @@
     align-items: center;
     gap: 10px 10px;
     
-    height: 85vh;
+    height: auto;
 }
 
 .imagenLogin {
-    max-width: 500px;
+    max-width: 350px;
 }
 
 
@@ -24,7 +32,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 450px;
+    width: 600px;
 }
 
 .input-group {
@@ -48,7 +56,6 @@
     flex: none !important;
     width: 1%;
     width: 500px;
-
 }
 
 .faColor {
@@ -68,4 +75,102 @@
     background-color: #f8f5f000;
     border: 1px solid #ced4da;
     border-radius: 0.375rem;
+}
+
+/*-------------------------------*/
+
+.contenedorInputsRow{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px 10px;
+}
+
+.contenedorDeInputs {
+    height: 90px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+
+
+
+
+/* Ventana de errores*/
+.modal_wrap {
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mensaje_modal {
+    background: #fff;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    width: 400px;
+    padding: 30px 20px 15px;
+}
+
+.contactanos {
+    text-align: center;
+    color: #444444;
+    font-weight: 900;
+}
+
+
+
+.mensaje_modal h3 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+    .mensaje_modal h3:after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: #C5C5C5;
+        margin: 10px 0px 15px;
+        font-family: "Montserrat", sans-serif;
+    }
+
+.mensaje_modal p {
+    font-size: 16px;
+    color: #444444;
+}
+
+    .mensaje_modal p:before {
+        content: "\f00d";
+        display: inline-block;
+        color: #E25151;
+        margin-right: 8px;
+    }
+
+#btnClose {
+    display: inline-block;
+    padding: 3px 10px;
+    margin-top: 10px;
+    background: #E25151;
+    color: #fff;
+    border: 2px solid #B14141;
+    cursor: pointer;
+    /*float: right; */
+}
+
+label {
+    color: #444444;
 }
