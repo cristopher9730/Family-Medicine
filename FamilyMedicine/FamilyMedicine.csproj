@@ -213,6 +213,7 @@
     <Content Include="Content\css\carritoDeCompras.css" />
     <Content Include="Content\css\DashboardCss\DashboardCitas.css" />
     <Content Include="Content\css\DashboardCss\DashboardCliente.css" />
+    <Content Include="Content\css\DashboardCss\DashBoardExamenes.css" />
     <Content Include="Content\css\DashboardCss\DashBoardGeneral.css" />
     <Content Include="Content\css\forgotPassword.css" />
     <Content Include="Content\css\Laboratorios.css" />
