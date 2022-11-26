@@ -102,7 +102,7 @@ namespace DataAccess.Mapper
                 Estado = row["Estado"].ToString(),
                 RolId = int.Parse(row["RolId"].ToString()),
                 LaboratorioId = int.Parse(row["LaboratorioId"].ToString()),
-                MembresiaId = int.Parse(row["MemebresiaId"].ToString()),
+                MembresiaId = int.Parse(row["MembresiaId"].ToString()),
                 Codigo = row["Codigo"].ToString(),
             };
             return usuario;

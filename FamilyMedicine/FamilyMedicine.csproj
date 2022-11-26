@@ -197,7 +197,7 @@
     <Compile Include="Controllers\DashboardAdminLaboratorioController.cs" />
     <Compile Include="Controllers\FooterController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\IniciarSecionController.cs" />
+    <Compile Include="Controllers\IniciarSesionController.cs" />
     <Compile Include="Controllers\LaboratoriosController.cs" />
     <Compile Include="Controllers\RegistrosController.cs" />
     <Compile Include="Global.asax.cs">
