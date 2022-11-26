@@ -21,13 +21,13 @@ namespace DataAccess.Mapper
 
             var cita = (Cita)entidadDTO;
 
-            operacion.AddVarcharParam("Fecha", cita.Fecha);
-            operacion.AddVarcharParam("Hora", cita.Hora);
+            operacion.AddIntergerParam("CitaId", cita.CitaId);
+            operacion.AddIntergerParam("ClienteId", cita.ClienteId);
             operacion.AddIntergerParam("LaboratorioId", cita.LaboratorioId);
-            operacion.AddIntergerParam("Cupo", cita.Cupo);
-            operacion.AddVarcharParam("Estado", cita.Codigo);
-            operacion.AddIntergerParam("PersonaEmpleadoId", cita.PersonaEmpleadoId);
-            operacion.AddIntergerParam("PersonaClienteId", cita.PersonaClienteId);
+            operacion.AddIntergerParam("ExamenId", cita.ExamenId);
+            operacion.AddDateParam("FechaExpiracion", cita.FechaExpiracion);
+            operacion.AddIntergerParam("HorarioId", cita.HorarioId);
+            operacion.AddVarcharParam("Estado", cita.Estado);
 
 
             return operacion;
@@ -43,13 +43,13 @@ namespace DataAccess.Mapper
 
             var cita = (Cita)entidadDTO;
 
-            operacion.AddVarcharParam("Fecha", cita.Fecha);
-            operacion.AddVarcharParam("Hora", cita.Hora);
+            operacion.AddIntergerParam("CitaId", cita.CitaId);
+            operacion.AddIntergerParam("ClienteId", cita.ClienteId);
             operacion.AddIntergerParam("LaboratorioId", cita.LaboratorioId);
-            operacion.AddIntergerParam("Cupo", cita.Cupo);
-            operacion.AddVarcharParam("Estado", cita.Codigo);
-            operacion.AddIntergerParam("PersonaEmpleadoId", cita.PersonaEmpleadoId);
-            operacion.AddIntergerParam("PersonaClienteId", cita.PersonaClienteId);
+            operacion.AddIntergerParam("ExamenId", cita.ExamenId);
+            operacion.AddDateParam("FechaExpiracion", cita.FechaExpiracion);
+            operacion.AddIntergerParam("HorarioId", cita.HorarioId);
+            operacion.AddVarcharParam("Estado", cita.Estado);
 
             return operacion;
         }
@@ -81,13 +81,12 @@ namespace DataAccess.Mapper
             var cita = new Cita()
             {
                 CitaId = int.Parse(row["CitaId"].ToString()),
-                Fecha = row["Fecha"].ToString(),
-                Hora = row["Hora"].ToString(),
+                ClienteId = int.Parse(row["ClienteId"].ToString()),
                 LaboratorioId = int.Parse(row["LaboratorioId"].ToString()),
-                Cupo = int.Parse(row["Cupo"].ToString()),
-                Estado = row["Estado"].ToString(),
-                PersonaEmpleadoId = int.Parse(row["PersonaEmpleadoId"].ToString()),
-                PersonaClienteId = int.Parse(row["PersonaClienteId"].ToString())
+                ExamenId = int.Parse(row["ExamenId"].ToString()),
+                FechaExpiracion = DateTime.Parse(row["FechaExpiracion"].ToString()),
+                HorarioId = int.Parse(row["HorarioId"].ToString()),
+                Estado = row["Estado"].ToString()
             };
             return cita;
         }
