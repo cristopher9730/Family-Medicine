@@ -22,8 +22,8 @@ namespace DataAccess.Mapper
             var usuario =(Usuario)entidadDTO;
 
             operacion.AddVarcharParam("Nombre", usuario.Nombre);
-            operacion.AddVarcharParam("PrimerApellido", usuario.PrimerApellido);
-            operacion.AddVarcharParam("SegundoApellido", usuario.SegundoApellido);
+            operacion.AddVarcharParam("Primer_Apellido", usuario.PrimerApellido);
+            operacion.AddVarcharParam("Segundo_Apellido", usuario.SegundoApellido);
             operacion.AddVarcharParam("Correo", usuario.Correo);
             operacion.AddVarcharParam("Telefono", usuario.Telefono);
             operacion.AddVarcharParam("Clave", usuario.Clave);
@@ -50,8 +50,8 @@ namespace DataAccess.Mapper
 
             operacion.AddIntergerParam("UsuarioId", usuario.UsuarioId);
             operacion.AddVarcharParam("Nombre", usuario.Nombre);
-            operacion.AddVarcharParam("PrimerApellido", usuario.PrimerApellido);
-            operacion.AddVarcharParam("SegundoApellido", usuario.SegundoApellido);
+            operacion.AddVarcharParam("Primer_Apellido", usuario.PrimerApellido);
+            operacion.AddVarcharParam("Segundo_Apellido", usuario.SegundoApellido);
             operacion.AddVarcharParam("Correo", usuario.Correo);
             operacion.AddVarcharParam("Telefono", usuario.Telefono);
             operacion.AddVarcharParam("Clave", usuario.Clave);
@@ -59,7 +59,7 @@ namespace DataAccess.Mapper
             operacion.AddVarcharParam("Estado", usuario.Estado);
             operacion.AddIntergerParam("RolId", usuario.RolId);
             operacion.AddIntergerParam("LaboratorioId", usuario.LaboratorioId);
-            operacion.AddIntergerParam("MemebresiaId", usuario.MembresiaId);
+            operacion.AddIntergerParam("MembresiaId", usuario.MembresiaId);
             operacion.AddVarcharParam("Codigo", usuario.Codigo);
 
             return operacion;
@@ -102,7 +102,7 @@ namespace DataAccess.Mapper
                 Estado = row["Estado"].ToString(),
                 RolId = int.Parse(row["RolId"].ToString()),
                 LaboratorioId = int.Parse(row["LaboratorioId"].ToString()),
-                MembresiaId = int.Parse(row["MemebresiaId"].ToString()),
+                MembresiaId = int.Parse(row["MembresiaId"].ToString()),
                 Codigo = row["Codigo"].ToString(),
             };
             return usuario;

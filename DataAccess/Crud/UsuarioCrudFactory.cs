@@ -78,7 +78,7 @@ namespace DataAccess.Crud
          */
         public int Login(Usuario oUsuario)
         {
-            oUsuario.Clave = ConvertirSha256(oUsuario.Clave);
+            //oUsuario.Clave = ConvertirSha256(oUsuario.Clave);
             var correo = oUsuario.Correo;
             var resultado = dao.ExectuteStoreProcedureWithQueryLogin(mapper.Login(oUsuario));
             //var objUsuario = new Usuario();

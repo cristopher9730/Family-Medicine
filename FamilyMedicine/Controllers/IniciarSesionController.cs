@@ -12,7 +12,7 @@ using System.Web.Mvc;
 
 namespace FamilyMedicine.Controllers
 {
-    public class IniciarSecionController : Controller
+    public class IniciarSesionController : Controller
     {
         /*
         Este metodo sirve para iniciar sesion. 

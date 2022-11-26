@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
+    public class Examen : EntidadBase
     public class Examen
     {
-        public int Identificador { get; set; }
-        public string Nombre { get; set; }
-        public string Descripccion { get; set; }
-        public string Laboratorio { get; set; }
-        public float Precio { get; set; }
+        public int ExamenId { get; set; }
+        public string NombreExamen { get; set; }
+        public int Precio { get; set; }
+        public string Descripcion { get; set; }
+        public string Estado { get; set; }
+        public int LaboratorioId { get; set; }
+
     }
 }

@@ -1,24 +1,15 @@
-﻿function Usuarios() {
+﻿function OTP() {
     this.InitView = function () {
         $("#btnRegistrarse").click(function () {
-            var vista = new Usuarios();
-            vista.RegistrarUsuario();
+            var vista = new OTP();
+            vista.ValidarOTP();
         });
     }
 
-    this.RegistrarUsuario = function () {
-        var usuario = {}
+    this.ValidarOTP = function () {
+        var otp = {}
         usuario.Nombre = $("#txtNombre").val();
-        usuario.PrimerApellido = $("#txtPrimerApellido").val();
-        usuario.SegundoApellido = $("#txtSegundoApellido").val();
-        usuario.Correo = $("#txtCorreo").val();
-        usuario.Telefono = $("#txtTelefono").val();
-        usuario.Clave = $("#txtClave").val();
-        usuario.Foto = "Foto";
-        usuario.Estado = "Pendiente";
-        usuario.RolId = 1;
-        usuario.MembresiaId = 0;
-        usuario.LaboratorioId = 0;
+       
 
         $.ajax({
             headers: {
@@ -38,12 +29,4 @@
             alert('hubo un problema al crear usuario');
         });
     }
-
-
 }
-
-$(document).ready(function () {
-    $.noConflict();
-    var view = new Usuarios();
-    view.InitView();
-});

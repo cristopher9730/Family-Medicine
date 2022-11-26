@@ -25,50 +25,45 @@
                 </div>
             </div>
 
-            <div class="mb-3 w-100 contenedorDeInputs">
-                <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
-                    <label class="form-label" for="txtNombre" id="inputGroupPrepend">Primer apellido</label>
-                    <input type="text" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
-                    <div class="invalid-feedback">
-                        Por favor, ingrese su nombre completo
-                    </div>
+        <div class="mb-3 w-100">
+            <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
+                <label class="form-label" for="txtPrimerApellido" id="inputGroupPrepend">Primer apellido</label>
+                <input type="text" class="form-control w-100" id="txtPrimerApellido" aria-describedby="inputGroupPrepend" required>
+                <div class="invalid-feedback">
+                    Por favor, ingrese su primer apellido
                 </div>
             </div>
-        </section>
+        </div>
 
-
-        <section class="contenedorInputsRow">
-            <div class="mb-3 w-100 contenedorDeInputs">
-                <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
-                    <label class="form-label" for="txtNombre" id="inputGroupPrepend">Segundo apellido</label>
-                    <input type="text" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
-                    <div class="invalid-feedback">
-                        Por favor, ingrese su nombre completo
-                    </div>
+        <div class="mb-3 w-100">
+            <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
+                <label class="form-label" for="txtSegundoApellido" id="inputGroupPrepend">Segundo apellido</label>
+                <input type="text" class="form-control w-100" id="txtSegundoApellido" aria-describedby="inputGroupPrepend" required>
+                <div class="invalid-feedback">
+                    Por favor, ingrese su segundo apellido
                 </div>
             </div>
+        </div>
 
-            <div class="mb-3 w-100 contenedorDeInputs">
-                <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
-                    <label class="form-label" for="txtCorreo" id="inputGroupPrepend">Correo Eléctronico</label>
-                    <input type="email" pattern="^[a-zA-Z0-9._+-]+@("@")[a-zA-Z0-9.-]+\.[a-zA-Z]{2,9}$" class="form-control w-100" name="emailForm" id="txtCorreo" aria-describedby="inputGroupPrepend" required>
-                    <div class="invalid-feedback">
-                        Por favor, ingrese su correo eléctronico
-                    </div>
+        <div class="mb-3 w-100">
+            <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
+                <label class="form-label" for="txtCorreo" id="inputGroupPrepend">Correo eléctronico</label>
+                <input type="email" pattern="^[a-zA-Z0-9._+-]+@("@")[a-zA-Z0-9.-]+\.[a-zA-Z]{2,9}$" class="form-control w-100" id="txtCorreo" aria-describedby="inputGroupPrepend" required>
+                <div class="invalid-feedback">
+                    Por favor, ingrese su correo eléctronico
                 </div>
             </div>
-        </section>
+        </div>
 
-        <section class="contenedorInputsRow">
-            <div class="mb-3 w-100 contenedorDeInputs">
-                <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
-                    <label class="form-label" for="txtTelefono" id="inputGroupPrepend">Teléfono</label>
-                    <input type="number" class="form-control w-100" id="txtTelefono" aria-describedby="inputGroupPrepend" required>
-                    <div class="invalid-feedback">
-                        Por favor, ingrese su teléfono
-                    </div>
+        <div class="mb-3 w-100">
+            <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
+                <label class="form-label" for="txtTelefono" id="inputGroupPrepend">Teléfono</label>
+                <input type="text" class="form-control w-100" id="txtTelefono" aria-describedby="inputGroupPrepend" required>
+                <div class="invalid-feedback">
+                    Por favor, ingrese su teléfono
                 </div>
             </div>
+        </div>
 
             <div class="mb-3 w-100 contenedorDeInputs">
                 <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
@@ -89,8 +84,7 @@
         </div>
 
 
-        <button type="submit" id="enviarRegistro" class="btn btn-primary">Crear Cuenta</button>
-        <!-- <a> @Html.ActionLink("Crear Cuenta", "OTP", "Home", new { area = "" }, new { @class = "btn btn-primary" })</a>-->
+        <button type="button" id="btnRegistrarse" class="btn btn-primary">Crear Cuenta</button>
     </form>
 
 
