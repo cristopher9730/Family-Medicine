@@ -49,7 +49,6 @@
     <Compile Include="Membresia.cs" />
     <Compile Include="Rol.cs" />
     <Compile Include="Promocion.cs" />
-    <Compile Include="Examen.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="EntidadBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
