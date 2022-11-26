@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    internal class Examen
+    public class Examen : EntidadBase
     {
+        public int ExamenId { get; set; }
+        public string NombreExamen { get; set; }
+        public int Precio { get; set; }
+        public string Descripcion { get; set; }
+        public string Estado { get; set; }
+        public int LaboratorioId { get; set; }
+
     }
 }
