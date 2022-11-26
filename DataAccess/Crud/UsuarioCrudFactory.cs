@@ -51,7 +51,7 @@ namespace DataAccess.Crud
 
             var listResult = dao.EjecProcedimientoAlmacenadoConConsulta(mapper.DeclaracionRecuperarTodos());
 
-            var dicc = new Dictionary<string, object>();
+            
 
             if (listResult.Count > 0)
             {
@@ -67,7 +67,23 @@ namespace DataAccess.Crud
 
         public override T ListarPorID<T>(int id)
         {
-            throw new NotImplementedException();
+    
+
+            var listResult = dao.EjecProcedimientoAlmacenadoConConsulta(mapper.DeclaracionRecuperarPorId(id));
+
+            var dicc = new Dictionary<string, object>();
+
+            if (listResult.Count > 0)
+            {
+                dicc = listResult[0];
+                var objsUsuario = mapper.ConstruirObjeto(dicc);
+                return(T)Convert.ChangeType(objsUsuario, typeof(T));
+
+
+            }
+            return default(T);
+          
+
         }
 
         /*

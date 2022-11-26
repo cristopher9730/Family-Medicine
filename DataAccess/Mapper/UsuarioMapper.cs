@@ -72,7 +72,11 @@ namespace DataAccess.Mapper
 
         public SqlOperation DeclaracionRecuperarPorId(int id)
         {
-            throw new NotImplementedException();
+            var operacion = new SqlOperation()
+            {
+                NombreProcedimiento = "SP_DevolverUsuario"
+            };
+            return operacion;
         }
 
         public SqlOperation DeclaracionRecuperarTodos()
