@@ -12,5 +12,6 @@ namespace DTO
         public string NombreMembresia { get; set; }
         public string Descripcion { get; set; }
         public int Cantidad { get; set; }
+        public string Estado { get; set; }
     }
 }

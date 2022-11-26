@@ -12,5 +12,6 @@ namespace DTO
         public string NombreActividad { get; set; }
         public int PersonaId { get; set; }
         public int Fecha { get; set; }
+        public string Estado { get; set; }
     }
 }
