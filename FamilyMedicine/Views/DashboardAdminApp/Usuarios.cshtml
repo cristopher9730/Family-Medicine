@@ -4,6 +4,9 @@
     Layout = "~/Views/Shared/_DashboardAdminAppLayout.cshtml";
 }
 
+<script src="~/Scripts/Views/DashboardAdminApp/Usuarios.js"></script>
+@*<script src="~/Scripts/Views/DashboardAdminApp/BusquedaEnTabla.js"></script>*@
+
 <style>
     /*Este style contien la clase de nav activo las opciones A1, A2, A3... etc estan en el layout*/
     .A2 {
@@ -30,46 +33,16 @@
         <thead>
             <tr>
                 <th scope="col">Nombre</th>
-                <th scope="col">Apellido 1</th>
-                <th scope="col">Apellido 2</th>
-                <th scope="col">Cédula</th>
+                <th scope="col">Primer apellido</th>
+                <th scope="col">Segundo apellido</th>
                 <th scope="col">Teléfono</th>
                 <th scope="col">Correo Electrónico</th>
                 <th scope="col">Estado</th>
 
             </tr>
         </thead>
-        <tbody>
-            <tr>
-                <td scope="row">Roberto</td>
-                <td>Solano</td>
-                <td>Vargas</td>
-                <td>105670854</td>
-                <td>88265471</td>
-                <td>rsolano@gmail.com</td>
-                <td>Activo</td>
-            </tr>
-            <tr>
-                <td>Hugo</td>
-                <td>Soto</td>
-                <td>Vargas</td>
-                <td>105670854</td>
-                <td>88265471</td>
-                <td>rsolano@gmail.com</td>
-                <td>Activo</td>
-            </tr>
-            <tr>
-                <td scope="row">Carolina</td>
-                <td>Solano</td>
-                <td>Arguedas</td>
-                <td>308710689</td>
-                <td>64265187</td>
-                <td>carobarrantes@gmail.com</td>
-                <td>Activo</td>
-            </tr>
-        </tbody>
     </table>
 
 </div>
 
-<script src="~/Scripts/Views/DashboardAdminApp/BusquedaEnTabla.js"></script>
+
