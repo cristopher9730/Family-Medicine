@@ -20,21 +20,11 @@
                 contentType: "application/json;charset=utf-8",
                 dataSrc: function (json) {
                     var json = { 'data': json }
-                    return json;
+                    return json.data;
                 }
             },
             columns: arrayColumnsData
         });
-
-        //Esto es para agregar los datos del API a la tabla html
-        $('#datos tbody').on('click', 'tr', function () {
-            var tr = $(this).closest('tr');
-            var data = $('#tblOfertas').DataTable().row(tr).data();
-
-            //Esto se necesita para mostrar el detalle de la tabla en el formulario
-            var controlAcciones = new ControlAcciones();
-            controlAcciones.BindFields("frmOfertas", data);
-        })
     }
 
 }
