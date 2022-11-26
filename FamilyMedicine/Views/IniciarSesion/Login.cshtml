@@ -9,7 +9,7 @@
 
 <section class="loginSectionContenedor">
 
-    <form action="@Url.Action("Login","IniciarSecion")" method="post" id="formContenedorId" class="was-validated" data-aos="fade-up" data-aos-duration="3000">
+    <form action="@Url.Action("Login","IniciarSesion")" method="post" id="formContenedorId" class="was-validated" data-aos="fade-up" data-aos-duration="3000">
         <div class="mb-3 mt-3">
             <div class="input-group has-validation">
                 <span class="input-group-text" id="inputGroupPrepend"><i class="fa-solid faColor fa-user"></i></span>
@@ -43,7 +43,7 @@
             <a> @Html.ActionLink("Crear cuenta", "RegistrarUsuario", "Registros", new { area = "" }, new { @class = "nav-link text-primary" }) </a>
         </div>
         <div class="d-flex flex-row mb-3">
-            <a> @Html.ActionLink("Recuperar Contraseña", "forgotPassword", "IniciarSecion", new { area = "" }, new { @class = "nav-link text-primary" }) </a>
+            <a> @Html.ActionLink("Recuperar Contraseña", "forgotPassword", "IniciarSesion", new { area = "" }, new { @class = "nav-link text-primary" }) </a>
         </div>
         <button type="submit" class="btn btn-primary login_btn">Iniciar sesión</button>
     </form>

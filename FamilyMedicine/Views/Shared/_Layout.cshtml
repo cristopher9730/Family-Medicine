@@ -42,11 +42,11 @@
                         <li class="nav-item">
                             @if (Session["usuario"] != null)
                             {
-                                <a> @Html.ActionLink("Mi Cuenta", "Login", "IniciarSecion", new { area = "" }, new { @class = "nav-link" }) </a>
+                                <a> @Html.ActionLink("Mi Cuenta", "Login", "IniciarSesion", new { area = "" }, new { @class = "nav-link" }) </a>
                             }
                             else
                             {
-                                <a> @Html.ActionLink("Iniciar Sesión", "Login", "IniciarSecion", new { area = "" }, new { @class = "nav-link" }) </a>
+                                <a> @Html.ActionLink("Iniciar Sesión", "Login", "IniciarSesion", new { area = "" }, new { @class = "nav-link" }) </a>
                             }
 
                         </li>
