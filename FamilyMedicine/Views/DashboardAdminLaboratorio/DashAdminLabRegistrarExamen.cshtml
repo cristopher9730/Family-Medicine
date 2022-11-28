@@ -12,6 +12,7 @@
     }
 </style>
 
+<link rel="stylesheet" href="~/Content/css/DashboardCss/DashboardCitas.css" />
 <link rel="stylesheet" href="~/Content/css/Login.css" />
 <link rel="stylesheet" href="~/Content/css/DashboardCss/DashBoardGeneral.css" />
 <link rel="stylesheet" href="~/Content/css/DashboardCss/DashBoardExamenes.css" />
@@ -23,10 +24,10 @@
             <a class="nav-link" data-bs-toggle="tab" href="#home" aria-selected="true" role="tab">Registrar Examen</a>
         </li>
         <li class="nav-item" role="presentation">
-            <a class="nav-link" data-bs-toggle="tab" href="#componentes" aria-selected="false" tabindex="-1" role="tab">Componentes</a>
+            <a class="nav-link" data-bs-toggle="tab" href="#componentes" aria-selected="false" tabindex="-1" role="tab">Registrar componentes</a>
         </li>
         <li class="nav-item" role="presentation">
-            <a class="nav-link" data-bs-toggle="tab" href="#horarios" aria-selected="false" tabindex="-1" role="tab">Horarios</a>
+            <a class="nav-link" data-bs-toggle="tab" href="#horarios" aria-selected="false" tabindex="-1" role="tab">Registrar horarios</a>
         </li>
         <li class="nav-item" role="presentation">
             <a class="nav-link" data-bs-toggle="tab" href="#profile" aria-selected="false" tabindex="-1" role="tab">Publicar Resultados</a>
@@ -34,169 +35,275 @@
     </ul>
 
     <div id="myTabContent" class="tab-content" style="min-width:345px">
+
+
+        <!---------Registrar Examen---------------------------------------------------->
+
         <div class="tab-pane fade show active" id="home" role="tabpanel">
-            <h4 style="text-align: center;">Registrar Exámen</h4>
-            <hr />
+            <section class="ContenedorDeDashboardFleROWEXAMEN" style="gap: 1px">
 
-            <form class="was-validated formularioContenedorDeDashboard">
-                <div class="mb-3 w-100 contenedorDeInputs">
-                    <div class="form-group has-validation w-100 d-flex flex-column">
-                        <label class="form-label" for="txtNombre" id="inputGroupPrepend">Nombre del Exámen</label>
-                        <input type="text" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
-                        <div class="invalid-feedback">
-                            Por favor, ingrese el nombre del exámen
+                <form class="was-validated formularioContenedorDeDashboard">
+
+                    <div class="mb-3 w-100 contenedorDeInputs">
+                        <div class="form-group has-validation w-100 d-flex flex-column">
+                            <label class="form-label" for="txtNombre" id="inputGroupPrepend">Nombre del Exámen</label>
+                            <input type="text" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
+                            <div class="invalid-feedback">
+                                Por favor, ingrese el nombre del exámen
+                            </div>
                         </div>
+                    </div>
+
+                    <div class="mb-3 w-100 contenedorDeInputs">
+                        <div class="form-group has-validation w-100 d-flex flex-column">
+                            <label class="form-label" for="txtNombre" id="inputGroupPrepend">Nombre interno</label>
+                            <input type="text" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
+                            <div class="invalid-feedback">
+                                Por favor, ingrese el nombre interno
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3 w-100" style="height: 135px;">
+                        <div class="form-group has-validation w-100 d-flex flex-column">
+                            <label class="form-label" for="txtDescripción" id="inputGroupPrepend">Descripción del Exámen</label>
+                            <textarea type="text" class="form-control w-100" id="txtDescripcion" aria-describedby="inputGroupPrepend" rows="3" required></textarea>
+                            <div class="invalid-feedback">
+                                Por favor, ingrese la descripción del exámen
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3 w-100 contenedorDeInputs">
+                        <div class="form-group has-validation w-100 d-flex flex-column">
+                            <label class="form-label" for="txtNombre" id="inputGroupPrepend">Precio</label>
+                            <input type="number" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
+                            <div class="invalid-feedback">
+                                Por favor, ingrese el precio
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="myfuncionGeneralRegistrar()" type="submit" class="btn btn-primary">Registrar</button>
+                </form>
+
+                <div>
+                    <div>
+                        <form class="d-flex" style="padding: 10px">
+                            <input class="form-control me-sm-2" type="text" id="searchTerm" onkeyup="doSearch()" placeholder="Buscar informacion">
+                        </form>
+                        <p class='noSearch hide'></p>
+                    </div>
+
+
+                    <div class="ContenedorDeDashboardTabOverFlow">
+                        <table id="datos" class="table table-hover" style=" min-width: 55vw; border-radius: 10px;">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Nombre de examen</th>
+                                    <th scope="col">Nombre interno</th>
+                                    <th scope="col">Precio</th>
+                                    <th scope="col">Ventas totales</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td scope="row">Examen de sangre</td>
+                                    <td>ES-0315</td>
+                                    <td id="precio">₡22000</td>
+                                    <td>410</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 
-                <div class="mb-3 w-100 contenedorDeInputs">
-                    <div class="form-group has-validation w-100 d-flex flex-column">
-                        <label class="form-label" for="txtNombre" id="inputGroupPrepend">Nombre interno</label>
-                        <input type="text" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
-                        <div class="invalid-feedback">
-                            Por favor, ingrese el nombre interno
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mb-3 w-100" style="height: 135px;">
-                    <div class="form-group has-validation w-100 d-flex flex-column">
-                        <label class="form-label" for="txtDescripción" id="inputGroupPrepend">Descripción del Exámen</label>
-                        <textarea type="text" class="form-control w-100" id="txtDescripcion" aria-describedby="inputGroupPrepend" rows="3" required></textarea>
-                        <div class="invalid-feedback">
-                            Por favor, ingrese la descripción del exámen
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mb-3 w-100 contenedorDeInputs">
-                    <div class="form-group has-validation w-100 d-flex flex-column">
-                        <label class="form-label" for="txtNombre" id="inputGroupPrepend">Precio</label>
-                        <input type="number" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
-                        <div class="invalid-feedback">
-                            Por favor, ingrese el precio
-                        </div>
-                    </div>
-                </div>
-                <button onclick="myfuncionGeneralRegistrar()" type="submit" class="btn btn-primary">Registrar</button>
-            </form>
+            </section>
         </div>
+
+        <!---------Registrar componentes---------------------------------------------------->
 
         <div class="tab-pane fade show active" id="componentes" role="tabpanel">
-            <h4 style="text-align: center;">Registrar componente</h4>
-            <hr />
 
-            <form class="was-validated formularioContenedorDeDashboard">
-                <div class="mb-3 w-100 contenedorDeInputs">
-                    <div class="form-group has-validation w-100 d-flex flex-column">
-                        <label class="form-label" for="txtNombre" id="inputGroupPrepend">Nombre del componente</label>
-                        <input type="text" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
-                        <div class="invalid-feedback">
-                            Por favor, ingrese el nombre del componente
+            <section class="ContenedorDeDashboardFleROWEXAMEN" style="gap: 1px">
+                <form class="was-validated formularioContenedorDeDashboard">
+                    <div class="mb-3 w-100 contenedorDeInputs">
+                        <div class="form-group has-validation w-100 d-flex flex-column">
+                            <label class="form-label" for="txtNombre" id="inputGroupPrepend">Nombre del componente</label>
+                            <input type="text" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
+                            <div class="invalid-feedback">
+                                Por favor, ingrese el nombre del componente
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="mb-3 w-100 contenedorDeInputs">
-                    <div class="form-group has-validation w-100 d-flex flex-column">
-                        <label class="form-label" for="txtNombre" id="inputGroupPrepend">Simbolo de medida</label>
-                        <input type="text" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
-                        <div class="invalid-feedback">
-                            Por favor, ingrese el simbolo de medida
+                    <div class="mb-3 w-100 contenedorDeInputs">
+                        <div class="form-group has-validation w-100 d-flex flex-column">
+                            <label class="form-label" for="txtNombre" id="inputGroupPrepend">Simbolo de medida</label>
+                            <input type="text" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
+                            <div class="invalid-feedback">
+                                Por favor, ingrese el simbolo de medida
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="mb-3 w-100 contenedorDeInputs">
-                    <div class="form-group has-validation w-100 d-flex flex-column">
-                        <label class="form-label" for="txtNombre" id="inputGroupPrepend">Medidad de referencia</label>
-                        <input type="number" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
-                        <div class="invalid-feedback">
-                            Ingrese la medidad de referencia
+                    <div class="mb-3 w-100 contenedorDeInputs">
+                        <div class="form-group has-validation w-100 d-flex flex-column">
+                            <label class="form-label" for="txtNombre" id="inputGroupPrepend">Medidad de referencia</label>
+                            <input type="number" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
+                            <div class="invalid-feedback">
+                                Ingrese la medidad de referencia
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="mb-3 w-100 contenedorDeInputs">
-                    <div class="form-group has-validation w-100 d-flex flex-column">
-                        <label class="form-label" for="txtNombre" id="inputGroupPrepend">ID</label>
-                        <input type="number" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
-                        <div class="invalid-feedback">
-                            Por favor, ingrese la ID de examen
+                    <div class="mb-3 w-100 contenedorDeInputs">
+                        <div class="form-group has-validation w-100 d-flex flex-column">
+                            <label class="form-label" for="txtNombre" id="inputGroupPrepend">ID</label>
+                            <input type="number" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
+                            <div class="invalid-feedback">
+                                Por favor, ingrese la ID de examen
+                            </div>
                         </div>
                     </div>
+                    <button onclick="myfuncionGeneralRegistrar()" type="submit" class="btn btn-primary">Registrar</button>
+                </form>
+
+                <div>
+                    <div>
+                        <form class="d-flex" style="padding: 10px">
+                            <input class="form-control me-sm-2" type="text" id="searchTermDos" onkeyup="doSearchDos()" placeholder="Buscar informacion">
+                        </form>
+                        <p class='noSearch hide'></p>
+                    </div>
+
+
+                    <div class="ContenedorDeDashboardTabOverFlow">
+                        <table id="datosDos" class="table table-hover" style=" min-width: 55vw; border-radius: 10px;">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Nombre del componente</th>
+                                    <th scope="col">Simbolo de medida</th>
+                                    <th scope="col">Medidad de referencia</th>
+                                    <th scope="col">ID</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td scope="row">Sangre</td>
+                                    <td>SL/%</td>
+                                    <td>SL/%</td>
+                                    <td>ES-0315</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-                <button onclick="myfuncionGeneralRegistrar()" type="submit" class="btn btn-primary">Registrar</button>
-            </form>
+            </section>
         </div>
+
+
+        <!---------Registrar horarios---------------------------------------------------->
 
         <div class="tab-pane fade show active" id="horarios" role="tabpanel">
-            <h4 style="text-align: center;">Registrar horario</h4>
-            <hr />
+            <section class="ContenedorDeDashboardFleROWEXAMEN" style="gap: 1px">
 
-            <form class="was-validated formularioContenedorDeDashboard">
-                <div class=" w-100 contenedorDeInputs">
-                    <div class="form-group has-validation w-100 d-flex flex-column">
-                        <label class="form-label" for="txtNombre" id="inputGroupPrepend">Dia de cita</label>
-                        <input type="date" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
-                        <div class="invalid-feedback">
-                            Por favor, ingrese el dia de cita
+                <form class="was-validated formularioContenedorDeDashboard">
+                    <div class=" w-100 contenedorDeInputs">
+                        <div class="form-group has-validation w-100 d-flex flex-column">
+                            <label class="form-label" for="txtNombre" id="inputGroupPrepend">Dia de cita</label>
+                            <input type="date" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
+                            <div class="invalid-feedback">
+                                Por favor, ingrese el dia de cita
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class=" w-100 contenedorDeInputs">
-                    <div class="form-group has-validation w-100 d-flex flex-column">
-                        <label class="form-label" for="txtNombre" id="inputGroupPrepend">Hora de inicio</label>
-                        <input type="time" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
-                        <div class="invalid-feedback">
-                            Por favor, ingrese la hora de inicio
+                    <div class=" w-100 contenedorDeInputs">
+                        <div class="form-group has-validation w-100 d-flex flex-column">
+                            <label class="form-label" for="txtNombre" id="inputGroupPrepend">Hora de inicio</label>
+                            <input type="time" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
+                            <div class="invalid-feedback">
+                                Por favor, ingrese la hora de inicio
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class=" w-100 contenedorDeInputs">
-                    <div class="form-group has-validation w-100 d-flex flex-column">
-                        <label class="form-label" for="txtNombre" id="inputGroupPrepend">Hora final</label>
-                        <input type="time" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
-                        <div class="invalid-feedback">
-                            Por favor, ingrese la hora de final
+                    <div class=" w-100 contenedorDeInputs">
+                        <div class="form-group has-validation w-100 d-flex flex-column">
+                            <label class="form-label" for="txtNombre" id="inputGroupPrepend">Hora final</label>
+                            <input type="time" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
+                            <div class="invalid-feedback">
+                                Por favor, ingrese la hora de final
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class=" w-100 contenedorDeInputs">
-                    <div class="form-group has-validation w-100 d-flex flex-column">
-                        <label class="form-label" for="txtNombre" id="inputGroupPrepend">ID de examen</label>
-                        <input type="number" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
-                        <div class="invalid-feedback">
-                            Por favor, ingrese la ID de examen
+                    <div class=" w-100 contenedorDeInputs">
+                        <div class="form-group has-validation w-100 d-flex flex-column">
+                            <label class="form-label" for="txtNombre" id="inputGroupPrepend">ID de examen</label>
+                            <input type="number" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
+                            <div class="invalid-feedback">
+                                Por favor, ingrese la ID de examen
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class=" w-100 contenedorDeInputs">
-                    <div class="form-group has-validation w-100 d-flex flex-column">
-                        <label class="form-label" for="txtNombre" id="inputGroupPrepend">Cupos disponibles</label>
-                        <input type="number" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
-                        <div class="invalid-feedback">
-                            Por favor, ingrese la ID de examen
+                    <div class=" w-100 contenedorDeInputs">
+                        <div class="form-group has-validation w-100 d-flex flex-column">
+                            <label class="form-label" for="txtNombre" id="inputGroupPrepend">Cupos disponibles</label>
+                            <input type="number" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
+                            <div class="invalid-feedback">
+                                Por favor, ingrese la ID de examen
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class=" w-100 contenedorDeInputs">
-                    <div class="form-group has-validation w-100 d-flex flex-column">
-                        <label class="form-label" for="txtNombre" id="inputGroupPrepend">ID de laboratorio</label>
-                        <input type="number" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
-                        <div class="invalid-feedback">
-                            Por favor, ingrese la ID de laboratorio
+                    <div class=" w-100 contenedorDeInputs">
+                        <div class="form-group has-validation w-100 d-flex flex-column">
+                            <label class="form-label" for="txtNombre" id="inputGroupPrepend">ID de laboratorio</label>
+                            <input type="number" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
+                            <div class="invalid-feedback">
+                                Por favor, ingrese la ID de laboratorio
+                            </div>
                         </div>
                     </div>
+                    <button onclick="myfuncionGeneralRegistrar()" type="submit" class="btn btn-primary">Registrar</button>
+                </form>
+
+                <div>
+                    <div>
+                        <form class="d-flex" style="padding: 10px">
+                            <input class="form-control me-sm-2" type="text" id="searchTermTres" onkeyup="doSearchTres()" placeholder="Buscar informacion">
+                        </form>
+                        <p class='noSearch hide'></p>
+                    </div>
+
+
+                    <div class="ContenedorDeDashboardTabOverFlow">
+                        <table id="datosTres" class="table table-hover" style=" min-width: 55vw; border-radius: 10px;">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Nombre de examen</th>
+                                    <th scope="col">Nombre interno</th>
+                                    <th scope="col">Precio</th>
+                                    <th scope="col">Ventas totales</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td scope="row">Examen de sangre</td>
+                                    <td>ES-0315</td>
+                                    <td id="precio">₡22000</td>
+                                    <td>410</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-                <button onclick="myfuncionGeneralRegistrar()" type="submit" class="btn btn-primary">Registrar</button>
-            </form>
+            </section>
         </div>
+
+        <!---------Publicar Resultados---------------------------------------------------->
 
         <div class="tab-pane fade" id="profile" role="tabpanel">
             <div class="tab-pane fade show active" id="home" role="tabpanel">
@@ -294,3 +401,7 @@
     </div>
 
 </div>
+
+
+
+<script src="~/Scripts/Views/dashboardUsuario/DashboardCitasResultado.js"></script>
