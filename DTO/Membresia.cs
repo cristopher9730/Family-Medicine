@@ -12,6 +12,9 @@ namespace DTO
         public string NombreMembresia { get; set; }
         public string Descripcion { get; set; }
         public int Cantidad { get; set; }
+        public float Precio { get; set; }
         public string Estado { get; set; }
+
+    /*[NombreMemebresia] [varchar] (100) NULL, *****/
     }
 }
