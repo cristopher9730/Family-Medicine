@@ -13,5 +13,6 @@ namespace DTO
         public double Descuento { get; set; }
         public int LaboratorioId { get; set; }
         public string EstadoPromocion { get; set; }
+        public int UsuarioId { get; set; }
     }
 }
