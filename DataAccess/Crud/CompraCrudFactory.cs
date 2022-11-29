@@ -9,20 +9,20 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Crud
 {
-    public class CitaCrudFactory : CrudFactory
+    public class CompraCrudFactory : CrudFactory
     {
-        private CitaMapper mapper;
+        private CompraMapper mapper;
 
-        public CitaCrudFactory() : base()
+        public CompraCrudFactory() : base()
         {
-            mapper = new CitaMapper();
+            mapper = new CompraMapper();
             dao = SqlDao.ObtenerInstancia();
         }
 
         public override void Crear(EntidadBase entidadDto)
         {
-            var cita = (Cita)entidadDto;
-            var sqlOperation = mapper.DeclaracionRecuperar(cita);
+            var compra = (Compra)entidadDto;
+            var sqlOperation = mapper.DeclaracionRecuperar(compra);
 
             dao.EjecProcedimientoAlmacenado(sqlOperation);
 
@@ -30,16 +30,16 @@ namespace DataAccess.Crud
 
         public override void Actualizar(EntidadBase entidadDto)
         {
-            var cita = (Cita)entidadDto;
-            var sqlOperation = mapper.DeclaracionActualizar(cita);
+            var compra = (Compra)entidadDto;
+            var sqlOperation = mapper.DeclaracionActualizar(compra);
 
             dao.EjecProcedimientoAlmacenado(sqlOperation);
         }
 
         public override void Eliminar(EntidadBase entidadDto)
         {
-            var cita = (Cita)entidadDto;
-            var sqlOperation = mapper.DeclaracionBorrar(cita);
+            var compra = (Compra)entidadDto;
+            var sqlOperation = mapper.DeclaracionBorrar(compra);
 
             dao.EjecProcedimientoAlmacenado(sqlOperation);
         }
@@ -54,9 +54,9 @@ namespace DataAccess.Crud
 
             if (listResult.Count > 0)
             {
-                var objsCita = mapper.ConstruirObjetos(listResult);
+                var objsCompra = mapper.ConstruirObjetos(listResult);
 
-                foreach (var c in objsCita)
+                foreach (var c in objsCompra)
                 {
                     list.Add((T)Convert.ChangeType(c, typeof(T)));
                 }
@@ -75,8 +75,8 @@ namespace DataAccess.Crud
             if (listResult.Count > 0)
             {
                 dicc = listResult[0];
-                var objsCita = mapper.ConstruirObjeto(dicc);
-                return (T)Convert.ChangeType(objsCita, typeof(T));
+                var objsCompra = mapper.ConstruirObjeto(dicc);
+                return (T)Convert.ChangeType(objsCompra, typeof(T));
 
 
             }
