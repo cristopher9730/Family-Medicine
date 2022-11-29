@@ -26,7 +26,7 @@ namespace AppLogic
 
         public string EditarRol(Rol rol)
         {
-            UsuarioCrudFactory rolCrud = new RolCrudFactory();
+            RolCrudFactory rolCrud = new RolCrudFactory();
             rolCrud.Actualizar(rol);
             return "Rol actualizado correctamente en base de datos";
         }
@@ -36,7 +36,7 @@ namespace AppLogic
             return "TBD";
         }
 
-        public List<Usuario> DevolverTodosRoles()
+        public List<Rol> DevolverTodosRoles()
         {
             RolCrudFactory rolCrud = new RolCrudFactory();
             return rolCrud.ListarTodos<Rol>();
