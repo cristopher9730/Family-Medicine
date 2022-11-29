@@ -8,11 +8,12 @@ namespace DTO
 {
     public class Compra : EntidadBase
     {
-        public int ClienteId { get; set; }
-        public List<Examen> CantidadProdocutos { get; set; }
-        public Cita Cita { get; set; }
-        public string FechaPedido { get; set; }
-        public string Promociones { get; set; }
+        public int CompraId { get; set; }
+        public int UsuarioId { get; set; }
+        public int CitaId { get; set; }
+        public int FacturaId { get; set; }
+        public int LaboratorioId { get; set; }
+        public DateTime FechaCompra { get; set; }
         public string Estado { get; set; }
     }
 }

@@ -9,20 +9,20 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Crud
 {
-    public class CitaCrudFactory : CrudFactory
+    public class LaboratorioCrudFactory : CrudFactory
     {
-        private CitaMapper mapper;
+        private LaboratorioMapper mapper;
 
-        public CitaCrudFactory() : base()
+        public LaboratorioCrudFactory() : base()
         {
-            mapper = new CitaMapper();
+            mapper = new LaboratorioMapper();
             dao = SqlDao.ObtenerInstancia();
         }
 
         public override void Crear(EntidadBase entidadDto)
         {
-            var cita = (Cita)entidadDto;
-            var sqlOperation = mapper.DeclaracionRecuperar(cita);
+            var laboratorio = (Laboratorio)entidadDto;
+            var sqlOperation = mapper.DeclaracionRecuperar(laboratorio);
 
             dao.EjecProcedimientoAlmacenado(sqlOperation);
 
@@ -30,16 +30,16 @@ namespace DataAccess.Crud
 
         public override void Actualizar(EntidadBase entidadDto)
         {
-            var cita = (Cita)entidadDto;
-            var sqlOperation = mapper.DeclaracionActualizar(cita);
+            var laboratorio = (Laboratorio)entidadDto;
+            var sqlOperation = mapper.DeclaracionActualizar(laboratorio);
 
             dao.EjecProcedimientoAlmacenado(sqlOperation);
         }
 
         public override void Eliminar(EntidadBase entidadDto)
         {
-            var cita = (Cita)entidadDto;
-            var sqlOperation = mapper.DeclaracionBorrar(cita);
+            var laboratorio   = (Laboratorio)entidadDto;
+            var sqlOperation = mapper.DeclaracionBorrar(laboratorio);
 
             dao.EjecProcedimientoAlmacenado(sqlOperation);
         }
@@ -75,8 +75,8 @@ namespace DataAccess.Crud
             if (listResult.Count > 0)
             {
                 dicc = listResult[0];
-                var objsCita = mapper.ConstruirObjeto(dicc);
-                return (T)Convert.ChangeType(objsCita, typeof(T));
+                var objsLaboratorio = mapper.ConstruirObjeto(dicc);
+                return (T)Convert.ChangeType(objsLaboratorio, typeof(T));
 
 
             }
