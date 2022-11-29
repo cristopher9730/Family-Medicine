@@ -20,7 +20,7 @@ namespace AppLogic
 
         public string CrearLaboratorio(Laboratorio laboratorio)
         {
-            LaboratorioCrudFactory LaboratorioCrud = new LaboratorioCrudFactory();
+            LaboratorioCrudFactory laboratorioCrud = new LaboratorioCrudFactory();
             laboratorioCrud.Crear(laboratorio);
             return "Laboratorio creado correctamente en base de datos";
         }

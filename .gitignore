@@ -362,3 +362,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/FamilyMedicine/Content
+/FamilyMedicine-API/Properties/ServiceDependencies/FamilyMedicine-API - Web Deploy

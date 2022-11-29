@@ -145,8 +145,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminCita.cs" />
+    <Compile Include="AdminComponente.cs" />
+    <Compile Include="AdminCompra.cs" />
     <Compile Include="AdminCorreo.cs" />
+    <Compile Include="AdminExamen.cs" />
+    <Compile Include="AdminHorario.cs" />
+    <Compile Include="AdminLaboratorio.cs" />
     <Compile Include="AdminLogin.cs" />
+    <Compile Include="AdminMembresia.cs" />
+    <Compile Include="AdminPromocion.cs" />
+    <Compile Include="AdminRol.cs" />
     <Compile Include="AdminSMS.cs" />
     <Compile Include="AdminUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

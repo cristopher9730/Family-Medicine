@@ -18,7 +18,7 @@ namespace AppLogic
 
         public string CrearCita(Cita cita)
         {
-            CitaCrudFactory CitaCrud = new CitaCrudFactory();
+            CitaCrudFactory citaCrud = new CitaCrudFactory();
             citaCrud.Crear(cita);
             return "Cita creado correctamente en base de datos";
         }

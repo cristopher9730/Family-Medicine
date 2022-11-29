@@ -6,14 +6,18 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class Cita : EntidadBase
+    public class Componente : EntidadBase
     {
-        public int CitaId { get; set; }
-        public int ClienteId { get; set; }
+        public int ComponenteId { get; set; }
         public int LaboratorioId { get; set; }
+        public string NombreComponente { get; set; }
+
+        public string SimboloMedida { get; set; }
+
+        public double MedidaReferencia { get; set; }
+
         public int ExamenId { get; set; }
-        public DateTime FechaExpiracion { get; set; }
-        public int HorarioId { get; set; }
+
         public string Estado { get; set; }
     }
 }
