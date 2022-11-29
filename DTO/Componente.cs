@@ -8,6 +8,7 @@ namespace DTO
 {
     public class Componente : EntidadBase
     {
+        public int ComponenteId { get; set; }
         public int LaboratorioId { get; set; }
         public string NombreComponente { get; set; }
 
