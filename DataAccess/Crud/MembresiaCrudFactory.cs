@@ -9,20 +9,20 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Crud
 {
-    public class LaboratorioCrudFactory : CrudFactory
+    public class MembresiaCrudFactory : CrudFactory
     {
-        private LaboratorioMapper mapper;
+        private MembresiaMapper mapper;
 
-        public LaboratorioCrudFactory() : base()
+        public MembresiaCrudFactory() : base()
         {
-            mapper = new LaboratorioMapper();
+            mapper = new MembresiaMapper();
             dao = SqlDao.ObtenerInstancia();
         }
 
         public override void Crear(EntidadBase entidadDto)
         {
-            var laboratorio = (Laboratorio)entidadDto;
-            var sqlOperation = mapper.DeclaracionRecuperar(laboratorio);
+            var membresia = (Membresia)entidadDto;
+            var sqlOperation = mapper.DeclaracionRecuperar(membresia);
 
             dao.EjecProcedimientoAlmacenado(sqlOperation);
 
@@ -30,16 +30,16 @@ namespace DataAccess.Crud
 
         public override void Actualizar(EntidadBase entidadDto)
         {
-            var laboratorio = (Laboratorio)entidadDto;
-            var sqlOperation = mapper.DeclaracionActualizar(laboratorio);
+            var membresia = (Membresia)entidadDto;
+            var sqlOperation = mapper.DeclaracionActualizar(membresia);
 
             dao.EjecProcedimientoAlmacenado(sqlOperation);
         }
 
         public override void Eliminar(EntidadBase entidadDto)
         {
-            var laboratorio   = (Laboratorio)entidadDto;
-            var sqlOperation = mapper.DeclaracionBorrar(laboratorio);
+            var membresia = (Membresia)entidadDto;
+            var sqlOperation = mapper.DeclaracionBorrar(membresia);
 
             dao.EjecProcedimientoAlmacenado(sqlOperation);
         }
@@ -54,9 +54,9 @@ namespace DataAccess.Crud
 
             if (listResult.Count > 0)
             {
-                var objsLaboratorio = mapper.ConstruirObjetos(listResult);
+                var objsMembresia = mapper.ConstruirObjetos(listResult);
 
-                foreach (var c in objsLaboratorio)
+                foreach (var c in objsMembresia)
                 {
                     list.Add((T)Convert.ChangeType(c, typeof(T)));
                 }
@@ -75,8 +75,8 @@ namespace DataAccess.Crud
             if (listResult.Count > 0)
             {
                 dicc = listResult[0];
-                var objsLaboratorio = mapper.ConstruirObjeto(dicc);
-                return (T)Convert.ChangeType(objsLaboratorio, typeof(T));
+                var objsMembresia = mapper.ConstruirObjeto(dicc);
+                return (T)Convert.ChangeType(objsMembresia, typeof(T));
 
 
             }
