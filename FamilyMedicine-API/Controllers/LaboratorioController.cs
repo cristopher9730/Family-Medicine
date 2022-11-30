@@ -4,32 +4,36 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
+using System.Web.Http;
 
 namespace FamilyMedicine.Controllers
 {
-    public class LaboratorioController : Controller
+    public class LaboratorioController : ApiController
     {
         [HttpPost]
         public string RegistrarLaboratorio(Laboratorio laboratorio)
         {
             Random generator = new Random();
             String otp = generator.Next(100000, 1000000).ToString("D6");
-            laboratorio.Codigo = otp;
+            
 
             AdminLaboratorio adminLaboratorio = new AdminLaboratorio();
             return adminLaboratorio.CrearLaboratorio(laboratorio);
 
         }
 
+        [HttpPut]
         public string ActualizarLaboratorio(Laboratorio laboratorio)
         {
-            return "TBD";
+            AdminLaboratorio adminLaboratorio = new AdminLaboratorio();
+            return adminLaboratorio.EditarLaboratorio(laboratorio);
         }
 
+        [HttpDelete]
         public string BorrarLaboratorio(Laboratorio laboratorio)
         {
-            return "TBD";
+            AdminLaboratorio adminLaboratorio = new AdminLaboratorio();
+            return adminLaboratorio.EliminarLaboratorio(laboratorio);
         }
 
         [HttpGet]
@@ -39,9 +43,11 @@ namespace FamilyMedicine.Controllers
             return adminLaboratorio.DevolverTodosLaboratorios();
         }
 
-        public string ObtenerUnLaboratorio(int LaboratorioId)
+        [HttpGet]
+        public Laboratorio ObtenerUnLaboratorio(Laboratorio laboratorio)
         {
-            return "TBD";
+            AdminLaboratorio adminLaboratorio = new AdminLaboratorio();
+            return adminLaboratorio.DevolverUnLaboratorio(laboratorio);
         }
     }
 }

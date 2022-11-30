@@ -145,10 +145,12 @@
     <Compile Include="AdminCompra.cs" />
     <Compile Include="AdminCorreo.cs" />
     <Compile Include="AdminExamen.cs" />
+    <Compile Include="AdminFactura.cs" />
     <Compile Include="AdminHorario.cs" />
     <Compile Include="AdminLaboratorio.cs" />
     <Compile Include="AdminLogin.cs" />
     <Compile Include="AdminMembresia.cs" />
+    <Compile Include="AdminOTP.cs" />
     <Compile Include="AdminPromocion.cs" />
     <Compile Include="AdminRol.cs" />
     <Compile Include="AdminSMS.cs" />

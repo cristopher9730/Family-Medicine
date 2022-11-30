@@ -1,46 +1,53 @@
-﻿using DTO;
+﻿using AppLogic;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
+using System.Web.Http;
+
 
 namespace FamilyMedicine.Controllers
 {
-    public class PromocionController : Controller
+    public class PromocionController : ApiController
     {
         [HttpPost]
         public string RegistrarPromocion(Promocion promocion)
         {
             Random generator = new Random();
             String otp = generator.Next(100000, 1000000).ToString("D6");
-            promocion.Codigo = otp;
 
             AdminPromocion adminPromocion = new AdminPromocion();
             return adminPromocion.CrearPromocion(promocion);
 
         }
 
-        public string ActualizarPromocion(Promocion Promocion)
+        [HttpPut]
+        public string ActualizarPromocion(Promocion promocion)
         {
-            return "TBD";
+            AdminPromocion adminPromocion = new AdminPromocion();
+            return adminPromocion.EditarPromocion(promocion);
         }
 
-        public string BorrarPromocion(Promocion Promocion)
+        [HttpDelete]
+        public string BorrarPromocion(Promocion promocion)
         {
-            return "TBD";
+            AdminPromocion adminPromocion = new AdminPromocion();
+            return adminPromocion.EliminarPromocion(promocion);
         }
 
         [HttpGet]
         public List<Promocion> ObtenerListaPromociones()
         {
             AdminPromocion adminPromocion = new AdminPromocion();
-            return adminPromocion.DevolverTodosPromocions();
+            return adminPromocion.DevolverTodasPromociones();
         }
 
-        public string ObtenerUnPromocion(int PromocionId)
+        [HttpGet]
+        public Promocion ObtenerUnPromocion(Promocion promocion)
         {
-            return "TBD";
+            AdminPromocion adminPromocion = new AdminPromocion();
+            return adminPromocion.DevolverUnaPromocion(promocion);
         }
     }
 }
