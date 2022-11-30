@@ -37,10 +37,10 @@ namespace AppLogic
 
         }
 
-        public List<Horario> DevolverTodosComponentes()
+        public List<Componente> DevolverTodosComponentes()
         {
             ComponenteCrudFactory componenteCrud = new ComponenteCrudFactory();
-            return componenteCrud.ListarTodos<Horario>();
+            return componenteCrud.ListarTodos<Componente>();
         }
 
         public Componente DevolverUnComponente(Componente componente)

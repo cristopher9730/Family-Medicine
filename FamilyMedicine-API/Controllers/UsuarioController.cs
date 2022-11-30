@@ -27,14 +27,18 @@ namespace FamilyMedicine_API.Controllers
 
         }
 
+        [HttpPut]
         public string ActualizarUsuario(Usuario usuario)
         {
-            return "TBD";
+            AdminUsuario adminUsuario = new AdminUsuario();
+            return adminUsuario.EditarUsuario(usuario); ;
         }
 
+        [HttpDelete]
         public string BorrarUsuario(Usuario usuario)
         {
-            return "TBD";
+            AdminUsuario adminUsuario = new AdminUsuario();
+            return adminUsuario.EliminarUsuario(usuario);
         }
 
         [HttpGet]
@@ -44,9 +48,11 @@ namespace FamilyMedicine_API.Controllers
             return adminUsuario.DevolverTodosUsuarios();
         }
 
-        public string ObtenerUnUsuario(int UsuarioId)
+        [HttpGet]
+        public Usuario ObtenerUnUsuario(Usuario usuario)
         {
-            return "TBD";
+            AdminUsuario adminUsuario = new AdminUsuario();
+            return adminUsuario.DevolverUnUsuario(usuario);
         }
 
     }

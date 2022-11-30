@@ -1,44 +1,54 @@
-﻿/*using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using DTO;
-using System.Net.Http;
 using System.Web.Http;
-using System.Collections;
+using AppLogic;
 
 namespace FamilyMedicine_API.Controllers
 {
     public class ExamenController : ApiController
     {
-        //[HttpGet]
-        //public ArrayList devolverExamen()
-        //{
-        //    ArrayList examen = new ArrayList();
+        [HttpPost]
+        public string RegistrarExamen(Examen examen)
+        {
+            Random generator = new Random();
+            String otp = generator.Next(100000, 1000000).ToString("D6");
+            
 
-        //    Examen examen1 = new Examen()
-        //    {
-        //        Identificador = 1,
-        //        Nombre = "Examen de sangre",
-        //        Descripccion = "Sacar sangre",
-        //        Laboratorio = "CRLABORATORIO",
-        //        Precio = 9000
-        //    };
+            AdminExamen adminExamen = new AdminExamen();
+            return adminExamen.CrearExamen(examen);
 
-        //    Examen examen2 = new Examen()
-        //    {
-        //        Identificador = 2,
-        //        Nombre = "Examen de DOPAJE",
-        //        Descripccion = "Sacar sangre",
-        //        Laboratorio = "CRLABORATORIO",
-        //        Precio = 9000
-        //    };
+        }
 
-        //    examen.Add(examen1);
-        //    examen.Add(examen2);
+        [HttpPut]
+        public string ActualizarExamen(Examen examen)
+        {
+            AdminExamen adminExamen = new AdminExamen();
+            return adminExamen.EditarExamen(examen);
+        }
 
-        //    return examen;
-        //}  
+        [HttpDelete]
+        public string BorrarExamen(Examen examen)
+        {
+            AdminExamen adminExamen = new AdminExamen();
+            return adminExamen.EliminarExamen(examen);
+        }
+
+        [HttpGet]
+        public List<Examen> ObtenerListaExamenes()
+        {
+            AdminExamen adminExamen = new AdminExamen();
+            return adminExamen.DevolverTodosExamenes();
+        }
+
+        [HttpGet]
+        public Examen ObtenerUnExamen(Examen examen)
+        {
+            AdminExamen adminExamen = new AdminExamen();
+            return adminExamen.DevolverUnExamen(examen);
+        }
+
     }
 }
-*/
