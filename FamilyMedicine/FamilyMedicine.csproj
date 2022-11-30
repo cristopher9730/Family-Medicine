@@ -269,7 +269,7 @@
     <Content Include="Scripts\Views\DashboardAdminApp\Usuarios.js" />
     <Content Include="Scripts\Views\dashboardUsuario\DashboardValidacion.js" />
     <Content Include="Scripts\Views\recuperarPass.js" />
-    <Content Include="Scripts\Views\Usuarios.js" />
+    <Content Include="Scripts\Views\RegistarUsuarios.js" />
     <Content Include="Scripts\Views\dashboardUsuario\DashboardCitasFechas.js" />
     <Content Include="Scripts\Views\dashboardUsuario\DashboardCitasQR.js" />
     <Content Include="Scripts\Views\dashboardUsuario\DashboardCitasResultado.js" />

@@ -36,5 +36,81 @@
     </table>
 
 </div>
+<div div class="card mb-3 m-2" style="width: 20%; float:right">
+    <div class="card border-light mb-3" style="max-width: 20rem;">
+        <divdiv class="card-header">
+            <h4>Ingrese los Datos</h4>
+        </divdiv>
+        <form id="frmUsuario" data-aos="fade-up" name="formValidacion"
+              data-aos-duration="3000" class="was-validated" id="formContenedorId">
+
+
+            <section class="contenedorInputsRow">
+                <div class="mb-3 w-100 contenedorDeInputs">
+                    <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
+                        <label class="form-label" for="txtNombre" id="inputGroupPrepend">Nombre</label>
+                        <input type="text" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
+                        <div class="invalid-feedback">
+                            Por favor, ingrese el nombre
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3 w-100">
+                    <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
+                        <label class="form-label" for="txtPrimerApellido" id="inputGroupPrepend">Primer apellido</label>
+                        <input type="text" class="form-control w-100" id="txtPrimerApellido" aria-describedby="inputGroupPrepend" required>
+                        <div class="invalid-feedback">
+                            Por favor, ingrese el primer apellido
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3 w-100">
+                    <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
+                        <label class="form-label" for="txtSegundoApellido" id="inputGroupPrepend">Segundo apellido</label>
+                        <input type="text" class="form-control w-100" id="txtSegundoApellido" aria-describedby="inputGroupPrepend" required>
+                        <div class="invalid-feedback">
+                            Por favor, ingrese el segundo apellido
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3 w-100">
+                    <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
+                        <label class="form-label" for="txtCorreo" id="inputGroupPrepend">Correo eléctronico</label>
+                        <input type="email" pattern="^[a-zA-Z0-9._+-]+@("@")[a-zA-Z0-9.-]+\.[a-zA-Z]{2,9}$" class="form-control w-100" id="txtCorreo" aria-describedby="inputGroupPrepend" required>
+                        <div class="invalid-feedback">
+                            Por favor, ingrese el correo eléctronico
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3 w-100">
+                    <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
+                        <label class="form-label" for="txtTelefono" id="inputGroupPrepend">Teléfono</label>
+                        <input type="text" class="form-control w-100" id="txtTelefono" aria-describedby="inputGroupPrepend" required>
+                        <div class="invalid-feedback">
+                            Por favor, ingrese el teléfono
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3 w-100 contenedorDeInputs">
+                    <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
+                        <label class="form-label" for="txtClave" id="inputGroupPrepend">Contraseña</label>
+                        <input type="password" class="form-control w-100" id="txtClave" aria-describedby="inputGroupPrepend" required>
+                        <div class="invalid-feedback">
+                            Por favor, ingrese la contraseña temporal
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </form>
+        <button type="button" id="btnRegistrar" class="btn btn-outline-primary">Registar Usuario</button>
+    </div>
+</div>
+
 
 
