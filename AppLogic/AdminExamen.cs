@@ -9,7 +9,7 @@ using DataAccess.Crud;
 
 namespace AppLogic
 {
-    internal class AdminExamen
+    public class AdminExamen
     {
 
         public AdminExamen()
@@ -31,15 +31,24 @@ namespace AppLogic
             return "Examen actualizado correctamente en base de datos";
         }
 
-        public string EliminarExamen()
+        public string EliminarExamen(Examen examen)
         {
-            return "TBD";
+            ExamenCrudFactory examenCrud = new ExamenCrudFactory();
+            examenCrud.Eliminar(examen);
+            return "Examen eliminado correctamente en base de datos";
         }
 
         public List<Examen> DevolverTodosExamenes()
         {
             ExamenCrudFactory examenCrud = new ExamenCrudFactory();
             return examenCrud.ListarTodos<Examen>();
+        }
+
+        public Examen DevolverUnExamen(Examen examen)
+        {
+            ExamenCrudFactory examenCrud = new ExamenCrudFactory();
+
+            return examenCrud.ListarPorID<Examen>(examen.identificacion);
         }
 
     }

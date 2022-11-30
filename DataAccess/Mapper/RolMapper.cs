@@ -49,7 +49,19 @@ namespace DataAccess.Mapper
 
         public SqlOperation DeclaracionBorrar(EntidadBase entidadDTO)
         {
-            throw new NotImplementedException();
+            var operacion = new SqlOperation()
+            {
+                NombreProcedimiento = "SP_BorrarRol"
+            };
+
+            var rol = (Rol)entidadDTO;
+
+            operacion.AddIntergerParam("RolId", rol.RolId);
+            operacion.AddVarcharParam("NombreRol", rol.NombreRol);
+            operacion.AddVarcharParam("Descripcion", rol.Descripcion);
+            operacion.AddVarcharParam("Estado", rol.Estado);
+
+            return operacion;
         }
 
         public SqlOperation DeclaracionRecuperarPorId(int id)

@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Crud\ActividadCrudFactory.cs" />
     <Compile Include="Crud\CitaCrudFactory.cs" />
     <Compile Include="Crud\ComponenteCrudFactory.cs" />
     <Compile Include="Crud\CompraCrudFactory.cs" />
@@ -59,6 +60,7 @@
     <Compile Include="Crud\CrudFactory.cs" />
     <Compile Include="Dao\SqlOperation.cs" />
     <Compile Include="Dao\SqlDao.cs" />
+    <Compile Include="Mapper\ActividadMapper.cs" />
     <Compile Include="Mapper\CitaMapper.cs" />
     <Compile Include="Mapper\ComponenteMapper.cs" />
     <Compile Include="Mapper\CompraMapper.cs" />

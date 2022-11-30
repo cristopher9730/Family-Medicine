@@ -9,7 +9,7 @@ using DataAccess.Crud;
 
 namespace AppLogic
 {
-    internal class AdminCita
+    public class AdminCita
     {
         public AdminCita()
         {
@@ -20,25 +20,33 @@ namespace AppLogic
         {
             CitaCrudFactory citaCrud = new CitaCrudFactory();
             citaCrud.Crear(cita);
-            return "Cita creado correctamente en base de datos";
+            return "Cita creada correctamente en base de datos";
         }
 
         public string EditarCita(Cita cita)
         {
             CitaCrudFactory citaCrud = new CitaCrudFactory();
             citaCrud.Actualizar(cita);
-            return "Cita actualizado correctamente en base de datos";
+            return "Cita actualizada correctamente en base de datos";
         }
 
-        public string EliminarCita()
+        public string EliminarCita(Cita cita)
         {
-            return "TBD";
+            CitaCrudFactory citaCrud = new CitaCrudFactory();
+            citaCrud.Eliminar(cita);
+            return "Cita borrada correctamente en base de datos";
         }
 
         public List<Cita> DevolverTodosCitas()
         {
             CitaCrudFactory citaCrud = new CitaCrudFactory();
             return citaCrud.ListarTodos<Cita>();
+        }
+
+        public Cita DevolverUnaCita(Cita cita)
+        {
+            ComponenteCrudFactory citaCrud = new ComponenteCrudFactory();
+            return citaCrud.ListarPorID<Cita>(cita.CitaId);
         }
 
     }

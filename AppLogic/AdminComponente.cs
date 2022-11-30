@@ -22,14 +22,14 @@ namespace AppLogic
             return "Componente creado correctamente en base de datos";
         }
 
-        public string EditarUsuario(Componente componente)
+        public string EditarComponente(Componente componente)
         {
             ComponenteCrudFactory componenteCrud = new ComponenteCrudFactory();
             componenteCrud.Actualizar(componente);
             return "Componente actualizado correctamente en base de datos";
         }
 
-        public string EliminarUsuario(Componente componente)
+        public string EliminarComponente(Componente componente)
         {
             ComponenteCrudFactory componenteCrud = new ComponenteCrudFactory();
             componenteCrud.Eliminar(componente);
@@ -37,13 +37,13 @@ namespace AppLogic
 
         }
 
-        public List<Horario> DevolverTodosUsuarios()
+        public List<Horario> DevolverTodosComponentes()
         {
             ComponenteCrudFactory componenteCrud = new ComponenteCrudFactory();
             return componenteCrud.ListarTodos<Horario>();
         }
 
-        public Componente DevolverUnUsuario(Componente componente)
+        public Componente DevolverUnComponente(Componente componente)
         {
             ComponenteCrudFactory componenteCrud = new ComponenteCrudFactory();
             return componenteCrud.ListarPorID<Componente>(componente.ComponenteId);
