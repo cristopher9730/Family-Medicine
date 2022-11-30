@@ -9,7 +9,7 @@ using DataAccess.Crud;
 
 namespace AppLogic
 {
-    internal class AdminCompra
+    public class AdminCompra
     {
 
         public AdminCompra()
@@ -21,25 +21,33 @@ namespace AppLogic
         {
             CompraCrudFactory compraCrud = new CompraCrudFactory();
             compraCrud.Crear(compra);
-            return "Compra creado correctamente en base de datos";
+            return "Compra creada correctamente en base de datos";
         }
 
         public string EditarCompra(Compra compra)
         {
             CompraCrudFactory compraCrud = new CompraCrudFactory();
             compraCrud.Actualizar(compra);
-            return "Compra actualizado correctamente en base de datos";
+            return "Compra actualizada correctamente en base de datos";
         }
 
-        public string EliminarCompra()
+        public string EliminarCompra(Compra compra)
         {
-            return "TBD";
+            CompraCrudFactory compraCrud = new CompraCrudFactory();
+            compraCrud.Eliminar(compra);
+            return "Compra Eliminada correctamente en base de datos";
         }
 
         public List<Compra> DevolverTodosCompras()
         {
             CompraCrudFactory compraCrud = new CompraCrudFactory();
             return compraCrud.ListarTodos<Compra>();
+        }
+        public Compra DevolverUnaCompra(Compra compra)
+        {
+            CompraCrudFactory compraCrud = new CompraCrudFactory();
+
+            return compraCrud.ListarPorID<Compra>(compra.CompraId);
         }
 
     }

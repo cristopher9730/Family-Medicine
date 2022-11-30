@@ -16,7 +16,7 @@ namespace DataAccess.Mapper
         {
             var operacion = new SqlOperation()
             {
-                NombreProcedimiento = "SP_CrearMembresia"
+                NombreProcedimiento = "SP_CrearPromocion"
             };
 
             var promocion = (Promocion)entidadDTO;
@@ -36,7 +36,7 @@ namespace DataAccess.Mapper
         {
             var operacion = new SqlOperation()
             {
-                NombreProcedimiento = "SP_ActualizarLaboratorio"
+                NombreProcedimiento = "SP_ActualizarPromocion"
             };
 
             var promocion = (Promocion)entidadDTO;
@@ -53,7 +53,21 @@ namespace DataAccess.Mapper
 
         public SqlOperation DeclaracionBorrar(EntidadBase entidadDTO)
         {
-            throw new NotImplementedException();
+            var operacion = new SqlOperation()
+            {
+                NombreProcedimiento = "SP_EliminarPromocion"
+            };
+
+            var promocion = (Promocion)entidadDTO;
+
+            operacion.AddIntergerParam("PromocionId", promocion.PromocionId);
+            operacion.AddVarcharParam("PromocionDescripcion", promocion.PromocionDescripcion);
+            operacion.AddDoublePram("Descuento", promocion.Descuento);
+            operacion.AddIntergerParam("LaboratorioId", promocion.LaboratorioId);
+            operacion.AddVarcharParam("EstadoPromocion", promocion.EstadoPromocion);
+            operacion.AddIntergerParam("UsuarioId", promocion.UsuarioId);
+
+            return operacion;
         }
 
         public SqlOperation DeclaracionRecuperarPorId(int id)

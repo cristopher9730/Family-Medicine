@@ -9,7 +9,7 @@ using DataAccess.Crud;
 
 namespace AppLogic
 {
-    internal class AdminRol
+    public class AdminRol
     {
 
         public AdminRol()
@@ -31,15 +31,24 @@ namespace AppLogic
             return "Rol actualizado correctamente en base de datos";
         }
 
-        public string EliminarRol()
+        public string EliminarRol(Rol rol)
         {
-            return "TBD";
+            RolCrudFactory rolCrud = new RolCrudFactory();
+            rolCrud.Actualizar(rol);
+            return "Rol eliminado correctamente en base de datos";
         }
 
         public List<Rol> DevolverTodosRoles()
         {
             RolCrudFactory rolCrud = new RolCrudFactory();
             return rolCrud.ListarTodos<Rol>();
+        }
+
+        public Rol DevolverUnRol(Rol rol)
+        {
+            RolCrudFactory rolCrud = new RolCrudFactory();
+
+            return rolCrud.ListarPorID<Rol>(rol.RolId);
         }
 
 

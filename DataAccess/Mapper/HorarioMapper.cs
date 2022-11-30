@@ -38,7 +38,7 @@ namespace DataAccess.Mapper
         {
             var operacion = new SqlOperation()
             {
-                NombreProcedimiento = "SP_ActualizarUsuario"
+                NombreProcedimiento = "SP_ActualizarHorario"
             };
 
             var horario = (Horario)entidadDTO;
@@ -57,7 +57,23 @@ namespace DataAccess.Mapper
 
         public SqlOperation DeclaracionBorrar(EntidadBase entidadDTO)
         {
-            throw new NotImplementedException();
+            var operacion = new SqlOperation()
+            {
+                NombreProcedimiento = "SP_BorrarHorario"
+            };
+
+            var horario = (Horario)entidadDTO;
+
+            operacion.AddIntergerParam("HorarioId", horario.HorarioId);
+            operacion.AddDateParam("Dia", horario.Dia);
+            operacion.AddIntergerParam("HoraInicio", horario.HoraInicio);
+            operacion.AddVarcharParam("HoraFin", horario.HoraFin);
+            operacion.AddIntergerParam("ExamenId", horario.ExamenId);
+            operacion.AddIntergerParam("Cupos", horario.Cupos);
+            operacion.AddIntergerParam("LaboratorioId", horario.LaboratorioId);
+            operacion.AddVarcharParam("Estado", horario.Estado);
+
+            return operacion;
         }
 
         public SqlOperation DeclaracionRecuperarPorId(int id)

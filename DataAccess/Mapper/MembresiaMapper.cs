@@ -37,7 +37,7 @@ namespace DataAccess.Mapper
         {
             var operacion = new SqlOperation()
             {
-                NombreProcedimiento = "SP_ActualizarLaboratorio"
+                NombreProcedimiento = "SP_ActualizarMembresia"
             };
 
             var membresia = (Membresia)entidadDTO;
@@ -55,7 +55,22 @@ namespace DataAccess.Mapper
 
         public SqlOperation DeclaracionBorrar(EntidadBase entidadDTO)
         {
-            throw new NotImplementedException();
+            var operacion = new SqlOperation()
+            {
+                NombreProcedimiento = "SP_BorrarMembresia"
+            };
+
+            var membresia = (Membresia)entidadDTO;
+
+            operacion.AddIntergerParam("LaboratorioId", membresia.MembresiaId);
+            operacion.AddVarcharParam("NombreLaboratorio", membresia.NombreMembresia);
+            operacion.AddVarcharParam("SedeLaboratorio", membresia.Descripcion);
+            operacion.AddIntergerParam("UsuarioPropietario", membresia.Cantidad);
+            operacion.AddDoublePram("Precio", membresia.Precio);
+            /*AddFloatParam*/
+            operacion.AddVarcharParam("Estado", membresia.Estado);
+
+            return operacion;
         }
 
         public SqlOperation DeclaracionRecuperarPorId(int id)

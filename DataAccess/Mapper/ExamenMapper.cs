@@ -53,7 +53,21 @@ namespace DataAccess.Mapper
 
         public SqlOperation DeclaracionBorrar(EntidadBase entidadDTO)
         {
-            throw new NotImplementedException();
+            var operacion = new SqlOperation()
+            {
+                NombreProcedimiento = "SP_BorrarExamen"
+            };
+
+            var examen = (Examen)entidadDTO;
+
+            operacion.AddIntergerParam("ExamenId", examen.ExamenId);
+            operacion.AddVarcharParam("NombreExamen", examen.Nombre);
+            operacion.AddVarcharParam("NombreInterno", examen.NombreInterno);
+            operacion.AddDoublePram("Precio", examen.Precio);
+            operacion.AddVarcharParam("Estado", examen.Estado);
+            operacion.AddIntergerParam("LaboratorioId", examen.LaboratorioId);
+
+            return operacion;
         }
 
         public SqlOperation DeclaracionRecuperarPorId(int id)
