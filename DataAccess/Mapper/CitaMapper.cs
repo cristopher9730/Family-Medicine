@@ -25,7 +25,7 @@ namespace DataAccess.Mapper
             operacion.AddIntergerParam("ClienteId", cita.ClienteId);
             operacion.AddIntergerParam("LaboratorioId", cita.LaboratorioId);
             operacion.AddIntergerParam("ExamenId", cita.ExamenId);
-            operacion.AddDateParam("FechaExpiracion", cita.FechaExpiracion);
+            operacion.AddDateParam("FechaExpiracion", cita.FechaExpiracion.Date);
             operacion.AddIntergerParam("HorarioId", cita.HorarioId);
             operacion.AddVarcharParam("Estado", cita.Estado);
 
@@ -47,7 +47,7 @@ namespace DataAccess.Mapper
             operacion.AddIntergerParam("ClienteId", cita.ClienteId);
             operacion.AddIntergerParam("LaboratorioId", cita.LaboratorioId);
             operacion.AddIntergerParam("ExamenId", cita.ExamenId);
-            operacion.AddDateParam("FechaExpiracion", cita.FechaExpiracion);
+            operacion.AddDateParam("FechaExpiracion", cita.FechaExpiracion.Date);
             operacion.AddIntergerParam("HorarioId", cita.HorarioId);
             operacion.AddVarcharParam("Estado", cita.Estado);
 
@@ -67,7 +67,7 @@ namespace DataAccess.Mapper
             operacion.AddIntergerParam("ClienteId", cita.ClienteId);
             operacion.AddIntergerParam("LaboratorioId", cita.LaboratorioId);
             operacion.AddIntergerParam("ExamenId", cita.ExamenId);
-            operacion.AddDateParam("FechaExpiracion", cita.FechaExpiracion);
+            operacion.AddDateParam("FechaExpiracion", cita.FechaExpiracion.Date);
             operacion.AddIntergerParam("HorarioId", cita.HorarioId);
             operacion.AddVarcharParam("Estado", cita.Estado);
 

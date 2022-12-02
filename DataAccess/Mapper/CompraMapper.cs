@@ -26,7 +26,7 @@ namespace DataAccess.Mapper
             operacion.AddIntergerParam("CitaId", compra.CitaId);
             operacion.AddIntergerParam("FacturaId", compra.FacturaId);
             operacion.AddIntergerParam("LaboratorioId", compra.LaboratorioId);
-            operacion.AddDateParam("FechaCompra", compra.FechaCompra);
+            operacion.AddDateParam("FechaCompra", compra.FechaCompra.Date);
             operacion.AddVarcharParam("Estado", compra.Estado);
             
             return operacion;
@@ -47,7 +47,7 @@ namespace DataAccess.Mapper
             operacion.AddIntergerParam("CitaId", compra.CitaId);
             operacion.AddIntergerParam("FacturaId", compra.FacturaId);
             operacion.AddIntergerParam("LaboratorioId", compra.LaboratorioId);
-            operacion.AddDateParam("FechaCompra", compra.FechaCompra);
+            operacion.AddDateParam("FechaCompra", compra.FechaCompra.Date);
             operacion.AddVarcharParam("Estado", compra.Estado);
 
             return operacion;
@@ -67,7 +67,7 @@ namespace DataAccess.Mapper
             operacion.AddIntergerParam("CitaId", compra.CitaId);
             operacion.AddIntergerParam("FacturaId", compra.FacturaId);
             operacion.AddIntergerParam("LaboratorioId", compra.LaboratorioId);
-            operacion.AddDateParam("FechaCompra", compra.FechaCompra);
+            operacion.AddDateParam("FechaCompra", compra.FechaCompra.Date);
             operacion.AddVarcharParam("Estado", compra.Estado);
 
             return operacion;

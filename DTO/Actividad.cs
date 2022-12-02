@@ -12,8 +12,5 @@ namespace DTO
         public string NombreActividad { get; set; }
         public DateTime FechaCreacion { get; set; }
         public int CreacionUsuarioId { get; set; }
-        public DateTime FechaModificacion { get; set; }
-        public DateTime ModificacionUsuario { get; set; }
-        public string Estado { get; set; }
     }
 }

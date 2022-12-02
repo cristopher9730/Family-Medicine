@@ -22,7 +22,7 @@ namespace DataAccess.Mapper
             var horario = (Horario)entidadDTO;
 
             operacion.AddIntergerParam("HorarioId", horario.HorarioId);
-            operacion.AddDateParam("Dia", horario.Dia);
+            operacion.AddDateParam("Dia", horario.Dia.Date);
             operacion.AddVarcharParam("HoraInicio", horario.HoraInicio);
             operacion.AddVarcharParam("HoraFin", horario.HoraFin);
             operacion.AddIntergerParam("ExamenId", horario.ExamenId);
@@ -44,7 +44,7 @@ namespace DataAccess.Mapper
             var horario = (Horario)entidadDTO;
 
             operacion.AddIntergerParam("HorarioId", horario.HorarioId);
-            operacion.AddDateParam("Dia", horario.Dia);
+            operacion.AddDateParam("Dia", horario.Dia.Date);
             operacion.AddVarcharParam("HoraInicio", horario.HoraInicio);
             operacion.AddVarcharParam("HoraFin", horario.HoraFin);
             operacion.AddIntergerParam("ExamenId", horario.ExamenId);
@@ -65,7 +65,7 @@ namespace DataAccess.Mapper
             var horario = (Horario)entidadDTO;
 
             operacion.AddIntergerParam("HorarioId", horario.HorarioId);
-            operacion.AddDateParam("Dia", horario.Dia);
+            operacion.AddDateParam("Dia", horario.Dia.Date);
             operacion.AddVarcharParam("HoraInicio", horario.HoraInicio);
             operacion.AddVarcharParam("HoraFin", horario.HoraFin);
             operacion.AddIntergerParam("ExamenId", horario.ExamenId);
