@@ -24,11 +24,7 @@ namespace DataAccess.Mapper
             operacion.AddIntergerParam("ActividadId", actividad.ActividadId);
             operacion.AddVarcharParam("NombreActividad", actividad.NombreActividad);
             operacion.AddDateParam("FechaCreacion", actividad.FechaCreacion);
-            operacion.AddIntergerParam("CreacionUsuarioId", actividad.CreacionUsuarioId);
-            operacion.AddDateParam("FechaModificacion", actividad.FechaModificacion);
-            operacion.AddDateParam("ModificacionUsuario", actividad.ModificacionUsuario);
-            operacion.AddVarcharParam("Estado", actividad.Estado);
-           
+            operacion.AddIntergerParam("CreacionUsuarioId", actividad.CreacionUsuarioId);           
             return operacion;
 
         }
@@ -46,10 +42,6 @@ namespace DataAccess.Mapper
             operacion.AddVarcharParam("NombreActividad", actividad.NombreActividad);
             operacion.AddDateParam("FechaCreacion", actividad.FechaCreacion);
             operacion.AddIntergerParam("CreacionUsuarioId", actividad.CreacionUsuarioId);
-            operacion.AddDateParam("FechaModificacion", actividad.FechaModificacion);
-            operacion.AddDateParam("ModificacionUsuario", actividad.ModificacionUsuario);
-            operacion.AddVarcharParam("Estado", actividad.Estado);
-
             return operacion;
         }
 
@@ -66,10 +58,6 @@ namespace DataAccess.Mapper
             operacion.AddVarcharParam("NombreActividad", actividad.NombreActividad);
             operacion.AddDateParam("FechaCreacion", actividad.FechaCreacion);
             operacion.AddIntergerParam("CreacionUsuarioId", actividad.CreacionUsuarioId);
-            operacion.AddDateParam("FechaModificacion", actividad.FechaModificacion);
-            operacion.AddDateParam("ModificacionUsuario", actividad.ModificacionUsuario);
-            operacion.AddVarcharParam("Estado", actividad.Estado);
-
             return operacion;
         }
 
@@ -102,9 +90,6 @@ namespace DataAccess.Mapper
                 NombreActividad = row["NombreActividad"].ToString(),
                 FechaCreacion = DateTime.Parse(row["FechaCreacion"].ToString()),
                 CreacionUsuarioId = int.Parse(row["CreacionUsuarioId"].ToString()),
-                FechaModificacion = DateTime.Parse(row["FechaModificacion"].ToString()),
-                ModificacionUsuario = DateTime.Parse(row["ModificacionUsuario"].ToString()),
-                Estado = row["Estado"].ToString(),
             };
             return actividad;
         }
