@@ -30,6 +30,13 @@ namespace AppLogic
             return "Usuario actualizado correctamente en base de datos";
         }
 
+        public string EditarUsuarioCliente(Usuario usuario)
+        {
+            UsuarioCrudFactory usuarioCrud = new UsuarioCrudFactory();
+            usuarioCrud.ActualizarCliente(usuario);
+            return "Usuario cliente actualizado correctamente en base de datos";
+        }
+
         public string EliminarUsuario(Usuario usuario)
         {
             UsuarioCrudFactory usuarioCrud = new UsuarioCrudFactory();

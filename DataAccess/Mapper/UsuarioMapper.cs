@@ -34,9 +34,7 @@ namespace DataAccess.Mapper
             operacion.AddIntergerParam("MembresiaId", usuario.MembresiaId);
             operacion.AddVarcharParam("Codigo", usuario.Codigo);
 
-
             return operacion;
-
         }
 
         public SqlOperation DeclaracionActualizar(EntidadBase entidadDTO)
@@ -61,6 +59,27 @@ namespace DataAccess.Mapper
             operacion.AddIntergerParam("LaboratorioId", usuario.LaboratorioId);
             operacion.AddIntergerParam("MembresiaId", usuario.MembresiaId);
             operacion.AddVarcharParam("Codigo", usuario.Codigo);
+
+            return operacion;
+        }
+
+        //Este es para actualizar los datos personales para el usuario
+        public SqlOperation DeclaracionActualizarCliente(EntidadBase entidadDTO)
+        {
+            var operacion = new SqlOperation()
+            {
+                NombreProcedimiento = "SP_ActualizarUsuarioCliente"
+            };
+
+            var usuario = (Usuario)entidadDTO;
+
+            operacion.AddVarcharParam("Nombre", usuario.Nombre);
+            operacion.AddVarcharParam("Primer_Apellido", usuario.PrimerApellido);
+            operacion.AddVarcharParam("Segundo_Apellido", usuario.SegundoApellido);
+            operacion.AddVarcharParam("Correo", usuario.Correo);
+            operacion.AddVarcharParam("Telefono", usuario.Telefono);
+            operacion.AddVarcharParam("Clave", usuario.Clave);
+            operacion.AddVarcharParam("Foto", usuario.Foto);      
 
             return operacion;
         }
