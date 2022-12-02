@@ -23,7 +23,7 @@ namespace DataAccess.Mapper
 
             operacion.AddIntergerParam("HorarioId", horario.HorarioId);
             operacion.AddDateParam("Dia", horario.Dia);
-            operacion.AddIntergerParam("HoraInicio", horario.HoraInicio);
+            operacion.AddVarcharParam("HoraInicio", horario.HoraInicio);
             operacion.AddVarcharParam("HoraFin", horario.HoraFin);
             operacion.AddIntergerParam("ExamenId", horario.ExamenId);
             operacion.AddIntergerParam("Cupos", horario.Cupos);
@@ -45,7 +45,7 @@ namespace DataAccess.Mapper
 
             operacion.AddIntergerParam("HorarioId", horario.HorarioId);
             operacion.AddDateParam("Dia", horario.Dia);
-            operacion.AddIntergerParam("HoraInicio", horario.HoraInicio);
+            operacion.AddVarcharParam("HoraInicio", horario.HoraInicio);
             operacion.AddVarcharParam("HoraFin", horario.HoraFin);
             operacion.AddIntergerParam("ExamenId", horario.ExamenId);
             operacion.AddIntergerParam("Cupos", horario.Cupos);
@@ -66,7 +66,7 @@ namespace DataAccess.Mapper
 
             operacion.AddIntergerParam("HorarioId", horario.HorarioId);
             operacion.AddDateParam("Dia", horario.Dia);
-            operacion.AddIntergerParam("HoraInicio", horario.HoraInicio);
+            operacion.AddVarcharParam("HoraInicio", horario.HoraInicio);
             operacion.AddVarcharParam("HoraFin", horario.HoraFin);
             operacion.AddIntergerParam("ExamenId", horario.ExamenId);
             operacion.AddIntergerParam("Cupos", horario.Cupos);
@@ -103,7 +103,7 @@ namespace DataAccess.Mapper
             {
                 HorarioId = int.Parse(row["HorarioId"].ToString()),
                 Dia = DateTime.Parse(row["Dia"].ToString()),
-                HoraInicio = int.Parse(row["HoraInicio"].ToString()),
+                HoraInicio = row["HoraInicio"].ToString(),
                 HoraFin = row["HoraFin"].ToString(),
                 ExamenId = int.Parse(row["ExamenId"].ToString()),
                 Cupos = int.Parse(row["Cupos"].ToString()),
