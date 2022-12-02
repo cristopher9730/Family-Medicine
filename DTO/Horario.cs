@@ -10,7 +10,7 @@ namespace DTO
     {
         public int HorarioId { get; set; }
         public DateTime Dia { get; set; }
-        public int HoraInicio { get; set; }
+        public string HoraInicio { get; set; }
         public string HoraFin { get; set; }
         public int ExamenId { get; set; }
         public int Cupos { get; set; }

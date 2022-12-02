@@ -37,6 +37,14 @@ namespace DataAccess.Crud
             dao.EjecProcedimientoAlmacenado(sqlOperation);
         }
 
+        public void ActualizarCliente(EntidadBase entidadDto)
+        {
+            var usuario = (Usuario)entidadDto;
+            var sqlOperation = mapper.DeclaracionActualizarCliente(usuario);
+
+            dao.EjecProcedimientoAlmacenado(sqlOperation);
+        }
+
         public override void Eliminar(EntidadBase entidadDto)
         {
             var usuario = (Usuario)entidadDto;

@@ -21,12 +21,11 @@ namespace DataAccess.Mapper
 
             var membresia = (Membresia)entidadDTO;
 
-            operacion.AddIntergerParam("LaboratorioId", membresia.MembresiaId);
-            operacion.AddVarcharParam("NombreLaboratorio", membresia.NombreMembresia);
-            operacion.AddVarcharParam("SedeLaboratorio", membresia.Descripcion);
-            operacion.AddIntergerParam("UsuarioPropietario", membresia.Cantidad);
+            operacion.AddIntergerParam("MembresiaId", membresia.MembresiaId);
+            operacion.AddVarcharParam("NombreMembresia", membresia.NombreMembresia);
+            operacion.AddVarcharParam("Descripcion", membresia.Descripcion);
+            operacion.AddIntergerParam("Cantidad", membresia.Cantidad);
             operacion.AddDoublePram("Precio", membresia.Precio);
-                      /*AddFloatParam*/
             operacion.AddVarcharParam("Estado", membresia.Estado);
 
             return operacion;
@@ -37,17 +36,16 @@ namespace DataAccess.Mapper
         {
             var operacion = new SqlOperation()
             {
-                NombreProcedimiento = "SP_ActualizarLaboratorio"
+                NombreProcedimiento = "SP_ActualizarMembresia"
             };
 
             var membresia = (Membresia)entidadDTO;
 
-            operacion.AddIntergerParam("LaboratorioId", membresia.MembresiaId);
-            operacion.AddVarcharParam("NombreLaboratorio", membresia.NombreMembresia);
-            operacion.AddVarcharParam("SedeLaboratorio", membresia.Descripcion);
-            operacion.AddIntergerParam("UsuarioPropietario", membresia.Cantidad);
+            operacion.AddIntergerParam("MembresiaId", membresia.MembresiaId);
+            operacion.AddVarcharParam("NombreMembresia", membresia.NombreMembresia);
+            operacion.AddVarcharParam("Descripcion", membresia.Descripcion);
+            operacion.AddIntergerParam("Cantidad", membresia.Cantidad);
             operacion.AddDoublePram("Precio", membresia.Precio);
-            /*AddFloatParam*/
             operacion.AddVarcharParam("Estado", membresia.Estado);
 
             return operacion;
@@ -55,7 +53,21 @@ namespace DataAccess.Mapper
 
         public SqlOperation DeclaracionBorrar(EntidadBase entidadDTO)
         {
-            throw new NotImplementedException();
+            var operacion = new SqlOperation()
+            {
+                NombreProcedimiento = "SP_BorrarMembresia"
+            };
+
+            var membresia = (Membresia)entidadDTO;
+
+            operacion.AddIntergerParam("MembresiaId", membresia.MembresiaId);
+            operacion.AddVarcharParam("NombreMembresia", membresia.NombreMembresia);
+            operacion.AddVarcharParam("Descripcion", membresia.Descripcion);
+            operacion.AddIntergerParam("Cantidad", membresia.Cantidad);
+            operacion.AddDoublePram("Precio", membresia.Precio);
+            operacion.AddVarcharParam("Estado", membresia.Estado);
+
+            return operacion;
         }
 
         public SqlOperation DeclaracionRecuperarPorId(int id)
@@ -88,7 +100,6 @@ namespace DataAccess.Mapper
                 Descripcion = row["Descripcion"].ToString(),
                 Cantidad = int.Parse(row["Cantidad"].ToString()),
                 Precio = double.Parse(row["Precio"].ToString()),
-                /*No se que paso aqui*/
                 Estado = row["Estado"].ToString()
 
             };

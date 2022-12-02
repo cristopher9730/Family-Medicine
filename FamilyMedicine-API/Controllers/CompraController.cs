@@ -1,34 +1,39 @@
-﻿using DTO;
+﻿using AppLogic;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
+using System.Web.Http;
 
 namespace FamilyMedicine.Controllers
 {
-    public class CompraController : Controller
+    public class CompraController : ApiController
     {
         [HttpPost]
         public string RegistrarCompra(Compra compra)
         {
             Random generator = new Random();
             String otp = generator.Next(100000, 1000000).ToString("D6");
-            compra.Codigo = otp;
+           
 
             AdminCompra adminCompra = new AdminCompra();
             return adminCompra.CrearCompra(compra);
 
         }
 
+        [HttpPut]
         public string ActualizarCompra(Compra compra)
         {
-            return "TBD";
+            AdminCompra adminCompra = new AdminCompra();
+            return adminCompra.EditarCompra(compra);
         }
 
+        [HttpDelete]
         public string BorrarCompra(Compra compra)
         {
-            return "TBD";
+            AdminCompra adminCompra = new AdminCompra();
+            return adminCompra.EliminarCompra(compra);
         }
 
         [HttpGet]
@@ -38,9 +43,11 @@ namespace FamilyMedicine.Controllers
             return adminCompra.DevolverTodosCompras();
         }
 
-        public string ObtenerUnCompra(int CompraId)
+        [HttpGet]
+        public Compra ObtenerUnCompra(Compra compra)
         {
-            return "TBD";
+            AdminCompra adminCompra = new AdminCompra();
+            return adminCompra.DevolverUnaCompra(compra);
         }
     }
 }

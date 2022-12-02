@@ -15,6 +15,5 @@ namespace DTO
         public double Precio { get; set; }
         public string Estado { get; set; }
 
-    /*[NombreMemebresia] se escribio mal en la base de datos **/
     }
 }

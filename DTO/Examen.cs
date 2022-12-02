@@ -12,7 +12,7 @@ namespace DTO
         public string Nombre { get; set; }
         public string NombreInterno { get; set; }
         public double Precio { get; set; }
-        public string Estado { get; set; }
         public int LaboratorioId { get; set; }
+        public string Estado { get; set; }
     }
 }

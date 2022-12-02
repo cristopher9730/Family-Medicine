@@ -10,7 +10,7 @@ using DataAccess.Crud;
 
 namespace AppLogic
 {
-    internal class AdminLaboratorio
+    public class AdminLaboratorio
     {
 
         public AdminLaboratorio()
@@ -32,15 +32,24 @@ namespace AppLogic
             return "Laboratorio actualizado correctamente en base de datos";
         }
 
-        public string EliminarLaboratorio()
+        public string EliminarLaboratorio(Laboratorio laboratorio)
         {
-            return "TBD";
+            LaboratorioCrudFactory laboratorioCrud = new LaboratorioCrudFactory();
+            laboratorioCrud.Eliminar(laboratorio);
+            return "Laboratorio elimindado correctamente en base de datos";
         }
 
         public List<Laboratorio> DevolverTodosLaboratorios()
         {
             LaboratorioCrudFactory laboratorioCrud = new LaboratorioCrudFactory();
             return laboratorioCrud.ListarTodos<Laboratorio>();
+        }
+
+        public Laboratorio DevolverUnLaboratorio(Laboratorio laboratorio)
+        {
+            LaboratorioCrudFactory laboratorioCrud = new LaboratorioCrudFactory();
+
+            return laboratorioCrud.ListarPorID<Laboratorio>(laboratorio.LaboratorioId);
         }
 
 

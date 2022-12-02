@@ -22,8 +22,8 @@ namespace DataAccess.Mapper
             var horario = (Horario)entidadDTO;
 
             operacion.AddIntergerParam("HorarioId", horario.HorarioId);
-            operacion.AddDateParam("Dia", horario.Dia);
-            operacion.AddIntergerParam("HoraInicio", horario.HoraInicio);
+            operacion.AddDateParam("Dia", horario.Dia.Date);
+            operacion.AddVarcharParam("HoraInicio", horario.HoraInicio);
             operacion.AddVarcharParam("HoraFin", horario.HoraFin);
             operacion.AddIntergerParam("ExamenId", horario.ExamenId);
             operacion.AddIntergerParam("Cupos", horario.Cupos);
@@ -38,14 +38,14 @@ namespace DataAccess.Mapper
         {
             var operacion = new SqlOperation()
             {
-                NombreProcedimiento = "SP_ActualizarUsuario"
+                NombreProcedimiento = "SP_ActualizarHorario"
             };
 
             var horario = (Horario)entidadDTO;
 
             operacion.AddIntergerParam("HorarioId", horario.HorarioId);
-            operacion.AddDateParam("Dia", horario.Dia);
-            operacion.AddIntergerParam("HoraInicio", horario.HoraInicio);
+            operacion.AddDateParam("Dia", horario.Dia.Date);
+            operacion.AddVarcharParam("HoraInicio", horario.HoraInicio);
             operacion.AddVarcharParam("HoraFin", horario.HoraFin);
             operacion.AddIntergerParam("ExamenId", horario.ExamenId);
             operacion.AddIntergerParam("Cupos", horario.Cupos);
@@ -57,7 +57,23 @@ namespace DataAccess.Mapper
 
         public SqlOperation DeclaracionBorrar(EntidadBase entidadDTO)
         {
-            throw new NotImplementedException();
+            var operacion = new SqlOperation()
+            {
+                NombreProcedimiento = "SP_BorrarHorario"
+            };
+
+            var horario = (Horario)entidadDTO;
+
+            operacion.AddIntergerParam("HorarioId", horario.HorarioId);
+            operacion.AddDateParam("Dia", horario.Dia.Date);
+            operacion.AddVarcharParam("HoraInicio", horario.HoraInicio);
+            operacion.AddVarcharParam("HoraFin", horario.HoraFin);
+            operacion.AddIntergerParam("ExamenId", horario.ExamenId);
+            operacion.AddIntergerParam("Cupos", horario.Cupos);
+            operacion.AddIntergerParam("LaboratorioId", horario.LaboratorioId);
+            operacion.AddVarcharParam("Estado", horario.Estado);
+
+            return operacion;
         }
 
         public SqlOperation DeclaracionRecuperarPorId(int id)
@@ -87,7 +103,7 @@ namespace DataAccess.Mapper
             {
                 HorarioId = int.Parse(row["HorarioId"].ToString()),
                 Dia = DateTime.Parse(row["Dia"].ToString()),
-                HoraInicio = int.Parse(row["HoraInicio"].ToString()),
+                HoraInicio = row["HoraInicio"].ToString(),
                 HoraFin = row["HoraFin"].ToString(),
                 ExamenId = int.Parse(row["ExamenId"].ToString()),
                 Cupos = int.Parse(row["Cupos"].ToString()),

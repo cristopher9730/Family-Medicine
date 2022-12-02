@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Crud\ActividadCrudFactory.cs" />
     <Compile Include="Crud\CitaCrudFactory.cs" />
     <Compile Include="Crud\ComponenteCrudFactory.cs" />
     <Compile Include="Crud\CompraCrudFactory.cs" />
@@ -53,12 +54,14 @@
     <Compile Include="Crud\HorarioCrudFactory.cs" />
     <Compile Include="Crud\LaboratorioCrudFactory.cs" />
     <Compile Include="Crud\MembresiaCrudFactory.cs" />
+    <Compile Include="Crud\OTPCrudFactory.cs" />
     <Compile Include="Crud\PromocionCrudFactory.cs" />
     <Compile Include="Crud\RolCrudFactory.cs" />
     <Compile Include="Crud\UsuarioCrudFactory.cs" />
     <Compile Include="Crud\CrudFactory.cs" />
     <Compile Include="Dao\SqlOperation.cs" />
     <Compile Include="Dao\SqlDao.cs" />
+    <Compile Include="Mapper\ActividadMapper.cs" />
     <Compile Include="Mapper\CitaMapper.cs" />
     <Compile Include="Mapper\ComponenteMapper.cs" />
     <Compile Include="Mapper\CompraMapper.cs" />
@@ -70,6 +73,7 @@
     <Compile Include="Mapper\CitaMapper.cs" />
     <Compile Include="Mapper\CompraMapper.cs" />
     <Compile Include="Mapper\ExamenMapper.cs" />
+    <Compile Include="Mapper\OTPMapper.cs" />
     <Compile Include="Mapper\PromocionMapper.cs" />
     <Compile Include="Mapper\RolMapper.cs" />
     <Compile Include="Mapper\UsuarioMapper.cs" />
