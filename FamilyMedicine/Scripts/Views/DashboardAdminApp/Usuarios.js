@@ -71,11 +71,11 @@
         ).fail(function (info) {
             alert('hubo un problema al crear usuario');
         });
+    }
 
+    $(document).ready(function () {
+        $.noConflict();
+        var view = new Usuarios();
+        view.InitView();
+    });
 }
-
-$(document).ready(function () {
-    $.noConflict();
-    var view = new Usuarios();
-    view.InitView();
-});

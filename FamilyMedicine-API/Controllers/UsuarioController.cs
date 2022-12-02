@@ -34,6 +34,13 @@ namespace FamilyMedicine_API.Controllers
             return adminUsuario.EditarUsuario(usuario); ;
         }
 
+        [HttpPut]
+        public string ActualizarDatos(Usuario usuario)
+        {
+            AdminUsuario adminUsuario = new AdminUsuario();
+            return adminUsuario.EditarUsuarioCliente(usuario); ;
+        }
+
         [HttpDelete]
         public string BorrarUsuario(Usuario usuario)
         {
