@@ -100,14 +100,17 @@ namespace DataAccess.Crud
         La operacion sql se ingresa como parametro al metodo de dao para ejectuar el procedimiento almacenado de login y se guarda la respuesta en la variable resultado. 
         Se devuelve la variable resultado que en este caso, contiene el id del usuario en caso de ser encontrado y 0 si no es encontrado 
          */
-        public int Login(Usuario oUsuario)
+        public Usuario Login(Usuario oUsuario)
         {
             //oUsuario.Clave = ConvertirSha256(oUsuario.Clave);
             var correo = oUsuario.Correo;
             var resultado = dao.ExectuteStoreProcedureWithQueryLogin(mapper.Login(oUsuario));
             //var objUsuario = new Usuario();
             //idUsuario = Mapper.BuildObjectLogin(resultado);
-            return resultado;
+            Usuario usuarioRespuesta;
+            usuarioRespuesta = (Usuario)mapper.ConstruirObjeto(resultado);
+
+            return usuarioRespuesta;
         }
 
 
