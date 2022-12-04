@@ -46,7 +46,7 @@ namespace AppLogic
         {
             OTPCrudFactory otpCrud = new OTPCrudFactory();
 
-            return otpCrud.ListarPorID<OTP>(otp.identificacion);
+            return otpCrud.ListarPorID2<OTP>(otp.CodigoOTP,otp.SesionUsuarioId);
         }
     }
 }

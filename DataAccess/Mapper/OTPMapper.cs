@@ -16,19 +16,20 @@ namespace DataAccess.Mapper
         {
             var operacion = new SqlOperation()
             {
-                NombreProcedimiento = "SP_CrearOTP"
+                NombreProcedimiento = "SP_RegistrarOTP"
             };
 
             var otp = (OTP)entidadDTO;
 
-            operacion.AddIntergerParam("OTPId", otp.OTPId);
+            operacion.AddIntergerParam("UsuarioId", otp.CreacionUsuario);
             operacion.AddIntergerParam("CodigoOTP", otp.CodigoOTP);
-            operacion.AddIntergerParam("CreacionUsuario", otp.CreacionUsuario);
-            operacion.AddIntergerParam("InactivacionUsuario", otp.InactivacionUsuario);
-            operacion.AddDateParam("FechaCreacion", otp.FechaCreacion.Date);
-            operacion.AddDateParam("FechaInactivacion", otp.FechaInactivacion.Date);
-            operacion.AddDateParam("FechaExpiracion", otp.FechaExpiracion.Date);
-            operacion.AddVarcharParam("Estado", otp.Estado);
+            //operacion.AddIntergerParam("CodigoOTP", otp.CodigoOTP);
+            //operacion.AddIntergerParam("CreacionUsuario", otp.CreacionUsuario);
+            //operacion.AddIntergerParam("InactivacionUsuario", otp.InactivacionUsuario);
+            //operacion.AddDateParam("FechaCreacion", otp.FechaCreacion.Date);
+            //operacion.AddDateParam("FechaInactivacion", otp.FechaInactivacion.Date);
+            //operacion.AddDateParam("FechaExpiracion", otp.FechaExpiracion.Date);
+            //operacion.AddVarcharParam("Estado", otp.Estado);
 
             return operacion;
 
@@ -85,6 +86,18 @@ namespace DataAccess.Mapper
             return operacion;
         }
 
+        public SqlOperation DeclaracionRecuperarPorId2(int CodigoOtp, int UsuarioId)
+        {
+            var operacion = new SqlOperation()
+            {
+                NombreProcedimiento = "SP_DevolverOTP"
+            };
+            
+            operacion.AddIntergerParam("CodigoOTP", CodigoOtp);
+            operacion.AddIntergerParam("UsuarioId", UsuarioId);
+            return operacion;
+        }
+
         public SqlOperation DeclaracionRecuperarTodos()
         {
             var operacion = new SqlOperation()
@@ -99,18 +112,28 @@ namespace DataAccess.Mapper
         #region Metodos de IObjectMapper
         public EntidadBase ConstruirObjeto(Dictionary<string, object> row)
         {
-            var otp = new OTP()
+            try
             {
-                OTPId = int.Parse(row["OTPId"].ToString()),
-                CodigoOTP = int.Parse(row["CodigoOTP"].ToString()),
-                CreacionUsuario = int.Parse(row["CreacionUsuario"].ToString()),
-                FechaCreacion = DateTime.Parse(row["FechaCreacion"].ToString()),
-                FechaInactivacion = DateTime.Parse(row["FechaInactivacion"].ToString()),
-                FechaExpiracion = DateTime.Parse(row["FechaExpiracion"].ToString()),
-                Estado = row["Estado"].ToString(),
-                
-            };
-            return otp;
+                var otp = new OTP()
+                {
+                    OTPId = int.Parse(row["OTPId"].ToString()),
+                    CodigoOTP = int.Parse(row["CodigoOTP"].ToString()),
+                    CreacionUsuario = int.Parse(row["CreacionUsuario"].ToString()),
+                    FechaCreacion = DateTime.Parse(row["FechaCreacion"].ToString()),
+                    FechaInactivacion = DateTime.Parse(row["FechaInactivacion"].ToString()),
+                    FechaExpiracion = DateTime.Parse(row["FechaExpiracion"].ToString()),
+                    Estado = row["Estado"].ToString(),
+
+                };
+                return otp;
+            }
+            catch 
+            {
+                var otp = new OTP();
+                otp.OTPId = 0;
+                otp.CodigoOTP = 0;
+                return otp;
+            }
         }
 
         public List<EntidadBase> ConstruirObjetos(List<Dictionary<string, object>> lstRows)
