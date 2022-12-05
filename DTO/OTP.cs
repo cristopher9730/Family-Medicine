@@ -11,7 +11,7 @@ namespace DTO
         //public int SesionUsuarioId { get; set; }
         public int OTPId { get; set; }
         public int CodigoOTP { get; set; }
-        public int CreacionUsuario { get; set; }
+        public string CreacionUsuario { get; set; }
         public int InactivacionUsuario { get; set; }
         public DateTime FechaCreacion { get; set; }
         public DateTime FechaInactivacion { get; set; }
