@@ -21,7 +21,7 @@ namespace DataAccess.Mapper
 
             var otp = (OTP)entidadDTO;
 
-            operacion.AddIntergerParam("UsuarioId", otp.CreacionUsuario);
+            operacion.AddVarcharParam("UsuarioId", otp.CreacionUsuario);
             operacion.AddIntergerParam("CodigoOTP", otp.CodigoOTP);
 
             return operacion;
@@ -39,8 +39,8 @@ namespace DataAccess.Mapper
 
             operacion.AddIntergerParam("OTPId", otp.OTPId);
             operacion.AddIntergerParam("CodigoOTP", otp.CodigoOTP);
-            operacion.AddIntergerParam("CreacionUsuario", otp.CreacionUsuario);
-            operacion.AddIntergerParam("InactivacionUsuario", otp.InactivacionUsuario);
+            operacion.AddVarcharParam("CreacionUsuario", otp.CreacionUsuario);
+            operacion.AddVarcharParam("InactivacionUsuario", otp.InactivacionUsuario);
             operacion.AddDateParam("FechaCreacion", otp.FechaCreacion.Date);
             operacion.AddDateParam("FechaInactivacion", otp.FechaInactivacion.Date);
             operacion.AddDateParam("FechaExpiracion", otp.FechaExpiracion.Date);
@@ -60,8 +60,8 @@ namespace DataAccess.Mapper
 
             operacion.AddIntergerParam("OTPId", otp.OTPId);
             operacion.AddIntergerParam("CodigoOTP", otp.CodigoOTP);
-            operacion.AddIntergerParam("CreacionUsuario", otp.CreacionUsuario);
-            operacion.AddIntergerParam("InactivacionUsuario", otp.InactivacionUsuario);
+            operacion.AddVarcharParam("CreacionUsuario", otp.CreacionUsuario);
+            operacion.AddVarcharParam("InactivacionUsuario", otp.InactivacionUsuario);
             operacion.AddDateParam("FechaCreacion", otp.FechaCreacion.Date);
             operacion.AddDateParam("FechaInactivacion", otp.FechaInactivacion.Date);
             operacion.AddDateParam("FechaExpiracion", otp.FechaExpiracion.Date);
@@ -79,15 +79,15 @@ namespace DataAccess.Mapper
             return operacion;
         }
 
-        public SqlOperation DeclaracionRecuperarPorId2(int CodigoOtp, int UsuarioId)
+        public SqlOperation DeclaracionRecuperarPorId2(int CodigoOtp, string CorreoUsuario)
         {
             var operacion = new SqlOperation()
             {
-                NombreProcedimiento = "SP_DevolverOTP"
+                NombreProcedimiento = "SP_ValidarOTPCorreo"
             };
             
             operacion.AddIntergerParam("CodigoOTP", CodigoOtp);
-            operacion.AddIntergerParam("UsuarioId", UsuarioId);
+            operacion.AddVarcharParam("UsuarioId", CorreoUsuario);
             return operacion;
         }
 
@@ -111,7 +111,7 @@ namespace DataAccess.Mapper
                 {
                     OTPId = int.Parse(row["OTPId"].ToString()),
                     CodigoOTP = int.Parse(row["CodigoOTP"].ToString()),
-                    CreacionUsuario = int.Parse(row["CreacionUsuario"].ToString()),
+                    CreacionUsuario = row["CreacionUsuario"].ToString(),
                     FechaCreacion = DateTime.Parse(row["FechaCreacion"].ToString()),
                     FechaInactivacion = DateTime.Parse(row["FechaInactivacion"].ToString()),
                     FechaExpiracion = DateTime.Parse(row["FechaExpiracion"].ToString()),
