@@ -29,9 +29,9 @@ namespace DataAccess.Mapper
             operacion.AddVarcharParam("Clave", usuario.Clave);
             operacion.AddVarcharParam("Foto", usuario.Foto);
             operacion.AddVarcharParam("Estado", usuario.Estado);
-            operacion.AddIntergerParam("RolId", usuario.RolId);
             operacion.AddIntergerParam("LaboratorioId", usuario.LaboratorioId);
             operacion.AddIntergerParam("MembresiaId", usuario.MembresiaId);
+            operacion.AddIntergerParam("RolId", usuario.RolId);
             operacion.AddVarcharParam("Codigo", usuario.Codigo);
 
             return operacion;
@@ -46,7 +46,6 @@ namespace DataAccess.Mapper
 
             var usuario = (Usuario)entidadDTO;
 
-            operacion.AddIntergerParam("UsuarioId", usuario.UsuarioId);
             operacion.AddVarcharParam("Nombre", usuario.Nombre);
             operacion.AddVarcharParam("Primer_Apellido", usuario.PrimerApellido);
             operacion.AddVarcharParam("Segundo_Apellido", usuario.SegundoApellido);
@@ -55,9 +54,9 @@ namespace DataAccess.Mapper
             operacion.AddVarcharParam("Clave", usuario.Clave);
             operacion.AddVarcharParam("Foto", usuario.Foto);
             operacion.AddVarcharParam("Estado", usuario.Estado);
-            operacion.AddIntergerParam("RolId", usuario.RolId);
             operacion.AddIntergerParam("LaboratorioId", usuario.LaboratorioId);
             operacion.AddIntergerParam("MembresiaId", usuario.MembresiaId);
+            operacion.AddIntergerParam("RolId", usuario.RolId);
             operacion.AddVarcharParam("Codigo", usuario.Codigo);
 
             return operacion;

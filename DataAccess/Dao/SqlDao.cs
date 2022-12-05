@@ -17,8 +17,8 @@ namespace DataAccess.Dao
 
         public SqlDao()
         {
-            //connectionString = ConfigurationManager.ConnectionStrings["FamilyMedicine-bd"].ConnectionString;
-            connectionString = "Server=DESKTOP-M61QKLM\\SQLEXPRESS; Database=FamilyMedicine-bd; Trusted_Connection=True";
+            connectionString = ConfigurationManager.ConnectionStrings["FamilyMedicine-bd"].ConnectionString;
+
         }
 
         //Se crea el metodo para manejar una instancia unica

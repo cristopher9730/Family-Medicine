@@ -36,7 +36,7 @@ namespace DataAccess.Mapper
         {
             var operacion = new SqlOperation()
             {
-                NombreProcedimiento = "SP_ActualizarPromocion"
+                NombreProcedimiento = "SP_ModificarPromocion"
             };
 
             var promocion = (Promocion)entidadDTO;

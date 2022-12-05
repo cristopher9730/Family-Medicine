@@ -16,7 +16,7 @@ namespace DataAccess.Mapper
         {
             var operacion = new SqlOperation()
             {
-                NombreProcedimiento = "SP_CrearCompra"
+                NombreProcedimiento = "SP_RegistrarCompra"
             };
 
             var compra = (Compra)entidadDTO;
