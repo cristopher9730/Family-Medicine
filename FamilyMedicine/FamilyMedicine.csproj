@@ -274,7 +274,6 @@
     <Content Include="Scripts\Views\recuperarPass.js" />
     <Content Include="Scripts\Views\RegistarUsuarios.js" />
     <Content Include="Scripts\Views\dashboardUsuario\DashboardCitasFechas.js" />
-    <Content Include="Scripts\Views\dashboardUsuario\DashboardCitasQR.js" />
     <Content Include="Scripts\Views\dashboardUsuario\DashboardCitasResultado.js" />
     <Content Include="Scripts\Views\ValidacionGeneralParaLasPaginas.js" />
     <Content Include="Web.config" />

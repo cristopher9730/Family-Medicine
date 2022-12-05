@@ -12,10 +12,7 @@ namespace FamilyMedicine.Controllers
     {
         [HttpPost]
         public string RegistrarLaboratorio(Laboratorio laboratorio)
-        {
-            Random generator = new Random();
-            String otp = generator.Next(100000, 1000000).ToString("D6");
-            
+        { 
 
             AdminLaboratorio adminLaboratorio = new AdminLaboratorio();
             return adminLaboratorio.CrearLaboratorio(laboratorio);
