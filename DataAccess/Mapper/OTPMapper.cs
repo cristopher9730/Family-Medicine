@@ -47,7 +47,7 @@ namespace DataAccess.Mapper
             operacion.AddIntergerParam("OTPId", otp.OTPId);
             operacion.AddIntergerParam("CodigoOTP", otp.CodigoOTP);
             operacion.AddVarcharParam("CreacionUsuario", otp.CreacionUsuario);
-            operacion.AddIntergerParam("InactivacionUsuario", otp.InactivacionUsuario);
+            operacion.AddVarcharParam("InactivacionUsuario", otp.InactivacionUsuario);
             operacion.AddDateParam("FechaCreacion", otp.FechaCreacion.Date);
             operacion.AddDateParam("FechaInactivacion", otp.FechaInactivacion.Date);
             operacion.AddDateParam("FechaExpiracion", otp.FechaExpiracion.Date);
@@ -68,7 +68,7 @@ namespace DataAccess.Mapper
             operacion.AddIntergerParam("OTPId", otp.OTPId);
             operacion.AddIntergerParam("CodigoOTP", otp.CodigoOTP);
             operacion.AddVarcharParam("CreacionUsuario", otp.CreacionUsuario);
-            operacion.AddIntergerParam("InactivacionUsuario", otp.InactivacionUsuario);
+            operacion.AddVarcharParam("InactivacionUsuario", otp.InactivacionUsuario);
             operacion.AddDateParam("FechaCreacion", otp.FechaCreacion.Date);
             operacion.AddDateParam("FechaInactivacion", otp.FechaInactivacion.Date);
             operacion.AddDateParam("FechaExpiracion", otp.FechaExpiracion.Date);
@@ -90,7 +90,7 @@ namespace DataAccess.Mapper
         {
             var operacion = new SqlOperation()
             {
-                NombreProcedimiento = "SP_DevolverOTP"
+                NombreProcedimiento = "SP_ValidarOTPCorreo"
             };
             
             operacion.AddIntergerParam("CodigoOTP", CodigoOtp);
