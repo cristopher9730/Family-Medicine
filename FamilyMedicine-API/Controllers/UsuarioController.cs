@@ -62,5 +62,19 @@ namespace FamilyMedicine_API.Controllers
             return adminUsuario.DevolverUnUsuario(usuario);
         }
 
+     
+        [HttpGet]
+        public Usuario ObtenerUnUsuarioDos()
+        {
+            Usuario usuario = new Usuario();
+            usuario.UsuarioId = 13;
+            usuario.Nombre = "ALFREDO";
+            usuario.PrimerApellido = "Segundo";
+            usuario.SegundoApellido = "PANCHITO";
+            usuario.Telefono = "24129919";
+            usuario.Correo = "alfredo@ucenfoc.com";
+
+            return usuario;
+        }  
     }
 }
