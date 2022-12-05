@@ -5,19 +5,21 @@
             var vista = new Laboratorio();
             vista.RegistrarLaboratorio();
         });
-        this.CargarTabla();
     }
 
     this.RegistrarLaboratorio = function () {
         var laboratorio = {}
+        laboratorio.UsuarioPropietarioId = 1;
         laboratorio.NombreLaboratorio = $("#txtNombre").val();
-        laboratorio.Dirrecion = $("#txtDirreccion").val();
+        laboratorio.SedeLaboratorio = "Heredia";
         laboratorio.Telefono = $("#txtTelefono").val();
         laboratorio.CorreoLaboratorio = $("#txtCorreo").val();
+        laboratorio.Direccion = $("#txtDireccion").val();
         laboratorio.CedulaJuridica = $("#txtCedula").val();
         laboratorio.RazonSocial = $("#txtRazon").val();
-        laboratorio.RazonSocial = $("#txtPaginaWeb").val();
-        laboratorio.RazonSocial = $("#txtRedSocial").val();
+        laboratorio.Estado = "Activo";
+        laboratorio.PaginaWeb = $("#txtPaginaWeb").val();
+        laboratorio.RedSocial = $("#txtRedSocial").val();
         
         $.ajax({
             headers: {
@@ -27,7 +29,7 @@
             method: "POST",
             url: "https://localhost:44391/api/Laboratorio/RegistrarLaboratorio",
             contentType: "application/json",
-            data: JSON.stringify(usuario),
+            data: JSON.stringify(laboratorio),
             hasContent: true
         }).done(function (info) {
             alert('Laboratorio Creado correctamente');
@@ -37,9 +39,11 @@
         });
     }
 
-    $(document).ready(function () {
-        $.noConflict();
-        var view = new Laboratorio();
-        view.InitView();
-    });
+    
 }
+
+$(document).ready(function () {
+    $.noConflict();
+    var view = new Laboratorio();
+    view.InitView();
+});

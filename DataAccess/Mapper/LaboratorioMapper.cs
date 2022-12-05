@@ -20,12 +20,12 @@ namespace DataAccess.Mapper
             };
 
             var laboratorio = (Laboratorio)entidadDTO;
-            operacion.AddIntergerParam("UsuarioPropietario", laboratorio.UsuarioPropietarioId);
+            operacion.AddIntergerParam("UsuarioPropietarioId", laboratorio.UsuarioPropietarioId);
             operacion.AddVarcharParam("NombreLaboratorio", laboratorio.NombreLaboratorio);
             operacion.AddVarcharParam("SedeLaboratorio", laboratorio.SedeLaboratorio);
             operacion.AddVarcharParam("Telefono", laboratorio.Telefono);
             operacion.AddVarcharParam("CorreoLaboratorio", laboratorio.CorreoLaboratorio);
-            operacion.AddVarcharParam("Dirrecion", laboratorio.Dirrecion);
+            operacion.AddVarcharParam("Direccion", laboratorio.Direccion);
             operacion.AddVarcharParam("CedulaJuridica", laboratorio.CedulaJuridica);
             operacion.AddVarcharParam("RazonSocial", laboratorio.RazonSocial);
             operacion.AddVarcharParam("Estado", laboratorio.Estado);
@@ -45,12 +45,12 @@ namespace DataAccess.Mapper
 
             var laboratorio = (Laboratorio)entidadDTO;
 
-            operacion.AddIntergerParam("UsuarioPropietario", laboratorio.UsuarioPropietarioId);
+            operacion.AddIntergerParam("UsuarioPropietarioId", laboratorio.UsuarioPropietarioId);
             operacion.AddVarcharParam("NombreLaboratorio", laboratorio.NombreLaboratorio);
             operacion.AddVarcharParam("SedeLaboratorio", laboratorio.SedeLaboratorio);
             operacion.AddVarcharParam("Telefono", laboratorio.Telefono);
             operacion.AddVarcharParam("CorreoLaboratorio", laboratorio.CorreoLaboratorio);
-            operacion.AddVarcharParam("Dirrecion", laboratorio.Dirrecion);
+            operacion.AddVarcharParam("Direccion", laboratorio.Direccion);
             operacion.AddVarcharParam("CedulaJuridica", laboratorio.CedulaJuridica);
             operacion.AddVarcharParam("RazonSocial", laboratorio.RazonSocial);
             operacion.AddVarcharParam("Estado", laboratorio.Estado);
@@ -69,12 +69,12 @@ namespace DataAccess.Mapper
 
             var laboratorio = (Laboratorio)entidadDTO;
 
-            operacion.AddIntergerParam("UsuarioPropietario", laboratorio.UsuarioPropietarioId);
+            operacion.AddIntergerParam("UsuarioPropietarioId", laboratorio.UsuarioPropietarioId);
             operacion.AddVarcharParam("NombreLaboratorio", laboratorio.NombreLaboratorio);
             operacion.AddVarcharParam("SedeLaboratorio", laboratorio.SedeLaboratorio);
             operacion.AddVarcharParam("Telefono", laboratorio.Telefono);
             operacion.AddVarcharParam("CorreoLaboratorio", laboratorio.CorreoLaboratorio);
-            operacion.AddVarcharParam("Dirrecion", laboratorio.Dirrecion);
+            operacion.AddVarcharParam("Direccion", laboratorio.Direccion);
             operacion.AddVarcharParam("CedulaJuridica", laboratorio.CedulaJuridica);
             operacion.AddVarcharParam("RazonSocial", laboratorio.RazonSocial);
             operacion.AddVarcharParam("Estado", laboratorio.Estado);
@@ -115,7 +115,7 @@ namespace DataAccess.Mapper
                 SedeLaboratorio = row["SedeLaboratorio"].ToString(),
                 Telefono = row["Telefono"].ToString(),
                 CorreoLaboratorio = row["CorreoLaboratorio"].ToString(),
-                Dirrecion = row["Dirrecion"].ToString(),
+                Direccion = row["Direccion"].ToString(),
                 CedulaJuridica = row["CedulaJuridica"].ToString(),
                 RazonSocial = row["RazonSocial"].ToString(),
                 Estado = row["Estado"].ToString(),
