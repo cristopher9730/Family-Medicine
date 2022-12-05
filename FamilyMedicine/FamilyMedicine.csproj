@@ -287,10 +287,8 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\LandingViejo.cshtml" />
-    <Content Include="Views\IniciarSecion\Login.cshtml" />
     <Content Include="Views\Registros\RegistrarCita.cshtml" />
     <Content Include="Views\Registros\RegistrarUsuario.cshtml" />
-    <Content Include="Views\IniciarSecion\OTP.cshtml" />
     <Content Include="Views\Shared\_LayoutBusqueda.cshtml" />
     <Content Include="Views\Busquedas\Busqueda.cshtml" />
     <Content Include="Views\DashboardUsuario\DashBoardCitas.cshtml" />
@@ -309,7 +307,6 @@
     <Content Include="Views\Footer\Contactenos.cshtml" />
     <Content Include="Views\Footer\TerminosCondiciones.cshtml" />
     <Content Include="Views\Footer\PreguntasFrecuentes.cshtml" />
-    <Content Include="Views\IniciarSecion\recuperarContrasenna.cshtml" />
     <Content Include="Views\CarritoDeCompras\CarritoDeCompras.cshtml" />
     <Content Include="Views\Laboratorios\CicloLab.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -317,6 +314,9 @@
     <Content Include="Views\DashboardAdminLaboratorio\Cupones.cshtml" />
     <Content Include="Views\AgendarCitas\AgendarCitas.cshtml" />
     <Content Include="Scripts\Views\ConsumoApi\jsconfig.json" />
+    <Content Include="Views\IniciarSesion\Login.cshtml" />
+    <Content Include="Views\IniciarSesion\OTP.cshtml" />
+    <Content Include="Views\IniciarSesion\recuperarContrasenna.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
