@@ -133,23 +133,32 @@ namespace DataAccess.Mapper
         #region Metodos de IObjectMapper
         public EntidadBase ConstruirObjeto(Dictionary<string, object> row)
         {
-            var usuario = new Usuario()
+            try
             {
-                UsuarioId = int.Parse(row["UsuarioId"].ToString()),
-                Nombre = row["Nombre"].ToString(),
-                PrimerApellido = row["Primer_Apellido"].ToString(),
-                SegundoApellido = row["Segundo_Apellido"].ToString(),
-                Correo = row["Correo"].ToString(),
-                Telefono = row["Telefono"].ToString(),
-                Clave = row["Clave"].ToString(),
-                Foto = row["Foto"].ToString(),
-                Estado = row["Estado"].ToString(),
-                RolId = int.Parse(row["LaboratorioId"].ToString()),
-                LaboratorioId = int.Parse(row["MembresiaId"].ToString()),
-                MembresiaId = int.Parse(row["RolId"].ToString()),
-                Codigo = row["Codigo"].ToString(),
-            };
-            return usuario;
+                var usuario = new Usuario()
+                {
+                    UsuarioId = int.Parse(row["UsuarioId"].ToString()),
+                    Nombre = row["Nombre"].ToString(),
+                    PrimerApellido = row["Primer_Apellido"].ToString(),
+                    SegundoApellido = row["Segundo_Apellido"].ToString(),
+                    Correo = row["Correo"].ToString(),
+                    Telefono = row["Telefono"].ToString(),
+                    Clave = row["Clave"].ToString(),
+                    Foto = row["Foto"].ToString(),
+                    Estado = row["Estado"].ToString(),
+                    LaboratorioId = int.Parse(row["LaboratorioId"].ToString()),
+                    MembresiaId = int.Parse(row["MembresiaId"].ToString()),
+                    RolId = int.Parse(row["RolId"].ToString()),
+                    Codigo = row["Codigo"].ToString(),
+                };
+                return usuario;
+            }
+            catch
+            {
+                Usuario usuario = new Usuario();
+                usuario.UsuarioId = 0;
+                return usuario;
+            }
         }
 
         public List<EntidadBase> ConstruirObjetos(List<Dictionary<string, object>> lstRows)

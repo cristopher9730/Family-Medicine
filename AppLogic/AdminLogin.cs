@@ -38,9 +38,9 @@ namespace AppLogic
             }
             else {
                 UsuarioCrudFactory usuarioCrud = new UsuarioCrudFactory();
-                int idUsuario = usuarioCrud.Login(oUsuario);
+                usuario = usuarioCrud.Login(oUsuario);
                 
-                usuario.UsuarioId = idUsuario;
+                //usuario.UsuarioId = idUsuario;
             }
 
             return usuario;
