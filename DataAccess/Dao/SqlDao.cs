@@ -17,7 +17,8 @@ namespace DataAccess.Dao
 
         public SqlDao()
         {
-            connectionString = ConfigurationManager.ConnectionStrings["FamilyMedicine-bd"].ConnectionString;
+            //connectionString = ConfigurationManager.ConnectionStrings["FamilyMedicine-bd"].ConnectionString;
+            connectionString = "Server=DESKTOP-M61QKLM\\SQLEXPRESS; Database=FamilyMedicine-bd; Trusted_Connection=True";
         }
 
         //Se crea el metodo para manejar una instancia unica
@@ -93,7 +94,7 @@ Reader tiene varios metodos, entre los cuales tiene un getSqlInt que devuelve el
 Se puede cambiar el tipo de dato en la firma por cualquier tipo. 
  * */
 
-        public int ExectuteStoreProcedureWithQueryLogin(SqlOperation operation)
+        public Dictionary<string, object> ExectuteStoreProcedureWithQueryLogin(SqlOperation operation)
         {
             var connection = new SqlConnection(this.connectionString);
             var command = new SqlCommand();
@@ -113,24 +114,23 @@ Se puede cambiar el tipo de dato en la firma por cualquier tipo.
             connection.Open();
 
             var reader = command.ExecuteReader();
-            //var dicc = new Dictionary<string, object>();
-            int idUsuario = 0;
+
+            var lstResult = new List<Dictionary<string, object>>();
+
+
+            var dicc = new Dictionary<string, object>();
 
             if (reader.HasRows)
             {
-
                 while (reader.Read())
                 {
-
-                    try
+                    for (int i = 0; i < reader.FieldCount; i++)
                     {
-                        idUsuario = (int)reader.GetSqlInt32(0);
+                        dicc.Add(reader.GetName(i), reader.GetValue(i));
                     }
-                    catch (Exception ex) { return 0; }
-
                 }
             }
-            return idUsuario;
+            return dicc;
         }
     }
 }

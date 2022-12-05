@@ -8,6 +8,7 @@ namespace DTO
 {
     public class OTP:EntidadBase
     {
+        //public int SesionUsuarioId { get; set; }
         public int OTPId { get; set; }
         public int CodigoOTP { get; set; }
         public int CreacionUsuario { get; set; }

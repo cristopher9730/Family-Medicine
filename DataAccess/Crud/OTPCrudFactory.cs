@@ -65,11 +65,32 @@ namespace DataAccess.Crud
             return list;
         }
 
-        public override T ListarPorID<T>(int id)
+        public override T ListarPorID<T>(int UsuarioId)
         {
 
 
-            var listResult = dao.EjecProcedimientoAlmacenadoConConsulta(mapper.DeclaracionRecuperarPorId(id));
+            var listResult = dao.EjecProcedimientoAlmacenadoConConsulta(mapper.DeclaracionRecuperarPorId(UsuarioId));
+
+            var dicc = new Dictionary<string, object>();
+
+            if (listResult.Count > 0)
+            {
+                dicc = listResult[0];
+                var objsOTP = mapper.ConstruirObjeto(dicc);
+                return (T)Convert.ChangeType(objsOTP, typeof(T));
+
+
+            }
+            return default(T);
+
+
+        }
+
+        public  T ListarPorID2<T>(int CodigoOTP, int UsuarioId)
+        {
+
+
+            var listResult = dao.EjecProcedimientoAlmacenadoConConsulta(mapper.DeclaracionRecuperarPorId2(CodigoOTP, UsuarioId));
 
             var dicc = new Dictionary<string, object>();
 
