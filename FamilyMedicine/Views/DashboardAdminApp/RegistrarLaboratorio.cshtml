@@ -14,9 +14,14 @@
         text-decoration: none;
         background-color: #f3f3f363;
     }
+
+    .contenedorDeInputsLab {
+        height: 74px !important;
+    }
 </style>
 
 
+<link rel="stylesheet" href="~/Content/css/Login.css" />
 <link rel="stylesheet" href="~/Content/css/DashboardCss/DashBoardGeneral.css" />
 
 <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
@@ -30,7 +35,7 @@
             <div class="col">
 
                 <div class="mb-3 w-100">
-                    <div class="form-group has-validation w-100 d-flex flex-column">
+                    <div class="form-group has-validation w-100 d-flex flex-column contenedorDeInputsLab">
                         <label class="form-label" for="txtNombre" id="inputGroupPrepend">Nombre del Laboratorio</label>
                         <input type="text" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
                         <div class="invalid-feedback">
@@ -40,27 +45,17 @@
                 </div>
 
                 <div class="mb-3 w-100">
-                    <div class="form-group has-validation w-100 d-flex flex-column">
-                        <label class="form-label" for="txtNombreComercial" id="inputGroupPrepend">Nombre Comercial</label>
-                        <input type="text" class="form-control w-100" id="txtNombreComercial" aria-describedby="inputGroupPrepend" required>
+                    <div class="form-group has-validation w-100 d-flex flex-column contenedorDeInputsLab">
+                        <label class="form-label" for="txtNombreComercial" id="inputGroupPrepend">Dirrección del laboratorio</label>
+                        <input type="text" class="form-control w-100" id="txtDireccion" aria-describedby="inputGroupPrepend" required>
                         <div class="invalid-feedback">
-                            Por favor, ingrese el nombre comercial del laboratorio
+                            Por favor, ingrese la dirrección del laboratorio
                         </div>
                     </div>
                 </div>
 
                 <div class="mb-3 w-100">
-                    <div class="form-group has-validation w-100 d-flex flex-column">
-                        <label class="form-label" for="txtCorreo" id="inputGroupPrepend">Correo Eléctronico</label>
-                        <input type="email" pattern="^[a-zA-Z0-9._+-]+@("@")[a-zA-Z0-9.-]+\.[a-zA-Z]{2,9}$" class="form-control w-100" id="txtCorreo" aria-describedby="inputGroupPrepend" required>
-                        <div class="invalid-feedback">
-                            Por favor, ingrese el correo eléctronico
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mb-3 w-100">
-                    <div class="form-group has-validation w-100 d-flex flex-column">
+                    <div class="form-group has-validation w-100 d-flex flex-column contenedorDeInputsLab">
                         <label class="form-label" for="txtTelefono" id="inputGroupPrepend">Télefono</label>
                         <input type="number" class="form-control w-100" id="txtTelefono" aria-describedby="inputGroupPrepend" required>
                         <div class="invalid-feedback">
@@ -70,7 +65,17 @@
                 </div>
 
                 <div class="mb-3 w-100">
-                    <div class="form-group has-validation w-100 d-flex flex-column">
+                    <div class="form-group has-validation w-100 d-flex flex-column contenedorDeInputsLab">
+                        <label class="form-label" for="txtCorreo" id="inputGroupPrepend">Correo Eléctronico</label>
+                        <input type="email" pattern="^[a-zA-Z0-9._+-]+@("@")[a-zA-Z0-9.-]+\.[a-zA-Z]{2,9}$" class="form-control w-100" id="txtCorreo" aria-describedby="inputGroupPrepend" required>
+                        <div class="invalid-feedback">
+                            Por favor, ingrese el correo eléctronico
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3 w-100">
+                    <div class="form-group has-validation w-100 d-flex flex-column contenedorDeInputsLab">
                         <label class="form-label" for="txtCedula" id="inputGroupPrepend">Cédula Jurídica</label>
                         <input type="number" class="form-control w-100" id="txtCedula" aria-describedby="inputGroupPrepend" required>
                         <div class="invalid-feedback">
@@ -79,24 +84,15 @@
                     </div>
                 </div>
 
+                <button id="btnRegistrar" onclick="myfuncionGeneralRegistrar()" type="submit" class="btn btn-primary mt-3 ">Registrar</button>
             </div>
 
             <div class="col">
 
                 <div class="mb-3 w-100">
-                    <div class="form-group has-validation w-100 d-flex flex-column">
-                        <label class="form-label" for="txtPagina" id="inputGroupPrepend">Página Web</label>
-                        <input type="text" class="form-control w-100" id="txtPagina" aria-describedby="inputGroupPrepend" required>
-                        <div class="invalid-feedback">
-                            Por favor, ingrese la página web
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mb-3 w-100">
-                    <div class="form-group has-validation w-100 d-flex flex-column">
+                    <div class="form-group has-validation w-100 d-flex flex-column contenedorDeInputsLab">
                         <label class="form-label" for="txtPagina" id="inputGroupPrepend">Razon social</label>
-                        <input type="text" class="form-control w-100" id="txtPagina" aria-describedby="inputGroupPrepend" required>
+                        <input type="text" class="form-control w-100" id="txtRazon" aria-describedby="inputGroupPrepend" required>
                         <div class="invalid-feedback">
                             Por favor, ingrese una razon social
                         </div>
@@ -104,7 +100,17 @@
                 </div>
 
                 <div class="mb-3 w-100">
-                    <div class="form-group has-validation w-100 d-flex flex-column">
+                    <div class="form-group has-validation w-100 d-flex flex-column contenedorDeInputsLab">
+                        <label class="form-label" for="txtPagina" id="inputGroupPrepend">Página Web</label>
+                        <input type="text" class="form-control w-100" id="txtPaginaWeb" aria-describedby="inputGroupPrepend" required>
+                        <div class="invalid-feedback">
+                            Por favor, ingrese la página web
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3 w-100">
+                    <div class="form-group has-validation w-100 d-flex flex-column contenedorDeInputsLab">
                         <label class="form-label" for="txtRedSocial" id="inputGroupPrepend">Red Social</label>
                         <input type="text" class="form-control w-100" id="txtRedSocial" aria-describedby="inputGroupPrepend" required>
                         <div class="invalid-feedback">
@@ -137,12 +143,8 @@
             </div>
 
         </div>
-        <button onclick="myfuncionGeneralRegistrar()" type="submit" class="btn btn-primary mt-3 ">Registrar</button>
     </form>
-
-    
-
-
 </div>
 
+<script src="~/Scripts/Views/DashboardAdminLaboratorio/registarLaboratorio.js" crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/e77fc0ae51.js" crossorigin="anonymous"></script>

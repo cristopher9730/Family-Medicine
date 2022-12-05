@@ -21,7 +21,7 @@ namespace DataAccess.Mapper
 
             var otp = (OTP)entidadDTO;
 
-            operacion.AddVarcharParam("CreacionUsuario", otp.CreacionUsuario);
+            operacion.AddVarcharParam("UsuarioId", otp.CreacionUsuario);
             operacion.AddIntergerParam("CodigoOTP", otp.CodigoOTP);
 
             return operacion;
@@ -79,15 +79,15 @@ namespace DataAccess.Mapper
             return operacion;
         }
 
-        public SqlOperation DeclaracionRecuperarPorId2(int CodigoOtp, string UsuarioCorreo)
+        public SqlOperation DeclaracionRecuperarPorId2(int CodigoOtp, string CorreoUsuario)
         {
             var operacion = new SqlOperation()
             {
-                NombreProcedimiento = "SP_DevolverOTP"
+                NombreProcedimiento = "SP_ValidarOTPCorreo"
             };
             
             operacion.AddIntergerParam("CodigoOTP", CodigoOtp);
-            operacion.AddVarcharParam("CreacionUsuario", UsuarioCorreo);
+            operacion.AddVarcharParam("UsuarioId", CorreoUsuario);
             return operacion;
         }
 

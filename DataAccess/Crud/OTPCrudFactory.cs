@@ -86,7 +86,7 @@ namespace DataAccess.Crud
 
         }
 
-        public  T ListarPorID2<T>(int CodigoOTP, string UsuarioCorreo)
+        public  T ListarPorID2<T>(int CodigoOTP, string UsuarioId)
         {
 
 
