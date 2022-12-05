@@ -21,11 +21,9 @@ namespace DataAccess.Mapper
 
             var examen = (Examen)entidadDTO;
 
-            operacion.AddIntergerParam("ExamenId", examen.ExamenId);
-            operacion.AddVarcharParam("NombreExamen", examen.Nombre);
+            operacion.AddVarcharParam("Nombre", examen.Nombre);
             operacion.AddVarcharParam("NombreInterno", examen.NombreInterno);
             operacion.AddDoublePram("Precio", examen.Precio);
-            operacion.AddVarcharParam("Estado", examen.Estado);
             operacion.AddIntergerParam("LaboratorioId", examen.LaboratorioId);
 
             return operacion;
@@ -36,17 +34,18 @@ namespace DataAccess.Mapper
         {
             var operacion = new SqlOperation()
             {
-                NombreProcedimiento = "SP_ActualizarExamen"
+                NombreProcedimiento = "SP_ModificarExamen"
             };
 
             var examen = (Examen)entidadDTO;
 
             operacion.AddIntergerParam("ExamenId", examen.ExamenId);
-            operacion.AddVarcharParam("NombreExamen", examen.Nombre);
+            operacion.AddVarcharParam("Nombre", examen.Nombre);
             operacion.AddVarcharParam("NombreInterno", examen.NombreInterno);
             operacion.AddDoublePram("Precio", examen.Precio);
-            operacion.AddVarcharParam("Estado", examen.Estado);
             operacion.AddIntergerParam("LaboratorioId", examen.LaboratorioId);
+            operacion.AddVarcharParam("Estado", examen.Estado);
+            
 
             return operacion;
         }
@@ -55,17 +54,13 @@ namespace DataAccess.Mapper
         {
             var operacion = new SqlOperation()
             {
-                NombreProcedimiento = "SP_BorrarExamen"
+                NombreProcedimiento = "SP_DeshabilitarExamenes"
             };
 
             var examen = (Examen)entidadDTO;
 
             operacion.AddIntergerParam("ExamenId", examen.ExamenId);
-            operacion.AddVarcharParam("NombreExamen", examen.Nombre);
-            operacion.AddVarcharParam("NombreInterno", examen.NombreInterno);
-            operacion.AddDoublePram("Precio", examen.Precio);
             operacion.AddVarcharParam("Estado", examen.Estado);
-            operacion.AddIntergerParam("LaboratorioId", examen.LaboratorioId);
 
             return operacion;
         }
@@ -74,7 +69,7 @@ namespace DataAccess.Mapper
         {
             var operacion = new SqlOperation()
             {
-                NombreProcedimiento = "SP_DevolverExamen"
+                NombreProcedimiento = "SP_DevolverUnExamen"
             };
             return operacion;
         }
@@ -96,11 +91,11 @@ namespace DataAccess.Mapper
             var examen = new Examen()
             {
                 ExamenId = int.Parse(row["ExamenId"].ToString()),
-                Nombre = row["NombreExamen"].ToString(),
+                Nombre = row["Nombre"].ToString(),
                 NombreInterno = row["NombreInterno"].ToString(),
                 Precio = double.Parse(row["Precio"].ToString()),
-                Estado = row["Estado"].ToString(),
-                LaboratorioId = int.Parse(row["LaboratorioId"].ToString())
+                LaboratorioId = int.Parse(row["LaboratorioId"].ToString()),
+                Estado = row["Estado"].ToString()                
             };
             return examen;
         }
