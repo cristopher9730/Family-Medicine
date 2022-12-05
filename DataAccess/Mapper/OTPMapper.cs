@@ -112,11 +112,11 @@ namespace DataAccess.Mapper
                     OTPId = int.Parse(row["OTPId"].ToString()),
                     CodigoOTP = int.Parse(row["CodigoOTP"].ToString()),
                     CreacionUsuario = row["CreacionUsuario"].ToString(),
+                    InactivacionUsuario = row["InactivacionUsuario"].ToString(),
                     FechaCreacion = DateTime.Parse(row["FechaCreacion"].ToString()),
                     FechaInactivacion = DateTime.Parse(row["FechaInactivacion"].ToString()),
                     FechaExpiracion = DateTime.Parse(row["FechaExpiracion"].ToString()),
-                    Estado = row["Estado"].ToString(),
-
+                    Estado = row["Estado"].ToString()
                 };
                 return otp;
             }

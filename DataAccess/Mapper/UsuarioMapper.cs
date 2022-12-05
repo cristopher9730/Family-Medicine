@@ -113,7 +113,7 @@ namespace DataAccess.Mapper
         {
             var operacion = new SqlOperation()
             {
-                NombreProcedimiento = "SP_DevolverUsuario"
+                NombreProcedimiento = "SP_DevolverUnUsuario"
             };
             return operacion;
         }
