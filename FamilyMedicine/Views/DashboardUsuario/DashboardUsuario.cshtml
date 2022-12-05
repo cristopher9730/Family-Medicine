@@ -21,29 +21,44 @@
                 <img id="file-ip-1-preview" src="https://josuergweb.web.app/image/josue.jpg" class="imgDashBoard" />
                 <button data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="buttonHiddenEditor"><i style="color: #ffffff" class="fa-solid fa-pen-to-square"></i></button>
             </div>
-
+         
             <div class="datoGeneral">
                 <h2 class="titleGeneral">Mi Perfil</h2>
                 <section class="ContenedorDeDashboardFleROW" style="gap: 1px">
                     <p class="tituloGeneralDos">Numero de cuenta: </p>
-                    <span class="textoGeneralUSO">73</span>
-                </section>
+                    @{
+                        var id = Session["UsuarioId"];
+                        <span id="idUsuario" class="textoGeneralUSO">@id</span>
+                    }
 
+                </section>
+                
                 <section class="ContenedorDeDashboardFleROW" style="gap: 1px">
                     <p class="tituloGeneralDos">Nombre: </p>
-                    <span class="textoGeneralUSO">Josué</span>
-                    <span class="textoGeneralUSO">Rivera</span>
-                    <span class="textoGeneralUSO">González</span>
+                    @{
+                        var nombre = Session["nombreUsuario"];
+                        <span id="nombreUsuario" class="textoGeneralUSO">@nombre</span>
+                        var primerApellido = Session["primerApellido"];
+                        <span id="primerApellidoUsuario" class="textoGeneralUSO">@primerApellido</span>
+                        var segundoApellido = Session["segundoApellido"];
+                        <span id="segundoApellidoUsuario" class="textoGeneralUSO">@segundoApellido</span>
+                    }
                 </section>
 
                 <section class="ContenedorDeDashboardFleROW" style="gap: 1px">
                     <p class="tituloGeneralDos">Telefono: </p>
-                    <span class="textoGeneralUSO">86966985</span>
-                </section>
+                    @{
+                        var telefono = Session["telefono"];
+                       <span id="telefonoUsuario" class="textoGeneralUSO">@telefono</span>
+                    }
+                    </section>
 
                 <section class="ContenedorDeDashboardFleROW" style="gap: 1px">
                     <p class="tituloGeneralDos">Correo: </p>
-                    <span class="textoGeneralUSO">psjosue1@gmail.com</span>
+                    @{
+                        var correo = Session["Correo"];
+                        <span id="correoUsuario" class="textoGeneralUSO">@correo</span>
+                    }
                 </section>
                 <button data-bs-toggle="modal" data-bs-target="#form" style="padding-top: 10px;" type="button" class="btn btn-primary mt-1">Editar</button>
             </div>
