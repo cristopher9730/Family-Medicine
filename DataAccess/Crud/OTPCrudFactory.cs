@@ -86,11 +86,11 @@ namespace DataAccess.Crud
 
         }
 
-        public  T ListarPorID2<T>(int CodigoOTP, int UsuarioId)
+        public  T ListarPorID2<T>(int CodigoOTP, string UsuarioCorreo)
         {
 
 
-            var listResult = dao.EjecProcedimientoAlmacenadoConConsulta(mapper.DeclaracionRecuperarPorId2(CodigoOTP, UsuarioId));
+            var listResult = dao.EjecProcedimientoAlmacenadoConConsulta(mapper.DeclaracionRecuperarPorId2(CodigoOTP, UsuarioCorreo));
 
             var dicc = new Dictionary<string, object>();
 
