@@ -53,7 +53,6 @@ namespace FamilyMedicine.Controllers
         public ActionResult Login(Usuario oUsuario)
         {
             Usuario apiRespuestaUsuario;
-            AdminLogin adminLogin = new AdminLogin();
 
             var urlPrincipal = "https://localhost:44391";
 
@@ -74,6 +73,11 @@ namespace FamilyMedicine.Controllers
             }
             else
                 throw new Exception(result.Content.ReadAsStringAsync().Result);
+
+            if (apiRespuestaUsuario.Estado.Equals("Pendiente"))
+            {
+                return RedirectToAction("OTP", "IniciarSesion");
+            }
 
             if (apiRespuestaUsuario.RolId == 5)
             {
