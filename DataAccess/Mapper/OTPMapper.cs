@@ -23,13 +23,6 @@ namespace DataAccess.Mapper
 
             operacion.AddIntergerParam("UsuarioId", otp.CreacionUsuario);
             operacion.AddIntergerParam("CodigoOTP", otp.CodigoOTP);
-            //operacion.AddIntergerParam("CodigoOTP", otp.CodigoOTP);
-            //operacion.AddIntergerParam("CreacionUsuario", otp.CreacionUsuario);
-            //operacion.AddIntergerParam("InactivacionUsuario", otp.InactivacionUsuario);
-            //operacion.AddDateParam("FechaCreacion", otp.FechaCreacion.Date);
-            //operacion.AddDateParam("FechaInactivacion", otp.FechaInactivacion.Date);
-            //operacion.AddDateParam("FechaExpiracion", otp.FechaExpiracion.Date);
-            //operacion.AddVarcharParam("Estado", otp.Estado);
 
             return operacion;
 

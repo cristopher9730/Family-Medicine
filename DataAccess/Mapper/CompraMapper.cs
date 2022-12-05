@@ -16,14 +16,13 @@ namespace DataAccess.Mapper
         {
             var operacion = new SqlOperation()
             {
-                NombreProcedimiento = "SP_CrearCompra"
+                NombreProcedimiento = "SP_RegistrarCompra"
             };
 
             var compra = (Compra)entidadDTO;
 
-            operacion.AddIntergerParam("CompraId", compra.CompraId);
-            operacion.AddIntergerParam("UsuarioId", compra.UsuarioId);
             operacion.AddIntergerParam("CitaId", compra.CitaId);
+            operacion.AddIntergerParam("UsuarioId", compra.UsuarioId);
             operacion.AddIntergerParam("FacturaId", compra.FacturaId);
             operacion.AddIntergerParam("LaboratorioId", compra.LaboratorioId);
             operacion.AddDateParam("FechaCompra", compra.FechaCompra.Date);
@@ -37,11 +36,10 @@ namespace DataAccess.Mapper
         {
             var operacion = new SqlOperation()
             {
-                NombreProcedimiento = "SP_ActualizarCompra"
+                NombreProcedimiento = "ModificarCompra"
             };
 
             var compra = (Compra)entidadDTO;
-
             operacion.AddIntergerParam("CompraId", compra.CompraId);
             operacion.AddIntergerParam("UsuarioId", compra.UsuarioId);
             operacion.AddIntergerParam("CitaId", compra.CitaId);
@@ -57,17 +55,12 @@ namespace DataAccess.Mapper
         {
             var operacion = new SqlOperation()
             {
-                NombreProcedimiento = "SP_BorrarCompra"
+                NombreProcedimiento = "SP_DeshabilitarCompra"
             };
 
             var compra = (Compra)entidadDTO;
 
             operacion.AddIntergerParam("CompraId", compra.CompraId);
-            operacion.AddIntergerParam("UsuarioId", compra.UsuarioId);
-            operacion.AddIntergerParam("CitaId", compra.CitaId);
-            operacion.AddIntergerParam("FacturaId", compra.FacturaId);
-            operacion.AddIntergerParam("LaboratorioId", compra.LaboratorioId);
-            operacion.AddDateParam("FechaCompra", compra.FechaCompra.Date);
             operacion.AddVarcharParam("Estado", compra.Estado);
 
             return operacion;
@@ -77,7 +70,7 @@ namespace DataAccess.Mapper
         {
             var operacion = new SqlOperation()
             {
-                NombreProcedimiento = "SP_DevolverCompra"
+                NombreProcedimiento = "SP_DevolverUnaCompra"
             };
             return operacion;
         }
@@ -99,13 +92,12 @@ namespace DataAccess.Mapper
             var compra = new Compra()
             {
                 CompraId = int.Parse(row["CompraId"].ToString()),
-                UsuarioId = int.Parse(row["UsuarioId"].ToString()),
                 CitaId = int.Parse(row["CitaId"].ToString()),
                 FacturaId = int.Parse(row["FacturaId"].ToString()),
                 LaboratorioId = int.Parse(row["LaboratorioId"].ToString()),
                 FechaCompra = DateTime.Parse(row["FechaCompra"].ToString()),
-                Estado = row["Estado"].ToString(),
-                
+                UsuarioId = int.Parse(row["UsuarioId"].ToString()),
+                Estado = row["Estado"].ToString()
             };
             return compra;
         }

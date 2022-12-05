@@ -16,15 +16,13 @@ namespace DataAccess.Mapper
         {
             var operacion = new SqlOperation()
             {
-                NombreProcedimiento = "SP_CrearActividad"
+                NombreProcedimiento = "SP_RegistrarActividad"
             };
 
             var actividad = (Actividad)entidadDTO;
-
-            operacion.AddIntergerParam("ActividadId", actividad.ActividadId);
             operacion.AddVarcharParam("NombreActividad", actividad.NombreActividad);
             operacion.AddDateParam("FechaCreacion", actividad.FechaCreacion);
-            operacion.AddIntergerParam("CreacionUsuarioId", actividad.CreacionUsuarioId);           
+            operacion.AddIntergerParam("UsuarioId", actividad.CreacionUsuarioId);           
             return operacion;
 
         }
@@ -38,7 +36,6 @@ namespace DataAccess.Mapper
 
             var actividad = (Actividad)entidadDTO;
 
-            operacion.AddIntergerParam("ActividadId", actividad.ActividadId);
             operacion.AddVarcharParam("NombreActividad", actividad.NombreActividad);
             operacion.AddDateParam("FechaCreacion", actividad.FechaCreacion);
             operacion.AddIntergerParam("CreacionUsuarioId", actividad.CreacionUsuarioId);
@@ -86,7 +83,6 @@ namespace DataAccess.Mapper
         {
             var actividad = new Actividad()
             {
-                ActividadId = int.Parse(row["ActividadId"].ToString()),
                 NombreActividad = row["NombreActividad"].ToString(),
                 FechaCreacion = DateTime.Parse(row["FechaCreacion"].ToString()),
                 CreacionUsuarioId = int.Parse(row["CreacionUsuarioId"].ToString()),

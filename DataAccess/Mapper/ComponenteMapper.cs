@@ -16,7 +16,7 @@ namespace DataAccess.Mapper
         {
             var operacion = new SqlOperation()
             {
-                NombreProcedimiento = "SP_CrearComponente"
+                NombreProcedimiento = "sp_RegistrarComponente"
             };
 
             var componente = (Componente)entidadDTO;
@@ -26,7 +26,6 @@ namespace DataAccess.Mapper
             operacion.AddVarcharParam("SimboloMedida", componente.SimboloMedida);
             operacion.AddDoublePram("MedidaReferencia", componente.MedidaReferencia);
             operacion.AddIntergerParam("ExamenId", componente.ExamenId);
-            operacion.AddVarcharParam("Estado", componente.Estado);
 
             return operacion;
 
@@ -36,7 +35,7 @@ namespace DataAccess.Mapper
         {
             var operacion = new SqlOperation()
             {
-                NombreProcedimiento = "SP_ActualizarComponente"
+                NombreProcedimiento = "ModificarComponente"
             };
 
             var componente = (Componente)entidadDTO;
@@ -55,16 +54,12 @@ namespace DataAccess.Mapper
         {
             var operacion = new SqlOperation()
             {
-                NombreProcedimiento = "SP_BorrarComponente"
+                NombreProcedimiento = "SP_DeshabilitarComponente"
             };
 
             var componente = (Componente)entidadDTO;
 
-            operacion.AddIntergerParam("LaboratorioId", componente.LaboratorioId);
-            operacion.AddVarcharParam("NombreComponente", componente.NombreComponente);
-            operacion.AddVarcharParam("SimboloMedida", componente.SimboloMedida);
-            operacion.AddDoublePram("MedidaReferencia", componente.MedidaReferencia);
-            operacion.AddIntergerParam("ExamenId", componente.ExamenId);
+            operacion.AddIntergerParam("ComponenteId", componente.ComponenteId);
             operacion.AddVarcharParam("Estado", componente.Estado);
 
             return operacion;
@@ -74,7 +69,7 @@ namespace DataAccess.Mapper
         {
             var operacion = new SqlOperation()
             {
-                NombreProcedimiento = "SP_DevolverComponente"
+                NombreProcedimiento = "SP_DevolverUnComponente"
             };
             return operacion;
         }

@@ -16,17 +16,15 @@ namespace DataAccess.Mapper
         {
             var operacion = new SqlOperation()
             {
-                NombreProcedimiento = "SP_CrearFactura"
+                NombreProcedimiento = "SP_RegistrarFactura"
             };
 
             var factura = (Factura)entidadDTO;
 
-            operacion.AddIntergerParam("FacturaId", factura.FacturaId);
             operacion.AddDoublePram("Subtotal", factura.Subtotal);
             operacion.AddDoublePram("Iva", factura.Iva);
             operacion.AddIntergerParam("CompraId", factura.CompraId);
             operacion.AddDoublePram("Total", factura.Total);
-            operacion.AddVarcharParam("Estado", factura.Estado);
 
 
             return operacion;
@@ -62,10 +60,6 @@ namespace DataAccess.Mapper
             var factura = (Factura)entidadDTO;
 
             operacion.AddIntergerParam("FacturaId", factura.FacturaId);
-            operacion.AddDoublePram("Subtotal", factura.Subtotal);
-            operacion.AddDoublePram("Iva", factura.Iva);
-            operacion.AddIntergerParam("CompraId", factura.CompraId);
-            operacion.AddDoublePram("Total", factura.Total);
             operacion.AddVarcharParam("Estado", factura.Estado);
 
             return operacion;
@@ -75,7 +69,7 @@ namespace DataAccess.Mapper
         {
             var operacion = new SqlOperation()
             {
-                NombreProcedimiento = "SP_DevolverFactura"
+                NombreProcedimiento = "SP_DevolverUnaFactura"
             };
             return operacion;
         }
@@ -84,7 +78,7 @@ namespace DataAccess.Mapper
         {
             var operacion = new SqlOperation()
             {
-                NombreProcedimiento = "SP_DevolverTodasFacturas"
+                NombreProcedimiento = "SP_DevolveTodasFacturas"
             };
             return operacion;
         }

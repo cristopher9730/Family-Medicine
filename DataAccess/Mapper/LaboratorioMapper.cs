@@ -16,12 +16,10 @@ namespace DataAccess.Mapper
         {
             var operacion = new SqlOperation()
             {
-                NombreProcedimiento = "SP_CrearLaboratorio"
+                NombreProcedimiento = "SP_RegistrarLaboratorio"
             };
 
             var laboratorio = (Laboratorio)entidadDTO;
-
-            operacion.AddIntergerParam("LaboratorioId", laboratorio.LaboratorioId);
             operacion.AddIntergerParam("UsuarioPropietario", laboratorio.UsuarioPropietarioId);
             operacion.AddVarcharParam("NombreLaboratorio", laboratorio.NombreLaboratorio);
             operacion.AddVarcharParam("SedeLaboratorio", laboratorio.SedeLaboratorio);
@@ -30,8 +28,9 @@ namespace DataAccess.Mapper
             operacion.AddVarcharParam("Dirrecion", laboratorio.Dirrecion);
             operacion.AddVarcharParam("CedulaJuridica", laboratorio.CedulaJuridica);
             operacion.AddVarcharParam("RazonSocial", laboratorio.RazonSocial);
-            operacion.AddVarcharParam("Fotografias", laboratorio.Fotografias);
             operacion.AddVarcharParam("Estado", laboratorio.Estado);
+            operacion.AddVarcharParam("PaginaWeb", laboratorio.PaginaWeb);
+            operacion.AddVarcharParam("RedSocial", laboratorio.RedSocial);
 
             return operacion;
 
@@ -46,7 +45,6 @@ namespace DataAccess.Mapper
 
             var laboratorio = (Laboratorio)entidadDTO;
 
-            operacion.AddIntergerParam("LaboratorioId", laboratorio.LaboratorioId);
             operacion.AddIntergerParam("UsuarioPropietario", laboratorio.UsuarioPropietarioId);
             operacion.AddVarcharParam("NombreLaboratorio", laboratorio.NombreLaboratorio);
             operacion.AddVarcharParam("SedeLaboratorio", laboratorio.SedeLaboratorio);
@@ -55,8 +53,9 @@ namespace DataAccess.Mapper
             operacion.AddVarcharParam("Dirrecion", laboratorio.Dirrecion);
             operacion.AddVarcharParam("CedulaJuridica", laboratorio.CedulaJuridica);
             operacion.AddVarcharParam("RazonSocial", laboratorio.RazonSocial);
-            operacion.AddVarcharParam("Fotografias", laboratorio.Fotografias);
             operacion.AddVarcharParam("Estado", laboratorio.Estado);
+            operacion.AddVarcharParam("PaginaWeb", laboratorio.PaginaWeb);
+            operacion.AddVarcharParam("RedSocial", laboratorio.RedSocial);
 
             return operacion;
         }
@@ -70,7 +69,6 @@ namespace DataAccess.Mapper
 
             var laboratorio = (Laboratorio)entidadDTO;
 
-            operacion.AddIntergerParam("LaboratorioId", laboratorio.LaboratorioId);
             operacion.AddIntergerParam("UsuarioPropietario", laboratorio.UsuarioPropietarioId);
             operacion.AddVarcharParam("NombreLaboratorio", laboratorio.NombreLaboratorio);
             operacion.AddVarcharParam("SedeLaboratorio", laboratorio.SedeLaboratorio);
@@ -79,8 +77,9 @@ namespace DataAccess.Mapper
             operacion.AddVarcharParam("Dirrecion", laboratorio.Dirrecion);
             operacion.AddVarcharParam("CedulaJuridica", laboratorio.CedulaJuridica);
             operacion.AddVarcharParam("RazonSocial", laboratorio.RazonSocial);
-            operacion.AddVarcharParam("Fotografias", laboratorio.Fotografias);
             operacion.AddVarcharParam("Estado", laboratorio.Estado);
+            operacion.AddVarcharParam("PaginaWeb", laboratorio.PaginaWeb);
+            operacion.AddVarcharParam("RedSocial", laboratorio.RedSocial);
 
             return operacion;
         }
@@ -89,7 +88,7 @@ namespace DataAccess.Mapper
         {
             var operacion = new SqlOperation()
             {
-                NombreProcedimiento = "SP_DevolverLaboratorio"
+                NombreProcedimiento = "SP_DevolverUnLaboratorio"
             };
             return operacion;
         }
@@ -119,8 +118,9 @@ namespace DataAccess.Mapper
                 Dirrecion = row["Dirrecion"].ToString(),
                 CedulaJuridica = row["CedulaJuridica"].ToString(),
                 RazonSocial = row["RazonSocial"].ToString(),
-                Fotografias = row["Fotografias"].ToString(),
-                Estado = row["Estado"].ToString()
+                Estado = row["Estado"].ToString(),
+                PaginaWeb = row["PaginaWeb"].ToString(),
+                RedSocial = row["RedSocial"].ToString(),
 
             };
             return laboratorio;
