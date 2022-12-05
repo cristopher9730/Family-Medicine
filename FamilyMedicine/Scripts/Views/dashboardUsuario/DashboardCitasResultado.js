@@ -14,7 +14,7 @@
 /*FUNCION DE BUSQUEDA--------------------------------------------- */
 
 function doSearch() {
-    const tableReg = document.getElementById('datos');
+    const tableReg = document.getElementById('datos1');
     const searchText = document.getElementById('searchTerm').value.toLowerCase();
     let total = 0;
 

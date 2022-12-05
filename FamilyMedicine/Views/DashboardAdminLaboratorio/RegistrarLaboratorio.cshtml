@@ -1,0 +1,150 @@
+﻿
+@{
+    ViewBag.Title = "RegistrarLaboratorio";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/css/DashboardCss/DashboardCliente.css" />
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+
+<style>
+    /*Este style contien la clase de nav activo las opciones A1, A2, A3... etc estan en el layout*/
+    .A3 {
+        box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+        text-decoration: none;
+        background-color: #f3f3f363;
+    }
+
+    .contenedorDeInputsLab {
+        height: 74px !important;
+    }
+</style>
+
+
+<link rel="stylesheet" href="~/Content/css/Login.css" />
+<link rel="stylesheet" href="~/Content/css/DashboardCss/DashBoardGeneral.css" />
+
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+
+<div class="divContenedorDelDashUno">
+
+    <h4>Registrar Laboratorio</h4>
+
+    <form class="was-validated">
+        <div class="row">
+            <div class="col">
+
+                <div class="mb-3 w-100">
+                    <div class="form-group has-validation w-100 d-flex flex-column contenedorDeInputsLab">
+                        <label class="form-label" for="txtNombre" id="inputGroupPrepend">Nombre del Laboratorio</label>
+                        <input type="text" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
+                        <div class="invalid-feedback">
+                            Por favor, ingrese el nombre del laboratorio
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3 w-100">
+                    <div class="form-group has-validation w-100 d-flex flex-column contenedorDeInputsLab">
+                        <label class="form-label" for="txtNombreComercial" id="inputGroupPrepend">Dirrección del laboratorio</label>
+                        <input type="text" class="form-control w-100" id="txtDireccion" aria-describedby="inputGroupPrepend" required>
+                        <div class="invalid-feedback">
+                            Por favor, ingrese la dirrección del laboratorio
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3 w-100">
+                    <div class="form-group has-validation w-100 d-flex flex-column contenedorDeInputsLab">
+                        <label class="form-label" for="txtTelefono" id="inputGroupPrepend">Télefono</label>
+                        <input type="number" class="form-control w-100" id="txtTelefono" aria-describedby="inputGroupPrepend" required>
+                        <div class="invalid-feedback">
+                            Por favor, ingrese el télefono
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3 w-100">
+                    <div class="form-group has-validation w-100 d-flex flex-column contenedorDeInputsLab">
+                        <label class="form-label" for="txtCorreo" id="inputGroupPrepend">Correo Eléctronico</label>
+                        <input type="email" pattern="^[a-zA-Z0-9._+-]+@("@")[a-zA-Z0-9.-]+\.[a-zA-Z]{2,9}$" class="form-control w-100" id="txtCorreo" aria-describedby="inputGroupPrepend" required>
+                        <div class="invalid-feedback">
+                            Por favor, ingrese el correo eléctronico
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3 w-100">
+                    <div class="form-group has-validation w-100 d-flex flex-column contenedorDeInputsLab">
+                        <label class="form-label" for="txtCedula" id="inputGroupPrepend">Cédula Jurídica</label>
+                        <input type="number" class="form-control w-100" id="txtCedula" aria-describedby="inputGroupPrepend" required>
+                        <div class="invalid-feedback">
+                            Por favor, ingrese la cédula jurídica
+                        </div>
+                    </div>
+                </div>
+
+                <button id="btnRegistrar" onclick="myfuncionGeneralRegistrar()" type="submit" class="btn btn-primary mt-3 ">Registrar</button>
+            </div>
+
+            <div class="col">
+
+                <div class="mb-3 w-100">
+                    <div class="form-group has-validation w-100 d-flex flex-column contenedorDeInputsLab">
+                        <label class="form-label" for="txtPagina" id="inputGroupPrepend">Razon social</label>
+                        <input type="text" class="form-control w-100" id="txtRazon" aria-describedby="inputGroupPrepend" required>
+                        <div class="invalid-feedback">
+                            Por favor, ingrese una razon social
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3 w-100">
+                    <div class="form-group has-validation w-100 d-flex flex-column contenedorDeInputsLab">
+                        <label class="form-label" for="txtPagina" id="inputGroupPrepend">Página Web</label>
+                        <input type="text" class="form-control w-100" id="txtPaginaWeb" aria-describedby="inputGroupPrepend" required>
+                        <div class="invalid-feedback">
+                            Por favor, ingrese la página web
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3 w-100">
+                    <div class="form-group has-validation w-100 d-flex flex-column contenedorDeInputsLab">
+                        <label class="form-label" for="txtRedSocial" id="inputGroupPrepend">Red Social</label>
+                        <input type="text" class="form-control w-100" id="txtRedSocial" aria-describedby="inputGroupPrepend" required>
+                        <div class="invalid-feedback">
+                            Por favor, ingrese una red social
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-group row mt-3">
+
+                    <label class="col-form-label" for="Foto" id="inputGroupPrepend">Seleccione el Logo</label>
+
+                    <div class="col-sm-10">
+                        <input class="form-control" type="file" id="Foto" aria-describedby="inputGroupPrepend">
+                    </div>
+                </div>
+                <div class="form-group row mt-3">
+
+                    <label class="col-form-label" for="Foto" id="inputGroupPrepend">Seleccione las Fotos</label>
+
+                    <div class="col-sm-10">
+                        <input class="form-control mb-1" type="file" id="Foto" aria-describedby="inputGroupPrepend">
+                        <input class="form-control mb-1" type="file" id="Foto" aria-describedby="inputGroupPrepend">
+                        <input class="form-control mb-1" type="file" id="Foto" aria-describedby="inputGroupPrepend">
+                        <input class="form-control mb-1" type="file" id="Foto" aria-describedby="inputGroupPrepend">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </form>
+</div>
+
+<script src="~/Scripts/Views/DashboardAdminLaboratorio/registarLaboratorio.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/e77fc0ae51.js" crossorigin="anonymous"></script>

@@ -13,32 +13,25 @@
         arrayColumnsData[0] = { 'data': 'Nombre' };
         arrayColumnsData[1] = { 'data': 'PrimerApellido' };
         arrayColumnsData[2] = { 'data': 'SegundoApellido' };
-        arrayColumnsData[3] = { 'data': 'Telefono' };
-        arrayColumnsData[4] = { 'data': 'Correo' };
+        arrayColumnsData[3] = { 'data': 'Correo' };
+        arrayColumnsData[4] = { 'data': 'Telefono' };
         arrayColumnsData[5] = { 'data': 'Estado' };
 
-        $('#datos').DataTable({
+
+        $('#datosUsuarios').DataTable({
             ajax: {
                 method: "GET",
-                url: "https://localhost:44391/api/Usuario/ObtenerListaUsuarios",
+                url: "https://familymedicine-api.azurewebsites.net/api/Usuario/ObtenerListaUsuarios",
                 contentType: "application/json;charset=utf-8",
                 dataSrc: function (json) {
-                    var json = { 'data': json.Data }
+                    var json = { 'data': json }
                     return json.data;
                 }
             },
             columns: arrayColumnsData
         });
-
-        //Agregar datos del api a la tabla en html
-        $('#datos tbody').on('click', 'tr', function () {
-            var tr = $(this).closest('tr');
-            var data = $('#datos').DataTable().row(tr).data();
-
-            //se necesita para mostrar detalle de la tabla en formulario
-            var controlAcciones = new ControlAcciones();
-            controlAcciones.BindFields("frmUsuario", data);
-        })
+        //table.buttons().container()
+        //    .appendTo($('.col-sm-6:eq(0)', table.table().container()));
     }
 
     this.RegistrarUsuario = function () {
@@ -51,7 +44,7 @@
         usuario.Clave = $("#txtClave").val();
         usuario.Foto = "Foto";
         usuario.Estado = "Pendiente";
-        usuario.RolId = $("#txtRol").val();
+        usuario.RolId = 1;
         usuario.MembresiaId = 0;
         usuario.LaboratorioId = 0;
 
@@ -61,7 +54,7 @@
                 'Content-Type': "application/json"
             },
             method: "POST",
-            url: "https://localhost:44391/api/Usuario/RegistrarUsuario",
+            url: "https://familymedicine-api.azurewebsites.net/api/Usuario/RegistrarUsuario",
             contentType: "application/json",
             data: JSON.stringify(usuario),
             hasContent: true
@@ -71,11 +64,10 @@
         ).fail(function (info) {
             alert('hubo un problema al crear usuario');
         });
-    }
-
-    $(document).ready(function () {
-        $.noConflict();
-        var view = new Usuarios();
-        view.InitView();
-    });
+    }  
 }
+$(document).ready(function () {
+    $.noConflict();
+    var view = new Usuarios();
+    view.InitView();
+});
