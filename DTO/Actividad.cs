@@ -10,8 +10,7 @@ namespace DTO
     {
         public int ActividadId { get; set; }
         public string NombreActividad { get; set; }
-        public int PersonaId { get; set; }
-        public int Fecha { get; set; }
-        public string Estado { get; set; }
+        public DateTime FechaCreacion { get; set; }
+        public int CreacionUsuarioId { get; set; }
     }
 }

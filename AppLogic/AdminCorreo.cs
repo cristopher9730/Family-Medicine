@@ -5,8 +5,6 @@ using System.Linq;
 using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
-using Mandrill;
-using Mandrill.Model;
 using System;
 
 namespace AppLogic

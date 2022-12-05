@@ -9,7 +9,7 @@ using DataAccess.Crud;
 
 namespace AppLogic
 {
-    internal class AdminPromocion
+    public class AdminPromocion
     {
 
         public AdminPromocion()
@@ -21,25 +21,34 @@ namespace AppLogic
         {
             PromocionCrudFactory promocionCrud = new PromocionCrudFactory();
             promocionCrud.Crear(promocion);
-            return "Promoción creado correctamente en base de datos";
+            return "Promoción creada correctamente en base de datos";
         }
 
         public string EditarPromocion(Promocion promocion)
         {
             PromocionCrudFactory promocionCrud = new PromocionCrudFactory();
             promocionCrud.Actualizar(promocion);
-            return "Promoción actualizado correctamente en base de datos";
+            return "Promoción actualizada correctamente en base de datos";
         }
 
-        public string EliminarPromocion()
+        public string EliminarPromocion(Promocion promocion)
         {
-            return "TBD";
+            PromocionCrudFactory promocionCrud = new PromocionCrudFactory();
+            promocionCrud.Eliminar(promocion);
+            return "Promoción eliminada correctamente en base de datos";
         }
 
         public List<Promocion> DevolverTodasPromociones()
         {
             PromocionCrudFactory promocionCrud = new PromocionCrudFactory();
             return promocionCrud.ListarTodos<Promocion>();
+        }
+
+        public Promocion DevolverUnaPromocion(Promocion promocion)
+        {
+            PromocionCrudFactory promocionCrud = new PromocionCrudFactory();
+
+            return promocionCrud.ListarPorID<Promocion>(promocion.PromocionId);
         }
 
     }

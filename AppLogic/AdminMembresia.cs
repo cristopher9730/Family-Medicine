@@ -9,7 +9,7 @@ using DataAccess.Crud;
 
 namespace AppLogic
 {
-    internal class AdminMembresia
+    public class AdminMembresia
     {
 
 
@@ -22,25 +22,34 @@ namespace AppLogic
         {
             MembresiaCrudFactory membresiaCrud = new MembresiaCrudFactory();
             membresiaCrud.Crear(membresia);
-            return "Membresia creado correctamente en base de datos";
+            return "Membresia creada correctamente en base de datos";
         }
 
         public string EditarMembresia(Membresia membresia)
         {
             MembresiaCrudFactory membresiaCrud = new MembresiaCrudFactory();
             membresiaCrud.Actualizar(membresia);
-            return "Membresia actualizado correctamente en base de datos";
+            return "Membresia actualizada correctamente en base de datos";
         }
 
-        public string EliminarMembresia()
+        public string EliminarMembresia(Membresia membresia)
         {
-            return "TBD";
+            MembresiaCrudFactory membresiaCrud = new MembresiaCrudFactory();
+            membresiaCrud.Eliminar(membresia);
+            return "Membresia eliminada correctamente en base de datos";
         }
 
         public List<Membresia> DevolverTodasMembresias()
         {
             MembresiaCrudFactory membresiaCrud = new MembresiaCrudFactory();
             return membresiaCrud.ListarTodos<Membresia>();
+        }
+
+        public Membresia DevolverUnaMembresia(Membresia membresia)
+        {
+            MembresiaCrudFactory membresiaCrud = new MembresiaCrudFactory();
+
+            return membresiaCrud.ListarPorID<Membresia>(membresia.MembresiaId);
         }
 
     }

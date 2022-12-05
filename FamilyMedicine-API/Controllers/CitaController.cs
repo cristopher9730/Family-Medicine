@@ -4,32 +4,37 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
+using System.Web.Http;
+
 
 namespace FamilyMedicine.Controllers
 {
-    public class CitaController : Controller
+    public class CitaController : ApiController
     {
         [HttpPost]
         public string RegistrarCita(Cita cita)
         {
             Random generator = new Random();
             String otp = generator.Next(100000, 1000000).ToString("D6");
-            cita.Codigo = otp;
+            
 
             AdminCita adminCita = new AdminCita();
             return adminCita.CrearCita(cita);
 
         }
 
+        [HttpPut]
         public string ActualizarCita(Cita cita)
         {
-            return "TBD";
+            AdminCita adminCita = new AdminCita();
+            return adminCita.EditarCita(cita);
         }
 
+        [HttpDelete]
         public string BorrarCita(Cita cita)
         {
-            return "TBD";
+            AdminCita adminCita = new AdminCita();
+            return adminCita.EliminarCita(cita);
         }
 
         [HttpGet]
@@ -39,9 +44,11 @@ namespace FamilyMedicine.Controllers
             return adminCita.DevolverTodosCitas();
         }
 
-        public string ObtenerUnCita(int CitaId)
+        [HttpGet]
+        public Cita ObtenerUnaCita(Cita cita)
         {
-            return "TBD";
+            AdminCita adminCita = new AdminCita();
+            return adminCita.DevolverUnaCita(cita);
         }
     }
 }

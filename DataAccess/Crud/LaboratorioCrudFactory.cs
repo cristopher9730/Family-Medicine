@@ -54,9 +54,9 @@ namespace DataAccess.Crud
 
             if (listResult.Count > 0)
             {
-                var objsCita = mapper.ConstruirObjetos(listResult);
+                var objsLaboratorio = mapper.ConstruirObjetos(listResult);
 
-                foreach (var c in objsCita)
+                foreach (var c in objsLaboratorio)
                 {
                     list.Add((T)Convert.ChangeType(c, typeof(T)));
                 }
