@@ -90,7 +90,7 @@ namespace DataAccess.Crud
         {
 
 
-            var listResult = dao.EjecProcedimientoAlmacenadoConConsulta(mapper.DeclaracionRecuperarPorId2(CodigoOTP, CorreoUsuario));
+            var listResult = dao.EjecProcedimientoAlmacenadoConConsulta(mapper.DeclaracionRecuperarPorId2(CodigoOTP, UsuarioId));
 
             var dicc = new Dictionary<string, object>();
 
