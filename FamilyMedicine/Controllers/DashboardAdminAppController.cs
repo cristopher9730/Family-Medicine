@@ -24,6 +24,9 @@ namespace FamilyMedicine.Controllers
             return View();
         }
 
-        
+        public ActionResult RegistrarLaboratorio()
+        {
+            return View();
+        }
     }
 }
