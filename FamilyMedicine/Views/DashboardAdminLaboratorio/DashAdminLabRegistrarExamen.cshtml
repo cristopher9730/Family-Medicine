@@ -1,4 +1,4 @@
-﻿
+﻿@model List<DTO.Examen>
 @{
     ViewBag.Title = "DashAdminLabRegistrarExamen";
     Layout = "~/Views/Shared/_DashboardLayout.cshtml";
@@ -148,7 +148,15 @@
                     <div class="mb-3 w-100 contenedorDeInputs">
                         <div class="form-group has-validation w-100 d-flex flex-column">
                             <label class="form-label" for="txtNombre" id="inputGroupPrepend">ID</label>
-                            <input type="number" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
+                            @*<input type="number" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>*@
+                            <select class="form-select" id="exampleSelect1">
+                                @foreach (var u in Model)
+                                {
+
+                                    <option>@u.NombreInterno</option>
+
+                                }
+                            </select>
                             <div class="invalid-feedback">
                                 Por favor, ingrese la ID de examen
                             </div>
