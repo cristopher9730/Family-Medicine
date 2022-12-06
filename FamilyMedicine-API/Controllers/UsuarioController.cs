@@ -78,6 +78,7 @@ namespace FamilyMedicine_API.Controllers
             usuario.SegundoApellido = "PANCHITO";
             usuario.Telefono = "24129919";
             usuario.Correo = "alfredo@ucenfoc.com";
+            usuario.Clave = "contraseña";
 
             return usuario;
         }  
