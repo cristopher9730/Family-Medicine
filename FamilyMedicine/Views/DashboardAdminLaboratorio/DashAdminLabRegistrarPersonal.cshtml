@@ -36,22 +36,91 @@
                     <h3 class="card-header">Agregar Personal</h3>
 
                     <div class="card-body">
-                        <form>
-                            <div class="form-group">
-                                <label class="form-label" for="inputDefault">Ingrese el correo</label>
-                                <input type="text" class="form-control" id="inputDefault" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleSelect1" class="form-label">Elija el tipo de rol</label>
-                                <select class="form-select" id="exampleSelect1">
-                                    <option>1 - Admin</option>
-                                    <option>2 - Personal Técnico</option>
-                                    <option>3 - Dar de baja del laboratorio</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <button onclick="myfuncionGeneral()" type="submit" class="btn btn-primary mt-2">Guardar Cambios</button>
-                            </div>
+                        <form id="frmRegistrarPersonal">
+                            <section class="contenedorInputsRow">
+                                <div class="mb-3 w-100 contenedorDeInputs">
+                                    <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
+                                        <label class="form-label" for="txtNombre" id="inputGroupPrepend">Nombre</label>
+                                        <input type="text" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
+                                        <div class="invalid-feedback">
+                                            Por favor, ingrese el nombre
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3 w-100">
+                                    <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
+                                        <label class="form-label" for="txtPrimerApellido" id="inputGroupPrepend">Primer apellido</label>
+                                        <input type="text" class="form-control w-100" id="txtPrimerApellido" aria-describedby="inputGroupPrepend" required>
+                                        <div class="invalid-feedback">
+                                            Por favor, ingrese el primer apellido
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3 w-100">
+                                    <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
+                                        <label class="form-label" for="txtSegundoApellido" id="inputGroupPrepend">Segundo apellido</label>
+                                        <input type="text" class="form-control w-100" id="txtSegundoApellido" aria-describedby="inputGroupPrepend" required>
+                                        <div class="invalid-feedback">
+                                            Por favor, ingrese el segundo apellido
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3 w-100">
+                                    <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
+                                        <label class="form-label" for="slt_rol" id="inputGroupPrepend">Rol</label>
+                                        <select class="form-control w-100" id="slt_rol" aria-describedby="inputGroupPrepend">
+                                            <option>Seleccione un rol</option>
+                                            <option value="2">Administrador Laboratorio</option>
+                                            <option value="3">Tecnico</option>
+                                            <option value="4">Usuario</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3 w-100">
+                                    <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
+                                        <label class="form-label" for="txtCorreo" id="inputGroupPrepend">Correo electronico</label>
+                                        <input type="email" pattern="^[a-zA-Z0-9._+-]+@("@")[a-zA-Z0-9.-]+\.[a-zA-Z]{2,9}$" class="form-control w-100" id="txtCorreo" aria-describedby="inputGroupPrepend" required>
+                                        <div class="invalid-feedback">
+                                            Por favor, ingrese el correo electronico
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3 w-100">
+                                    <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
+                                        <label class="form-label" for="txtTelefono" id="inputGroupPrepend">Teléfono</label>
+                                        <input type="text" class="form-control w-100" id="txtTelefono" aria-describedby="inputGroupPrepend" required>
+                                        <div class="invalid-feedback">
+                                            Por favor, ingrese el teléfono
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3 w-100 contenedorDeInputs">
+                                    <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
+                                        <label class="form-label" for="txtClave" id="inputGroupPrepend">Contraseña</label>
+                                        <input type="password" class="form-control w-100" id="txtClave" aria-describedby="inputGroupPrepend" required>
+                                        <div class="invalid-feedback">
+                                            Por favor, ingrese la contraseña
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3 w-100 contenedorDeInputs">
+                                    <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
+                                        <label class="form-label" for="Foto" id="inputGroupPrepend">Seleccione una foto de perfil</label>
+                                        <input class="form-control w-100" type="file" id="Foto" aria-describedby="inputGroupPrepend">
+                                    </div>
+                                </div>
+                                <div class="mb-3 w-100 contenedorDeInputs">
+                                    <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
+                                        <button id="btnRegistrarPersonal" type="button" class="btn btn-primary mt-2">Registrar</button>
+                                    </div>
+                                </div>
+                            </section>
                         </form>
                     </div>
                 </div>
@@ -107,9 +176,9 @@
                     <h3 class="card-header">Editar Permisos</h3>
                     <div class="card-body">
                         <form>
-                            
-                        
-                               
+
+
+
                             <div class="form-group">
                                 <div class="input-group mb-3">
                                     <input type="text" class="form-control" placeholder="Buscar correo" aria-label="Recipient's username" aria-describedby="button-addon2">
@@ -136,9 +205,9 @@
                                         </label>
                                     </li>
                                 </ul>
-                                <button onclick="myfuncionGeneral()" type="submit" class="btn btn-primary">Guardar Cambios</button>
+                                <button type="submit" class="btn btn-primary">Guardar Cambios</button>
                             </div>
-                            
+
 
                         </form>
                     </div>
@@ -190,4 +259,5 @@
 
 </div>
 
+<script src="~/Scripts/Views/DashboardAdminLaboratorio/personal.js"></script>
 <script src="https://kit.fontawesome.com/e77fc0ae51.js" crossorigin="anonymous"></script>
