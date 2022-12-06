@@ -364,3 +364,4 @@ MigrationBackup/
 FodyWeavers.xsd
 /FamilyMedicine/Content
 /FamilyMedicine-API/Properties/ServiceDependencies/FamilyMedicine-API - Web Deploy
+/DTO/Resultado.cs
