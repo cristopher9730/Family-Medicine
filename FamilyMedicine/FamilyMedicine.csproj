@@ -272,6 +272,7 @@
     <Content Include="Scripts\Views\carritoDeComprasjs.js" />
     <Content Include="Scripts\Views\ConsumoApi\ApiCarrito.js" />
     <Content Include="Scripts\Views\ControlAcciones.js" />
+    <Content Include="Scripts\Views\DashboardAdminApp\Laboratorio.js" />
     <Content Include="Scripts\Views\DashboardAdminApp\Usuarios.js" />
     <Content Include="Scripts\Views\DashboardAdminLaboratorio\Cupones.js" />
     <Content Include="Scripts\Views\DashboardAdminLaboratorio\Examen.js" />
