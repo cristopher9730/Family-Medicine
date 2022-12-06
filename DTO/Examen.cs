@@ -14,5 +14,7 @@ namespace DTO
         public double Precio { get; set; }
         public int LaboratorioId { get; set; }
         public string Estado { get; set; }
+        public string Descripcion { get; set; }
+        public int Ventas { get; set; }
     }
 }

@@ -54,6 +54,8 @@
             hasContent: true
         }).done(function (info) {
             alert('Cupón Creado correctamente');
+            var table = $('#datos').DataTable();
+            table.ajax.reload();
         }
         ).fail(function (info) {
             alert('Hubo un problema al crear el cupón');
