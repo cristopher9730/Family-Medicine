@@ -9,7 +9,7 @@
 
     this.RegistrarLaboratorio = function () {
         var laboratorio = {}
-        laboratorio.UsuarioPropietarioId = 1;
+        laboratorio.UsuarioPropietarioId = sessionStorage.getItem("UsuarioId");
         laboratorio.NombreLaboratorio = $("#txtNombre").val();
         laboratorio.SedeLaboratorio = "Heredia";
         laboratorio.Telefono = $("#txtTelefono").val();
