@@ -223,6 +223,7 @@
     <Content Include="Content\imgs\Labs\cicloLab\CL2.jpg" />
     <Content Include="Content\imgs\Labs\cicloLab\CL3.jpg" />
     <Content Include="Content\imgs\Labs\cicloLab\CL4.png" />
+    <Content Include="Content\imgs\otros\medicos.png" />
     <Content Include="Content\imgs\vectoriales\items.png" />
     <Content Include="Content\imgs\Labs\Lab1.jpg" />
     <Content Include="Content\imgs\Labs\Lab1Blanco.png" />
@@ -269,6 +270,7 @@
     <Content Include="Scripts\Views\ConsumoApi\ApiCarrito.js" />
     <Content Include="Scripts\Views\ControlAcciones.js" />
     <Content Include="Scripts\Views\DashboardAdminApp\Usuarios.js" />
+    <Content Include="Scripts\Views\DashboardAdminLaboratorio\Cupones.js" />
     <Content Include="Scripts\Views\DashboardAdminLaboratorio\registarLaboratorio.js" />
     <Content Include="Scripts\Views\dashboardUsuario\DashboardCliente.js" />
     <Content Include="Scripts\Views\dashboardUsuario\DashboardValidacion.js" />
