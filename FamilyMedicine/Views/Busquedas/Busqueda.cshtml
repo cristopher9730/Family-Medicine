@@ -1,8 +1,11 @@
-﻿
+﻿@model List<DTO.Laboratorio>
 @{
     ViewBag.Title = "Busqueda";
     Layout = "~/Views/Shared/_LayoutBusqueda.cshtml";
 }
+
+<link rel="stylesheet" href="~/Content/css/sweetalert.css" />
+<link rel="stylesheet" href="~/Content/css/Laboratorios.css" />
 
 <div class="container mt-5">
     <form class="d-flex justify-content-center">
@@ -11,9 +14,32 @@
     </form>
 </div>
 
-<div class="mt-4 flex-wrap d-flex w-100 justify-content-center" style="min-height:35vw">
+<div class="contentDivsBusqueda">
 
-    <div class="card border-light m-3 shadow-sm h-100" style="max-width: 20rem;">
+    @foreach (var u in Model)
+    {
+        <div class="card border-light m-3 contentExamen shadow-sm h-100" style="max-width: 20rem;">
+            <div class="card-header text-center">
+                <h5><strong>@u.NombreLaboratorio</strong></h5>
+            </div>
+            <div class="card-body">
+                <div class="text-center mb-2" style="max-height:10rem">
+                    <img loading="lazy" src="~/Content/imgs/Labs/Lab2.jpg" class="w-100" alt="..." style="border-radius: 5px; max-height: 190px">
+                </div>
+                <div class="container" style="min-height:5rem">
+                    <p class="card-text">@u.RazonSocial</p>
+                </div>
+
+                <a class="btn btn-outline-primary" href="">Ver más</a>
+            </div>
+        </div>
+    }
+</div>
+
+
+
+
+@*<div class="card border-light m-3 shadow-sm h-100" style="max-width: 20rem;">
         <div class="card-header text-center">
             <h5><strong>Ciclo Lab</strong></h5>
         </div>
@@ -59,7 +85,5 @@
 
             <a> @Html.ActionLink("Ver más", "CicloLab", "Laboratorios", new { area = "" }, new { @class = "text-decoration-none btn btn-outline-primary" })</a>
         </div>
-    </div>
-
-</div>
+    </div>*@
 
