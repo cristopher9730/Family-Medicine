@@ -16,17 +16,19 @@ namespace DataAccess.Mapper
         {
             var operacion = new SqlOperation()
             {
-                NombreProcedimiento = "SP_CrearPromocion"
+                NombreProcedimiento = "SP_RegistrarPromociones"
             };
 
             var promocion = (Promocion)entidadDTO;
 
-            operacion.AddIntergerParam("PromocionId", promocion.PromocionId);
             operacion.AddVarcharParam("PromocionDescripcion", promocion.PromocionDescripcion);
             operacion.AddDoublePram("Descuento", promocion.Descuento);
             operacion.AddIntergerParam("LaboratorioId", promocion.LaboratorioId);
             operacion.AddVarcharParam("EstadoPromocion", promocion.EstadoPromocion);
             operacion.AddIntergerParam("UsuarioId", promocion.UsuarioId);
+            operacion.AddVarcharParam("FechaDeVencimiento", promocion.FechaDeVencimiento);
+            operacion.AddIntergerParam("Usos", promocion.Usos);
+            operacion.AddIntergerParam("Codigo", promocion.Codigo);
 
             return operacion;
 
@@ -47,6 +49,9 @@ namespace DataAccess.Mapper
             operacion.AddIntergerParam("LaboratorioId", promocion.LaboratorioId);
             operacion.AddVarcharParam("EstadoPromocion", promocion.EstadoPromocion);
             operacion.AddIntergerParam("UsuarioId", promocion.UsuarioId);
+            operacion.AddVarcharParam("FechaDeVencimiento", promocion.FechaDeVencimiento);
+            operacion.AddIntergerParam("Usos", promocion.Usos);
+            operacion.AddIntergerParam("Codigo", promocion.Codigo);
 
             return operacion;
         }
@@ -66,6 +71,9 @@ namespace DataAccess.Mapper
             operacion.AddIntergerParam("LaboratorioId", promocion.LaboratorioId);
             operacion.AddVarcharParam("EstadoPromocion", promocion.EstadoPromocion);
             operacion.AddIntergerParam("UsuarioId", promocion.UsuarioId);
+            operacion.AddVarcharParam("FechaDeVencimiento", promocion.FechaDeVencimiento);
+            operacion.AddIntergerParam("Usos", promocion.Usos);
+            operacion.AddIntergerParam("Codigo", promocion.Codigo);
 
             return operacion;
         }
@@ -100,7 +108,10 @@ namespace DataAccess.Mapper
                 Descuento = double.Parse(row["Descuento"].ToString()),
                 LaboratorioId = int.Parse(row["LaboratorioId"].ToString()),
                 EstadoPromocion = row["EstadoPromocion"].ToString(),
-                UsuarioId = int.Parse(row["UsuarioId"].ToString())
+                UsuarioId = int.Parse(row["UsuarioId"].ToString()),
+                FechaDeVencimiento = row["FechaDeVencimiento"].ToString(),
+                Usos = int.Parse(row["Usos"].ToString()),
+                Codigo = int.Parse(row["Codigo"].ToString())
 
             };
             return promocion;

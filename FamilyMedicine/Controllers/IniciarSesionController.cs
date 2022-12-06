@@ -53,7 +53,6 @@ namespace FamilyMedicine.Controllers
         public ActionResult Login(Usuario oUsuario)
         {
             Usuario apiRespuestaUsuario;
-            AdminLogin adminLogin = new AdminLogin();
 
             var urlPrincipal = "https://localhost:44391";
 
@@ -71,40 +70,57 @@ namespace FamilyMedicine.Controllers
             {
                 string jsonObject = result.Content.ReadAsStringAsync().Result;
                 apiRespuestaUsuario = JsonConvert.DeserializeObject<Usuario>(jsonObject);
+                Session["UsuarioId"] = apiRespuestaUsuario.UsuarioId;
+                Session["nombreUsuario"] = apiRespuestaUsuario.Nombre;
+                Session["primerApellido"] = apiRespuestaUsuario.PrimerApellido;
+                Session["segundoApellido"] = apiRespuestaUsuario.SegundoApellido;
+                Session["Correo"] = apiRespuestaUsuario.Correo;
+                Session["telefono"] = apiRespuestaUsuario.Telefono;
+                Session["FotoUsuario"] = apiRespuestaUsuario.Foto;
+                Session["Estado"] = apiRespuestaUsuario.Estado;
+                Session["LaboratorioId"] = apiRespuestaUsuario.LaboratorioId;
+                Session["MembresiaId"] = apiRespuestaUsuario.MembresiaId;
+                Session["RolId"] = apiRespuestaUsuario.RolId;
+                Session["Codigo"] = apiRespuestaUsuario.Codigo;
             }
             else
                 throw new Exception(result.Content.ReadAsStringAsync().Result);
 
+            if (apiRespuestaUsuario.Estado.Equals("Pendiente"))
+            {
+                return RedirectToAction("OTP", "IniciarSesion");
+            }
+
             if (apiRespuestaUsuario.RolId == 5)
             {
                 apiRespuestaUsuario.UsuarioId = -1;
-                Session["usuario"] = apiRespuestaUsuario;
+                //Session["usuario"] = apiRespuestaUsuario;
                 return RedirectToAction("Index", "Home");
             }
             else if (apiRespuestaUsuario.RolId == 2)
             {
                 apiRespuestaUsuario.UsuarioId = 1;
-                Session["usuario"] = apiRespuestaUsuario;
-                Session["rolAdmin"] = apiRespuestaUsuario.RolId;
+                //Session["usuario"] = apiRespuestaUsuario;
+                //Session["rolAdmin"] = apiRespuestaUsuario.RolId;
                 return RedirectToAction("Index", "Home");
             }
             else if (apiRespuestaUsuario.RolId == 1)
             {
                 apiRespuestaUsuario.UsuarioId = 1;
-                Session["usuario"] = apiRespuestaUsuario;
+                //Session["usuario"] = apiRespuestaUsuario;
                 return RedirectToAction("Index", "Home");
             }
             else if (apiRespuestaUsuario.RolId == 3)
             {
                 apiRespuestaUsuario.UsuarioId = 1;
-                Session["usuario"] = apiRespuestaUsuario;
-                Session["rolTecnico"] = apiRespuestaUsuario.RolId;
+                //Session["usuario"] = apiRespuestaUsuario;
+                //Session["rolTecnico"] = apiRespuestaUsuario.RolId;
                 return RedirectToAction("Index", "Home");
             }
 
             if (apiRespuestaUsuario.UsuarioId != 0)
             {
-                Session["usuario"] = apiRespuestaUsuario;
+                //Session["usuario"] = apiRespuestaUsuario;
                 return RedirectToAction("Index", "Home");
             }
             else
