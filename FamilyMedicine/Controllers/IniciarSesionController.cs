@@ -90,37 +90,9 @@ namespace FamilyMedicine.Controllers
             {
                 return RedirectToAction("OTP", "IniciarSesion");
             }
-
-            if (apiRespuestaUsuario.RolId == 5)
-            {
-                apiRespuestaUsuario.UsuarioId = -1;
-                //Session["usuario"] = apiRespuestaUsuario;
-                return RedirectToAction("Index", "Home");
-            }
-            else if (apiRespuestaUsuario.RolId == 2)
-            {
-                apiRespuestaUsuario.UsuarioId = 1;
-                //Session["usuario"] = apiRespuestaUsuario;
-                //Session["rolAdmin"] = apiRespuestaUsuario.RolId;
-                return RedirectToAction("Index", "Home");
-            }
-            else if (apiRespuestaUsuario.RolId == 1)
-            {
-                apiRespuestaUsuario.UsuarioId = 1;
-                //Session["usuario"] = apiRespuestaUsuario;
-                return RedirectToAction("Index", "Home");
-            }
-            else if (apiRespuestaUsuario.RolId == 3)
-            {
-                apiRespuestaUsuario.UsuarioId = 1;
-                //Session["usuario"] = apiRespuestaUsuario;
-                //Session["rolTecnico"] = apiRespuestaUsuario.RolId;
-                return RedirectToAction("Index", "Home");
-            }
-
             if (apiRespuestaUsuario.UsuarioId != 0)
             {
-                //Session["usuario"] = apiRespuestaUsuario;
+                Session["usuario"] = apiRespuestaUsuario;
                 return RedirectToAction("Index", "Home");
             }
             else
@@ -132,6 +104,51 @@ namespace FamilyMedicine.Controllers
                 //ViewBag.Message = "Login";
                 return View();
             }
+
+
+
+
+            //if (apiRespuestaUsuario.RolId == 5)
+            //{
+            //    //apiRespuestaUsuario.UsuarioId = -1;
+            //    Session["usuario"] = apiRespuestaUsuario;
+            //    return RedirectToAction("Index", "Home");
+            //}
+            //else if (apiRespuestaUsuario.RolId == 2)
+            //{
+            //    //apiRespuestaUsuario.UsuarioId = 1;
+            //    Session["usuario"] = apiRespuestaUsuario;
+            //    //Session["rolAdmin"] = apiRespuestaUsuario.RolId;
+            //    return RedirectToAction("Index", "Home");
+            //}
+            //else if (apiRespuestaUsuario.RolId == 1)
+            //{
+            //    //apiRespuestaUsuario.UsuarioId = 1;
+            //    Session["usuario"] = apiRespuestaUsuario;
+            //    return RedirectToAction("Index", "Home");
+            //}
+            //else if (apiRespuestaUsuario.RolId == 3)
+            //{
+            //    //apiRespuestaUsuario.UsuarioId = 1;
+            //    Session["usuario"] = apiRespuestaUsuario;
+            //    //Session["rolTecnico"] = apiRespuestaUsuario.RolId;
+            //    return RedirectToAction("Index", "Home");
+            //}
+
+            //if (apiRespuestaUsuario.UsuarioId != 0)
+            //{
+            //    Session["usuario"] = apiRespuestaUsuario;
+            //    return RedirectToAction("Index", "Home");
+            //}
+            //else
+            //{
+
+            //    ViewData["Mensaje"] = "usuario no encontrado";
+            //    //return RedirectToAction("Login", "Home");
+
+            //    //ViewBag.Message = "Login";
+            //    return View();
+            //}
 
         }
 

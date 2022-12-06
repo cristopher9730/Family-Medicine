@@ -13,7 +13,16 @@ namespace FamilyMedicine.Controllers
         // GET: Busquedas
         public ActionResult Busqueda()
         {
-            return View();
+            //TBD reemplazar esta lista por una conexion a la lista de base de datos 
+            List<Laboratorio> laboratorios = new List<Laboratorio>();
+
+            Laboratorio laboratorio1 = new Laboratorio();
+            laboratorio1.NombreLaboratorio = "CICLO LAB";
+            laboratorio1.RazonSocial = "Examenes de sangre para adultos y niños con los mejores precios";
+
+            laboratorios.Add(laboratorio1);       
+
+            return View("Busqueda", laboratorios);
         }
 
         public ActionResult BusquedaExamen()
@@ -37,9 +46,15 @@ namespace FamilyMedicine.Controllers
             examen3.Descripcion = "Examenes de Tiroides T1, T2 y T3";
             examen3.Precio = 40000;
 
+            Examen examen4 = new Examen();
+            examen4.Nombre = "Examen de Tiroides";
+            examen4.Descripcion = "Examenes de Tiroides T1, T2 y T3";
+            examen4.Precio = 40000;
+
             examenes.Add(examen1);
             examenes.Add(examen2);
             examenes.Add(examen3);
+            examenes.Add(examen4);
 
             return View("BusquedaExamen",examenes);
         }

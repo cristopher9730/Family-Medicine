@@ -83,7 +83,7 @@ namespace DataAccess.Mapper
         {
             var operacion = new SqlOperation()
             {
-                NombreProcedimiento = "SP_ValidarOTPCorreo"
+                NombreProcedimiento = "SP_ValidacionOTP"
             };
             
             operacion.AddIntergerParam("CodigoOTP", CodigoOtp);
