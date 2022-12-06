@@ -14,8 +14,6 @@ namespace FamilyMedicine.Controllers
         [HttpPost]
         public string RegistrarPromocion(Promocion promocion)
         {
-            Random generator = new Random();
-            String otp = generator.Next(100000, 1000000).ToString("D6");
 
             AdminPromocion adminPromocion = new AdminPromocion();
             return adminPromocion.CrearPromocion(promocion);
