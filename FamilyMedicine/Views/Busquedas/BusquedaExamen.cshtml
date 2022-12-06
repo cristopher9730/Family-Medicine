@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<DTO.Examen>
+@{
     ViewBag.Title = "BusquedaExamen";
     Layout = "~/Views/Shared/_LayoutBusqueda.cshtml";
 }
@@ -16,7 +17,7 @@
                 <h5><strong>PENDIENTE TBD</strong></h5>
             </div>
             <div class="container" style="min-height:12rem">
-                <p class="card-text">PENDIENTE TBD</p>
+                <p class="card-text">@u.Descripcion</p>
             </div>
             <div class="text-center mb-2" style="max-height:12rem">
                 <h5><strong>@u.Precio</strong></h5>
