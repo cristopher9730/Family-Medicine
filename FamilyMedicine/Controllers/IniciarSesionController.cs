@@ -1,5 +1,6 @@
 ﻿using AppLogic;
 using DTO;
+using MailChimp.Net.Core;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -32,15 +33,19 @@ namespace FamilyMedicine.Controllers
             if (Session["usuario"] != null)
             {
                 Usuario rol = (Usuario)(Session["usuario"]);
-                if (rol.RolId == 5)
+                if (rol.RolId == 4)
                 {
                     return RedirectToAction("LaboratoriosRegistrados", "DashboardAdminApp");
 
                 }
-                if (rol.RolId == 1 || rol.RolId == 2 || rol.RolId == 3)
+                if (rol.RolId == 1)
                 {
                     return RedirectToAction("DashboardUsuario", "DashboardUsuario");
 
+                }
+                if (rol.RolId == 2 || rol.RolId == 3)
+                {
+                    return RedirectToAction("DashAdminLabDatosLaboratorio", "DashboardAdminLaboratorio");
                 }
             }
             return View();
@@ -69,6 +74,15 @@ namespace FamilyMedicine.Controllers
             {
                 string jsonObject = result.Content.ReadAsStringAsync().Result;
                 apiRespuestaUsuario = JsonConvert.DeserializeObject<Usuario>(jsonObject);
+
+
+                if (apiRespuestaUsuario.UsuarioId == 0)
+                {
+                    ViewData["Mensaje"] = "Usuario y/o password invalidos";
+                    return View();
+                }
+
+
                 Session["UsuarioId"] = apiRespuestaUsuario.UsuarioId;
                 Session["nombreUsuario"] = apiRespuestaUsuario.Nombre;
                 Session["primerApellido"] = apiRespuestaUsuario.PrimerApellido;
@@ -82,73 +96,53 @@ namespace FamilyMedicine.Controllers
                 Session["MembresiaId"] = apiRespuestaUsuario.MembresiaId;
                 Session["RolId"] = apiRespuestaUsuario.RolId;
                 Session["Codigo"] = apiRespuestaUsuario.Codigo;
+
+
+                if (apiRespuestaUsuario.Estado.Equals("Pendiente"))
+                {
+                    return RedirectToAction("OTP", "IniciarSesion");
+                }
+
+                if (apiRespuestaUsuario.RolId == 4)
+                {
+                    //apiRespuestaUsuario.UsuarioId = -1;
+                    Session["usuario"] = apiRespuestaUsuario;
+                    Session["rolAdminApp"] = apiRespuestaUsuario.RolId;
+                    Session["dashboard"] = apiRespuestaUsuario.RolId;
+                    return RedirectToAction("Index", "Home");
+                }
+                else if (apiRespuestaUsuario.RolId == 2)
+                {
+                    //apiRespuestaUsuario.UsuarioId = 1;
+                    Session["usuario"] = apiRespuestaUsuario;
+                    Session["rolAdmin"] = apiRespuestaUsuario.RolId;
+                    Session["dashboard"] = apiRespuestaUsuario.RolId;
+                    return RedirectToAction("Index", "Home");
+                }
+                else if (apiRespuestaUsuario.RolId == 1)
+                {
+                    //apiRespuestaUsuario.UsuarioId = 1;
+                    Session["usuario"] = apiRespuestaUsuario;
+                    return RedirectToAction("Index", "Home");
+                }
+                else if (apiRespuestaUsuario.RolId == 3)
+                {
+                    //apiRespuestaUsuario.UsuarioId = 1;
+                    Session["usuario"] = apiRespuestaUsuario;
+                    Session["rolTecnico"] = apiRespuestaUsuario.RolId;
+                    Session["dashboard"] = apiRespuestaUsuario.RolId;
+                    return RedirectToAction("Index", "Home");
+                }
+                else { return View(); }
+
+
             }
             else
-                throw new Exception(result.Content.ReadAsStringAsync().Result);
-
-            if (apiRespuestaUsuario.Estado.Equals("Pendiente"))
-            {
-                return RedirectToAction("OTP", "IniciarSesion");
-            }
-            if (apiRespuestaUsuario.UsuarioId != 0)
-            {
-                Session["usuario"] = apiRespuestaUsuario;
-                return RedirectToAction("Index", "Home");
-            }
-            else
             {
 
-                ViewData["Mensaje"] = "usuario no encontrado";
-                //return RedirectToAction("Login", "Home");
-
-                //ViewBag.Message = "Login";
+                ViewData["Mensaje"] = "Usuario y/o password invalidos";
                 return View();
             }
-
-
-
-
-            //if (apiRespuestaUsuario.RolId == 5)
-            //{
-            //    //apiRespuestaUsuario.UsuarioId = -1;
-            //    Session["usuario"] = apiRespuestaUsuario;
-            //    return RedirectToAction("Index", "Home");
-            //}
-            //else if (apiRespuestaUsuario.RolId == 2)
-            //{
-            //    //apiRespuestaUsuario.UsuarioId = 1;
-            //    Session["usuario"] = apiRespuestaUsuario;
-            //    //Session["rolAdmin"] = apiRespuestaUsuario.RolId;
-            //    return RedirectToAction("Index", "Home");
-            //}
-            //else if (apiRespuestaUsuario.RolId == 1)
-            //{
-            //    //apiRespuestaUsuario.UsuarioId = 1;
-            //    Session["usuario"] = apiRespuestaUsuario;
-            //    return RedirectToAction("Index", "Home");
-            //}
-            //else if (apiRespuestaUsuario.RolId == 3)
-            //{
-            //    //apiRespuestaUsuario.UsuarioId = 1;
-            //    Session["usuario"] = apiRespuestaUsuario;
-            //    //Session["rolTecnico"] = apiRespuestaUsuario.RolId;
-            //    return RedirectToAction("Index", "Home");
-            //}
-
-            //if (apiRespuestaUsuario.UsuarioId != 0)
-            //{
-            //    Session["usuario"] = apiRespuestaUsuario;
-            //    return RedirectToAction("Index", "Home");
-            //}
-            //else
-            //{
-
-            //    ViewData["Mensaje"] = "usuario no encontrado";
-            //    //return RedirectToAction("Login", "Home");
-
-            //    //ViewBag.Message = "Login";
-            //    return View();
-            //}
 
         }
 
