@@ -21,7 +21,7 @@
                 <img id="file-ip-1-preview" src="https://josuergweb.web.app/image/josue.jpg" class="imgDashBoard" />
                 <button data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="buttonHiddenEditor"><i style="color: #ffffff" class="fa-solid fa-pen-to-square"></i></button>
             </div>
-         
+          
             <div class="datoGeneral">
                 <h2 class="titleGeneral">Mi Perfil</h2>
                 <section class="ContenedorDeDashboardFleROW" style="gap: 1px">
@@ -93,57 +93,60 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <form data-aos="fade-up" class="was-validated mb-1 mt-1 formContenedorId" id="formContenedorId">
-                        <div>
-                            <label for="staticEmail" class=" tituloGeneralTres">Nombre</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control formPupUp" id="txtNombre" value="Josue Rivera">
+                        @{          
+                            var Clave = Session["Clave"];
+                            <div>
+                                <label for="staticEmail" class=" tituloGeneralTres">Nombre</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control formPupUp" id="txtNombre" value="@nombre">
+                                </div>
+                            </div>                         
+                            <div>
+                                <label for="staticEmail" class=" tituloGeneralTres">Primer apellido</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control formPupUp" id="txtPrimerApellido" value="@primerApellido">
+                                </div>
                             </div>
-                        </div>
 
-                        <div>
-                            <label for="staticEmail" class=" tituloGeneralTres">Primer apellido</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control formPupUp" id="txtPrimerApellido" value="Rivera">
+                            <div>
+                                <label for="staticEmail" class=" tituloGeneralTres">Segundo apellido</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control formPupUp" id="txtSegundoApellido" value="@segundoApellido">
+                                </div>
                             </div>
-                        </div>
 
-                        <div>
-                            <label for="staticEmail" class=" tituloGeneralTres">Segundo apellido</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control formPupUp" id="txtSegundoApellido" value="Gonzalez">
+                            <div>
+                                <label for="staticEmail" class=" tituloGeneralTres">Telefono</label>
+                                <div class="col-sm-10">
+                                    <input type="tel" class="form-control formPupUp" id="txtTelefono" value="@telefono">
+                                </div>
                             </div>
-                        </div>
 
-                        <div>
-                            <label for="staticEmail" class=" tituloGeneralTres">Telefono</label>
-                            <div class="col-sm-10">
-                                <input type="tel" class="form-control formPupUp" id="txtTelefono" value="86976985">
+                            <div>
+                                <label for="staticEmail" class=" tituloGeneralTres">Correo</label>
+                                <div class="col-sm-10">
+                                    <input type="email" pattern="^[a-zA-Z0-9._+-]+@("@")[a-zA-Z0-9.-]+\.[a-zA-Z]{2,9}$" class="form-control formPupUp" id="txtCorreo" value="@correo">
+                                </div>
                             </div>
-                        </div>
 
-                        <div>
-                            <label for="staticEmail" class=" tituloGeneralTres">Correo</label>
-                            <div class="col-sm-10">
-                                <input type="email" pattern="^[a-zA-Z0-9._+-]+@("@")[a-zA-Z0-9.-]+\.[a-zA-Z]{2,9}$" class="form-control formPupUp" id="txtCorreo" value="psjosue1@gmail.com">
+                            <div>
+                                <label for="staticEmail" class=" tituloGeneralTres">Contraseña</label>
+                                <div class="col-sm-10 ContenedorDeDashboardFleROW">
+                                    <input type="password" class="form-control formPupUp" id="txtClave" value="@Clave">
+                                </div>
                             </div>
-                        </div>
 
-                        <div>
-                            <label for="staticEmail" class=" tituloGeneralTres">Contraseña</label>
-                            <div class="col-sm-10 ContenedorDeDashboardFleROW">
-                                <input type="password" class="form-control formPupUp" id="txtClave" value="Contraseña">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" onclick="verPassword()" type="checkbox" id="flexSwitchCheckChecked">
+                                <label class="form-check-label" for="flexSwitchCheckChecked">Ver contraseña</label>
                             </div>
-                        </div>
 
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" onclick="verPassword()" type="checkbox" id="flexSwitchCheckChecked">
-                            <label class="form-check-label" for="flexSwitchCheckChecked">Ver contraseña</label>
-                        </div>
+                            <div class="modal-footer">
+                                <button id="btnActualizarCliente" type="submit" class="btn btn-primary data-bs-dismiss=" modal" mt-1">Guardar</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            </div>
 
-                        <div class="modal-footer">
-                            <button id="btnActualizarCliente" type="submit" class="btn btn-primary data-bs-dismiss=" modal" mt-1">Guardar</button>
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                        </div>
+                        }
                     </form>
                 </div>
             </div>

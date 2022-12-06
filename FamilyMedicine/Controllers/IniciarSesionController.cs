@@ -25,7 +25,6 @@ namespace FamilyMedicine.Controllers
        Post Async recibe un url y un string content. 
        El resultado se asigna a una variable y si es exitoso, se convierte la respuesta json a un objeto usuario 
        Si el ID del usuario es 0 significa que no existe el usuario consultado. Cualquier otro ID podra ingresar correctamente 
-
         */
 
         public ActionResult Login()
@@ -75,6 +74,7 @@ namespace FamilyMedicine.Controllers
                 Session["primerApellido"] = apiRespuestaUsuario.PrimerApellido;
                 Session["segundoApellido"] = apiRespuestaUsuario.SegundoApellido;
                 Session["Correo"] = apiRespuestaUsuario.Correo;
+                Session["Clave"] = apiRespuestaUsuario.Clave;
                 Session["telefono"] = apiRespuestaUsuario.Telefono;
                 Session["FotoUsuario"] = apiRespuestaUsuario.Foto;
                 Session["Estado"] = apiRespuestaUsuario.Estado;
