@@ -204,6 +204,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\LaboratorioModel.cs" />
     <Compile Include="Models\ExamenModel.cs" />
     <Compile Include="Permisos\ValidarSesionAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -267,6 +268,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\Views\AgendarCitas\AgendarCitas.js" />
+    <Content Include="Scripts\Views\busqueda\busquedaLab.js" />
     <Content Include="Scripts\Views\carritoDeComprasjs.js" />
     <Content Include="Scripts\Views\ConsumoApi\ApiCarrito.js" />
     <Content Include="Scripts\Views\ControlAcciones.js" />
