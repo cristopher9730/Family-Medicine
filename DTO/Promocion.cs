@@ -14,5 +14,8 @@ namespace DTO
         public int LaboratorioId { get; set; }
         public string EstadoPromocion { get; set; }
         public int UsuarioId { get; set; }
+        public string FechaDeVencimiento { get; set; }
+        public int Usos { get; set; }
+        public int Codigo { get; set; }
     }
 }
