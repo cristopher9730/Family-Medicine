@@ -204,6 +204,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ExamenModel.cs" />
     <Compile Include="Permisos\ValidarSesionAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -272,6 +273,7 @@
     <Content Include="Scripts\Views\ControlAcciones.js" />
     <Content Include="Scripts\Views\DashboardAdminApp\Usuarios.js" />
     <Content Include="Scripts\Views\DashboardAdminLaboratorio\Cupones.js" />
+    <Content Include="Scripts\Views\DashboardAdminLaboratorio\Examen.js" />
     <Content Include="Scripts\Views\DashboardAdminLaboratorio\registarLaboratorio.js" />
     <Content Include="Scripts\Views\DashboardAdminLaboratorio\personal.js" />
     <Content Include="Scripts\Views\dashboardUsuario\DashboardCliente.js" />
@@ -338,7 +340,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
     <Folder Include="Views\Acceso\" />
     <Folder Include="Views\OTP\" />
   </ItemGroup>

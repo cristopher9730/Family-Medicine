@@ -72,7 +72,6 @@
     <Compile Include="Mapper\MembresiaMapper.cs" />
     <Compile Include="Mapper\CitaMapper.cs" />
     <Compile Include="Mapper\CompraMapper.cs" />
-    <Compile Include="Mapper\ExamenMapper.cs" />
     <Compile Include="Mapper\OTPMapper.cs" />
     <Compile Include="Mapper\PromocionMapper.cs" />
     <Compile Include="Mapper\RolMapper.cs" />

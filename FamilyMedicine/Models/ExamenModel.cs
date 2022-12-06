@@ -1,12 +1,12 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
 
-namespace DTO
+namespace FamilyMedicine.Models
 {
-    public class Examen : EntidadBase
+    public class ExamenModel
     {
         public int ExamenId { get; set; }
         public string Nombre { get; set; }

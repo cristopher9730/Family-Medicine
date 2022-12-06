@@ -16,7 +16,7 @@ namespace DataAccess.Mapper
         {
             var operacion = new SqlOperation()
             {
-                NombreProcedimiento = "SP_CrearExamen"
+                NombreProcedimiento = "sp_RegistrarExamen"
             };
 
             var examen = (Examen)entidadDTO;
@@ -25,7 +25,8 @@ namespace DataAccess.Mapper
             operacion.AddVarcharParam("NombreInterno", examen.NombreInterno);
             operacion.AddDoublePram("Precio", examen.Precio);
             operacion.AddIntergerParam("LaboratorioId", examen.LaboratorioId);
-
+            operacion.AddVarcharParam("Descripcion", examen.Descripcion);
+            operacion.AddIntergerParam("Ventas", examen.Ventas);
             return operacion;
 
         }
@@ -45,7 +46,9 @@ namespace DataAccess.Mapper
             operacion.AddDoublePram("Precio", examen.Precio);
             operacion.AddIntergerParam("LaboratorioId", examen.LaboratorioId);
             operacion.AddVarcharParam("Estado", examen.Estado);
-            
+            operacion.AddVarcharParam("Descripcion", examen.Descripcion);
+            operacion.AddIntergerParam("Ventas", examen.Ventas);
+
 
             return operacion;
         }
@@ -95,7 +98,9 @@ namespace DataAccess.Mapper
                 NombreInterno = row["NombreInterno"].ToString(),
                 Precio = double.Parse(row["Precio"].ToString()),
                 LaboratorioId = int.Parse(row["LaboratorioId"].ToString()),
-                Estado = row["Estado"].ToString()                
+                Estado = row["Estado"].ToString(),
+                Descripcion = row["Descripcion"].ToString(),
+                Ventas = int.Parse(row["Ventas"].ToString()),
             };
             return examen;
         }

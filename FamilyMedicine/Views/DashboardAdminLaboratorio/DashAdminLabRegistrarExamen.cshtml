@@ -3,6 +3,9 @@
     ViewBag.Title = "DashAdminLabRegistrarExamen";
     Layout = "~/Views/Shared/_DashboardLayout.cshtml";
 }
+
+<script src="~/Scripts/Views/DashboardAdminLaboratorio/Examen.js"></script>
+
 <style>
     /*Este style contien la clase de nav activo las opciones A1, A2, A3... etc estan en el layout*/
     .A5 {
@@ -57,7 +60,7 @@
                     <div class="mb-3 w-100 contenedorDeInputs">
                         <div class="form-group has-validation w-100 d-flex flex-column">
                             <label class="form-label" for="txtNombre" id="inputGroupPrepend">Nombre interno</label>
-                            <input type="text" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
+                            <input type="text" class="form-control w-100" id="txtNombreInterno" aria-describedby="inputGroupPrepend" required>
                             <div class="invalid-feedback">
                                 Por favor, ingrese el nombre interno
                             </div>
@@ -77,23 +80,16 @@
                     <div class="mb-3 w-100 contenedorDeInputs">
                         <div class="form-group has-validation w-100 d-flex flex-column">
                             <label class="form-label" for="txtNombre" id="inputGroupPrepend">Precio</label>
-                            <input type="number" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
+                            <input type="number" class="form-control w-100" id="txtPrecio" aria-describedby="inputGroupPrepend" required>
                             <div class="invalid-feedback">
                                 Por favor, ingrese el precio
                             </div>
                         </div>
                     </div>
-                    <button onclick="myfuncionGeneralRegistrar()" type="submit" class="btn btn-primary">Registrar</button>
+                    <button type="button" class="btn btn-primary" id="btnRegistrar">Registrar</button>
                 </form>
 
                 <div>
-                    <div>
-                        <form class="d-flex" style="padding: 10px">
-                            <input class="form-control me-sm-2" type="text" id="searchTerm" onkeyup="doSearch()" placeholder="Buscar informacion">
-                        </form>
-                        <p class='noSearch hide'></p>
-                    </div>
-
 
                     <div class="ContenedorDeDashboardTabOverFlow">
                         <table id="datos" class="table table-hover" style=" min-width: 55vw; border-radius: 10px;">
@@ -102,17 +98,10 @@
                                     <th scope="col">Nombre de examen</th>
                                     <th scope="col">Nombre interno</th>
                                     <th scope="col">Precio</th>
+                                    <th scope="col">Descripción</th>
                                     <th scope="col">Ventas totales</th>
                                 </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td scope="row">Examen de sangre</td>
-                                    <td>ES-0315</td>
-                                    <td id="precio">₡22000</td>
-                                    <td>410</td>
-                                </tr>
-                            </tbody>
+                            </thead>                       
                         </table>
                     </div>
                 </div>
@@ -402,6 +391,3 @@
 
 </div>
 
-
-
-<script src="~/Scripts/Views/dashboardUsuario/DashboardCitasResultado.js"></script>
