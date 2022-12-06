@@ -43,6 +43,12 @@ namespace AppLogic
             return componenteCrud.ListarTodos<Componente>();
         }
 
+        public List<Componente> DevolverTodosComponentesPodId(int id)
+        {
+            ComponenteCrudFactory componenteCrud = new ComponenteCrudFactory();
+            return componenteCrud.ListarTodosPorId<Componente>(id);
+        }
+
         public Componente DevolverUnComponente(Componente componente)
         {
             ComponenteCrudFactory componenteCrud = new ComponenteCrudFactory();
