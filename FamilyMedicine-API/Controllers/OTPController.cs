@@ -44,7 +44,7 @@ namespace FamilyMedicine_API.Controllers
             return adminOTP.DevolverTodosOTPs();
         }
 
-        [HttpGet]
+        [HttpPost]
         public OTP ObtenerUnaOTP(OTP otp)
         {
             AdminOTP adminOTP = new AdminOTP();

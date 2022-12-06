@@ -1,0 +1,31 @@
+﻿@model DTO.OTP
+@{
+    ViewBag.Title = "OTPValidacion";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+@using (Html.BeginForm("OTP", "OTP", FormMethod.Get))
+{
+    <h2>Validar OTP</h2>
+    <table>
+        <tr>
+            <td>@Html.LabelFor(a => a.CreacionUsuario)</td>
+            <td>@Html.TextBoxFor(a => a.CreacionUsuario)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(a => a.CodigoOTP)</td>
+            <td>@Html.TextBoxFor(a => a.CodigoOTP)</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" class="btn btn-primary" value="Login" />
+                @Html.ActionLink("Cancel", "Cancel", "OTP", new { @class = "btn btn-primary" })
+            </td>
+            
+        </tr>
+    </table>
+}
+
+<h2>OTPValidacion</h2>
+

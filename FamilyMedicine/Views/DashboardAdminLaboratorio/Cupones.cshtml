@@ -4,6 +4,8 @@
     Layout = "~/Views/Shared/_DashboardLayout.cshtml";
 }
 
+<script src="~/Scripts/Views/DashboardAdminLaboratorio/Cupones.js"></script>
+
 <style>
     /*Este style contien la clase de nav activo las opciones A1, A2, A3... etc estan en el layout*/
     .A10 {
@@ -39,7 +41,7 @@
                 <div class="mb-3 w-100">
                     <div class="form-group has-validation w-100 d-flex flex-column">
                         <label class="form-label" for="txtNombre" id="inputGroupPrepend">Fecha de Vencimiento</label>
-                        <input type="date" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" style="min-width:318px" required>
+                        <input type="date" class="form-control w-100" id="txtFecha" aria-describedby="inputGroupPrepend" style="min-width:318px" required>
                         <div class="invalid-feedback">
                             Por favor, seleccione una fecha
                         </div>
@@ -59,7 +61,7 @@
                     </div>
                 </div>
 
-                <button onclick="myfuncionGeneralRegistrar()" type="submit" class="btn btn-primary mt-3 ">Registrar</button>
+                <button type="button" class="btn btn-primary mt-3 " id="btnRegistrar">Registrar</button>
             </form>
         </div>
     </div>
@@ -69,7 +71,7 @@
         <h3 class="card-header">Cupones Registrado</h3>
 
         <div class="card-body">
-            <table class="table table-hover">
+            <table class="table table-hover" id="datos">
                 <thead>
                     <tr>
                         <th scope="col">Nombre</th>
@@ -79,26 +81,10 @@
                         <th scope="col">Fecha de Vencimiento</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">Black November</th>
-                        <td>265746</td>
-                        <td>30</td>
-                        <td>3</td>
-                        <td>01/12/2022</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Super Descuento</th>
-                        <td>268468</td>
-                        <td>50</td>
-                        <td>12</td>
-                        <td>20/11/2022</td>
-                    </tr>
-                </tbody>
             </table>
         </div>
     </div>
 </div>
 
 
-    <script src="https://kit.fontawesome.com/e77fc0ae51.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/e77fc0ae51.js" crossorigin="anonymous"></script>
