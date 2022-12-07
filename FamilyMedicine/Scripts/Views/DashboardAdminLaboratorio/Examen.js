@@ -4,10 +4,10 @@
             var vista = new Examen();
             vista.RegistrarExamen();
         });
-        this.CargarTabla();
+        this.CargarTablaExamen();
     }
 
-    this.CargarTabla = function () {
+    this.CargarTablaExamen = function () {
         var arrayColumnsData = [];
         arrayColumnsData[0] = { 'data': 'Nombre' };
         arrayColumnsData[1] = { 'data': 'NombreInterno' };

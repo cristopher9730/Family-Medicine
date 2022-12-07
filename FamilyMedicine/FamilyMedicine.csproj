@@ -309,7 +309,7 @@
     <Content Include="Views\Shared\_DashboardLayout.cshtml" />
     <Content Include="Views\DashboardAdminLaboratorio\DashAdminLabDatosLaboratorio.cshtml" />
     <Content Include="Views\DashboardAdminLaboratorio\DashAdminLabHistorialVentas.cshtml" />
-    <Content Include="Views\DashboardAdminLaboratorio\DashAdminLabRegistrarExamen.cshtml" />
+    <Content Include="Views\DashboardAdminLaboratorio\Componentes.cshtml" />
     <Content Include="Views\DashboardAdminLaboratorio\DashAdminLabRegistrarPersonal.cshtml" />
     <Content Include="Views\Shared\_DashboardAdminAppLayout.cshtml" />
     <Content Include="Views\DashboardAdminApp\LaboratoriosRegistrados.cshtml" />
@@ -338,6 +338,10 @@
     <Content Include="Scripts\Views\ConsumoApi\jsconfig.json" />
     <Content Include="Views\DashboardAdminApp\RegistrarLaboratorio.cshtml" />
     <Content Include="Views\IniciarSesion\OTPValidacion.cshtml" />
+    <Content Include="Views\IniciarSesion\recuperarOTP.cshtml" />
+    <Content Include="Views\DashboardAdminLaboratorio\Examen.cshtml" />
+    <Content Include="Views\DashboardAdminLaboratorio\Horarios.cshtml" />
+    <Content Include="Views\DashboardAdminLaboratorio\Resultados.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
