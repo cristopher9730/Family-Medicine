@@ -99,6 +99,21 @@ namespace DataAccess.Mapper
             return operacion;
         }
 
+        public SqlOperation DeclaracionRecuperarOTP(EntidadBase entidadDTO)
+        {
+            var operacion = new SqlOperation()
+            {
+                NombreProcedimiento = "SP_RecuperarOTP"
+            };
+
+            var usuario = (Usuario)entidadDTO;
+
+            operacion.AddIntergerParam("UsuarioId", usuario.UsuarioId);
+            operacion.AddVarcharParam("token", usuario.Codigo);
+
+            return operacion;
+        }
+
         public SqlOperation DeclaracionBorrar(EntidadBase entidadDTO)
         {
             var operacion = new SqlOperation()
