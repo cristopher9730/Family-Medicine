@@ -163,6 +163,7 @@
     <Compile Include="Controllers\CitaController.cs" />
     <Compile Include="Controllers\ComponenteController.cs" />
     <Compile Include="Controllers\CompraController.cs" />
+    <Compile Include="Controllers\HorarioController.cs" />
     <Compile Include="Controllers\ExamenController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ComunicacionController.cs" />
