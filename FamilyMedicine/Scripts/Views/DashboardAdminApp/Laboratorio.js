@@ -11,6 +11,7 @@
         arrayColumnsData[2] = { 'data': 'PaginaWeb' };
         arrayColumnsData[3] = { 'data': 'Telefono' };
         arrayColumnsData[4] = { 'data': 'CorreoLaboratorio' };
+        arrayColumnsData[5] = { defaultContent: '<button class="btn btn-primary">Inactivar</button>' };
 
         $('#datos').DataTable({
             "language": {
@@ -24,6 +25,7 @@
                 "infoEmpty": "Tabla vacia",
                 "search": "Buscar:",
                 "infoFiltered": "(Filtrando de _MAX_ total de resultados)"
+            },
             ajax: {
                 method: "GET",
                 url: "https://familymedicine-api.azurewebsites.net/api/Laboratorio/ObtenerListaLaboratorios",

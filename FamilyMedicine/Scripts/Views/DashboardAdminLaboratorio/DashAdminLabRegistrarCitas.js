@@ -43,6 +43,7 @@
         arrayColumnsData[2] = { 'data': 'HoraFin' };
         arrayColumnsData[3] = { 'data': 'Cupos' };
         arrayColumnsData[4] = { 'data': 'ExamenId' };
+        arrayColumnsData[5] = { defaultContent: '<button class="btn btn-primary">Eliminar</button>' };
 
         var id = $("#session").val();
 
@@ -58,6 +59,7 @@
                 "infoEmpty": "Tabla vacia",
                 "search": "Buscar:",
                 "infoFiltered": "(Filtrando de _MAX_ total de resultados)"
+            },
             ajax: {
                 method: "GET",
                 url: "https://localhost:44391/api/Horario/ObtenerListaHorariosPorId?id=" + id,

@@ -14,6 +14,7 @@
         arrayColumnsData[2] = { 'data': 'Precio' };
         arrayColumnsData[3] = { 'data': 'Descripcion' };
         arrayColumnsData[4] = { 'data': 'Ventas' };
+        arrayColumnsData[5] = { defaultContent: '<button class="btn btn-primary">Eliminar</button>' };
         var id = $("#session").val();
 
         $('#datos').DataTable({
