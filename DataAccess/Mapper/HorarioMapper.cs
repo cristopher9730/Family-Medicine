@@ -16,19 +16,20 @@ namespace DataAccess.Mapper
         {
             var operacion = new SqlOperation()
             {
-                NombreProcedimiento = "SP_CrearHorario"
+                NombreProcedimiento = "SP_RegistrarHorario"
             };
 
             var horario = (Horario)entidadDTO;
-
-            operacion.AddIntergerParam("HorarioId", horario.HorarioId);
+            
+            operacion.AddIntergerParam("UsuarioId", 1);//recordar borrar esta linea, y arreglar el SP
+           /// operacion.AddIntergerParam("HorarioId", horario.HorarioId);
             operacion.AddDateParam("Dia", horario.Dia.Date);
             operacion.AddVarcharParam("HoraInicio", horario.HoraInicio);
             operacion.AddVarcharParam("HoraFin", horario.HoraFin);
             operacion.AddIntergerParam("ExamenId", horario.ExamenId);
             operacion.AddIntergerParam("Cupos", horario.Cupos);
             operacion.AddIntergerParam("LaboratorioId", horario.LaboratorioId);
-            operacion.AddVarcharParam("Estado", horario.Estado);
+       //     operacion.AddVarcharParam("Estado", horario.Estado);
 
             return operacion;
 

@@ -1,19 +1,20 @@
-﻿function Cita() {
+﻿function horario() {
 
     this.InitView = function () {
-        $("#btnRegistrar").click(function () {
-            var vista = new Cita();
-            vista.RegistrarCitas();
+        $("#btnRegistrarHorario").click(function () {
+            var vista = new horario();
+            vista.RegistrarHorario();
         });
         this.CargarTabla();
     }
 
-    this.RegistrarCitas = function () {
-        var Cita = {}
-        Cita.ExamenId = $("#examenesId").val();
-        Cita.FechaExpiracion = $("#exampleSelect2").val();
-        Cita.HoraCita = $("#hora").val();
-        Cita.Cupon = $("#nputDefault").val();
+    this.RegistrarHorario = function () {
+        var horario = {}
+        horario.Dia = $("#txtDia").val();
+        horario.HoraInicio = $("#txtHoraInicio").val();
+        horario.HoraFin = $("#txtHoraFinal").val();
+        horario.Cupos = $("#txtCuposDisponibles").val();
+        horario.ExamenId = $("#examenesId").val();
 
         $.ajax({
             headers: {
@@ -21,9 +22,9 @@
                 'Content-Type': "application/json"
             },
             method: "POST",
-            url: "https://familymedicine-api.azurewebsites.net/api/Cita/RegistrarCita",
+            url: "https://familymedicine-api.azurewebsites.net/api/Horario/RegistrarHorario",
             contentType: "application/json",
-            data: JSON.stringify(Cita),
+            data: JSON.stringify(horario),
             hasContent: true
         }).done(function (info) {
             alert('Usuario Creado correctamente');
@@ -40,10 +41,10 @@
         arrayColumnsData[2] = { 'data': 'HoraFin' };
         arrayColumnsData[3] = { 'data': 'Cupos' };
 
-        $('#datos').DataTable({
+        $('#datosHorarios').DataTable({
             ajax: {
                 method: "GET",
-                url: "https://familymedicine-api.azurewebsites.net/api/Laboratorio/ObtenerListaLaboratorios",
+                url: "https://familymedicine-api.azurewebsites.net/api/Horario/ObtenerListaHorarios",
                 contentType: "application/json;charset=utf-8",
                 dataSrc: function (json) {
                     var json = { 'data': json }
@@ -52,13 +53,11 @@
             },
             columns: arrayColumnsData
         });
-        //table.buttons().container()
-        //    .appendTo($('.col-sm-6:eq(0)', table.table().container()));
     }
 }
 
 $(document).ready(function () {
     $.noConflict();
-    var view = new Cita();
+    var view = new horario();
     view.InitView();
 });
