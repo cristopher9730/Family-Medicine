@@ -44,6 +44,13 @@ namespace FamilyMedicine_API.Controllers
         }
 
         [HttpGet]
+        public List<Examen> ObtenerListaExamenesPorId(int id)
+        {
+            AdminExamen adminExamen = new AdminExamen();
+            return adminExamen.DevolverTodosExamenesPorId(id);
+        }
+
+        [HttpGet]
         public Examen ObtenerUnExamen(Examen examen)
         {
             AdminExamen adminExamen = new AdminExamen();

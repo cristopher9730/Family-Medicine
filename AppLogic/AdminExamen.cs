@@ -44,6 +44,12 @@ namespace AppLogic
             return examenCrud.ListarTodos<Examen>();
         }
 
+        public List<Examen> DevolverTodosExamenesPorId(int id)
+        {
+            ExamenCrudFactory examenCrud = new ExamenCrudFactory();
+            return examenCrud.ListarTodosPorId<Examen>(id);
+        }
+
         public Examen DevolverUnExamen(Examen examen)
         {
             ExamenCrudFactory examenCrud = new ExamenCrudFactory();

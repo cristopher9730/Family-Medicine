@@ -14,12 +14,25 @@
         arrayColumnsData[2] = { 'data': 'Precio' };
         arrayColumnsData[3] = { 'data': 'Descripcion' };
         arrayColumnsData[4] = { 'data': 'Ventas' };
-
+        var id = $("#session").val();
 
         $('#datos').DataTable({
+            "language": {
+                "paginate": {
+                    "previous": "Anterior",
+                    "next": "Siguiente"
+                },
+                "lengthMenu": "Mostrar _MENU_ resultados por pagina",
+                "zeroRecords": "Sin resultados",
+                "info": "Pagina _PAGE_ de _PAGES_",
+                "infoEmpty": "Tabla vacia",
+                "search": "Buscar:",
+                "infoFiltered": "(Filtrando de _MAX_ total de resultados)"
+
+            },
             ajax: {
                 method: "GET",
-                url: "https://localhost:44391/api/Examen/ObtenerListaExamenes",
+                url: "https://localhost:44391/api/Examen/ObtenerListaExamenesPorId?id=" + id,
                 contentType: "application/json;charset=utf-8",
                 dataSrc: function (json) {
                     var json = { 'data': json }
@@ -36,7 +49,7 @@
         examen.Nombre = $("#txtNombre").val();
         examen.NombreInterno = $("#txtNombreInterno").val();
         examen.Precio = $("#txtPrecio").val();
-        examen.LaboratorioId = 1;
+        examen.LaboratorioId = $("#session").val();
         examen.Descripcion = $("#txtDescripcion").val();
         examen.Ventas = 0;
 
