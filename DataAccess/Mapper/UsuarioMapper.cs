@@ -72,13 +72,14 @@ namespace DataAccess.Mapper
 
             var usuario = (Usuario)entidadDTO;
 
+            operacion.AddIntergerParam("UsuarioId", usuario.UsuarioId);
             operacion.AddVarcharParam("Nombre", usuario.Nombre);
             operacion.AddVarcharParam("Primer_Apellido", usuario.PrimerApellido);
             operacion.AddVarcharParam("Segundo_Apellido", usuario.SegundoApellido);
             operacion.AddVarcharParam("Correo", usuario.Correo);
             operacion.AddVarcharParam("Telefono", usuario.Telefono);
             operacion.AddVarcharParam("Clave", usuario.Clave);
-            operacion.AddVarcharParam("Foto", usuario.Foto);      
+            operacion.AddVarcharParam("Foto", "urlFoto");      
 
             return operacion;
         }
