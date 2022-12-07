@@ -30,12 +30,16 @@
                     <i class="fa-solid fa-user"></i>
                     <a> @Html.ActionLink("Usuario", "DashboardUsuario", "DashboardUsuario", new { area = "" }, new { @class = "ContenedorDeNombre text-decoration-none" }) </a>
                 </div>
-                <div class="mb-2 contenedorDeOpcionesDelNav A2 gap-1" style="width:100%">
-                    <i class="fa-solid fa-flask-vial"></i>
-                    <a> @Html.ActionLink("Mis Exámenes", "DashBoardCitas", "DashboardUsuario", new { area = "" }, new { @class = "ContenedorDeNombre text-decoration-none" }) </a>
-                </div>
+                @if (Session["rolTecnico"] == null && Session["rolAdmin"] == null)
+                {
+                    <div class="mb-2 contenedorDeOpcionesDelNav A2 gap-1" style="width:100%">
+                        <i class="fa-solid fa-flask-vial"></i>
+                        <a> @Html.ActionLink("Mis Exámenes", "DashBoardCitas", "DashboardUsuario", new { area = "" }, new { @class = "ContenedorDeNombre text-decoration-none" }) </a>
+                    </div>
+                }
 
-                @if ( Session["rolAdmin"] != null)
+
+                @if (Session["rolAdmin"] != null)
                 {
                     <div class="mb-2 contenedorDeOpcionesDelNav A3 gap-1" style="width:100%">
                         <i class="fa-solid fa-flask-vial"></i>
