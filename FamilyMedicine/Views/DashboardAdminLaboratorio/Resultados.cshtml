@@ -19,97 +19,80 @@
 <link rel="stylesheet" href="~/Content/css/DashboardCss/DashBoardExamenes.css" />
 
 <div class="divContenedorDelDashUno">
-    <div class="tab-pane fade show active" id="home" role="tabpanel">
-        <h4>Publicar Resultados</h4>
-
-        <div class="tab-pane fade show active" id="home" role="tabpanel">
-            <fieldset class="m-2">
-                <div class="card mb-3" style="width: 30%; float:left">
-                    <div class="card-body">
-                        <form>
-                            <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Buscar codigo cita" aria-label="Recipient's username" aria-describedby="button-addon2">
-                                <button class="btn btn-primary" type="button" id="button-addon2">Buscar</button>
-                            </div>
-                            <div class="mb-3 w-100">
-                                <div class="form-group has-validation w-100 d-flex flex-column">
-                                    <label class="form-label" for="txtDescripción" id="inputGroupPrepend">Descripción del Exámen</label>
-                                    <textarea type="text" class="form-control w-100" id="txtDescripcion" aria-describedby="inputGroupPrepend" rows="3" required></textarea>
-                                    <div class="invalid-feedback">
-                                        Por favor, ingrese la descripción del exámen
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mb-3 w-100">
-                                <label for="exampleSelect2" class="form-label">Estado de la cita</label>
-                                <select class="form-select" id="citaEstado">
-                                    <option>PENDIENTE</option>
-                                    <option>COMPLETADO</option>
-                                    <option>NO ASISTIO</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <button onclick="myfuncionGeneral()" type="submit" class="btn btn-primary mt-2">Guardar Cambios</button>
-                            </div>
-                        </form>
+    <section class="ContenedorDeDashboardFleROWEXAMEN" style="gap: 1px">
+        <form class="was-validated formularioContenedorDeDashboard">
+            <div class="input-group mb-3">
+                <select class="form-select" id="examenesId">
+                    <option value="" disabled selected hidden>Busca codigo de cita</option>
+                    <option value=""></option>
+                </select>
+            </div>
+            <div class="mb-3 w-100">
+                <div class="form-group has-validation w-100 d-flex flex-column">
+                    <label class="form-label" for="txtDescripción" id="inputGroupPrepend">Descripción del Exámen</label>
+                    <textarea type="text" class="form-control w-100" id="txtDescripcion" aria-describedby="inputGroupPrepend" rows="3" required></textarea>
+                    <div class="invalid-feedback">
+                        Por favor, ingrese la descripción del exámen
                     </div>
                 </div>
+            </div>
+            <div class="mb-3 w-100">
+                <select class="form-select" id="citaEstado">
+                    <option value="" disabled selected hidden>Estado de la cita</option>
+                    <option>PENDIENTE</option>
+                    <option>COMPLETADO</option>
+                    <option>NO ASISTIO</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button onclick="myfuncionGeneral()" type="submit" class="btn btn-primary mt-2">Guardar Cambios</button>
+            </div>
+        </form>
 
-                <div class="card mb-3" style="width: 69%; float:right">
-
-                    <div class="card-body">
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Nombre Paciente</th>
-                                    <th scope="col">Correo</th>
-                                    <th scope="col">Descripcion Resultados</th>
-                                    <th scope="col">Estado</th>
-                                    <th scope="col">Fecha publicacion</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">Jacinto</th>
-                                    <td>jacinto@labpaez.com</td>
-                                    <td>
-                                        <p>Examen: Hemoglobina</p>
-                                        <p>Resultado: Hb = 13,5</p>
-                                    </td>
-                                    <td>Completado</td>
-                                    <td>11/10/2022</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Jacinto</th>
-                                    <td>jacinto@labpaez.com</td>
-                                    <td>
-                                        <p>Examen: Hemoglobina</p>
-                                        <p>Resultado: Hb = 13,5</p>
-                                    </td>
-                                    <td>Completado</td>
-                                    <td>11/10/2022</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Jacinto</th>
-                                    <td>jacinto@labpaez.com</td>
-                                    <td>
-                                        <p>Examen: Hemoglobina</p>
-                                        <p>Resultado: Hb = 13,5</p>
-                                    </td>
-                                    <td>Completado</td>
-                                    <td>11/10/2022</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Buscar cita por palabra clave" aria-label="Recipient's username" aria-describedby="button-addon2">
-                            <button class="btn btn-outline-dark" type="button" id="button-addon2">Buscar</button>
-                        </div>
-                    </div>
-                </div>
-            </fieldset>
-        </div>
-    </div>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre Paciente</th>
+                    <th scope="col">Correo</th>
+                    <th scope="col">Descripcion Resultados</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Fecha publicacion</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Jacinto</th>
+                    <td>jacinto@labpaez.com</td>
+                    <td>
+                        <p>Examen: Hemoglobina</p>
+                        <p>Resultado: Hb = 13,5</p>
+                    </td>
+                    <td>Completado</td>
+                    <td>11/10/2022</td>
+                </tr>
+                <tr>
+                    <th scope="row">Jacinto</th>
+                    <td>jacinto@labpaez.com</td>
+                    <td>
+                        <p>Examen: Hemoglobina</p>
+                        <p>Resultado: Hb = 13,5</p>
+                    </td>
+                    <td>Completado</td>
+                    <td>11/10/2022</td>
+                </tr>
+                <tr>
+                    <th scope="row">Jacinto</th>
+                    <td>jacinto@labpaez.com</td>
+                    <td>
+                        <p>Examen: Hemoglobina</p>
+                        <p>Resultado: Hb = 13,5</p>
+                    </td>
+                    <td>Completado</td>
+                    <td>11/10/2022</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
 </div>
 
 
