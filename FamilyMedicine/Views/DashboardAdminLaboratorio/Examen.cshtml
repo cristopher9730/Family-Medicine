@@ -1,0 +1,90 @@
+﻿
+@{
+    ViewBag.Title = "Examen";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<script src="~/Scripts/Views/DashboardAdminLaboratorio/Examen.js"></script>
+
+<style>
+    /*Este style contien la clase de nav activo las opciones A1, A2, A3... etc estan en el layout*/
+    .A5 {
+        box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+        text-decoration: none;
+        background-color: #f3f3f363;
+    }
+</style>
+
+<link rel="stylesheet" href="~/Content/css/DashboardCss/DashboardCitas.css" />
+<link rel="stylesheet" href="~/Content/css/Login.css" />
+<link rel="stylesheet" href="~/Content/css/DashboardCss/DashBoardGeneral.css" />
+<link rel="stylesheet" href="~/Content/css/DashboardCss/DashBoardExamenes.css" />
+
+
+<div class="divContenedorDelDashUno">
+    <section class="ContenedorDeDashboardFleROWEXAMEN" style="gap: 1px">
+
+        <form class="was-validated formularioContenedorDeDashboard">
+
+            <div class="mb-3 w-100 contenedorDeInputs">
+                <div class="form-group has-validation w-100 d-flex flex-column">
+                    <label class="form-label" for="txtNombre" id="inputGroupPrepend">Nombre del Exámen</label>
+                    <input type="text" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
+                    <div class="invalid-feedback">
+                        Por favor, ingrese el nombre del exámen
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3 w-100 contenedorDeInputs">
+                <div class="form-group has-validation w-100 d-flex flex-column">
+                    <label class="form-label" for="txtNombre" id="inputGroupPrepend">Nombre interno</label>
+                    <input type="text" class="form-control w-100" id="txtNombreInterno" aria-describedby="inputGroupPrepend" required>
+                    <div class="invalid-feedback">
+                        Por favor, ingrese el nombre interno
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3 w-100" style="height: 135px;">
+                <div class="form-group has-validation w-100 d-flex flex-column">
+                    <label class="form-label" for="txtDescripción" id="inputGroupPrepend">Descripción del Exámen</label>
+                    <textarea type="text" class="form-control w-100" id="txtDescripcion" aria-describedby="inputGroupPrepend" rows="3" required></textarea>
+                    <div class="invalid-feedback">
+                        Por favor, ingrese la descripción del exámen
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3 w-100 contenedorDeInputs">
+                <div class="form-group has-validation w-100 d-flex flex-column">
+                    <label class="form-label" for="txtNombre" id="inputGroupPrepend">Precio</label>
+                    <input type="number" class="form-control w-100" id="txtPrecio" aria-describedby="inputGroupPrepend" required>
+                    <div class="invalid-feedback">
+                        Por favor, ingrese el precio
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary" id="btnRegistrar">Registrar</button>
+        </form>
+
+        <div>
+
+            <div class="ContenedorDeDashboardTabOverFlow">
+                <table id="datos" class="table table-hover" style=" min-width: 55vw; border-radius: 10px;">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nombre de examen</th>
+                            <th scope="col">Nombre interno</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Descripción</th>
+                            <th scope="col">Ventas totales</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+
+    </section>
+</div>
+

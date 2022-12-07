@@ -37,6 +37,24 @@ namespace FamilyMedicine.Controllers
             return View();
         }
 
+        public ActionResult Examen()
+        {
+            return View();
+        }
+
+        public ActionResult Horarios()
+        {
+            List<Examen> examenes = new List<Examen>();
+            examenes = this.GenerarExamenesSelect();
+
+            return View(examenes);
+        }
+
+        public ActionResult Resultados()
+        {
+            return View();
+        }
+
         [HttpPost]
         public ActionResult DashAdminLabRegistrarExamen(Componente componente)
         {

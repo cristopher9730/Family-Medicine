@@ -338,6 +338,9 @@
     <Content Include="Scripts\Views\ConsumoApi\jsconfig.json" />
     <Content Include="Views\DashboardAdminApp\RegistrarLaboratorio.cshtml" />
     <Content Include="Views\IniciarSesion\OTPValidacion.cshtml" />
+    <Content Include="Views\DashboardAdminLaboratorio\Examen.cshtml" />
+    <Content Include="Views\DashboardAdminLaboratorio\Horarios.cshtml" />
+    <Content Include="Views\DashboardAdminLaboratorio\Resultados.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
