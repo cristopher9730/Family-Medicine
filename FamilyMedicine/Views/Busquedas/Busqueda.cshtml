@@ -29,8 +29,18 @@
                 <div class="container" style="min-height:5rem">
                     <p class="card-text">@u.RazonSocial</p>
                 </div>
-
-                <a class="btn btn-outline-primary" href="">Ver más</a>
+                
+                <form method="post" action="@Url.Action("verPerfilLaboratorio", "Busquedas")">
+                    @{
+                        <div style="display:none">
+                            <input value=@u.NombreLaboratorio name="NombreLaboratorio" />
+                            <input value=@u.RazonSocial name="RazonSocial" />
+                        </div>
+                    }
+                    <button class="btn btn-outline-primary" type="submit">
+                        Ver mas
+                    </button>
+                </form>
             </div>
         </div>
     }
