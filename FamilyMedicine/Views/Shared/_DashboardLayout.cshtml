@@ -49,9 +49,33 @@
 
                 @if (Session["rolTecnico"] != null || Session["rolAdmin"] != null)
                 {
+                    <div class="mb-2 contenedorDeOpcionesDelNav A4 gap-1" style="width:100%">
+                        <i class="fa-solid fa-wrench"></i>
+                        <a> @Html.ActionLink("Examenes", "Examen", "DashboardAdminLaboratorio", new { area = "" }, new { @class = "ContenedorDeNombre text-decoration-none" })</a>
+                    </div>
+                }
+
+                @if (Session["rolTecnico"] != null || Session["rolAdmin"] != null)
+                {
                     <div class="mb-2 contenedorDeOpcionesDelNav A5 gap-1" style="width:100%">
                         <i class="fa-solid fa-wrench"></i>
-                        <a> @Html.ActionLink("Examenes", "DashAdminLabRegistrarExamen", "DashboardAdminLaboratorio", new { area = "" }, new { @class = "ContenedorDeNombre text-decoration-none" })</a>
+                        <a> @Html.ActionLink("Componentes", "Componentes", "DashboardAdminLaboratorio", new { area = "" }, new { @class = "ContenedorDeNombre text-decoration-none" })</a>
+                    </div>
+                }
+
+                @if (Session["rolTecnico"] != null || Session["rolAdmin"] != null)
+                {
+                    <div class="mb-2 contenedorDeOpcionesDelNav A11 gap-1" style="width:100%">
+                        <i class="fa-solid fa-wrench"></i>
+                        <a> @Html.ActionLink("Horarios", "Horarios", "DashboardAdminLaboratorio", new { area = "" }, new { @class = "ContenedorDeNombre text-decoration-none" })</a>
+                    </div>
+                }
+
+                @if (Session["rolTecnico"] != null || Session["rolAdmin"] != null)
+                {
+                    <div class="mb-2 contenedorDeOpcionesDelNav A12 gap-1" style="width:100%">
+                        <i class="fa-solid fa-wrench"></i>
+                        <a> @Html.ActionLink("Resultados", "Resultados", "DashboardAdminLaboratorio", new { area = "" }, new { @class = "ContenedorDeNombre text-decoration-none" })</a>
                     </div>
                 }
 
