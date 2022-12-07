@@ -19,7 +19,7 @@ namespace FamilyMedicine.Controllers
         }
 
         public ActionResult DashAdminLabDatosLaboratorio()
-        { 
+        {
             return View();
         }
 
@@ -60,7 +60,7 @@ namespace FamilyMedicine.Controllers
             cliente.BaseAddress = new Uri(url);
             var result = cliente.PostAsync(url, stringContent).Result;
 
-            
+
 
             if (result.IsSuccessStatusCode)
             {
