@@ -66,7 +66,7 @@
                                 <label class="form-label" for="txtNombre" id="inputGroupPrepend">Nombre</label>
                                 <input type="text" class="form-control w-100 contentInput" id="txtNombre" aria-describedby="inputGroupPrepend" required>
                                 <div class="invalid-feedback">
-                                    Por favor, ingresa tu nombre
+                                    Por favor, ingresa el nombre
                                 </div>
                             </div>
                         </div>
@@ -93,12 +93,13 @@
                             </div>
                         </div>
 
+
                         <div class="mb-3 w-100">
                             <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
-                                <label class="form-label " for="txtCorreo" id="inputGroupPrepend">Correo eléctronico</label>
+                                <label class="form-label " for="txtCorreo" id="inputGroupPrepend">Correo electrónico</label>
                                 <input type="email" pattern="^[a-zA-Z0-9._+-]+@("@")[a-zA-Z0-9.-]+\.[a-zA-Z]{2,9}$" class="contentInput form-control w-100" id="txtCorreo" aria-describedby="inputGroupPrepend" required>
                                 <div class="invalid-feedback">
-                                    Por favor, ingrese el correo eléctronico
+                                    Por favor, ingrese el correo electrónico
                                 </div>
                             </div>
                         </div>
@@ -125,6 +126,18 @@
                             </div>
                         </div>
                     </section>
+                    <div class="mb-3 w-100">
+                        <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
+                            <label class="form-label" for="slt_rol" id="inputGroupPrepend">Rol</label>
+                            <select class="form-control w-100" id="slt_rol" aria-describedby="inputGroupPrepend">
+                                <option>Seleccione un rol</option>
+                                <option value="4">Administrador Aplicación</option>
+                                <option value="3">Técnico</option>
+                                <option value="2">Administrador Laboratorio</option>
+                                <option value="1">Paciente</option>
+                            </select>
+                        </div>
+                    </div>
 
                     <div>
                         <label for="formFileMultiple" class="form-label">Ingrese la foto</label>
