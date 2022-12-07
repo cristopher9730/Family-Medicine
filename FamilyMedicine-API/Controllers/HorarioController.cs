@@ -19,28 +19,28 @@ namespace FamilyMedicine_API.Controllers
         }
 
         [HttpPut]
-        public string ActualizarExamen(Horario horario)
+        public string ActualizarHorario(Horario horario)
         {
             AdminHorario adminHorario = new AdminHorario();
             return adminHorario.EditarHorario(horario);
         }
 
         [HttpDelete]
-        public string BorrarExamen(Horario horario)
+        public string BorrarHorario(Horario horario)
         {
             AdminHorario adminHorario = new AdminHorario();
             return adminHorario.EliminarHorario(horario);
         }
 
         [HttpGet]
-        public List<Horario> ObtenerListaHorarioss()
+        public List<Horario> ObtenerListaHorarios()
         {
             AdminHorario adminHorario = new AdminHorario();
             return adminHorario.DevolverTodosHorarios();
         }
 
         [HttpGet]
-        public Horario ObtenerUnExamen(Horario horario)
+        public Horario ObtenerUnHorario(Horario horario)
         {
             AdminHorario adminHorario = new AdminHorario();
             return adminHorario.DevolverUnHorario(horario);
