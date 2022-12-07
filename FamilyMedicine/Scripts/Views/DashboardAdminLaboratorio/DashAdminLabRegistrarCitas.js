@@ -27,10 +27,12 @@
             data: JSON.stringify(horario),
             hasContent: true
         }).done(function (info) {
-            alert('Usuario Creado correctamente');
+            alert('Horario Creado correctamente');
+            var table = $('#datosHorarios').DataTable();
+            table.ajax.reload();
         }
         ).fail(function (info) {
-            alert('hubo un problema al crear usuario');
+            alert('hubo un problema al crear el horario');
         });
     }
 

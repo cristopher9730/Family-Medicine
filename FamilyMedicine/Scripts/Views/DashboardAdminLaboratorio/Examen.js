@@ -5,7 +5,6 @@
             vista.RegistrarExamen();
         });
         this.CargarTablaExamen();
-        this.CargarTablaHorarios();
     }
 
     this.CargarTablaExamen = function () {

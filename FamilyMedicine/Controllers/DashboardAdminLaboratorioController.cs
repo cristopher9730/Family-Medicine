@@ -13,10 +13,6 @@ namespace FamilyMedicine.Controllers
 {
     public class DashboardAdminLaboratorioController : Controller
     {
-        public ActionResult DashAdminLabRegistrarCitas()
-        {
-            return View();
-        }
 
         public ActionResult DashAdminLabDatosLaboratorio()
         {
