@@ -11,6 +11,7 @@
         arrayColumnsData[1] = { 'data': 'SimboloMedida' };
         arrayColumnsData[2] = { 'data': 'MedidaReferencia' };
         arrayColumnsData[3] = { 'data': 'Estado' };
+        arrayColumnsData[4] = { defaultContent: '<button class="btn btn-primary">Eliminar</button>' };
 
         var lab = $("#session").val();
 

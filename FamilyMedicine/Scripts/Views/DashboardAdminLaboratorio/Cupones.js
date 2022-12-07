@@ -14,6 +14,8 @@
         arrayColumnsData[2] = { 'data': 'Descuento' };
         arrayColumnsData[3] = { 'data': 'Usos' };
         arrayColumnsData[4] = { 'data': 'FechaDeVencimiento' };
+        arrayColumnsData[5] = { defaultContent: '<button class="btn btn-primary">Eliminar</button>' };
+
 
         $('#datos').DataTable({
             "language": {
