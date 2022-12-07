@@ -16,6 +16,7 @@
         arrayColumnsData[3] = { 'data': 'Correo' };
         arrayColumnsData[4] = { 'data': 'Telefono' };
         arrayColumnsData[5] = { 'data': 'Estado' };
+        arrayColumnsData[6] = { defaultContent: '<button class="btn btn-primary">Inactivar</button>' };
 
 
         $('#datosUsuarios').DataTable({
