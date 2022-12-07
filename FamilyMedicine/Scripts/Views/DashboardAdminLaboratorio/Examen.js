@@ -17,6 +17,17 @@
 
 
         $('#datos').DataTable({
+            "language": {
+                "paginate": {
+                    "previous": "Anterior",
+                    "next": "Siguiente"
+                },
+                "lengthMenu": "Mostrar _MENU_ resultados por pagina",
+                "zeroRecords": "Sin resultados",
+                "info": "Pagina _PAGE_ de _PAGES_",
+                "infoEmpty": "Tabla vacia",
+                "search": "Buscar:",
+                "infoFiltered": "(Filtrando de _MAX_ total de resultados)"
             ajax: {
                 method: "GET",
                 url: "https://localhost:44391/api/Examen/ObtenerListaExamenes",
