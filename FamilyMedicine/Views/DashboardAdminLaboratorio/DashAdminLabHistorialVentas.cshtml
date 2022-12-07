@@ -13,6 +13,7 @@
     }
 </style>
 
+<link rel="stylesheet" href="~/Content/css/DashboardCss/DashBoardExamenes.css" />
 <link rel="stylesheet" href="~/Content/css/DashBoard.css" />
 <link rel="stylesheet" href="~/Content/css/DashboardCss/DashboardCitas.css" />
 
@@ -20,83 +21,47 @@
 <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 
 <div class="divContenedorDelDashUno">
-    <fieldset class="m-2">
+    <section class="ContenedorDeDashboardFleROWEXAMEN" style="gap: 1px">
 
-        <div class="card mb-3" style="width: 30%; float:left">
-            <h3 class="card-header">Generar Reporte de ventas</h3>
-            <div class="card-body">
+        <form class="was-validated formularioContenedorDeDashboard" style="width: 450px;">
 
-                <form class="was-validated">
-
-                    <div class="mb-3 w-100">
-                        <div class="form-group has-validation w-100 d-flex flex-column">
-                            <label class="form-label" for="txtInicio" id="inputGroupPrepend">Fecha de inicio del reporte</label>
-                            <input type="date" class="form-control w-100" id="txtInicio" aria-describedby="inputGroupPrepend" style="min-width:318px" required>
-                            <div class="invalid-feedback">
-                                Por favor, seleccione una fecha
-                            </div>
-                        </div>
+            <div class="mb-3 w-100">
+                <div class="form-group has-validation w-100 d-flex flex-column">
+                    <label class="form-label" for="txtInicio" id="inputGroupPrepend">Fecha de inicio del reporte</label>
+                    <input type="date" class="form-control w-100" id="txtInicio" aria-describedby="inputGroupPrepend" style="min-width:318px" required>
+                    <div class="invalid-feedback">
+                        Por favor, seleccione una fecha
                     </div>
-
-                    <div class="mb-3 w-100">
-                        <div class="form-group has-validation w-100 d-flex flex-column">
-                            <label class="form-label" for="txtNombre" id="inputGroupPrepend">Fecha final del reporte</label>
-                            <input type="date" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" style="min-width:318px" required>
-                            <div class="invalid-feedback">
-                                Por favor, seleccione una fecha
-                            </div>
-                        </div>
-                    </div>                 
-                    <button onclick="myfuncionGeneralCrear()" type="submit" class="btn btn-primary mt-3 ">Crear reporte</button>
-                </form>
-
+                </div>
             </div>
-        </div>
 
-        <div class="card mb-3" style="width: 69%; float:right">
-            <h3 class="card-header">Vista previa del reporte</h3>
-
-            <div class="card-body">
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th scope="col">Id del Cliente</th>
-                            <th scope="col">Tipo de Examen</th>
-                            <th scope="col">Descripcion resultados</th>
-                            <th scope="col">Fecha de resultados</th>
-                            <th scope="col">Fecha de la cita</th>
-                            <th scope="col">Precio de la cita</th>
-
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">12346854654</th>
-                            <td>Leucocitos</td>
-                            <td>Leucocitos status = muy mal</td>
-                            <td>2022-2-2</td>
-                            <td>2022-2-4</td>
-                            <td>15000</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">12346854654</th>
-                            <td>Leucocitos</td>
-                            <td>Leucocitos status = muy mal</td>
-                            <td>2022-2-2</td>
-                            <td>2022-2-4</td>
-                            <td>15000</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">12346854654</th>
-                            <td>Leucocitos</td>
-                            <td>Leucocitos status = muy mal</td>
-                            <td>2022-2-2</td>
-                            <td>2022-2-4</td>
-                            <td>15000</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="mb-3 w-100">
+                <div class="form-group has-validation w-100 d-flex flex-column">
+                    <label class="form-label" for="txtNombre" id="inputGroupPrepend">Fecha final del reporte</label>
+                    <input type="date" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" style="min-width:318px" required>
+                    <div class="invalid-feedback">
+                        Por favor, seleccione una fecha
+                    </div>
+                </div>
             </div>
-        </div>
-    </fieldset>    
+            <button onclick="myfuncionGeneralCrear()" type="submit" class="btn btn-primary mt-3 ">Crear reporte</button>
+
+        </form>
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Id del Cliente</th>
+                    <th scope="col">Tipo de Examen</th>
+                    <th scope="col">Descripcion resultados</th>
+                    <th scope="col">Fecha de resultados</th>
+                    <th scope="col">Fecha de la cita</th>
+                    <th scope="col">Precio de la cita</th>
+
+                </tr>
+            </thead>       
+        </table>
+
+    </section>
+
 </div> 

@@ -1,4 +1,4 @@
-﻿
+﻿@model List<DTO.Usuario>
 @{
     ViewBag.Title = "DashboardAdminLaboratorio";
     Layout = "~/Views/Shared/_DashboardLayout.cshtml";
@@ -13,148 +13,123 @@
     }
 </style>
 
+<link rel="stylesheet" href="~/Content/css/DashboardCss/DashBoardExamenes.css" />
 <link rel="stylesheet" href="~/Content/css/DashboardCss/DashBoardGeneral.css" />
 <link rel="stylesheet" href="~/Content/css/DashboardCss/DashboardCitas.css" />
 <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 
-<div class="divContenedorDelDashTab" style="min-width:90vw">
+<div class="divContenedorDelDashUno">
 
-    <ul class="nav nav-tabs" role="tablist">
-        <li class="nav-item" role="presentation">
-            <a class="nav-link" data-bs-toggle="tab" href="#home" aria-selected="true" role="tab">Registrar Personal</a>
-        </li>
-        <li class="nav-item" role="presentation">
-            <a class="nav-link" data-bs-toggle="tab" href="#profile" aria-selected="false" tabindex="-1" role="tab">Permisos</a>
-        </li>
-    </ul>
+    <section class="ContenedorDeDashboardFleROWEXAMEN" style="gap: 1px">
 
-    <div id="myTabContent" class="tab-content">
-        <div class="tab-pane fade show active" id="home" role="tabpanel">
-            <fieldset class="m-2">
-                <div class="card mb-3" style="width: 30%; float:left">
-
-                    <h3 class="card-header">Agregar Personal</h3>
-
-                    <div class="card-body">
-                        <form id="frmRegistrarPersonal">
-                            <section class="contenedorInputsRow">
-                                <div class="mb-3 w-100 contenedorDeInputs">
-                                    <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
-                                        <label class="form-label" for="txtNombre" id="inputGroupPrepend">Nombre</label>
-                                        <input type="text" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
-                                        <div class="invalid-feedback">
-                                            Por favor, ingrese el nombre
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="mb-3 w-100">
-                                    <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
-                                        <label class="form-label" for="txtPrimerApellido" id="inputGroupPrepend">Primer apellido</label>
-                                        <input type="text" class="form-control w-100" id="txtPrimerApellido" aria-describedby="inputGroupPrepend" required>
-                                        <div class="invalid-feedback">
-                                            Por favor, ingrese el primer apellido
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="mb-3 w-100">
-                                    <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
-                                        <label class="form-label" for="txtSegundoApellido" id="inputGroupPrepend">Segundo apellido</label>
-                                        <input type="text" class="form-control w-100" id="txtSegundoApellido" aria-describedby="inputGroupPrepend" required>
-                                        <div class="invalid-feedback">
-                                            Por favor, ingrese el segundo apellido
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="mb-3 w-100">
-                                    <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
-                                        <label class="form-label" for="slt_rol" id="inputGroupPrepend">Rol</label>
-                                        <select class="form-control w-100" id="slt_rol" aria-describedby="inputGroupPrepend">
-                                            <option>Seleccione un rol</option>
-                                            <option value="2">Administrador Laboratorio</option>
-                                            <option value="3">Técnico</option>
-                                            <option value="1">Paciente</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="mb-3 w-100">
-                                    <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
-                                        <label class="form-label" for="txtCorreo" id="inputGroupPrepend">Correo electrónico</label>
-                                        <input type="email" pattern="^[a-zA-Z0-9._+-]+@("@")[a-zA-Z0-9.-]+\.[a-zA-Z]{2,9}$" class="form-control w-100" id="txtCorreo" aria-describedby="inputGroupPrepend" required>
-                                        <div class="invalid-feedback">
-                                            Por favor, ingrese el correo electrónico
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="mb-3 w-100">
-                                    <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
-                                        <label class="form-label" for="txtTelefono" id="inputGroupPrepend">Teléfono</label>
-                                        <input type="text" class="form-control w-100" id="txtTelefono" aria-describedby="inputGroupPrepend" required>
-                                        <div class="invalid-feedback">
-                                            Por favor, ingrese el teléfono
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="mb-3 w-100 contenedorDeInputs">
-                                    <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
-                                        <label class="form-label" for="txtClave" id="inputGroupPrepend">Contraseña</label>
-                                        <input type="password" class="form-control w-100" id="txtClave" aria-describedby="inputGroupPrepend" required>
-                                        <div class="invalid-feedback">
-                                            Por favor, ingrese la contraseña
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3 w-100 contenedorDeInputs">
-                                    <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
-                                        <label class="form-label" for="Foto" id="inputGroupPrepend">Seleccione una foto de perfil</label>
-                                        <input class="form-control w-100" type="file" id="Foto" aria-describedby="inputGroupPrepend">
-                                    </div>
-                                </div>
-                                <div class="mb-3 w-100 contenedorDeInputs">
-                                    <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
-                                        <button id="btnRegistrarPersonal" type="button" class="btn btn-primary mt-2">Registrar</button>
-                                    </div>
-                                </div>
-                                @{
-                                    DTO.Usuario id = (DTO.Usuario)(Session["usuario"]);
-                                    <div style="display:none">
-                                        <input id="session" value=@id.LaboratorioId />
-                                    </div>
-
-                                }
-                            </section>
-                        </form>
+        <form class="was-validated formularioContenedorDeDashboard" id="frmRegistrarPersonal">
+            <section class="contenedorInputsRow">
+                <div class="mb-3 w-100 contenedorDeInputs">
+                    <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
+                        <label class="form-label" for="txtNombre" id="inputGroupPrepend">Nombre</label>
+                        <input type="text" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
+                        <div class="invalid-feedback">
+                            Por favor, ingrese el nombre
+                        </div>
                     </div>
                 </div>
 
-                <div class="card mb-3" style="width: 69%; float:right">
-
-                    <h3 class="card-header">Personal Registrado</h3>
-
-                    <div class="card-body">
-                        <table class="table table-hover" id="datosPersonal">
-                            <thead>
-                                <tr>
-                                    <th>Nombre</th>
-                                    <th>Primer apellido</th>
-                                    <th>Segundo apellido</th>
-                                    <th>Rol</th>
-                                    <th>Correo</th>
-                                    <th>Estado</th>
-                                </tr>
-                            </thead>
-                        </table>
+                <div class="mb-3 w-100">
+                    <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
+                        <label class="form-label" for="txtPrimerApellido" id="inputGroupPrepend">Primer apellido</label>
+                        <input type="text" class="form-control w-100" id="txtPrimerApellido" aria-describedby="inputGroupPrepend" required>
+                        <div class="invalid-feedback">
+                            Por favor, ingrese el primer apellido
+                        </div>
                     </div>
                 </div>
-            </fieldset>
-        </div>
-    </div>
 
+                <div class="mb-3 w-100">
+                    <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
+                        <label class="form-label" for="txtSegundoApellido" id="inputGroupPrepend">Segundo apellido</label>
+                        <input type="text" class="form-control w-100" id="txtSegundoApellido" aria-describedby="inputGroupPrepend" required>
+                        <div class="invalid-feedback">
+                            Por favor, ingrese el segundo apellido
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3 w-100">
+                    <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
+                        <label class="form-label" for="slt_rol" id="inputGroupPrepend">Rol</label>
+                        <select class="form-control w-100" id="slt_rol" aria-describedby="inputGroupPrepend">
+                            <option>Seleccione un rol</option>
+                            <option value="2">Administrador Laboratorio</option>
+                            <option value="3">Técnico</option>
+                            <option value="1">Paciente</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="mb-3 w-100">
+                    <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
+                        <label class="form-label" for="txtCorreo" id="inputGroupPrepend">Correo electrónico</label>
+                        <input type="email" pattern="^[a-zA-Z0-9._+-]+@("@")[a-zA-Z0-9.-]+\.[a-zA-Z]{2,9}$" class="form-control w-100" id="txtCorreo" aria-describedby="inputGroupPrepend" required>
+                        <div class="invalid-feedback">
+                            Por favor, ingrese el correo electrónico
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3 w-100">
+                    <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
+                        <label class="form-label" for="txtTelefono" id="inputGroupPrepend">Teléfono</label>
+                        <input type="text" class="form-control w-100" id="txtTelefono" aria-describedby="inputGroupPrepend" required>
+                        <div class="invalid-feedback">
+                            Por favor, ingrese el teléfono
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3 w-100 contenedorDeInputs">
+                    <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
+                        <label class="form-label" for="txtClave" id="inputGroupPrepend">Contraseña</label>
+                        <input type="password" class="form-control w-100" id="txtClave" aria-describedby="inputGroupPrepend" required>
+                        <div class="invalid-feedback">
+                            Por favor, ingrese la contraseña
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3 w-100 contenedorDeInputs">
+                    <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
+                        <label class="form-label" for="Foto" id="inputGroupPrepend">Seleccione una foto de perfil</label>
+                        <input class="form-control w-100" type="file" id="Foto" aria-describedby="inputGroupPrepend">
+                    </div>
+                </div>
+                <div class="mb-3 w-100 contenedorDeInputs">
+                    <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
+                        <button id="btnRegistrarPersonal" type="button" class="btn btn-primary mt-2">Registrar</button>
+                    </div>
+                </div>
+                @{
+                    DTO.Usuario id = (DTO.Usuario)(Session["usuario"]);
+                    <div style="display:none">
+                        <input id="session" value=@id.LaboratorioId />
+                    </div>
+                }
+            </section>
+        </form>
+
+
+        <table class="table table-hover" id="datosPersonal" style="width: 70vw;">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Primer apellido</th>
+                    <th>Segundo apellido</th>
+                    <th>Rol</th>
+                    <th>Correo</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+        </table>
+
+    </section>
 </div>
 
 <script src="~/Scripts/Views/DashboardAdminLaboratorio/personal.js"></script>
