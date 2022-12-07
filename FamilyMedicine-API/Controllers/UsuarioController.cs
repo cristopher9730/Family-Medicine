@@ -61,6 +61,13 @@ namespace FamilyMedicine_API.Controllers
         }
 
         [HttpGet]
+        public List<Usuario> ObtenerListaPersonal(int id)
+        {
+            AdminUsuario adminUsuario = new AdminUsuario();
+            return adminUsuario.DevolverTodosUsuariosPorId(id);
+        }
+
+        [HttpGet]
         public Usuario ObtenerUnUsuario(Usuario usuario)
         {
             AdminUsuario adminUsuario = new AdminUsuario();
