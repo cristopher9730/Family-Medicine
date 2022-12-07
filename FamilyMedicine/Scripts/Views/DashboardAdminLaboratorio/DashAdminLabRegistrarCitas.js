@@ -40,6 +40,8 @@
         arrayColumnsData[1] = { 'data': 'HoraInicio' };
         arrayColumnsData[2] = { 'data': 'HoraFin' };
         arrayColumnsData[3] = { 'data': 'Cupos' };
+        arrayColumnsData[3] = { 'data': 'ExamenId' };
+
 
         $('#datosHorarios').DataTable({
             ajax: {
