@@ -1,6 +1,6 @@
-﻿
+﻿@model DTO.Laboratorio
 @{
-    ViewBag.Title = "CicloLab";
+    ViewBag.Title = " ";
 }
 
 <link rel="stylesheet" href="~/Content/css/sweetalert.css" />
@@ -24,15 +24,12 @@
             </li>
         </ul>
         <div class="divDifumador"></div>
-
         <div class="divContenederDeInformacion">
             <section class="ContenederDeInformacion">
                 <img class="imgLaboratorio" src="~/Content/imgs/Labs/Lab1Blanco.png" />
-                <h1 class="tituloLaboratorio">CicloLab</h1>
+                <h1 class="tituloLaboratorio">@Model.NombreLaboratorio</h1>
                 <p class="parrafoDescripcionDeLab">
-                    Más de 30 años realizando diferentes exámenes con los mejores precios
-                    del mercado. Desde 1988 ofreciendo el mejor servicio del mercado.
-                    El mejor laboratorio del mercado con diferentes sedes por todo el país.
+                    @Model.RazonSocial
                 </p>
             </section>
         </div>

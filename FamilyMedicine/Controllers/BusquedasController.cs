@@ -53,6 +53,11 @@ namespace FamilyMedicine.Controllers
             return View("Busqueda", listaFinal);
         }
 
+        [HttpPost]
+        public ActionResult verPerfilLaboratorio(Laboratorio laboratorio)
+        {
+            return RedirectToAction("PerfilDeLaboratorio", "Laboratorios", laboratorio);
+        }
 
         public static int i = 0;
 
@@ -129,5 +134,7 @@ namespace FamilyMedicine.Controllers
 
             return apiRespuestaExamen;
         }
+
+        
     }
 }
