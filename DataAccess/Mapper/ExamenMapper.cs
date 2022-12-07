@@ -86,6 +86,16 @@ namespace DataAccess.Mapper
             return operacion;
         }
 
+        public SqlOperation DeclaracionRecuperarTodosPorId(int id)
+        {
+            var operacion = new SqlOperation()
+            {
+                NombreProcedimiento = "SP_DevolverTodosExamenPorId"
+            };
+            operacion.AddIntergerParam("LaboratorioId", id);
+            return operacion;
+        }
+
         #endregion
 
         #region Metodos de IObjectMapper

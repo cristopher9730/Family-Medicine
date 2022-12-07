@@ -64,6 +64,26 @@ namespace DataAccess.Crud
             return list;
         }
 
+        public List<T> ListarTodosPorId<T>(int id)
+        {
+            var list = new List<T>();
+
+            var listResult = dao.EjecProcedimientoAlmacenadoConConsulta(mapper.DeclaracionRecuperarTodosPorId(id));
+
+
+
+            if (listResult.Count > 0)
+            {
+                var objsExamen = mapper.ConstruirObjetos(listResult);
+
+                foreach (var c in objsExamen)
+                {
+                    list.Add((T)Convert.ChangeType(c, typeof(T)));
+                }
+            }
+            return list;
+        }
+
         public override T ListarPorID<T>(int id)
         {
 

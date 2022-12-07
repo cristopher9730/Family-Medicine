@@ -1,4 +1,4 @@
-﻿
+﻿@model List<DTO.Usuario>
 @{
     ViewBag.Title = "Examen";
     Layout = "~/Views/Shared/_DashboardLayout.cshtml";
@@ -66,6 +66,13 @@
                 </div>
             </div>
             <button type="button" class="btn btn-primary" id="btnRegistrar">Registrar</button>
+            @{
+                DTO.Usuario id = (DTO.Usuario)(Session["usuario"]);
+                <div style="display:none">
+                    <input id="session" value=@id.LaboratorioId />
+                </div>
+
+            }
         </form>
 
         <div>
