@@ -9,6 +9,6 @@ namespace DTO
     public class EntidadBase
     {
         public int identificacion { get; set; }
-        //public int SesionUsuarioId { get; set; }
+        public int SesionUsuarioId { get; set; }
     }
 }

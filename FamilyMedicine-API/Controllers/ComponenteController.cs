@@ -44,10 +44,10 @@ namespace FamilyMedicine_API.Controllers
         }
 
         [HttpGet]
-        public List<Componente> ObtenerListaComponentesPorId(Componente id)
+        public List<Componente> ObtenerListaComponentesPorId(int id)
         {
             AdminComponente adminComponente = new AdminComponente();
-            return adminComponente.DevolverTodosComponentesPodId(id.LaboratorioId);
+            return adminComponente.DevolverTodosComponentesPodId(id);
         }
 
         [HttpGet]
