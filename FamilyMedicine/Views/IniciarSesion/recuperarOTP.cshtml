@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "recuperarOTP";
+}
+
+<link rel="stylesheet" href="~/Content/css/forgotPassword.css" />
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://kit.fontawesome.com/e77fc0ae51.js" crossorigin="anonymous"></script>
+
+<section class="sectionForgotPasword">
+    <div class="contenedorForgotPassword">
+        <div class="card text-center">
+            <div class="card-header h5 text-white bg-primary">Recuperar OTP</div>
+            <div class="card-body px-5">
+                <p class="card-text py-2">
+                    El código OTP ha vencido. Al solicitar un código nuevo se enviará por correo
+                </p>
+                <button type="submit" class="btn btn-primary" method="post">Solicitar</button>
+            </div>
+        </div>
+    </div>
+</section>
+

@@ -44,6 +44,13 @@ namespace AppLogic
             return "La clave ha sido actualizada con temporal";
         }
 
+        public string RecuperarOTP(Usuario usuario)
+        {
+            UsuarioCrudFactory usuarioCrud = new UsuarioCrudFactory();
+            usuarioCrud.RecuperarOTP(usuario);
+            return "El OTP ha sido actualizado con exito";
+        }
+
         public string EliminarUsuario(Usuario usuario)
         {
             UsuarioCrudFactory usuarioCrud = new UsuarioCrudFactory();

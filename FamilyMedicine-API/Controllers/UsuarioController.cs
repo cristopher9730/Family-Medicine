@@ -102,5 +102,24 @@ namespace FamilyMedicine_API.Controllers
             return adminUsuario.RecuperarClave(usuario);
 
         }
+
+        [HttpPost]
+        public string RecuperarOTP(Usuario usuario)
+        {
+            Random generator = new Random();
+            String otp = generator.Next(100000, 1000000).ToString("D6");
+            usuario.Codigo = otp;
+            OTP objOtp = new OTP();
+            objOtp.CodigoOTP = int.Parse(otp);
+            objOtp.CreacionUsuario = usuario.Correo;
+
+            AdminUsuario adminUsuario = new AdminUsuario();
+            AdminCorreo adminCorreo = new AdminCorreo();
+            AdminOTP adminOTP = new AdminOTP();
+            adminCorreo.EviarEmailRecuperarOTP(usuario);
+            adminOTP.CrearOTP(objOtp);
+            return adminUsuario.RecuperarOTP(usuario);
+
+        }
     }
 }

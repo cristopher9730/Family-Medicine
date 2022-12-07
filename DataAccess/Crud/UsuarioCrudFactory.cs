@@ -53,6 +53,14 @@ namespace DataAccess.Crud
             dao.EjecProcedimientoAlmacenado(sqlOperation);
         }
 
+        public void RecuperarOTP(EntidadBase entidadDto)
+        {
+            var usuario = (Usuario)entidadDto;
+            var sqlOperation = mapper.DeclaracionRecuperarOTP(usuario);
+
+            dao.EjecProcedimientoAlmacenado(sqlOperation);
+        }
+
 
         public override void Eliminar(EntidadBase entidadDto)
         {
