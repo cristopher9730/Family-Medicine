@@ -40,6 +40,13 @@ namespace FamilyMedicine_API.Controllers
         }
 
         [HttpGet]
+        public List<Horario> ObtenerListaHorariosPorId(int id)
+        {
+            AdminHorario adminHorario = new AdminHorario();
+            return adminHorario.DevolverTodosHorariosPorId(id);
+        }
+
+        [HttpGet]
         public Horario ObtenerUnHorario(Horario horario)
         {
             AdminHorario adminHorario = new AdminHorario();

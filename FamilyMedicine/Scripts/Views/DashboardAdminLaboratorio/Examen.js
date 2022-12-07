@@ -4,10 +4,11 @@
             var vista = new Examen();
             vista.RegistrarExamen();
         });
-        this.CargarTabla();
+        this.CargarTablaExamen();
+        this.CargarTablaHorarios();
     }
 
-    this.CargarTabla = function () {
+    this.CargarTablaExamen = function () {
         var arrayColumnsData = [];
         arrayColumnsData[0] = { 'data': 'Nombre' };
         arrayColumnsData[1] = { 'data': 'NombreInterno' };
@@ -29,6 +30,30 @@
             columns: arrayColumnsData
         });
 
+    }
+
+    this.CargarTablaHorarios = function () {
+        var arrayColumnsData = [];
+        arrayColumnsData[0] = { 'data': 'Dia' };
+        arrayColumnsData[1] = { 'data': 'HoraInicio' };
+        arrayColumnsData[2] = { 'data': 'HoraFin' };
+        arrayColumnsData[3] = { 'data': 'Cupos' };
+        arrayColumnsData[4] = { 'data': 'ExamenId' };
+
+        var id = $("#session").val();
+
+        $('#datosHorarios').DataTable({
+            ajax: {
+                method: "GET",
+                url: "https://localhost:44391/api/Horario/ObtenerListaHorariosPorId?id=" + id,
+                contentType: "application/json;charset=utf-8",
+                dataSrc: function (json) {
+                    var json = { 'data': json }
+                    return json.data;
+                }
+            },
+            columns: arrayColumnsData
+        });
     }
 
     this.RegistrarExamen = function () {

@@ -4,7 +4,6 @@
     Layout = "~/Views/Shared/_DashboardLayout.cshtml";
 }
 
-<script src="~/Scripts/Views/DashboardAdminLaboratorio/Examen.js"></script>
 
 <style>
     /*Este style contien la clase de nav activo las opciones A1, A2, A3... etc estan en el layout*/
@@ -183,14 +182,6 @@
                                     <th scope="col">ID</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td scope="row">Sangre</td>
-                                    <td>SL/%</td>
-                                    <td>SL/%</td>
-                                    <td>ES-0315</td>
-                                </tr>
-                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -256,6 +247,14 @@
                         </select>
                     </div>
                     <button id="btnRegistrarHorario" type="button" class="btn btn-primary">Registrar</button>
+                    @{
+                        DTO.Usuario id = (DTO.Usuario)(Session["usuario"]);
+                        <div style="display:none">
+                            <input id="session" value=@id.LaboratorioId />
+                        </div>
+                        
+                    }
+
                 </form>
 
 
@@ -376,6 +375,5 @@
     </div>
 </div>
 
-
-<script src="~/Scripts/jquery-3.4.1.js"></script>
-<script src="~/Scripts/Views/DashboardAdminLaboratorio/DashAdminLabRegistrarCitas.js"></script>
+<script src="~/Scripts/Views/DashboardAdminLaboratorio/Examen.js"></script>
+@*<script src="~/Scripts/Views/DashboardAdminLaboratorio/DashAdminLabRegistrarCitas.js"></script>*@

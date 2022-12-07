@@ -43,6 +43,12 @@ namespace AppLogic
             return horarioCrud.ListarTodos<Horario>();
         }
 
+        public List<Horario> DevolverTodosHorariosPorId(int id)
+        {
+            HorarioCrudFactory horarioCrud = new HorarioCrudFactory();
+            return horarioCrud.ListarTodosPorId<Horario>(id);
+        }
+
         public Horario DevolverUnHorario(Horario horario)
         {
             HorarioCrudFactory horarioCrud = new HorarioCrudFactory();
