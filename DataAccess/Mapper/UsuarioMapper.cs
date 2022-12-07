@@ -83,6 +83,21 @@ namespace DataAccess.Mapper
             return operacion;
         }
 
+        public SqlOperation DeclaracionRecuperarClave(EntidadBase entidadDTO)
+        {
+            var operacion = new SqlOperation()
+            {
+                NombreProcedimiento = "SP_RecuperarContrasenia"
+            };
+
+            var usuario = (Usuario)entidadDTO;
+
+            operacion.AddVarcharParam("Correo", usuario.Correo);
+            operacion.AddVarcharParam("token", usuario.Clave);
+
+            return operacion;
+        }
+
         public SqlOperation DeclaracionBorrar(EntidadBase entidadDTO)
         {
             var operacion = new SqlOperation()
