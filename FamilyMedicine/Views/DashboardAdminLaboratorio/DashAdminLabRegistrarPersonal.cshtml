@@ -120,6 +120,13 @@
                                         <button id="btnRegistrarPersonal" type="button" class="btn btn-primary mt-2">Registrar</button>
                                     </div>
                                 </div>
+                                @{
+                                    DTO.Usuario id = (DTO.Usuario)(Session["usuario"]);
+                                    <div style="display:none">
+                                        <input id="session" value=@id.LaboratorioId />
+                                    </div>
+
+                                }
                             </section>
                         </form>
                     </div>
@@ -130,7 +137,7 @@
                     <h3 class="card-header">Personal Registrado</h3>
 
                     <div class="card-body">
-                        <table class="table table-hover">
+                        <table class="table table-hover" id="datosPersonal">
                             <thead>
                                 <tr>
                                     <th>Nombre</th>
@@ -141,8 +148,6 @@
                                     <th>Estado</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                            </tbody>
                         </table>
                     </div>
                 </div>

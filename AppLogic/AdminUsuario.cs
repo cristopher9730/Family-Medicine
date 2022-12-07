@@ -58,6 +58,12 @@ namespace AppLogic
             return usuarioCrud.ListarTodos<Usuario>();
         }
 
+        public List<Usuario> DevolverTodosUsuariosPorId(int id)
+        {
+            UsuarioCrudFactory usuarioCrud = new UsuarioCrudFactory();
+            return usuarioCrud.ListarTodosPorId<Usuario>(id);
+        }
+
         public Usuario DevolverUnUsuario(Usuario usuarioId)
         {
             UsuarioCrudFactory usuarioCrud = new UsuarioCrudFactory();

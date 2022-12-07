@@ -103,6 +103,26 @@ namespace DataAccess.Crud
 
         }
 
+        public List<T> ListarTodosPorId<T>(int id)
+        {
+            var list = new List<T>();
+
+            var listResult = dao.EjecProcedimientoAlmacenadoConConsulta(mapper.DeclaracionRecuperarTodosporId(id));
+
+
+
+            if (listResult.Count > 0)
+            {
+                var objsUsuario = mapper.ConstruirObjetos(listResult);
+
+                foreach (var c in objsUsuario)
+                {
+                    list.Add((T)Convert.ChangeType(c, typeof(T)));
+                }
+            }
+            return list;
+        }
+
         /*
          El metodo login recibe un objeto usuario con el correo y la clave dentro de si mismo 
         El metodo procede a encriptar la clave dentro del objeto usuario y utiliza al objeto mapper para convertir al usuario en una operacion sql 
