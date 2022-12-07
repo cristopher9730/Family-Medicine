@@ -1,0 +1,109 @@
+﻿@model List<DTO.Examen>
+@{
+    ViewBag.Title = "Horarios";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<script src="~/Scripts/Views/DashboardAdminLaboratorio/DashAdminLabRegistrarCitas.js"></script>
+
+<style>
+    /*Este style contien la clase de nav activo las opciones A1, A2, A3... etc estan en el layout*/
+    .A11 {
+        box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+        text-decoration: none;
+        background-color: #f3f3f363;
+    }
+</style>
+
+<link rel="stylesheet" href="~/Content/css/DashboardCss/DashboardCitas.css" />
+<link rel="stylesheet" href="~/Content/css/Login.css" />
+<link rel="stylesheet" href="~/Content/css/DashboardCss/DashBoardGeneral.css" />
+<link rel="stylesheet" href="~/Content/css/DashboardCss/DashBoardExamenes.css" />
+
+
+<div class="divContenedorDelDashUno">
+    <section class="ContenedorDeDashboardFleROWEXAMEN" style="gap: 1px">
+
+        <form class="was-validated formularioContenedorDeDashboard">
+            <div class=" w-100 contenedorDeInputs">
+                <div class="form-group has-validation w-100 d-flex flex-column">
+                    <label class="form-label" for="txtNombre" id="inputGroupPrepend">Dia de cita</label>
+                    <input type="date" class="form-control w-100" id="txtDia" aria-describedby="inputGroupPrepend" required>
+                    <div class="invalid-feedback">
+                        Por favor, ingrese el dia de cita
+                    </div>
+                </div>
+            </div>
+
+            <div class=" w-100 contenedorDeInputs">
+                <div class="form-group has-validation w-100 d-flex flex-column">
+                    <label class="form-label" for="txtNombre" id="inputGroupPrepend">Hora de inicio</label>
+                    <input type="time" class="form-control w-100" id="txtHoraInicio" aria-describedby="inputGroupPrepend" required>
+                    <div class="invalid-feedback">
+                        Por favor, ingrese la hora de inicio
+                    </div>
+                </div>
+            </div>
+
+            <div class=" w-100 contenedorDeInputs">
+                <div class="form-group has-validation w-100 d-flex flex-column">
+                    <label class="form-label" for="txtNombre" id="inputGroupPrepend">Hora final</label>
+                    <input type="time" class="form-control w-100" id="txtHoraFinal" aria-describedby="inputGroupPrepend" required>
+                    <div class="invalid-feedback">
+                        Por favor, ingrese la hora de final
+                    </div>
+                </div>
+            </div>
+
+
+            <div class=" w-100 contenedorDeInputs">
+                <div class="form-group has-validation w-100 d-flex flex-column">
+                    <label class="form-label" for="txtCuposisponibles" id="inputGroupPrepend">Cupos disponibles</label>
+                    <input type="number" class="form-control w-100" id="txtCuposDisponibles" aria-describedby="inputGroupPrepend" required>
+                    <div class="invalid-feedback">
+                        Por favor, ingrese Cupos disponibles
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group mb-1">
+                <label for="exampleSelect2" class="form-label">Escoja el Examen para la Cita</label>
+                <select class="form-select" id="examenesId">
+                    <option value="" disabled selected hidden>Seleccione un Examen para la Cita</option>
+                    @foreach (var u in Model)
+                    {
+                        <option value="@u.ExamenId">@u.NombreInterno</option>
+                    }
+                </select>
+            </div>
+            <button id="btnRegistrarHorario" type="button" class="btn btn-primary">Registrar</button>
+            @{
+                DTO.Usuario id = (DTO.Usuario)(Session["usuario"]);
+                <div style="display:none">
+                    <input id="session" value=@id.LaboratorioId />
+                </div>
+
+            }
+
+        </form>
+
+
+        <div>
+            <div class="ContenedorDeDashboardTabOverFlow">
+                <table id="datosHorarios" class="table table-hover" style=" min-width: 55vw; border-radius: 10px;">
+                    <thead>
+                        <tr>
+                            <th scope="col">Dia de examen</th>
+                            <th scope="col">Hora de inicio</th>
+                            <th scope="col">Hora fin</th>
+                            <th scope="col">Cupos</th>
+                            <th scope="col">Examen ID</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+
+    </section>
+</div>
+

@@ -13,10 +13,6 @@ namespace FamilyMedicine.Controllers
 {
     public class DashboardAdminLaboratorioController : Controller
     {
-        public ActionResult DashAdminLabRegistrarCitas()
-        {
-            return View();
-        }
 
         public ActionResult DashAdminLabDatosLaboratorio()
         {
@@ -37,8 +33,26 @@ namespace FamilyMedicine.Controllers
             return View();
         }
 
+        public ActionResult Examen()
+        {
+            return View();
+        }
+
+        public ActionResult Horarios()
+        {
+            List<Examen> examenes = new List<Examen>();
+            examenes = this.GenerarExamenesSelect();
+
+            return View(examenes);
+        }
+
+        public ActionResult Resultados()
+        {
+            return View();
+        }
+
         [HttpPost]
-        public ActionResult DashAdminLabRegistrarExamen(Componente componente)
+        public ActionResult Componentes(Componente componente)
         {
             //esto simula una sesion activa y hay que borrarlo cuando ya exista un usuario con laboratorioId 
             Usuario usuario = new Usuario();
@@ -74,7 +88,7 @@ namespace FamilyMedicine.Controllers
                 throw new Exception(result.Content.ReadAsStringAsync().Result);
 
         }
-        public ActionResult DashAdminLabRegistrarExamen()
+        public ActionResult Componentes()
         {
             List<Examen> examenes = new List<Examen>();
             examenes = this.GenerarExamenesSelect();

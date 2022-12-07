@@ -27,10 +27,12 @@
             data: JSON.stringify(horario),
             hasContent: true
         }).done(function (info) {
-            alert('Usuario Creado correctamente');
+            alert('Horario Creado correctamente');
+            var table = $('#datosHorarios').DataTable();
+            table.ajax.reload();
         }
         ).fail(function (info) {
-            alert('hubo un problema al crear usuario');
+            alert('hubo un problema al crear el horario');
         });
     }
 
@@ -40,13 +42,14 @@
         arrayColumnsData[1] = { 'data': 'HoraInicio' };
         arrayColumnsData[2] = { 'data': 'HoraFin' };
         arrayColumnsData[3] = { 'data': 'Cupos' };
-        arrayColumnsData[3] = { 'data': 'ExamenId' };
+        arrayColumnsData[4] = { 'data': 'ExamenId' };
 
+        var id = $("#session").val();
 
         $('#datosHorarios').DataTable({
             ajax: {
                 method: "GET",
-                url: "https://familymedicine-api.azurewebsites.net/api/Horario/ObtenerListaHorarios",
+                url: "https://localhost:44391/api/Horario/ObtenerListaHorariosPorId?id=" + id,
                 contentType: "application/json;charset=utf-8",
                 dataSrc: function (json) {
                     var json = { 'data': json }
