@@ -1,4 +1,4 @@
-﻿
+﻿@model List<DTO.Examen>
 @{
     ViewBag.Title = "CarritoDeCompras";
 }
@@ -7,29 +7,20 @@
 
 
 <hgroup class="grupoCarrito">
-
     <div class="divContenedorDeTodosLosExamenes">
-
-        <div id="ContenedorPrueba"></div>
-
-        <section id="idCarritoContenedorDeExamenes" class="ContenedorDeExamenes">
-            <div class="flexClass divExamenCotenido">
-                <h2 class="tituloDeExamen">Examen de Sangre </h2>
-                <p class="descripcionExamen">Evaluar el funcionamiento de diferentes órganos del cuerpo, como el hígado, los riñones, el corazón o la tiroides. Diagnosticar trastornos hemorrágicos o de la coagulación. Averiguar si el sistema inmunitario está teniendo problemas para combatir las infecciones</p>
-                <span class="laboratorioExamen">CLINICOCR</span>
-            </div>
-            <div class="flexClass">
-                <select class="form-select" aria-label="Default select example">
-                    <option value="" disabled selected hidden>Numero de examenes</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                </select>
-                <span class="precioMonto">₡24000</span>
-            </div>
-            <button type="submit" id="remove" class="eliminarExamen"><i class="fa-solid fa-trash"></i></button>
-        </section>
-
+        @foreach (var u in Model)
+        {
+            <section id="@u.ExamenId" class="ContenedorDeExamenes">
+                <div class="flexClass divExamenCotenido">
+                    <h2 class="tituloDeExamen">@u.Nombre</h2>
+                    <p class="descripcionExamen">@u.Descripcion</p>
+                </div>
+                <div class="flexClass">
+                    <span class="precioMonto">₡@u.Precio</span>
+                </div>
+                <button type="submit" id="@u.ExamenId" class="eliminarExamen"><i class="fa-solid fa-trash"></i></button>
+            </section>
+        }
     </div>
 
     <!--CONTENEDOR DE PAGOS-->
@@ -37,13 +28,20 @@
     <section class="contenidoPreciosPago">
         <h3 class="tituloResumen"></h3>
 
-        <hgroup class="grupoCarritoInfomacion">
-            <div class="contentenedorDelNumeroDeProductos">
-                <span class="numeroDeProductosOdeCargosExtra V4">1</span>
-                <span class="textNormalCarrito">Productos</span>
+
+        @foreach (var u in Model)
+        {
+            <div id="@u.ExamenId">
+                <hgroup class="grupoCarritoInfomacion">
+                    <div class="contentenedorDelNumeroDeProductos">
+                        <span class="numeroDeProductosOdeCargosExtra V4">1</span>
+                        <span class="textNormalCarrito">@u.Nombre</span>
+                    </div>
+                    <span class="contendorPrecioTotalDeLosProductos V1">₡@u.Precio</span>
+                </hgroup>
             </div>
-            <span class="contendorPrecioTotalDeLosProductos V1">₡24000</span>
-        </hgroup>
+        }
+
 
         <hgroup class="grupoCarritoInfomacion">
             <div class="contentenedorDelNumeroDeProductos">
@@ -63,18 +61,25 @@
         <a class="pagoPorPaypal" style="text-decoration:none;" href="javascript:ventanaSecundaria('https://deportesymas.com.es/ejemplo.html')">Pagar por PAYPAL</a>
         <!--<button class="pagoPorPaypal">Pagar por PAYPAL</button>-->
 
-        <div class="flexClass">
-            <span class="textNormalCarrito">Aplicar un codigo de descuento</span>
-            <div class="grupoDeCuponDescuento">
-                <input type="text" class="form-control cupon" placeholder="Cupon" aria-label="Recipient's username" aria-describedby="basic-addon2">
-            </div>
+        <input type="text" class="pagoPorPaypal form-control" style="width: 300px" placeholder="Usar cupon">
+        <div class=" input-group-append mb-3" style="margin: 0 auto;">
+            <button class="btn btn-primary" type="button">Aplicar</button>
         </div>
+
+
 
     </section>
 
 </hgroup>
-
-<script src="~/Scripts/Views/ConsumoApi/ApiCarrito.js"></script>
-<script src="~/Scripts/Views/carritoDeComprasjs.js"></script>
-<script src="https://kit.fontawesome.com/e77fc0ae51.js" crossorigin="anonymous"></script>
+@foreach (var u in Model)
+{
+<script>
+        document.getElementById("@u.ExamenId").onclick = function () {
+            document.getElementById("@u.ExamenId").remove();
+        }
+</script>
+}
+    <script src="~/Scripts/Views/ConsumoApi/ApiCarrito.js"></script>
+    <script src="~/Scripts/Views/carritoDeComprasjs.js"></script>
+    <script src="https://kit.fontawesome.com/e77fc0ae51.js" crossorigin="anonymous"></script>
 
