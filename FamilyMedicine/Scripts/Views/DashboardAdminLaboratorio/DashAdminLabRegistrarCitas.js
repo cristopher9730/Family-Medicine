@@ -32,6 +32,29 @@
             alert('hubo un problema al crear usuario');
         });
     }
+
+    this.CargarTabla = function () {
+        var arrayColumnsData = [];
+        arrayColumnsData[0] = { 'data': 'Dia' };
+        arrayColumnsData[1] = { 'data': 'HoraInicio' };
+        arrayColumnsData[2] = { 'data': 'HoraFin' };
+        arrayColumnsData[3] = { 'data': 'Cupos' };
+
+        $('#datos').DataTable({
+            ajax: {
+                method: "GET",
+                url: "https://familymedicine-api.azurewebsites.net/api/Laboratorio/ObtenerListaLaboratorios",
+                contentType: "application/json;charset=utf-8",
+                dataSrc: function (json) {
+                    var json = { 'data': json }
+                    return json.data;
+                }
+            },
+            columns: arrayColumnsData
+        });
+        //table.buttons().container()
+        //    .appendTo($('.col-sm-6:eq(0)', table.table().container()));
+    }
 }
 
 $(document).ready(function () {

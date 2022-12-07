@@ -311,7 +311,6 @@
     <Content Include="Views\Shared\_DashboardLayout.cshtml" />
     <Content Include="Views\DashboardAdminLaboratorio\DashAdminLabDatosLaboratorio.cshtml" />
     <Content Include="Views\DashboardAdminLaboratorio\DashAdminLabHistorialVentas.cshtml" />
-    <Content Include="Views\DashboardAdminLaboratorio\DashAdminLabRegistrarCitas.cshtml" />
     <Content Include="Views\DashboardAdminLaboratorio\DashAdminLabRegistrarExamen.cshtml" />
     <Content Include="Views\DashboardAdminLaboratorio\DashAdminLabRegistrarPersonal.cshtml" />
     <Content Include="Views\Shared\_DashboardAdminAppLayout.cshtml" />

@@ -149,14 +149,13 @@
                         <div class="form-group has-validation w-100 d-flex flex-column">
                             <label class="form-label" for="txtNombre" id="inputGroupPrepend">ID</label>
                             @*<input type="number" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>*@
-                            <select class="form-select" id="exampleSelect1" name="ExamenId">
-                                @foreach (var u in Model)
-                                {
-                                    
-                                    <option>@u.ExamenId</option>
-
-                                }
-                            </select>
+                        <select class="form-select" id="exampleSelect1" name="ExamenId">
+                            <option value="" disabled selected hidden>Seleccione un Examen para la Cita</option>
+                            @foreach (var u in Model)
+                            {
+                                <option value="@u.ExamenId">@u.NombreInterno</option>
+                            }
+                        </select>
                             <div class="invalid-feedback">
                                 Por favor, ingrese la ID de examen
                             </div>
@@ -235,15 +234,6 @@
                         </div>
                     </div>
 
-                    <div class=" w-100 contenedorDeInputs">
-                        <div class="form-group has-validation w-100 d-flex flex-column">
-                            <label class="form-label" for="txtNombre" id="inputGroupPrepend">ID de examen</label>
-                            <input type="number" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
-                            <div class="invalid-feedback">
-                                Por favor, ingrese la ID de examen
-                            </div>
-                        </div>
-                    </div>
 
                     <div class=" w-100 contenedorDeInputs">
                         <div class="form-group has-validation w-100 d-flex flex-column">
@@ -255,48 +245,36 @@
                         </div>
                     </div>
 
-                    <div class=" w-100 contenedorDeInputs">
-                        <div class="form-group has-validation w-100 d-flex flex-column">
-                            <label class="form-label" for="txtNombre" id="inputGroupPrepend">ID de laboratorio</label>
-                            <input type="number" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
-                            <div class="invalid-feedback">
-                                Por favor, ingrese la ID de laboratorio
-                            </div>
-                        </div>
+                    <div class="form-group mb-1">
+                        <label for="exampleSelect2" class="form-label">Escoja el Examen para la Cita</label>
+                        <select class="form-select" id="examenesId">
+                            <option value="" disabled selected hidden>Seleccione un Examen para la Cita</option>
+                            @foreach (var u in Model)
+                            {
+                                <option value="@u.ExamenId">@u.NombreInterno</option>
+                            }
+                        </select>
                     </div>
                     <button onclick="myfuncionGeneralRegistrar()" type="submit" class="btn btn-primary">Registrar</button>
                 </form>
 
+
                 <div>
-                    <div>
-                        <form class="d-flex" style="padding: 10px">
-                            <input class="form-control me-sm-2" type="text" id="searchTermTres" onkeyup="doSearchTres()" placeholder="Buscar informacion">
-                        </form>
-                        <p class='noSearch hide'></p>
-                    </div>
-
-
                     <div class="ContenedorDeDashboardTabOverFlow">
-                        <table id="datosTres" class="table table-hover" style=" min-width: 55vw; border-radius: 10px;">
+                        <table id="datos" class="table table-hover" style=" min-width: 55vw; border-radius: 10px;">
                             <thead>
                                 <tr>
                                     <th scope="col">Nombre de examen</th>
                                     <th scope="col">Nombre interno</th>
                                     <th scope="col">Precio</th>
+                                    <th scope="col">Descripción</th>
                                     <th scope="col">Ventas totales</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td scope="row">Examen de sangre</td>
-                                    <td>ES-0315</td>
-                                    <td id="precio">₡22000</td>
-                                    <td>410</td>
-                                </tr>
-                            </tbody>
                         </table>
                     </div>
                 </div>
+
             </section>
         </div>
 

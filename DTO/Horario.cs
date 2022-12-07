@@ -16,6 +16,5 @@ namespace DTO
         public int Cupos { get; set; }
         public int LaboratorioId { get; set; }
         public string Estado { get; set; }
-
     }
 }
