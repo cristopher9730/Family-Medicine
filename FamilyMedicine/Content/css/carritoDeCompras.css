@@ -11,7 +11,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 60vw;
+    width: 70vw;
 }
 
 .ContenedorDeExamenes {
@@ -24,6 +24,9 @@
     margin: 25px auto;
     padding: 10px;
     border-radius: 10px;
+    min-height: 230px;
+    width: 750px;
+    pointer-events: none;
 }
 
 .flexClass {
@@ -33,13 +36,13 @@
 }
 
 .divExamenCotenido {
-    width: 350px
+    width: 650px
 }
 
 .tituloDeExamen {
     text-align: start;
     padding: 5px;
-    font-size: 20px;
+    font-size: 30px;
     color: #325D88;
     margin: 0;
 }
@@ -47,7 +50,7 @@
 .descripcionExamen {
     text-align: start;
     padding: 5px;
-    font-size: 13px;
+    font-size: 20px;
     color: #333333;
     margin: 0;
 }
@@ -55,7 +58,7 @@
 .laboratorioExamen {
     text-align: start;
     padding: 5px;
-    font-size: 10px;
+    font-size: 15px;
     color: #000000b2;
     font-weight: bold;
 }
@@ -76,6 +79,7 @@
     font-weight: bold;
     border: none;
     background: none;
+    pointer-events: auto;
 }
 
     .eliminarExamen:hover {
@@ -88,6 +92,7 @@
         background: none;
         animation: shake 1s;
         animation-iteration-count: infinite;
+        pointer-events: auto;
     }
 
 @keyframes shake {
@@ -142,7 +147,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 350px;
+    width: 460px;
     min-height: 20vh;
     margin: 20px;
     box-shadow: rgba(0, 0, 0, 0.10) 0px 3px 6px, rgba(0, 0, 0, 0.13) 0px 3px 6px;
