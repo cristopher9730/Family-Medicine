@@ -30,6 +30,8 @@
                 "infoEmpty": "Tabla vacia",
                 "search": "Buscar:",
                 "infoFiltered": "(Filtrando de _MAX_ total de resultados)"
+
+            },
             ajax: {
                 method: "GET",
                 url: "https://familymedicine-api.azurewebsites.net/api/Usuario/ObtenerListaUsuarios",
