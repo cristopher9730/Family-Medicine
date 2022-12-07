@@ -9,6 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
+using static System.Net.WebRequestMethods;
 
 namespace FamilyMedicine.Controllers
 {
@@ -175,7 +176,28 @@ namespace FamilyMedicine.Controllers
 
         public ActionResult recuperarContrasenna()
         {
+
             return View();
+        }
+        [HttpPost]
+        public ActionResult recuperarContrasenna(Usuario usuario)
+        {
+            var url = "https://familymedicine-api.azurewebsites.net/api/Usuario/RecuperarClave";
+            var stringContent = new StringContent(JsonConvert.SerializeObject(usuario), Encoding.UTF8, "application/json");
+
+            var cliente = new HttpClient();
+            cliente.BaseAddress = new Uri(url);
+
+            var result = cliente.PostAsync(url, stringContent).Result;
+
+            if (result.IsSuccessStatusCode)
+            {
+                ViewBag.Message = "Correo enviado correctamente";
+                return View();
+            }
+            else
+                throw new Exception(result.Content.ReadAsStringAsync().Result);
+            
         }
     }
 }

@@ -37,6 +37,13 @@ namespace AppLogic
             return "Usuario cliente actualizado correctamente en base de datos";
         }
 
+        public string RecuperarClave(Usuario usuario)
+        {
+            UsuarioCrudFactory usuarioCrud = new UsuarioCrudFactory();
+            usuarioCrud.RecuperarClave(usuario);
+            return "La clave ha sido actualizada con temporal";
+        }
+
         public string EliminarUsuario(Usuario usuario)
         {
             UsuarioCrudFactory usuarioCrud = new UsuarioCrudFactory();

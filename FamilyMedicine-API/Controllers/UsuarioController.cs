@@ -81,6 +81,19 @@ namespace FamilyMedicine_API.Controllers
             usuario.Clave = "contraseña";
 
             return usuario;
-        }  
+        }
+
+        [HttpPost]
+        public string RecuperarClave(Usuario usuario)
+        {
+            Random generator = new Random();
+            String otp = generator.Next(100000, 1000000).ToString("D6");
+            usuario.Clave = otp;
+            AdminUsuario adminUsuario = new AdminUsuario();
+            AdminCorreo adminCorreo = new AdminCorreo();
+            adminCorreo.EviarEmailRecuperarClave(usuario);
+            return adminUsuario.RecuperarClave(usuario);
+
+        }
     }
 }

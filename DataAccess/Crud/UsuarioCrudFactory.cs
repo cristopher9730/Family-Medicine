@@ -45,6 +45,15 @@ namespace DataAccess.Crud
             dao.EjecProcedimientoAlmacenado(sqlOperation);
         }
 
+        public void RecuperarClave(EntidadBase entidadDto)
+        {
+            var usuario = (Usuario)entidadDto;
+            var sqlOperation = mapper.DeclaracionRecuperarClave(usuario);
+
+            dao.EjecProcedimientoAlmacenado(sqlOperation);
+        }
+
+
         public override void Eliminar(EntidadBase entidadDto)
         {
             var usuario = (Usuario)entidadDto;
