@@ -1,4 +1,4 @@
-﻿
+﻿@model List<DTO.Examen>
 @{
     ViewBag.Title = "DashAdminLabRegistrarExamen";
     Layout = "~/Views/Shared/_DashboardLayout.cshtml";
@@ -114,11 +114,11 @@
         <div class="tab-pane fade show active" id="componentes" role="tabpanel">
 
             <section class="ContenedorDeDashboardFleROWEXAMEN" style="gap: 1px">
-                <form class="was-validated formularioContenedorDeDashboard">
+                <form class="was-validated formularioContenedorDeDashboard" method="post">
                     <div class="mb-3 w-100 contenedorDeInputs">
                         <div class="form-group has-validation w-100 d-flex flex-column">
                             <label class="form-label" for="txtNombre" id="inputGroupPrepend">Nombre del componente</label>
-                            <input type="text" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
+                            <input type="text" class="form-control w-100" name ="NombreComponente" id="txtNombre" aria-describedby="inputGroupPrepend" required>
                             <div class="invalid-feedback">
                                 Por favor, ingrese el nombre del componente
                             </div>
@@ -128,7 +128,7 @@
                     <div class="mb-3 w-100 contenedorDeInputs">
                         <div class="form-group has-validation w-100 d-flex flex-column">
                             <label class="form-label" for="txtNombre" id="inputGroupPrepend">Simbolo de medida</label>
-                            <input type="text" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
+                            <input type="text" class="form-control w-100" name="SimboloMedida" id="txtNombre" aria-describedby="inputGroupPrepend" required>
                             <div class="invalid-feedback">
                                 Por favor, ingrese el simbolo de medida
                             </div>
@@ -138,7 +138,7 @@
                     <div class="mb-3 w-100 contenedorDeInputs">
                         <div class="form-group has-validation w-100 d-flex flex-column">
                             <label class="form-label" for="txtNombre" id="inputGroupPrepend">Medidad de referencia</label>
-                            <input type="number" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
+                            <input type="number" class="form-control w-100" name="MedidaReferencia" id="txtNombre" aria-describedby="inputGroupPrepend" required>
                             <div class="invalid-feedback">
                                 Ingrese la medidad de referencia
                             </div>
@@ -148,7 +148,15 @@
                     <div class="mb-3 w-100 contenedorDeInputs">
                         <div class="form-group has-validation w-100 d-flex flex-column">
                             <label class="form-label" for="txtNombre" id="inputGroupPrepend">ID</label>
-                            <input type="number" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>
+                            @*<input type="number" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>*@
+                            <select class="form-select" id="exampleSelect1" name="ExamenId">
+                                @foreach (var u in Model)
+                                {
+                                    
+                                    <option>@u.ExamenId</option>
+
+                                }
+                            </select>
                             <div class="invalid-feedback">
                                 Por favor, ingrese la ID de examen
                             </div>

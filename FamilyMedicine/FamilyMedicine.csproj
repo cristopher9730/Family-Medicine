@@ -206,6 +206,7 @@
     </Compile>
     <Compile Include="Models\LaboratorioModel.cs" />
     <Compile Include="Models\ExamenModel.cs" />
+    <Compile Include="Models\Ping.cs" />
     <Compile Include="Permisos\ValidarSesionAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -225,7 +226,7 @@
     <Content Include="Content\imgs\Labs\cicloLab\CL2.jpg" />
     <Content Include="Content\imgs\Labs\cicloLab\CL3.jpg" />
     <Content Include="Content\imgs\Labs\cicloLab\CL4.png" />
-    <Content Include="Content\imgs\otros\medicos.png" />
+    <Content Include="Content\imgs\logos\medicos.png" />
     <Content Include="Content\imgs\vectoriales\items.png" />
     <Content Include="Content\imgs\Labs\Lab1.jpg" />
     <Content Include="Content\imgs\Labs\Lab1Blanco.png" />
@@ -272,8 +273,10 @@
     <Content Include="Scripts\Views\carritoDeComprasjs.js" />
     <Content Include="Scripts\Views\ConsumoApi\ApiCarrito.js" />
     <Content Include="Scripts\Views\ControlAcciones.js" />
+    <Content Include="Scripts\Views\DashboardAdminApp\Laboratorio.js" />
     <Content Include="Scripts\Views\DashboardAdminApp\Usuarios.js" />
     <Content Include="Scripts\Views\DashboardAdminLaboratorio\Cupones.js" />
+    <Content Include="Scripts\Views\DashboardAdminLaboratorio\DashAdminLabRegistrarCitas.js" />
     <Content Include="Scripts\Views\DashboardAdminLaboratorio\Examen.js" />
     <Content Include="Scripts\Views\DashboardAdminLaboratorio\registarLaboratorio.js" />
     <Content Include="Scripts\Views\DashboardAdminLaboratorio\personal.js" />

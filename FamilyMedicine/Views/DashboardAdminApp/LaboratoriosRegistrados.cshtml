@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "LaboratoriosRegistrados";
     Layout = "~/Views/Shared/_DashboardAdminAppLayout.cshtml";
 }
@@ -63,13 +62,6 @@
         </div>
     </div>
 
-    <div>
-        <form class="d-flex" style="padding: 10px">
-            <input class="form-control me-sm-2" type="text" id="searchTerm" onkeyup="doSearch()" placeholder="Buscar información">
-        </form>
-        <p class='noSearch hide'></p>
-    </div>
-
     <table id="datos" class="table table-hover">
         <thead>
             <tr>
@@ -78,34 +70,9 @@
                 <th scope="col">Página web</th>
                 <th scope="col">Teléfono</th>
                 <th scope="col">Correo electrónico</th>
-
             </tr>
         </thead>
-        <tbody>
-            <tr>
-                <td scope="row">Ciclo Lab</td>
-                <td>3-101-342687</td>
-                <td>ciclolab.com</td>
-                <td>24468762</td>
-                <td>ciclolab@gmail.com</td>
-            </tr>
-            <tr>
-                <td scope="row">Alchemy Lab</td>
-                <td>3-101-568725</td>
-                <td>alchemylab.com</td>
-                <td>24464587</td>
-                <td>alchemylab@gmail.com</td>
-            </tr>
-            <tr>
-                <td scope="row">The Lab</td>
-                <td>3-101-597428</td>
-                <td>thelab.com</td>
-                <td>24462156</td>
-                <td>thelab@gmail.com</td>
-            </tr>
-        </tbody>
     </table>
 
 </div>
-
-<script src="~/Scripts/Views/DashboardAdminApp/BusquedaEnTabla.js"></script>
+<script src="~/Scripts/Views/DashboardAdminApp/Laboratorio.js"></script>

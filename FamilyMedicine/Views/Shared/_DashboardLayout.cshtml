@@ -35,7 +35,7 @@
                     <a> @Html.ActionLink("Mis Exámenes", "DashBoardCitas", "DashboardUsuario", new { area = "" }, new { @class = "ContenedorDeNombre text-decoration-none" }) </a>
                 </div>
 
-                @if (Session["rolTecnico"] == null && Session["rolAdmin"] == null)
+                @if ( Session["rolAdmin"] != null)
                 {
                     <div class="mb-2 contenedorDeOpcionesDelNav A3 gap-1" style="width:100%">
                         <i class="fa-solid fa-flask-vial"></i>
@@ -93,7 +93,7 @@
 
                 <div class="mb-2 contenedorDeOpcionesDelNav gap-1" style="width:100%">
                     <i class="fa-solid fa-right-from-bracket"></i>
-                    <a> @Html.ActionLink("Cerrar Sesión", "Logout", "IniciarSecion", new { area = "" }, new { @class = "ContenedorDeNombre text-decoration-none" }) </a>
+                    <a> @Html.ActionLink("Cerrar Sesión", "Logout", "IniciarSesion", new { area = "" }, new { @class = "ContenedorDeNombre text-decoration-none" }) </a>
                 </div>
 
 
