@@ -1,4 +1,4 @@
-﻿
+﻿@model List<DTO.Examen>
 @{
     ViewBag.Title = "DashAdminLabRegistrarCitas";
     Layout = "~/Views/Shared/_DashboardLayout.cshtml";
@@ -27,32 +27,31 @@
                     <div class="form-group mb-1">
                         <label for="exampleSelect2" class="form-label">Escoja el Examen para la Cita</label>
                         <select class="form-select" id="examenesId">
-                            <option>Leucocitos</option>
-                            <option>Hemoglobina</option>
-                            <option>Orina</option>
-                            <option>Heces</option>
-                            <option>Tiroides T1</option>
-                            <option>Colonoscopia</option>
-                            <option>Doping</option>
+                            <option value="" disabled selected hidden>Seleccione un Examen para la Cita</option>
+                            @foreach (var u in Model)
+                            {
+                                <option value="@u.Nombre">@u.Nombre</option>
+                            }
                         </select>
                     </div>
 
                     <div class="form-group ">
                         <label for="exampleSelect2" class="form-label">Dias de la cita</label>
                         <select multiple="" class="form-select" id="exampleSelect2" style="min-height:150px">
-                            <option>Lunes</option>
-                            <option>Martes</option>
-                            <option>Miercoles</option>
-                            <option>Jueves</option>
-                            <option>Viernes</option>
-                            <option>Sabado</option>
-                            <option>Domingo</option>
+                            <option value="" disabled selected hidden>Seleccione el dia para la Cita</option>
+                            <option value="Lunes">Lunes</option>
+                            <option value="Martes">Martes</option>
+                            <option value="Miercoles">Miercoles</option>
+                            <option value="Jueves">Jueves</option>
+                            <option value="Viernes">Viernes</option>
+                            <option value="Sabado">Sabado</option>
+                            <option value="Domingo">Domingo</option>
                         </select>
                     </div>
 
                     <div class="form-group mt-2">
                         <label for="hora">Hora de la Cita:</label>
-                        <input id="hora" class="form-control" type="time" required/>
+                        <input id="hora" class="form-control" type="time" required />
                     </div>
 
                     <div class="form-group">
@@ -66,7 +65,7 @@
                     </div>
 
                     <div class="mt-1">
-                        <button onclick="myfuncionGeneralRegistrar()" type="submit" class="btn btn-primary">Registrar</button>
+                        <button id="btnRegistrar" type="submit" class="btn btn-primary">Registrar</button>
                     </div>
 
                 </form>
@@ -75,7 +74,6 @@
 
         <div class="card mb-3" style="width: 69%; float:right">
             <h3 class="card-header">Citas Registradas</h3>
-            
             <div class="card-body">
                 <table class="table table-hover">
                     <thead>
@@ -122,3 +120,4 @@
 </div>
 
 <script src="https://kit.fontawesome.com/e77fc0ae51.js" crossorigin="anonymous"></script>
+<script src="~/Scripts/Views/DashboardAdminLaboratorio/DashAdminLabRegistrarCitas.js"></script>

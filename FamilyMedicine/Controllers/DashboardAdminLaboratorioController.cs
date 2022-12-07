@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +11,14 @@ namespace FamilyMedicine.Controllers
     {
         public ActionResult DashAdminLabRegistrarCitas()
         {
-            return View();
+            List<Examen> examenes = new List<Examen>();
+
+            Examen examen1 = new Examen();
+            examen1.Nombre = "Examen de Sangre";
+
+            examenes.Add(examen1);
+
+            return View("DashAdminLabRegistrarCitas", examenes);
         }
 
         public ActionResult DashAdminLabDatosLaboratorio()
