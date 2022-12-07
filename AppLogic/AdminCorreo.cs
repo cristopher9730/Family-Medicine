@@ -21,6 +21,22 @@ namespace AppLogic
 
         }
 
+        public void EviarEmailRecuperarClave(Usuario usuario)
+        {
+            string asunto = "Family Medicine Recuperar Contraseña";
+            string contenido = "Para cambiar su contraseña utilice esta clave  : " + usuario.Clave;
+            SendGmail(usuario, asunto, contenido);
+
+        }
+
+        public void EviarEmailRecuperarOTP(Usuario usuario)
+        {
+            string asunto = "Family Medicine Recuperar OTP";
+            string contenido = "Para cambiar OTP su  utilice siguiente token:  : " + usuario.Codigo;
+            SendGmail(usuario, asunto, contenido);
+
+        }
+
         public static bool SendGmail(Usuario usuario, String asunto, String contenido)
         {
 

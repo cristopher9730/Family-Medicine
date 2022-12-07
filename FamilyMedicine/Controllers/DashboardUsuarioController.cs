@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 
@@ -14,22 +15,32 @@ namespace FamilyMedicine.Controllers
         // GET: DashBoard
         public ActionResult DashboardUsuario()
         {
-            //Usuario apiRespuestaUsuario;
-            //var cliente = new HttpClient();
-            ////var urlPrincipal = "https://localhost:44370";
-            //var url = "https://localhost:44391/api/Usuario/ObtenerUnUsuarioDos";
-            //var result = cliente.GetAsync(url).Result;
-            //string jsonObject = result.Content.ReadAsStringAsync().Result;
-            //apiRespuestaUsuario = JsonConvert.DeserializeObject<Usuario>(jsonObject);
-
-            //Session["UsuarioId"] = apiRespuestaUsuario.UsuarioId;
-            //Session["nombreUsuario"] = apiRespuestaUsuario.Nombre;
-            //Session["primerApellido"] = apiRespuestaUsuario.PrimerApellido;
-            //Session["segundoApellido"] = apiRespuestaUsuario.SegundoApellido;
-            //Session["telefono"] = apiRespuestaUsuario.Telefono;
-            //Session["Correo"] = apiRespuestaUsuario.Correo;
-
             return View();
+        }
+        [HttpPost]
+        public ActionResult DashboardUsuario(Usuario usuario)
+        {
+            Usuario SessionUsuario = (Usuario) (Session["usuario"]);
+            usuario.UsuarioId = SessionUsuario.UsuarioId;
+            var urlPrincipal = "https://localhost:44391";
+            // Pendiente acutualizar los datos en session 
+            var url = urlPrincipal + "/api/Usuario/ActualizarDatos";
+
+            //url += string.Format("?Correo={0}", oUsuario.Correo,"?Clave={1}", oUsuario.Clave);
+            var stringContent = new StringContent(JsonConvert.SerializeObject(usuario), Encoding.UTF8, "application/json");
+
+            var cliente = new HttpClient();
+            cliente.BaseAddress = new Uri(url);
+
+            var result = cliente.PutAsync(url, stringContent).Result;
+
+            if (result.IsSuccessStatusCode)
+            {
+                ViewBag.Message = "Usario actualizado correctamente";
+            }else
+                throw new Exception(result.Content.ReadAsStringAsync().Result);
+
+                return View();
         }
 
         public ActionResult DashBoardCitas()

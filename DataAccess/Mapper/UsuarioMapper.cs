@@ -72,13 +72,44 @@ namespace DataAccess.Mapper
 
             var usuario = (Usuario)entidadDTO;
 
+            operacion.AddIntergerParam("UsuarioId", usuario.UsuarioId);
             operacion.AddVarcharParam("Nombre", usuario.Nombre);
             operacion.AddVarcharParam("Primer_Apellido", usuario.PrimerApellido);
             operacion.AddVarcharParam("Segundo_Apellido", usuario.SegundoApellido);
             operacion.AddVarcharParam("Correo", usuario.Correo);
             operacion.AddVarcharParam("Telefono", usuario.Telefono);
             operacion.AddVarcharParam("Clave", usuario.Clave);
-            operacion.AddVarcharParam("Foto", usuario.Foto);      
+            operacion.AddVarcharParam("Foto", "urlFoto");      
+
+            return operacion;
+        }
+
+        public SqlOperation DeclaracionRecuperarClave(EntidadBase entidadDTO)
+        {
+            var operacion = new SqlOperation()
+            {
+                NombreProcedimiento = "SP_RecuperarContrasenia"
+            };
+
+            var usuario = (Usuario)entidadDTO;
+
+            operacion.AddVarcharParam("Correo", usuario.Correo);
+            operacion.AddVarcharParam("token", usuario.Clave);
+
+            return operacion;
+        }
+
+        public SqlOperation DeclaracionRecuperarOTP(EntidadBase entidadDTO)
+        {
+            var operacion = new SqlOperation()
+            {
+                NombreProcedimiento = "SP_RecuperarOTP"
+            };
+
+            var usuario = (Usuario)entidadDTO;
+
+            operacion.AddIntergerParam("UsuarioId", usuario.UsuarioId);
+            operacion.AddVarcharParam("token", usuario.Codigo);
 
             return operacion;
         }
@@ -124,6 +155,16 @@ namespace DataAccess.Mapper
             {
                 NombreProcedimiento = "SP_DevolverTodosUsuarios"
             };
+            return operacion;
+        }
+
+        public SqlOperation DeclaracionRecuperarTodosporId(int id)
+        {
+            var operacion = new SqlOperation()
+            {
+                NombreProcedimiento = "SP_DevolverTodosUsuariosPorId"
+            };
+            operacion.AddIntergerParam("LaboratorioId", id);
             return operacion;
         }
 

@@ -17,17 +17,17 @@
                     Ingrese su dirección de correo electrónico y le enviaremos un correo electrónico con instrucciones para restablecer su contraseña.
                 </p>
                 <form data-aos="fade-up"
-                      data-aos-duration="3000" class="was-validated" id="formContenedorId">
+                      data-aos-duration="3000" class="was-validated" id="formContenedorId" method="post">
                     <div class="mb-3 mt-3">
                         <div class="input-group has-validation">
                             <span class="input-group-text" id="inputGroupPrepend"><i class="fa-solid fa-envelope colorGeneral"></i></span>
-                            <input type="email" class="form-control" placeholder="Correo" id="correoForgotPassword" aria-describedby="inputGroupPrepend" required>
+                            <input type="email" name="Correo" class="form-control" placeholder="Correo" id="correoForgotPassword" aria-describedby="inputGroupPrepend" required>
                             <div class="invalid-feedback">
-                                Por favor, ingrese su correo
+                                Por favor, ingrese el correo
                             </div>
                         </div>
                     </div>
-                    <button onclick="myFunction()" type="button" class="btn btn-primary">Recuperar</button>
+                    <button type="submit" class="btn btn-primary">Recuperar</button>
                 </form>
                 <div class="d-flex justify-content-center mt-2">
                     <a> @Html.ActionLink("Iniciar Sesión", "Login", "IniciarSecion", new { area = "" }, new { @class = "colorGeneral" }) </a>

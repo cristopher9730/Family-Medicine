@@ -6,7 +6,7 @@ using System.Web;
 
 namespace FamilyMedicine.Models
 {
-    public class ExamenModel
+    public class CarritoModel
     {
         public int ExamenId { get; set; }
         public string Nombre { get; set; }

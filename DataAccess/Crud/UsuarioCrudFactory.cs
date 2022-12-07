@@ -45,6 +45,23 @@ namespace DataAccess.Crud
             dao.EjecProcedimientoAlmacenado(sqlOperation);
         }
 
+        public void RecuperarClave(EntidadBase entidadDto)
+        {
+            var usuario = (Usuario)entidadDto;
+            var sqlOperation = mapper.DeclaracionRecuperarClave(usuario);
+
+            dao.EjecProcedimientoAlmacenado(sqlOperation);
+        }
+
+        public void RecuperarOTP(EntidadBase entidadDto)
+        {
+            var usuario = (Usuario)entidadDto;
+            var sqlOperation = mapper.DeclaracionRecuperarOTP(usuario);
+
+            dao.EjecProcedimientoAlmacenado(sqlOperation);
+        }
+
+
         public override void Eliminar(EntidadBase entidadDto)
         {
             var usuario = (Usuario)entidadDto;
@@ -92,6 +109,26 @@ namespace DataAccess.Crud
             return default(T);
           
 
+        }
+
+        public List<T> ListarTodosPorId<T>(int id)
+        {
+            var list = new List<T>();
+
+            var listResult = dao.EjecProcedimientoAlmacenadoConConsulta(mapper.DeclaracionRecuperarTodosporId(id));
+
+
+
+            if (listResult.Count > 0)
+            {
+                var objsUsuario = mapper.ConstruirObjetos(listResult);
+
+                foreach (var c in objsUsuario)
+                {
+                    list.Add((T)Convert.ChangeType(c, typeof(T)));
+                }
+            }
+            return list;
         }
 
         /*
