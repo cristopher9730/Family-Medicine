@@ -227,6 +227,7 @@
     <Content Include="Content\imgs\Labs\cicloLab\CL3.jpg" />
     <Content Include="Content\imgs\Labs\cicloLab\CL4.png" />
     <Content Include="Content\imgs\logos\medicos.png" />
+    <Content Include="Content\imgs\otros\clientes\medicos.png" />
     <Content Include="Content\imgs\vectoriales\items.png" />
     <Content Include="Content\imgs\Labs\Lab1.jpg" />
     <Content Include="Content\imgs\Labs\Lab1Blanco.png" />
