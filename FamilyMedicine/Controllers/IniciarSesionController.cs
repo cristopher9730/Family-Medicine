@@ -1,6 +1,5 @@
 ﻿using AppLogic;
 using DTO;
-using MailChimp.Net.Core;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;

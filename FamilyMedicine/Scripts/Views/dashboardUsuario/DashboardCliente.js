@@ -2,7 +2,7 @@
 
     this.InitView = function () {
         $("#btnActualizarCliente").click(function () {
-            var vista = new Usuarios();
+            var vista = new DashboardCliente();
             vista.ActualizarUsuario();
         });
         this.CargarTabla();
@@ -10,6 +10,7 @@
 
     this.ActualizarUsuario = function() {
         var usuario = {}
+        usuario.UsuarioId = Session["UsuarioId"];
         usuario.Nombre = $("#txtNombre").val();
         usuario.PrimerApellido = $("#txtPrimerApellido").val();
         usuario.SegundoApellido = $("#txtSegundoApellido").val();
@@ -30,7 +31,7 @@
             contentType: "application/json",
             data: JSON.stringify(usuario),
             hasContent: true
-        }).done(function (info) {
+        }).done(function (info) {S
             alert('Datos actualizados correctamente');
         }
         ).fail(function (info) {
