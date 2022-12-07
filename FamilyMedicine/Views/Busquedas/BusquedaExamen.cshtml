@@ -18,27 +18,41 @@
 
     @foreach (var u in Model)
     {
-        <div class="card contentExamen border-light m-3 shadow-sm h-100" style="width: 350px; ">
-            <div class="card-header text-center">
-                <h5><strong>@u.Nombre</strong></h5>
+        
+            <div class="card contentExamen border-light m-3 shadow-sm h-100" style="width: 350px; ">
+                <div class="card-header text-center">
+                    <h5><strong>@u.Nombre</strong></h5>
+                </div>
+                <div class="card-body">
+                    <div class="text-center mb-2" style="max-height:12rem">
+                        <h5><strong>PENDIENTE TBD</strong></h5>
+                    </div>
+                    <div class="container" style="min-height:12rem">
+                        <p class="card-text">@u.Descripcion</p>
+                    </div>
+                    <div class="text-center mb-2" style="max-height:12rem">
+                        <h5><strong>@u.Precio</strong></h5>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <form method="post">
+                            @{
+                                
+                            <div style="display:none">
+
+                                <input value=@u.ExamenId name="ExamenId" />
+                                <input value=@u.Nombre name="Nombre" />
+                                <input value=@u.Descripcion name="Descripcion" />
+                                <input value=@u.Precio name="Precio" />
+                            </div>
+                            }
+                            <button onclick="myfuncionGeneralCarrito()" class="btn btn-outline-primary" type="submit">
+                                Añadir al carrito
+                            </button>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <div class="card-body">
-                <div class="text-center mb-2" style="max-height:12rem">
-                    <h5><strong>PENDIENTE TBD</strong></h5>
-                </div>
-                <div class="container" style="min-height:12rem">
-                    <p class="card-text">@u.Descripcion</p>
-                </div>
-                <div class="text-center mb-2" style="max-height:12rem">
-                    <h5><strong>@u.Precio</strong></h5>
-                </div>
-                <div class="d-flex justify-content-center">
-                    <button onclick="myfuncionGeneralCarrito()" class="btn btn-outline-primary">
-                        Añadir al carrito
-                    </button>
-                </div>
-            </div>
-        </div>
+        
     }
 </div>
 
