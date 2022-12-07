@@ -10,6 +10,8 @@ namespace FamilyMedicine.Controllers
 {
     public class CompraController : ApiController
     {
+        
+
         [HttpPost]
         public string RegistrarCompra(Compra compra)
         {
@@ -48,6 +50,21 @@ namespace FamilyMedicine.Controllers
         {
             AdminCompra adminCompra = new AdminCompra();
             return adminCompra.DevolverUnaCompra(compra);
+        }
+
+
+        [HttpPost]
+        public void CarritoCompras(Examen examen)
+        {
+            AdminCompra admin = new AdminCompra();
+            admin.CarritoCompras(examen);
+        }
+
+        [HttpGet]
+        public List<Examen> ObtenerCarritoCompras()
+        {
+            AdminCompra admin = new AdminCompra();
+            return admin.ObtenerCarritoCompras();
         }
     }
 }
