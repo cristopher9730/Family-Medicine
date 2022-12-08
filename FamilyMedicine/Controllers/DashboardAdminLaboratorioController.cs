@@ -19,6 +19,31 @@ namespace FamilyMedicine.Controllers
             return View();
         }
 
+        [HttpPost]
+        public ActionResult DashAdminLabDatosLaboratorio(Laboratorio laboratorio)
+        {
+            Laboratorio SessionLaboratorio = (Laboratorio) (Session["laboratorio"]);
+            laboratorio.LaboratorioId = SessionLaboratorio.LaboratorioId;
+            var urlPrincipal = "https://familymedicine.azurewebsites.net";
+            var url = urlPrincipal + "/api/Laboratorio/ActualizarLaboratorio";
+
+            var stringContent = new StringContent(JsonConvert.SerializeObject(laboratorio), Encoding.UTF8, "application/json");
+
+            var lab = new HttpClient();
+            lab.BaseAddress = new Uri(url);
+
+            var result = lab.PutAsync(url, stringContent).Result;
+
+            if (result.IsSuccessStatusCode)
+            {
+                ViewBag.Message = "Laboratorio actualizado correctamente";
+            }
+            else
+                throw new Exception(result.Content.ReadAsStringAsync().Result);
+
+            return View();
+        }
+
         public ActionResult DashAdminLabHistorialVentas()
         {
             return View();

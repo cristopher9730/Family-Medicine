@@ -235,53 +235,53 @@
     <div class="modal fade" id="form" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form data-aos="fade-up" class="was-validated mb-1 mt-1 formContenedorId" id="formContenedorId">
+                <form data-aos="fade-up" class="was-validated mb-1 mt-1 formContenedorId" id="formContenedorId" method="post">
                     <div>
                         <label for="staticEmail" class=" tituloGeneralTres">Nombre laboratorio</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control formPupUp" id="" value="The lab">
+                            <input type="text" name="NombreLaboratorio" class="form-control formPupUp" id="txtNombreLaboratorio" value="The lab">
                         </div>
                     </div>
 
                     <div>
                         <label for="staticEmail" class=" tituloGeneralTres">Correo</label>
                         <div class="col-sm-10">
-                            <input type="email" pattern="^[a-zA-Z0-9._+-]+@("@")[a-zA-Z0-9.-]+\.[a-zA-Z]{2,9}$" class="form-control formPupUp" id="" value="thelab@gmail.com">
+                            <input type="email" name="CorreoLaboratorio" pattern="^[a-zA-Z0-9._+-]+@("@")[a-zA-Z0-9.-]+\.[a-zA-Z]{2,9}$" class="form-control formPupUp" id="txtCorreoLaboratorio" value="thelab@gmail.com">
                         </div>
                     </div>
 
                     <div>
                         <label for="staticEmail" class=" tituloGeneralTres">Telefono</label>
                         <div class="col-sm-10">
-                            <input type="tel" class="form-control formPupUp" id="" value="2224-2224">
+                            <input type="tel" name="Telefono" class="form-control formPupUp" id="txtTelefono" value="2224-2224">
                         </div>
                     </div>
 
                     <div>
                         <label for="staticEmail" class=" tituloGeneralTres">Cedula juridica</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control formPupUp" id="" value="3-123-895170">
+                            <input type="text" name="CedulaJuridica" class="form-control formPupUp" id="txtCedulaJuridica" value="3-123-895170">
                         </div>
                     </div>
 
                     <div>
                         <label for="staticEmail" class=" tituloGeneralTres">Razón social</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control formPupUp" id="" value="Laboratorios para examenes">
+                            <input type="text" name="RazonSocial" class="form-control formPupUp" id="txtRazonSocial" value="Laboratorios para examenes">
                         </div>
                     </div>
 
                     <div>
                         <label for="staticEmail" class=" tituloGeneralTres">Pagina web</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control formPupUp" id="" value="thelab.com">
+                            <input type="text" name="PaginaWeb" class="form-control formPupUp" id="txtPaginaWeb" value="thelab.com">
                         </div>
                     </div>
 
                     <div>
                         <label for="staticEmail" class=" tituloGeneralTres">Red social</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control formPupUp" id="" value="@("@")thelab">
+                            <input type="text" name="RedSocial" class="form-control formPupUp" id="txtRedSocial" value="@("@")thelab">
                         </div>
                     </div>
 
@@ -294,7 +294,7 @@
         </div>
     </div>
 </section>
-
+<script src="~/Scripts/Views/DashboardAdminLaboratorio/ActualizarLaboratorio.js"></script>
 <script src="~/Scripts/Views/dashboardUsuario/DashboardValidacion.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://kit.fontawesome.com/e77fc0ae51.js" crossorigin="anonymous"></script>
