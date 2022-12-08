@@ -16,7 +16,7 @@
         usuario.Clave = $("#txtClave").val();
         usuario.Foto = "Foto";
         usuario.Estado = "Pendiente";
-        usuario.RolId = 4;
+        usuario.RolId = 1;
         usuario.MembresiaId = 0;
         usuario.LaboratorioId = 0;
 
