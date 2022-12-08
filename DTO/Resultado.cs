@@ -12,7 +12,7 @@ namespace DTO
         public int CitaId { get; set; }
         public int ExamenId { get; set; }
         public DateTime FechaPublicacion { get; set; }
-        public double Resultado { get; set; }
+        public double Resultados { get; set; }
         public int LaboratorioId { get; set; }
         public string Estado { get; set; }
     }

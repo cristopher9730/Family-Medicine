@@ -45,12 +45,6 @@ namespace FamilyMedicine.Controllers
 
         public ActionResult DashBoardCitas()
         {
-            //esto simula una sesion activa y hay que borrarlo cuando ya exista un usuario con laboratorioId 
-            Usuario usuario = new Usuario();
-            usuario.LaboratorioId = 1;
-            Session["usuario"] = usuario;
-            Usuario usuarioLaboratorio = (Usuario)(Session["usuario"]);
-            //esto simula una sesion activa
 
             //Esto recibe la lista de examenes del Back End 
             List<Examen> apiRespuestaExamen;
