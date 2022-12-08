@@ -9,14 +9,13 @@
     }
 
     this.RegistrarHorario = function () {
-        var lab = $("#session").val();
         var horario = {}
         horario.Dia = $("#txtDia").val();
         horario.HoraInicio = $("#txtHoraInicio").val();
         horario.HoraFin = $("#txtHoraFinal").val();
         horario.Cupos = $("#txtCuposDisponibles").val();
         horario.ExamenId = $("#examenesId").val();
-        horario.LaboratorioId = lab
+        horario.LaboratorioId = $("#session").val();
 
         $.ajax({
             headers: {
