@@ -52,8 +52,8 @@
         arrayColumnsData[0] = { 'data': 'Nombre' };
         arrayColumnsData[1] = { 'data': 'PrimerApellido' };
         arrayColumnsData[2] = { 'data': 'SegundoApellido' };
-        arrayColumnsData[3] = { 'data': 'Correo' };
-        arrayColumnsData[4] = { 'data': 'Telefono' };
+        arrayColumnsData[3] = { 'data': 'RolId' };
+        arrayColumnsData[4] = { 'data': 'Correo' };
         arrayColumnsData[5] = { 'data': 'Estado' };
         arrayColumnsData[6] = { defaultContent: '<button class="btn btn-primary">Editar</button>' };
 
