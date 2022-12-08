@@ -1,4 +1,4 @@
-﻿
+﻿@model List<DTO.Usuario>
 @{
     ViewBag.Title = "Cupones";
     Layout = "~/Views/Shared/_DashboardLayout.cshtml";
@@ -62,17 +62,14 @@
                 <div style="display:none">
                     <input id="session" value=@id.UsuarioId />
                 </div>
-            }
-
-            <button type="button" class="btn btn-primary mt-3 " id="btnRegistrar">Registrar</button>
-            @{
-                DTO.Usuario id = (DTO.Usuario)(Session["usuario"]);
                 <div style="display:none">
                     <input id="sessionLabId" value=@id.LaboratorioId />
                     <input id="sessionUsuarioId" value=@id.UsuarioId />
                 </div>
-
             }
+
+            <button type="button" class="btn btn-primary mt-3 " id="btnRegistrar">Registrar</button>
+
         </form>
 
         <table class="table table-hover" id="datos" style="width: 70vw;">
@@ -87,7 +84,7 @@
                 </tr>
             </thead>
         </table>
-    </section>         
+    </section>
 </div>
 
 
