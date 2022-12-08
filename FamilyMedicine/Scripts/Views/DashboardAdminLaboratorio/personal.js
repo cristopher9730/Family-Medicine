@@ -39,6 +39,8 @@
             hasContent: true
         }).done(function (info) {
             alert('Usuario registrado correctamente');
+            var table = $('#datosPersonal').DataTable();
+            table.ajax.reload();
         }
         ).fail(function (info) {
             alert('hubo un problema al registrar usuario');
@@ -53,7 +55,7 @@
         arrayColumnsData[3] = { 'data': 'Correo' };
         arrayColumnsData[4] = { 'data': 'Telefono' };
         arrayColumnsData[5] = { 'data': 'Estado' };
-        arrayColumnsData[6] = { defaultContent: '<button class="btn btn-primary">Eliminar</button>' };
+        arrayColumnsData[6] = { defaultContent: '<button class="btn btn-primary">Editar</button>' };
 
 
         var lab = $("#session").val();
@@ -84,6 +86,7 @@
             },
             columns: arrayColumnsData
         });
+
   
     }
 }

@@ -1,6 +1,6 @@
 ﻿function ControlAcciones() {
 
-	this.URL_API = "https://localhost:44391";
+	this.URL_API = "https://familymedicine-api.azurewebsites.net";
 
 	this.GetUrlApiService = function (service) {
 		return this.URL_API + service;

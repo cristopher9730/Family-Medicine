@@ -125,9 +125,6 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="Twilio, Version=5.81.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\FamilyMedicine\packages\Twilio.5.81.1\lib\net451\Twilio.dll</HintPath>
-    </Reference>
     <Reference Include="zxing, Version=0.16.8.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
       <HintPath>..\FamilyMedicine\packages\ZXing.Net.0.16.8\lib\net48\zxing.dll</HintPath>
     </Reference>
@@ -153,7 +150,6 @@
     <Compile Include="AdminOTP.cs" />
     <Compile Include="AdminPromocion.cs" />
     <Compile Include="AdminRol.cs" />
-    <Compile Include="AdminSMS.cs" />
     <Compile Include="AdminUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

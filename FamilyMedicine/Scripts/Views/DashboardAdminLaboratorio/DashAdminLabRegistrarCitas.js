@@ -9,12 +9,14 @@
     }
 
     this.RegistrarHorario = function () {
+        var lab = $("#session").val();
         var horario = {}
         horario.Dia = $("#txtDia").val();
         horario.HoraInicio = $("#txtHoraInicio").val();
         horario.HoraFin = $("#txtHoraFinal").val();
         horario.Cupos = $("#txtCuposDisponibles").val();
         horario.ExamenId = $("#examenesId").val();
+        horario.LaboratorioId = lab
 
         $.ajax({
             headers: {
@@ -62,7 +64,7 @@
             },
             ajax: {
                 method: "GET",
-                url: "https://localhost:44391/api/Horario/ObtenerListaHorariosPorId?id=" + id,
+                url: "https://familymedicine-api.azurewebsites.net/api/Horario/ObtenerListaHorariosPorId?id=" + id,
                 contentType: "application/json;charset=utf-8",
                 dataSrc: function (json) {
                     var json = { 'data': json }

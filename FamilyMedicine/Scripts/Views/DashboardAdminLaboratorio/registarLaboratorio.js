@@ -27,7 +27,7 @@
                 'Content-Type': "application/json"
             },
             method: "POST",
-            url: "https://localhost:44391/api/Laboratorio/RegistrarLaboratorio",
+            url: "https://familymedicine-api.azurewebsites.net/api/Laboratorio/RegistrarLaboratorio",
             contentType: "application/json",
             data: JSON.stringify(laboratorio),
             hasContent: true

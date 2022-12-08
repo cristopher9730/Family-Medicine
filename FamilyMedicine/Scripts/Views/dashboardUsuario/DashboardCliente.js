@@ -27,7 +27,7 @@
                 'Content-Type': "application/json"
             },
             method: "PUT",
-            url: "https://localhost:44391/api/Usuario/ActualizarDatos",
+            url: "https://familymedicine-api.azurewebsites.net/api/Usuario/ActualizarDatos",
             contentType: "application/json",
             data: JSON.stringify(usuario),
             hasContent: true

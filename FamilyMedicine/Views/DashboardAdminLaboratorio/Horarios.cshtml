@@ -30,7 +30,7 @@
                     <label class="form-label" for="txtNombre" id="inputGroupPrepend">Dia de cita</label>
                     <input type="date" class="form-control w-100" id="txtDia" aria-describedby="inputGroupPrepend" required>
                     <div class="invalid-feedback">
-                        Por favor, ingrese el dia de cita
+                        Por favor, ingrese el día de cita
                     </div>
                 </div>
             </div>
@@ -38,7 +38,7 @@
             <div class=" w-100 contenedorDeInputs">
                 <div class="form-group has-validation w-100 d-flex flex-column">
                     <label class="form-label" for="txtNombre" id="inputGroupPrepend">Hora de inicio</label>
-                    <input type="time" class="form-control w-100" id="txtHoraInicio" aria-describedby="inputGroupPrepend" required>
+                    <input type="time" step="3600000" class="form-control w-100" id="txtHoraInicio" aria-describedby="inputGroupPrepend" required>
                     <div class="invalid-feedback">
                         Por favor, ingrese la hora de inicio
                     </div>
@@ -48,7 +48,7 @@
             <div class=" w-100 contenedorDeInputs">
                 <div class="form-group has-validation w-100 d-flex flex-column">
                     <label class="form-label" for="txtNombre" id="inputGroupPrepend">Hora final</label>
-                    <input type="time" class="form-control w-100" id="txtHoraFinal" aria-describedby="inputGroupPrepend" required>
+                    <input type="time" step="3600000" class="form-control w-100" id="txtHoraFinal" aria-describedby="inputGroupPrepend" required>
                     <div class="invalid-feedback">
                         Por favor, ingrese la hora de final
                     </div>
@@ -93,7 +93,7 @@
                 <table id="datosHorarios" class="table table-hover" style=" min-width: 55vw; border-radius: 10px;">
                     <thead>
                         <tr>
-                            <th scope="col">Dia de examen</th>
+                            <th scope="col">Día de examen</th>
                             <th scope="col">Hora de inicio</th>
                             <th scope="col">Hora fin</th>
                             <th scope="col">Cupos</th>
