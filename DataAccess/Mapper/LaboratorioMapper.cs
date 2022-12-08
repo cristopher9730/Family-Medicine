@@ -29,8 +29,8 @@ namespace DataAccess.Mapper
             operacion.AddVarcharParam("CedulaJuridica", laboratorio.CedulaJuridica);
             operacion.AddVarcharParam("RazonSocial", laboratorio.RazonSocial);
             operacion.AddVarcharParam("Estado", laboratorio.Estado);
-            operacion.AddVarcharParam("PaginaWeb", laboratorio.PaginaWeb);
-            operacion.AddVarcharParam("RedSocial", laboratorio.RedSocial);
+            //operacion.AddVarcharParam("PaginaWeb", laboratorio.PaginaWeb);
+            //operacion.AddVarcharParam("RedSocial", laboratorio.RedSocial);
 
             return operacion;
 
@@ -45,17 +45,18 @@ namespace DataAccess.Mapper
 
             var laboratorio = (Laboratorio)entidadDTO;
 
+            operacion.AddIntergerParam("LaboratorioId ", laboratorio.LaboratorioId);
             operacion.AddIntergerParam("UsuarioPropietarioId", laboratorio.UsuarioPropietarioId);
             operacion.AddVarcharParam("NombreLaboratorio", laboratorio.NombreLaboratorio);
-            operacion.AddVarcharParam("SedeLaboratorio", laboratorio.SedeLaboratorio);
+            operacion.AddVarcharParam("SedeLaboratorio", "None");
             operacion.AddVarcharParam("Telefono", laboratorio.Telefono);
             operacion.AddVarcharParam("CorreoLaboratorio", laboratorio.CorreoLaboratorio);
             operacion.AddVarcharParam("Direccion", laboratorio.Direccion);
             operacion.AddVarcharParam("CedulaJuridica", laboratorio.CedulaJuridica);
             operacion.AddVarcharParam("RazonSocial", laboratorio.RazonSocial);
             operacion.AddVarcharParam("Estado", laboratorio.Estado);
-            operacion.AddVarcharParam("PaginaWeb", laboratorio.PaginaWeb);
-            operacion.AddVarcharParam("RedSocial", laboratorio.RedSocial);
+            //operacion.AddVarcharParam("PaginaWeb", laboratorio.PaginaWeb);
+            //operacion.AddVarcharParam("RedSocial", laboratorio.RedSocial);
 
             return operacion;
         }

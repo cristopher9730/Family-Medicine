@@ -1,4 +1,4 @@
-﻿
+﻿@model DTO.Laboratorio
 @{
     ViewBag.Title = "DashAdminLabRegistrarCitas";
     Layout = "~/Views/Shared/_DashboardLayout.cshtml";
@@ -44,42 +44,42 @@
                             <h2 class="titleGeneral">Perfil</h2>
                             <section class="ContenedorDeDashboardFleROW" style="gap: 1px">
                                 <p class="tituloGeneralDos">Número de laboratorio: </p>
-                                <span class="textoGeneralUSO">73</span>
+                                <span class="textoGeneralUSO">@Model.LaboratorioId</span>
                             </section>
 
                             <section class="ContenedorDeDashboardFleROW" style="gap: 1px">
                                 <p class="tituloGeneralDos">Nombre: </p>
-                                <span class="textoGeneralUSO">The Lab</span>
+                                <span class="textoGeneralUSO">@Model.NombreLaboratorio</span>
                             </section>
 
                             <section class="ContenedorDeDashboardFleROW" style="gap: 1px">
-                                <p class="tituloGeneralDos">Correo: </p>
-                                <span class="textoGeneralUSO">thelab@gmail.com</span>
+                                <p class="tituloGeneralDos">Correo</p>
+                                <span class="textoGeneralUSO">@Model.CorreoLaboratorio</span>
                             </section>
 
                             <section class="ContenedorDeDashboardFleROW" style="gap: 1px">
                                 <p class="tituloGeneralDos">Teléfono: </p>
-                                <span class="textoGeneralUSO">2224-2224</span>
+                                <span class="textoGeneralUSO">@Model.Telefono</span>
                             </section>
 
                             <section class="ContenedorDeDashboardFleROW" style="gap: 1px">
                                 <p class="tituloGeneralDos">Cédula jurídica: </p>
-                                <span class="textoGeneralUSO">3-123-895170</span>
+                                <span class="textoGeneralUSO">@Model.CedulaJuridica</span>
                             </section>
 
                             <section class="ContenedorDeDashboardFleROW" style="gap: 1px">
                                 <p class="tituloGeneralDos">Página web: </p>
-                                <span class="textoGeneralUSO">thelab.com</span>
+                                <span class="textoGeneralUSO">@Model.PaginaWeb</span>
                             </section>
 
                             <section class="ContenedorDeDashboardFleROW" style="gap: 1px">
                                 <p class="tituloGeneralDos">Razón social: </p>
-                                <span class="textoGeneralUSO">Laboratorios para exámenes</span>
+                                <span class="textoGeneralUSO">@Model.RazonSocial</span>
                             </section>
 
                             <section class="ContenedorDeDashboardFleROW" style="gap: 1px">
                                 <p class="tituloGeneralDos">Red social: </p>
-                                <span class="textoGeneralUSO">@("@")thelab</span>
+                                <span class="textoGeneralUSO">@Model.RedSocial</span>
                             </section>
 
                             <button data-bs-toggle="modal" data-bs-target="#form" style="padding-top: 10px;" type="button" class="btn btn-primary mt-1">Editar</button>
@@ -236,55 +236,73 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <form data-aos="fade-up" class="was-validated mb-1 mt-1 formContenedorId" id="formContenedorId" method="post">
+
+
+
                     <div>
                         <label for="staticEmail" class=" tituloGeneralTres">Nombre laboratorio</label>
                         <div class="col-sm-10">
-                            <input type="text" name="NombreLaboratorio" class="form-control formPupUp" id="txtNombreLaboratorio" value="The lab">
+                            <input type="text" name="NombreLaboratorio" class="form-control formPupUp" id="txtNombreLaboratorio" value=@Model.NombreLaboratorio>
                         </div>
                     </div>
 
                     <div>
                         <label for="staticEmail" class=" tituloGeneralTres">Correo</label>
                         <div class="col-sm-10">
-                            <input type="email" name="CorreoLaboratorio" pattern="^[a-zA-Z0-9._+-]+@("@")[a-zA-Z0-9.-]+\.[a-zA-Z]{2,9}$" class="form-control formPupUp" id="txtCorreoLaboratorio" value="thelab@gmail.com">
+                            <input type="email" name="CorreoLaboratorio" pattern="^[a-zA-Z0-9._+-]+@("@")[a-zA-Z0-9.-]+\.[a-zA-Z]{2,9}$" class="form-control formPupUp" id="txtCorreoLaboratorio" value=@Model.CorreoLaboratorio>
                         </div>
                     </div>
 
                     <div>
                         <label for="staticEmail" class=" tituloGeneralTres">Telefono</label>
                         <div class="col-sm-10">
-                            <input type="tel" name="Telefono" class="form-control formPupUp" id="txtTelefono" value="2224-2224">
+                            <input type="tel" name="Telefono" class="form-control formPupUp" id="txtTelefono" value=@Model.Telefono>
                         </div>
                     </div>
 
                     <div>
                         <label for="staticEmail" class=" tituloGeneralTres">Cedula juridica</label>
                         <div class="col-sm-10">
-                            <input type="text" name="CedulaJuridica" class="form-control formPupUp" id="txtCedulaJuridica" value="3-123-895170">
+                            <input type="text" name="CedulaJuridica" class="form-control formPupUp" id="txtCedulaJuridica" value=@Model.CedulaJuridica>
                         </div>
                     </div>
 
                     <div>
                         <label for="staticEmail" class=" tituloGeneralTres">Razón social</label>
                         <div class="col-sm-10">
-                            <input type="text" name="RazonSocial" class="form-control formPupUp" id="txtRazonSocial" value="Laboratorios para examenes">
+                            <input type="text" name="RazonSocial" class="form-control formPupUp" id="txtRazonSocial" value=@Model.RazonSocial>
                         </div>
                     </div>
 
                     <div>
                         <label for="staticEmail" class=" tituloGeneralTres">Pagina web</label>
                         <div class="col-sm-10">
-                            <input type="text" name="PaginaWeb" class="form-control formPupUp" id="txtPaginaWeb" value="thelab.com">
+                            <input type="text" name="PaginaWeb" class="form-control formPupUp" id="txtPaginaWeb" value=@Model.PaginaWeb>
                         </div>
                     </div>
 
                     <div>
                         <label for="staticEmail" class=" tituloGeneralTres">Red social</label>
                         <div class="col-sm-10">
-                            <input type="text" name="RedSocial" class="form-control formPupUp" id="txtRedSocial" value="@("@")thelab">
+                            <input type="text" name="RedSocial" class="form-control formPupUp" id="txtRedSocial" value=@Model.RazonSocial>
                         </div>
                     </div>
+                    <div>
+                        <label for="staticEmail" class=" tituloGeneralTres">Direccion</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="Direccion" class="form-control formPupUp" id="txtRedSocial" value=@Model.Direccion>
+                        </div>
+                    </div>
+                    @{
+                        
+                    <div style="display:none">
 
+
+                        <input id="sessionLabId" value=@Model.LaboratorioId name="LaboratorioId" />
+                        <input id="sessionLabId" value=@Model.Estado name="Estado" />
+
+                    </div>
+                    }
                     <div class="modal-footer">
                         <button id="btnActualizarCliente" type="submit" class="btn btn-primary" mt-1">Guardar</button>
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
