@@ -24,9 +24,6 @@
                     <h5><strong>@u.Nombre</strong></h5>
                 </div>
                 <div class="card-body">
-                    <div class="text-center mb-2" style="max-height:12rem">
-                        <h5><strong>PENDIENTE TBD</strong></h5>
-                    </div>
                     <div class="container" style="min-height:12rem">
                         <p class="card-text">@u.Descripcion</p>
                     </div>
@@ -45,7 +42,10 @@
                                 <input value=@u.Precio name="Precio" />
                             </div>
                             }
-                            <button onclick="myfuncionGeneralCarrito()" class="btn btn-outline-primary" type="submit">
+                            <button 
+                                    onclick="myfuncionGeneralCarrito()" 
+                                    class="btn btn-outline-primary" 
+                                    type="submit">
                                 Añadir al carrito
                             </button>
                         </form>
