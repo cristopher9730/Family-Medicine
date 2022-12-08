@@ -63,7 +63,7 @@ namespace FamilyMedicine.Controllers
 
             componente.LaboratorioId = usuario.LaboratorioId;
 
-            var urlPrincipal = "https://localhost:44391"; //TBD cambiar al de la nube
+            var urlPrincipal = "https://familymedicine-api.azurewebsites.net"; //TBD cambiar al de la nube
 
             var url = urlPrincipal + "/api/Componente/RegistrarComponente";
 
@@ -112,7 +112,7 @@ namespace FamilyMedicine.Controllers
             //Esto recibe la lista de examenes del Back End 
             List<Examen> apiRespuestaExamen;
 
-            var urlPrincipal = "https://localhost:44391"; //Esto hay que cambiarlo antes de hacer publish 
+            var urlPrincipal = "https://familymedicine-api.azurewebsites.net"; //Esto hay que cambiarlo antes de hacer publish 
 
             var url = urlPrincipal + "/api/Examen/ObtenerListaExamenes";
 

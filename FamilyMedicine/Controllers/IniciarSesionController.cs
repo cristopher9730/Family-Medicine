@@ -58,7 +58,7 @@ namespace FamilyMedicine.Controllers
         {
             Usuario apiRespuestaUsuario;
 
-            var urlPrincipal = "https://localhost:44391";
+            var urlPrincipal = "https://familymedicine-api.azurewebsites.net";
 
             var url = urlPrincipal + "/api/Login/ValidarUsaurio";
 
@@ -87,7 +87,7 @@ namespace FamilyMedicine.Controllers
                 //Session["nombreUsuario"] = apiRespuestaUsuario.Nombre;
                 //Session["primerApellido"] = apiRespuestaUsuario.PrimerApellido;
                 //Session["segundoApellido"] = apiRespuestaUsuario.SegundoApellido;
-                //Session["Correo"] = apiRespuestaUsuario.Correo;
+                Session["Correo"] = apiRespuestaUsuario.Correo;
                 //Session["Clave"] = apiRespuestaUsuario.Clave;
                 //Session["telefono"] = apiRespuestaUsuario.Telefono;
                 //Session["FotoUsuario"] = apiRespuestaUsuario.Foto;

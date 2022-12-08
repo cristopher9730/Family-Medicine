@@ -51,6 +51,7 @@
     <Compile Include="Laboratorio.cs" />
     <Compile Include="Membresia.cs" />
     <Compile Include="OTP.cs" />
+    <Compile Include="Resultado.cs" />
     <Compile Include="Rol.cs" />
     <Compile Include="Promocion.cs" />
     <Compile Include="Usuario.cs" />

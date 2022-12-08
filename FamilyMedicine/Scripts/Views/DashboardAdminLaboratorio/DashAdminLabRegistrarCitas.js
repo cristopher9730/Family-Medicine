@@ -63,7 +63,7 @@
             },
             ajax: {
                 method: "GET",
-                url: "https://localhost:44391/api/Horario/ObtenerListaHorariosPorId?id=" + id,
+                url: "https://familymedicine-api.azurewebsites.net/api/Horario/ObtenerListaHorariosPorId?id=" + id,
                 contentType: "application/json;charset=utf-8",
                 dataSrc: function (json) {
                     var json = { 'data': json }

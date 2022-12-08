@@ -32,7 +32,7 @@
             },
             ajax:{
                 method: "GET",
-                url: "https://localhost:44391/api/Promocion/ObtenerListaPromociones",
+                url: "https://familymedicine-api.azurewebsites.net/api/Promocion/ObtenerListaPromociones",
                 contentType: "application/json;charset=utf-8",
                 dataSrc: function (json) {
                     var json = { 'data': json }
@@ -60,7 +60,7 @@
                 'Content-Type': "application/json"
             },
             method: "POST",
-            url: "https://localhost:44391/api/Promocion/RegistrarPromocion",
+            url: "https://familymedicine-api.azurewebsites.net/api/Promocion/RegistrarPromocion",
             contentType: "application/json",
             data: JSON.stringify(cupon),
             hasContent: true

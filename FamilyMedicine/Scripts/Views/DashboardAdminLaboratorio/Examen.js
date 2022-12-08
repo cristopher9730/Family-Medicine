@@ -33,7 +33,7 @@
             },
             ajax: {
                 method: "GET",
-                url: "https://localhost:44391/api/Examen/ObtenerListaExamenesPorId?id=" + id,
+                url: "https://familymedicine-api.azurewebsites.net/api/Examen/ObtenerListaExamenesPorId?id=" + id,
                 contentType: "application/json;charset=utf-8",
                 dataSrc: function (json) {
                     var json = { 'data': json }
@@ -60,7 +60,7 @@
                 'Content-Type': "application/json"
             },
             method: "POST",
-            url: "https://localhost:44391/api/Examen/RegistrarExamen",
+            url: "https://familymedicine-api.azurewebsites.net/api/Examen/RegistrarExamen",
             contentType: "application/json",
             data: JSON.stringify(examen),
             hasContent: true
