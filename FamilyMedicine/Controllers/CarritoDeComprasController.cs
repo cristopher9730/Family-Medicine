@@ -15,40 +15,48 @@ namespace FamilyMedicine.Controllers
         public ActionResult CarritoDeCompras()
         {
 
-            //esto simula una sesion activa y hay que borrarlo cuando ya exista un usuario con laboratorioId 
-            Usuario usuario = new Usuario();
-            usuario.LaboratorioId = 1;
-            Session["usuario"] = usuario;
-            Usuario usuarioLaboratorio = (Usuario)(Session["usuario"]);
-            //esto simula una sesion activa
+            ////esto simula una sesion activa y hay que borrarlo cuando ya exista un usuario con laboratorioId 
+            //Usuario usuario = new Usuario();
+            //usuario.LaboratorioId = 1;
+            //Session["usuario"] = usuario;
+            //Usuario usuarioLaboratorio = (Usuario)(Session["usuario"]);
+            ////esto simula una sesion activa
 
-            //Esto recibe la lista de examenes del Back End 
-            List<Examen> apiRespuestaExamen;
+            ////Esto recibe la lista de examenes del Back End 
+            //List<Examen> apiRespuestaExamen;
 
-            var urlPrincipal = "https://localhost:44391"; //Esto hay que cambiarlo antes de hacer publish 
+            //var urlPrincipal = "https://localhost:44391"; //Esto hay que cambiarlo antes de hacer publish 
 
-            var url = urlPrincipal + "/api/Examen/ObtenerListaExamenes";
+            //var url = urlPrincipal + "/api/Examen/ObtenerListaExamenes";
 
-            var cliente = new HttpClient();
-            cliente.BaseAddress = new Uri(url);
+            //var cliente = new HttpClient();
+            //cliente.BaseAddress = new Uri(url);
 
-            var result = cliente.GetAsync(url).Result;
+            //var result = cliente.GetAsync(url).Result;
 
-            if (result.IsSuccessStatusCode)
-            {
-                string jsonObject = result.Content.ReadAsStringAsync().Result;
-                apiRespuestaExamen = JsonConvert.DeserializeObject<List<Examen>>(jsonObject);
-            }
-            else
-                throw new Exception(result.Content.ReadAsStringAsync().Result);
+            //if (result.IsSuccessStatusCode)
+            //{
+            //    string jsonObject = result.Content.ReadAsStringAsync().Result;
+            //    apiRespuestaExamen = JsonConvert.DeserializeObject<List<Examen>>(jsonObject);
+            //}
+            //else
+            //    throw new Exception(result.Content.ReadAsStringAsync().Result);
 
             List<Examen> listaFinal = new List<Examen>();
 
-            foreach (var u in apiRespuestaExamen)
+            //foreach (var u in apiRespuestaExamen)
+            //{
+            //    listaFinal.Add(u);
+            //}
+
+            for (int i = 1; i <= Convert.ToInt32(Session["conteo"]); i++)
             {
-                listaFinal.Add(u);
+                Examen examen = new Examen();
+                examen = (Examen)(Session["examenCarrito" + i]);
+                listaFinal.Add(examen);
+
             }
-     
+
             return View("CarritoDeCompras", listaFinal);
         }
     }

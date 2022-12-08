@@ -11,7 +11,7 @@ namespace AppLogic
 {
     public class AdminCompra
     {
-
+        private List<Examen> carritoCompras = new List<Examen>();
         public AdminCompra()
         {
 
@@ -48,6 +48,16 @@ namespace AppLogic
             CompraCrudFactory compraCrud = new CompraCrudFactory();
 
             return compraCrud.ListarPorID<Compra>(compra.CompraId);
+        }
+
+        public void CarritoCompras(Examen examen)
+        {
+            carritoCompras.Add(examen);
+        }
+
+        public List<Examen> ObtenerCarritoCompras()
+        {
+            return carritoCompras;
         }
 
     }
