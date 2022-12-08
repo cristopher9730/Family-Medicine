@@ -42,22 +42,31 @@ namespace FamilyMedicine.Controllers
             //else
             //    throw new Exception(result.Content.ReadAsStringAsync().Result);
 
-            List<Examen> listaFinal = new List<Examen>();
+
 
             //foreach (var u in apiRespuestaExamen)
             //{
             //    listaFinal.Add(u);
             //}
 
-            for (int i = 1; i <= Convert.ToInt32(Session["conteo"]); i++)
+            if (Session["usuario"] != null)
             {
-                Examen examen = new Examen();
-                examen = (Examen)(Session["examenCarrito" + i]);
-                listaFinal.Add(examen);
+                List<Examen> listaFinal = new List<Examen>();
 
+                for (int i = 1; i <= Convert.ToInt32(Session["conteo"]); i++)
+                {
+                    Examen examen = new Examen();
+                    examen = (Examen)(Session["examenCarrito" + i]);
+                    listaFinal.Add(examen);
+
+                }
+
+                return View("CarritoDeCompras", listaFinal);
             }
-
-            return View("CarritoDeCompras", listaFinal);
+            else
+            {
+                return RedirectToAction("Login", "IniciarSesion");
+            }
         }
     }
 }

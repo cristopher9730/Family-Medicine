@@ -64,42 +64,50 @@ namespace FamilyMedicine.Controllers
         [HttpPost]
         public ActionResult BusquedaExamen(Examen examen)
         {
-            Usuario usuario = new Usuario();
-            usuario = (Usuario)(Session["usuario"]);
-            examen.SesionUsuarioId = usuario.UsuarioId;
 
-            i++;
-            Session["examenCarrito" + i] = examen;
-            Session["conteo"] = i;
+            if (Session["usuario"] != null)
+            {
+                Usuario usuario = new Usuario();
+                usuario = (Usuario)(Session["usuario"]);
+                examen.SesionUsuarioId = usuario.UsuarioId;
 
-            //List<Examen> carritoCompras = (List<Examen>)(Session["carritoCompras"]);
+                i++;
+                Session["examenCarrito" + i] = examen;
+                Session["conteo"] = i;
 
-
-
-
-            //var url = "https://familymedicine-api.azurewebsites.net/api/Compra/CarritoCompras";
-
-            //var cliente = new HttpClient();
-            //cliente.BaseAddress = new Uri(url);
-            //var stringContent = new StringContent(JsonConvert.SerializeObject(examen), Encoding.UTF8, "application/json");
-
-
-            //var result = cliente.PostAsync(url, stringContent).Result;
-
-            //if (result.IsSuccessStatusCode)
-            //{
-            //    ViewBag.Message = "Produto agregado correctamente";
-            //}
-            //else
-            //    throw new Exception(result.Content.ReadAsStringAsync().Result);
+                //List<Examen> carritoCompras = (List<Examen>)(Session["carritoCompras"]);
 
 
 
-            List<Examen> listaFinal = new List<Examen>();
-            listaFinal = this.generarExamenes();
+
+                //var url = "https://familymedicine-api.azurewebsites.net/api/Compra/CarritoCompras";
+
+                //var cliente = new HttpClient();
+                //cliente.BaseAddress = new Uri(url);
+                //var stringContent = new StringContent(JsonConvert.SerializeObject(examen), Encoding.UTF8, "application/json");
 
 
-            return View("BusquedaExamen", listaFinal);
+                //var result = cliente.PostAsync(url, stringContent).Result;
+
+                //if (result.IsSuccessStatusCode)
+                //{
+                //    ViewBag.Message = "Produto agregado correctamente";
+                //}
+                //else
+                //    throw new Exception(result.Content.ReadAsStringAsync().Result);
+
+
+
+                List<Examen> listaFinal = new List<Examen>();
+                listaFinal = this.generarExamenes();
+
+
+                return View("BusquedaExamen", listaFinal);
+            }
+            else
+            {
+                return RedirectToAction("Login", "IniciarSesion");
+            }
         }
         public ActionResult BusquedaExamen()
         {

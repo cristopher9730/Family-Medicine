@@ -16,14 +16,23 @@ namespace FamilyMedicine.Controllers
 
         public ActionResult DashAdminLabDatosLaboratorio()
         {
-            return View();
+            if (Session["usuario"] != null)
+            {
+                Laboratorio laboratorio = ObtenerLaboratorio();
+                return View(laboratorio);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            
         }
 
         [HttpPost]
         public ActionResult DashAdminLabDatosLaboratorio(Laboratorio laboratorio)
         {
 
-            var urlPrincipal = "https://familymedicine.azurewebsites.net";
+            var urlPrincipal = "https://localhost:44391";
             var url = urlPrincipal + "/api/Laboratorio/ActualizarLaboratorio";
 
             var stringContent = new StringContent(JsonConvert.SerializeObject(laboratorio), Encoding.UTF8, "application/json");
@@ -40,7 +49,9 @@ namespace FamilyMedicine.Controllers
             else
                 throw new Exception(result.Content.ReadAsStringAsync().Result);
 
-            return View();
+            
+            return View(laboratorio);
+
         }
 
         public ActionResult DashAdminLabHistorialVentas()
@@ -165,9 +176,49 @@ namespace FamilyMedicine.Controllers
 
             return apiRespuestaExamen;
         }
+
+
+        public Laboratorio ObtenerLaboratorio()
+        {
+            Usuario usuarioLaboratorio = (Usuario)(Session["usuario"]);
+
+            List<Laboratorio> apiRespuestaLaboratorio = new List<Laboratorio>();
+
+            //var urlPrincipal = "https://familymedicine-api.azurewebsites.net"; //Esto hay que cambiarlo antes de hacer publish 
+
+            var url = "https://familymedicine-api.azurewebsites.net/api/Laboratorio/ObtenerListaLaboratorios";
+
+            var cliente = new HttpClient();
+            cliente.BaseAddress = new Uri(url);
+
+            var result = cliente.GetAsync(url).Result;
+
+            if (result.IsSuccessStatusCode)
+            {
+                string jsonObject = result.Content.ReadAsStringAsync().Result;
+                apiRespuestaLaboratorio = JsonConvert.DeserializeObject<List<Laboratorio>>(jsonObject);
+            }
+            else
+                throw new Exception(result.Content.ReadAsStringAsync().Result);
+
+            Laboratorio laboratorio = new Laboratorio();
+
+            foreach (var u in apiRespuestaLaboratorio)
+            {
+                if (u.LaboratorioId == usuarioLaboratorio.LaboratorioId)
+                {
+                    laboratorio = u;
+                }
+            }
+
+            return laboratorio;
+        }
+        
         public ActionResult Cupones()
         {
             return View();
         }
+
+
     }
 }
