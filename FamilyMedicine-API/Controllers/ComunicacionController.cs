@@ -27,18 +27,18 @@ namespace FamilyMedicine_API.Controllers
 
         }
 
-        public IHttpActionResult EnviarSMS(Usuario usuario)
-        {
-            try
-            {
-                AdminSMS sms = new AdminSMS();
-                sms.EnviarSMS(usuario);
-                return Ok();
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
+        //public IHttpActionResult EnviarSMS(Usuario usuario)
+        //{
+        //    try
+        //    {
+        //        AdminSMS sms = new AdminSMS();
+        //        sms.EnviarSMS(usuario);
+        //        return Ok();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return BadRequest(ex.Message);
+        //    }
+        //}
     }
 }
