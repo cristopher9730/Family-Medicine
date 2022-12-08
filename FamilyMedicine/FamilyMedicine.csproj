@@ -280,6 +280,7 @@
     <Content Include="Scripts\Views\DashboardAdminLaboratorio\Examen.js" />
     <Content Include="Scripts\Views\DashboardAdminLaboratorio\registarLaboratorio.js" />
     <Content Include="Scripts\Views\DashboardAdminLaboratorio\personal.js" />
+    <Content Include="Scripts\Views\DashboardAdminLaboratorio\Ventas.js" />
     <Content Include="Scripts\Views\dashboardUsuario\DashboardCliente.js" />
     <Content Include="Scripts\Views\dashboardUsuario\DashboardValidacion.js" />
     <Content Include="Scripts\Views\recuperarPass.js" />
