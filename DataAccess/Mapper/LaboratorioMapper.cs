@@ -29,8 +29,8 @@ namespace DataAccess.Mapper
             operacion.AddVarcharParam("CedulaJuridica", laboratorio.CedulaJuridica);
             operacion.AddVarcharParam("RazonSocial", laboratorio.RazonSocial);
             operacion.AddVarcharParam("Estado", laboratorio.Estado);
-            //operacion.AddVarcharParam("PaginaWeb", laboratorio.PaginaWeb);
-            //operacion.AddVarcharParam("RedSocial", laboratorio.RedSocial);
+            operacion.AddVarcharParam("PaginaWeb", laboratorio.PaginaWeb);
+            operacion.AddVarcharParam("RedSocial", laboratorio.RedSocial);
 
             return operacion;
 
@@ -55,8 +55,8 @@ namespace DataAccess.Mapper
             operacion.AddVarcharParam("CedulaJuridica", laboratorio.CedulaJuridica);
             operacion.AddVarcharParam("RazonSocial", laboratorio.RazonSocial);
             operacion.AddVarcharParam("Estado", laboratorio.Estado);
-            //operacion.AddVarcharParam("PaginaWeb", laboratorio.PaginaWeb);
-            //operacion.AddVarcharParam("RedSocial", laboratorio.RedSocial);
+            operacion.AddVarcharParam("PaginaWeb", laboratorio.PaginaWeb);
+            operacion.AddVarcharParam("RedSocial", laboratorio.RedSocial);
 
             return operacion;
         }
