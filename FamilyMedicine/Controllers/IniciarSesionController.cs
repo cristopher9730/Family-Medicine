@@ -216,8 +216,7 @@ namespace FamilyMedicine.Controllers
 
             if (result.IsSuccessStatusCode)
             {
-                ViewBag.Message = "Correo enviado correctamente";
-                return View();
+                return RedirectToAction("Login", "IniciarSesion");
             }
             else
                 throw new Exception(result.Content.ReadAsStringAsync().Result);
