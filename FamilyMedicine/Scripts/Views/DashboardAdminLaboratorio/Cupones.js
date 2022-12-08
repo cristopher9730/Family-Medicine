@@ -47,9 +47,9 @@
         var cupon = {}
         cupon.PromocionDescripcion = $("#txtNombre").val();
         cupon.Descuento = $("#txtPorcentaje").val();
-        cupon.LaboratorioId = 1;
+        cupon.LaboratorioId = $("#sessionLabId").val();
         cupon.EstadoPromocion = "Activo";
-        cupon.UsuarioId = 1;
+        cupon.UsuarioId = $("#sessionUsuarioId").val();
         cupon.FechaDeVencimiento = $("#txtFecha").val();
         cupon.Usos = 0;
         cupon.Codigo = Math.round(Math.random() * 999999);
