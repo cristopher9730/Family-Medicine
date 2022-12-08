@@ -15,7 +15,7 @@
 
         var lab = $("#session").val();
 
-        api = "https://localhost:44391/api/Componente/ObtenerListaComponentesPorId/?id=" + lab; //Recordar cambiar por el que hay en la nube
+        api = "https://familymedicine-api.azurewebsites.net/api/Componente/ObtenerListaComponentesPorId/?id=" + lab; //Recordar cambiar por el que hay en la nube
         $('#datosComponente').DataTable({
             "language": {
                 "paginate": {

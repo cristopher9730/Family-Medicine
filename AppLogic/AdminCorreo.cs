@@ -16,7 +16,7 @@ namespace AppLogic
         public void EviarEmailBienvenida(Usuario usuario)
         {
             string asunto = "Bienvenido a Family Medicine";
-            string contenido = "Confirme su identidad con el siguiente token: " + usuario.Codigo;
+            string contenido = "Confirme su identidad con el siguiente código: " + usuario.Codigo;
             SendGmail(usuario, asunto, contenido);
 
         }
@@ -32,7 +32,7 @@ namespace AppLogic
         public void EviarEmailRecuperarOTP(Usuario usuario)
         {
             string asunto = "Family Medicine Recuperar OTP";
-            string contenido = "Para cambiar OTP su  utilice siguiente token:  : " + usuario.Codigo;
+            string contenido = "Para cambiar el OTP  utilice el siguiente código:  : " + usuario.Codigo;
             SendGmail(usuario, asunto, contenido);
 
         }

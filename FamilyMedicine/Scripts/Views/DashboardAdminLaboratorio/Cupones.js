@@ -32,7 +32,7 @@
             },
             ajax:{
                 method: "GET",
-                url: "https://localhost:44391/api/Promocion/ObtenerListaPromociones",
+                url: "https://familymedicine-api.azurewebsites.net/api/Promocion/ObtenerListaPromociones",
                 contentType: "application/json;charset=utf-8",
                 dataSrc: function (json) {
                     var json = { 'data': json }
@@ -47,9 +47,9 @@
         var cupon = {}
         cupon.PromocionDescripcion = $("#txtNombre").val();
         cupon.Descuento = $("#txtPorcentaje").val();
-        cupon.LaboratorioId = 1;
+        cupon.LaboratorioId = $("#sessionLabId").val();
         cupon.EstadoPromocion = "Activo";
-        cupon.UsuarioId = 1;
+        cupon.UsuarioId = $("#sessionUsuarioId").val();
         cupon.FechaDeVencimiento = $("#txtFecha").val();
         cupon.Usos = 0;
         cupon.Codigo = Math.round(Math.random() * 999999);
@@ -60,7 +60,7 @@
                 'Content-Type': "application/json"
             },
             method: "POST",
-            url: "https://localhost:44391/api/Promocion/RegistrarPromocion",
+            url: "https://familymedicine-api.azurewebsites.net/api/Promocion/RegistrarPromocion",
             contentType: "application/json",
             data: JSON.stringify(cupon),
             hasContent: true

@@ -24,7 +24,7 @@ namespace FamilyMedicine.Controllers
 
             OTP apiRespuestaOTP;
 
-            var urlPrincipal = "https://localhost:44391";
+            var urlPrincipal = "https://familymedicine-api.azurewebsites.net";
 
             var url = urlPrincipal + "/api/OTP/ObtenerUnaOTP";
 
