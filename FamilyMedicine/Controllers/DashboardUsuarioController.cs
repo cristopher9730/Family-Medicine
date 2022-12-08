@@ -22,7 +22,7 @@ namespace FamilyMedicine.Controllers
         {
             Usuario SessionUsuario = (Usuario) (Session["usuario"]);
             usuario.UsuarioId = SessionUsuario.UsuarioId;
-            var urlPrincipal = "https://localhost:44391";
+            var urlPrincipal = "https://familymedicine-api.azurewebsites.net";
             // Pendiente acutualizar los datos en session 
             var url = urlPrincipal + "/api/Usuario/ActualizarDatos";
 
@@ -45,17 +45,11 @@ namespace FamilyMedicine.Controllers
 
         public ActionResult DashBoardCitas()
         {
-            //esto simula una sesion activa y hay que borrarlo cuando ya exista un usuario con laboratorioId 
-            Usuario usuario = new Usuario();
-            usuario.LaboratorioId = 1;
-            Session["usuario"] = usuario;
-            Usuario usuarioLaboratorio = (Usuario)(Session["usuario"]);
-            //esto simula una sesion activa
 
             //Esto recibe la lista de examenes del Back End 
             List<Examen> apiRespuestaExamen;
 
-            var urlPrincipal = "https://localhost:44391"; //Esto hay que cambiarlo antes de hacer publish 
+            var urlPrincipal = "https://familymedicine-api.azurewebsites.net"; //Esto hay que cambiarlo antes de hacer publish 
 
             var url = urlPrincipal + "/api/Examen/ObtenerListaExamenes";
 

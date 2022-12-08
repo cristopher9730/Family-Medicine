@@ -17,16 +17,16 @@ namespace FamilyMedicine.Controllers
         public ActionResult Busqueda()
         {
             //esto simula una sesion activa y hay que borrarlo cuando ya exista un usuario con laboratorioId 
-            Usuario usuario = new Usuario();
-            usuario.LaboratorioId = 1;
-            Session["usuario"] = usuario;
+            //Usuario usuario = new Usuario();
+            //usuario.LaboratorioId = 1;
+            //Session["usuario"] = usuario;
             Usuario usuarioLaboratorio = (Usuario)(Session["usuario"]);
             //esto simula una sesion activa
 
             //Esto recibe la lista de examenes del Back End 
             List<Laboratorio> apiRespuestaLaboratorio;
 
-            var urlPrincipal = "https://localhost:44391"; //Esto hay que cambiarlo antes de hacer publish 
+            var urlPrincipal = "https://familymedicine-api.azurewebsites.net"; //Esto hay que cambiarlo antes de hacer publish 
 
             var url = urlPrincipal + "/api/Laboratorio/ObtenerListaLaboratorios";
 
@@ -77,7 +77,7 @@ namespace FamilyMedicine.Controllers
 
 
 
-            //var url = "https://localhost:44391/api/Compra/CarritoCompras";
+            //var url = "https://familymedicine-api.azurewebsites.net/api/Compra/CarritoCompras";
 
             //var cliente = new HttpClient();
             //cliente.BaseAddress = new Uri(url);
@@ -115,7 +115,7 @@ namespace FamilyMedicine.Controllers
         {
             List<Examen> apiRespuestaExamen;
 
-            var urlPrincipal = "https://localhost:44391"; //Esto hay que cambiarlo antes de hacer publish 
+            var urlPrincipal = "https://familymedicine-api.azurewebsites.net"; //Esto hay que cambiarlo antes de hacer publish 
 
             var url = urlPrincipal + "/api/Examen/ObtenerListaExamenes";
 

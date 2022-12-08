@@ -24,7 +24,7 @@ namespace FamilyMedicine.Controllers
 
             OTP apiRespuestaOTP;
 
-            var urlPrincipal = "https://localhost:44391";
+            var urlPrincipal = "https://familymedicine-api.azurewebsites.net";
 
             var url = urlPrincipal + "/api/OTP/ObtenerUnaOTP";
 
@@ -45,12 +45,12 @@ namespace FamilyMedicine.Controllers
 
             if (apiRespuestaOTP.OTPId !=0)
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("DashboardUsuario", "DashboardUsuario");
             }
             else
             {
                 ViewBag.Message = "Codigo incorrecto";
-                return RedirectToAction("Login", "IniciarSesion");
+                return RedirectToAction("OTP", "OTP");
             }
             
         }

@@ -58,7 +58,7 @@ namespace FamilyMedicine.Controllers
         {
             Usuario apiRespuestaUsuario;
 
-            var urlPrincipal = "https://localhost:44391";
+            var urlPrincipal = "https://familymedicine-api.azurewebsites.net";
 
             var url = urlPrincipal + "/api/Login/ValidarUsaurio";
 
@@ -83,19 +83,19 @@ namespace FamilyMedicine.Controllers
                 }
 
 
-                //Session["UsuarioId"] = apiRespuestaUsuario.UsuarioId;
-                //Session["nombreUsuario"] = apiRespuestaUsuario.Nombre;
-                //Session["primerApellido"] = apiRespuestaUsuario.PrimerApellido;
-                //Session["segundoApellido"] = apiRespuestaUsuario.SegundoApellido;
-                //Session["Correo"] = apiRespuestaUsuario.Correo;
-                //Session["Clave"] = apiRespuestaUsuario.Clave;
-                //Session["telefono"] = apiRespuestaUsuario.Telefono;
-                //Session["FotoUsuario"] = apiRespuestaUsuario.Foto;
-                //Session["Estado"] = apiRespuestaUsuario.Estado;
-                //Session["LaboratorioId"] = apiRespuestaUsuario.LaboratorioId;
-                //Session["MembresiaId"] = apiRespuestaUsuario.MembresiaId;
-                //Session["RolId"] = apiRespuestaUsuario.RolId;
-                //Session["Codigo"] = apiRespuestaUsuario.Codigo;
+                Session["UsuarioId"] = apiRespuestaUsuario.UsuarioId;
+                Session["nombreUsuario"] = apiRespuestaUsuario.Nombre;
+                Session["primerApellido"] = apiRespuestaUsuario.PrimerApellido;
+                Session["segundoApellido"] = apiRespuestaUsuario.SegundoApellido;
+                Session["Correo"] = apiRespuestaUsuario.Correo;
+                Session["Clave"] = apiRespuestaUsuario.Clave;
+                Session["telefono"] = apiRespuestaUsuario.Telefono;
+                Session["FotoUsuario"] = apiRespuestaUsuario.Foto;
+                Session["Estado"] = apiRespuestaUsuario.Estado;
+                Session["LaboratorioId"] = apiRespuestaUsuario.LaboratorioId;
+                Session["MembresiaId"] = apiRespuestaUsuario.MembresiaId;
+                Session["RolId"] = apiRespuestaUsuario.RolId;
+                Session["Codigo"] = apiRespuestaUsuario.Codigo;
 
 
                 if (apiRespuestaUsuario.Estado.Equals("Pendiente"))
