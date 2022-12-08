@@ -61,7 +61,7 @@ namespace FamilyMedicine.Controllers
             Usuario usuarioLaboratorio = (Usuario)(Session["usuario"]);
             //esto simula una sesion activa
 
-            componente.LaboratorioId = usuario.LaboratorioId;
+            componente.LaboratorioId = usuarioLaboratorio.LaboratorioId;
 
             var urlPrincipal = "https://familymedicine-api.azurewebsites.net"; //TBD cambiar al de la nube
 
