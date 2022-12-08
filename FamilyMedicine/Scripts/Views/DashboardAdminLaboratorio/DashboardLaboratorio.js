@@ -1,8 +1,8 @@
-﻿function ActualizarLaboratorio() {
+﻿function DashboardLaboratorio() {
 
     this.InitView = function () {
         $("#btnActualizarCliente").click(function () {
-            var vista = new ActualizarLaboratorio();
+            var vista = new DashboardLaboratorio();
             vista.ActualizarLaboratorio();
         });
         this.CargarTabla();
@@ -10,10 +10,10 @@
 
     this.ActualizarLaboratorio = function() {
         var laboratorio = {}
-        laboratorio.UsuarioPropietarioId = Session["UsuarioPropietarioId"];
+        laboratorio.LaboratorioId = Session["LaboratorioId"];
         laboratorio.NombreLaboratorio = $("#txtNombreLaboratorio").val();
-        laboratorio.CorreoLaboratorio = $("#txtCorreoLaboratorio").val();
         laboratorio.Telefono = $("#txtTelefono").val();
+        laboratorio.CorreoLaboratorio = $("#txtCorreoLaboratorio").val();
         laboratorio.CedulaJuridica = $("#txtCedulaJuridica").val();
         laboratorio.RazonSocial = $("#txtRazonSocial").val();
         laboratorio.PaginaWeb = $("#txtPaginaWeb").val();
