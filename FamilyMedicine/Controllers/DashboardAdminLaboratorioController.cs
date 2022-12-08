@@ -22,8 +22,7 @@ namespace FamilyMedicine.Controllers
         [HttpPost]
         public ActionResult DashAdminLabDatosLaboratorio(Laboratorio laboratorio)
         {
-            Laboratorio SessionLaboratorio = (Laboratorio) (Session["laboratorio"]);
-            laboratorio.LaboratorioId = SessionLaboratorio.LaboratorioId;
+
             var urlPrincipal = "https://familymedicine.azurewebsites.net";
             var url = urlPrincipal + "/api/Laboratorio/ActualizarLaboratorio";
 

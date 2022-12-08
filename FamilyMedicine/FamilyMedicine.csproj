@@ -274,7 +274,7 @@
     <Content Include="Scripts\Views\ControlAcciones.js" />
     <Content Include="Scripts\Views\DashboardAdminApp\Laboratorio.js" />
     <Content Include="Scripts\Views\DashboardAdminApp\Usuarios.js" />
-    <Content Include="Scripts\Views\DashboardAdminLaboratorio\ActualizarLaboratorio.js" />
+    <Content Include="Scripts\Views\DashboardAdminLaboratorio\DashboardLaboratorio.js" />
     <Content Include="Scripts\Views\DashboardAdminLaboratorio\Componente.js" />
     <Content Include="Scripts\Views\DashboardAdminLaboratorio\Cupones.js" />
     <Content Include="Scripts\Views\DashboardAdminLaboratorio\DashAdminLabRegistrarCitas.js" />
