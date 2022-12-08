@@ -299,15 +299,9 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\Login.cshtml" />
-    <Content Include="Views\Home\RegistrarCita.cshtml" />
-    <Content Include="Views\Home\RegistrarUsuario.cshtml" />
-    <Content Include="Views\Home\OTP.cshtml" />
     <Content Include="Views\Shared\_LayoutBusqueda.cshtml" />
-    <Content Include="Views\Home\Busqueda.cshtml" />
     <Content Include="Views\DashboardUsuario\DashBoardCitas.cshtml" />
     <Content Include="Views\Shared\_DashboardLayout.cshtml" />
     <Content Include="Views\DashboardAdminLaboratorio\DashAdminLabDatosLaboratorio.cshtml" />
@@ -323,11 +317,7 @@
     <Content Include="Views\Footer\Contactenos.cshtml" />
     <Content Include="Views\Footer\TerminosCondiciones.cshtml" />
     <Content Include="Views\Footer\PreguntasFrecuentes.cshtml" />
-    <Content Include="Views\Home\forgotPassword.cshtml" />
-    <Content Include="Views\Home\CarritoDeCompras.cshtml" />
     <Content Include="Views\Laboratorios\PerfilDeLaboratorio.cshtml" />
-    <Content Include="Views\Home\LandingPage.cshtml" />
-    <Content Include="Views\Home\BusquedaExamen.cshtml" />
     <Content Include="Views\DashboardAdminLaboratorio\Cupones.cshtml" />
     <Content Include="Views\CarritoDeCompras\CarritoDeCompras.cshtml" />
     <Content Include="Views\Busquedas\Busqueda.cshtml" />
@@ -345,6 +335,7 @@
     <Content Include="Views\DashboardAdminLaboratorio\Examen.cshtml" />
     <Content Include="Views\DashboardAdminLaboratorio\Horarios.cshtml" />
     <Content Include="Views\DashboardAdminLaboratorio\Resultados.cshtml" />
+    <Content Include="Views\Home\LandingViejo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

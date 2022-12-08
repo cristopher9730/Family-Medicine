@@ -7,7 +7,6 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <link rel="shortcut icon" href="~/Content/imgs/logos/logoConColor.png" />
-    <link rel="stylesheet" href="~/Content/css/sweetalert.css" />
 
     <script src="https://kit.fontawesome.com/e77fc0ae51.js" crossorigin="anonymous"></script>
 </head>
@@ -41,7 +40,7 @@
                             @if (Session["dashboard"] == null)
                             {
                                 <form class="d-flex">
-                                    <input class="form-control me-sm-2" type="text" placeholder="Buscar Exámen">
+                                    <input class="form-control me-sm-2" type="text" placeholder="Buscar Examen">
                                     <a> @Html.ActionLink("Buscar", "BusquedaExamen", "Busquedas", new { area = "" }, new { @class = "btn btn-secondary my-2 my-sm-0" })</a>
                                 </form>
                             }

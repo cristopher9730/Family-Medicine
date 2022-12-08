@@ -54,10 +54,10 @@ namespace FamilyMedicine.Controllers
         [HttpPost]
         public ActionResult Componentes(Componente componente)
         {
-            //esto simula una sesion activa y hay que borrarlo cuando ya exista un usuario con laboratorioId 
-            Usuario usuario = new Usuario();
-            usuario.LaboratorioId = 1;
-            Session["usuario"] = usuario;
+            //esto simula una sesion activa y hay que borrarlo cuando ya exista un usuario con laboratorioId
+            //Usuario usuario = new Usuario();
+            //usuario.LaboratorioId = 1;
+            //Session["usuario"] = usuario;
             Usuario usuarioLaboratorio = (Usuario)(Session["usuario"]);
             //esto simula una sesion activa
 
@@ -99,12 +99,12 @@ namespace FamilyMedicine.Controllers
 
         public List<Examen> GenerarExamenesSelect()
         {
-            //esto simula una sesion activa y hay que borrarlo cuando ya exista un usuario con laboratorioId 
-            Usuario usuario = new Usuario();
-            usuario.LaboratorioId = 1;
-            Session["usuario"] = usuario;
+            ////esto simula una sesion activa y hay que borrarlo cuando ya exista un usuario con laboratorioId 
+            //Usuario usuario = new Usuario();
+            //usuario.LaboratorioId = 1;
+            //Session["usuario"] = usuario;
             Usuario usuarioLaboratorio = (Usuario)(Session["usuario"]);
-            //esto simula una sesion activa
+            ////esto simula una sesion activa
 
 
 
