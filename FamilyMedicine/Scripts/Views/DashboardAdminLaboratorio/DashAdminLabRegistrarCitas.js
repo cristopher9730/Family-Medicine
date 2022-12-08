@@ -15,6 +15,7 @@
         horario.HoraFin = $("#txtHoraFinal").val();
         horario.Cupos = $("#txtCuposDisponibles").val();
         horario.ExamenId = $("#examenesId").val();
+        horario.LaboratorioId = $("#session").val();
 
         $.ajax({
             headers: {
