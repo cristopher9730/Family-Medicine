@@ -179,6 +179,7 @@ namespace FamilyMedicine.Controllers
 
             return View();
         }
+        [HttpPost]
         public ActionResult recuperarOTP(Usuario usuario)
         {
             var url = "https://familymedicine-api.azurewebsites.net/api/Usuario/RecuperarOTP";
@@ -192,7 +193,7 @@ namespace FamilyMedicine.Controllers
             if (result.IsSuccessStatusCode)
             {
                 ViewBag.Message = "Correo enviado correctamente";
-                return View();
+                return RedirectToAction("Login", "IniciarSesion");
             }
             else
                 throw new Exception(result.Content.ReadAsStringAsync().Result);
