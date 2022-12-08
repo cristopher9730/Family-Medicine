@@ -31,7 +31,8 @@
             data: JSON.stringify(usuario),
             hasContent: true
         }).done(function (info) {
-            alert('Usuario Creado correctamente');
+            alert('Usuario Creado correctamente, ve al inicio de sesion');
+            window.location.href = "/IniciarSesion/Login";
         }
         ).fail(function (info) {
             alert('hubo un problema al crear usuario');
