@@ -40,7 +40,12 @@ namespace FamilyMedicine.Controllers
             }else
                 throw new Exception(result.Content.ReadAsStringAsync().Result);
 
-                return View();
+            Session["nombreUsuario"] = usuario.Nombre;
+            Session["primerApellido"] = usuario.PrimerApellido;
+            Session["telefono"] = usuario.Telefono;
+            Session["Correo"] = usuario.Correo;
+
+            return View();
         }
 
         public ActionResult DashBoardCitas()
