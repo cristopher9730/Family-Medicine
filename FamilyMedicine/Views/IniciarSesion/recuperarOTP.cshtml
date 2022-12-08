@@ -11,12 +11,14 @@
 <section class="sectionForgotPasword">
     <div class="contenedorForgotPassword">
         <div class="card text-center">
-            <div class="card-header h5 text-white bg-primary">Recuperar OTP</div>
+            <div class="card-header h5 text-white bg-primary" style="max-width: 25rem">Recuperar OTP</div>
             <div class="card-body px-5">
                 <p class="card-text py-2">
-                    El código OTP ha vencido. Al solicitar un código nuevo se enviará por correo
+                    Solicitar un código nuevo que se enviará por correo.
                 </p>
-                <button type="submit" class="btn btn-primary" method="post">Solicitar</button>
+                <form method="post"></form>
+                @{var correo = Session["UsuarioId"]; <input type="email" name="CreacionUsuario" value=@correo readonly>}
+                <button type="submit" class="btn btn-primary">Solicitar</button>
             </div>
         </div>
     </div>

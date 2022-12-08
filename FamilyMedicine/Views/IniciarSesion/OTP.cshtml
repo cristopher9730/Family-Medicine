@@ -26,10 +26,12 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="submit" class="btn btn-primary" value="Login" />
-                                        
-                                    </td>
+                                        <input type="submit" class="btn btn-primary" value="Verificar" />
 
+                                    </td>
+                                    <div class="d-flex flex-row mb-3">
+                                        <a> @Html.ActionLink("Recuperar OTP", "recuperarOTP", "IniciarSesion", new { area = "" }, new { @class = "colorGeneral" }) </a>
+                                    </div>
                                 </tr>
                             </table>
                         </div>

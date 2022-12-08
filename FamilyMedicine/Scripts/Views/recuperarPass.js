@@ -7,7 +7,7 @@
                 'Se envió un correo electrónico de restablecimiento de contraseña si la dirección de correo electrónico proporcionada estaba registrada.',
                 'success'
             ).then(function () {
-                window.location = "/ ";
+                window.location.href = "/IniciarSesion/Login";
             });
         }
     }
