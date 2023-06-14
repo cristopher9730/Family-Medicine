@@ -26,3 +26,5 @@ let resetPrecio = (() => {
 })
 
 document.querySelector(".cupon").addEventListener("input", (e) => resetPrecio())
+
+

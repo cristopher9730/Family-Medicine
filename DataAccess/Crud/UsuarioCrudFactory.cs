@@ -37,6 +37,31 @@ namespace DataAccess.Crud
             dao.EjecProcedimientoAlmacenado(sqlOperation);
         }
 
+        public void ActualizarCliente(EntidadBase entidadDto)
+        {
+            var usuario = (Usuario)entidadDto;
+            var sqlOperation = mapper.DeclaracionActualizarCliente(usuario);
+
+            dao.EjecProcedimientoAlmacenado(sqlOperation);
+        }
+
+        public void RecuperarClave(EntidadBase entidadDto)
+        {
+            var usuario = (Usuario)entidadDto;
+            var sqlOperation = mapper.DeclaracionRecuperarClave(usuario);
+
+            dao.EjecProcedimientoAlmacenado(sqlOperation);
+        }
+
+        public void RecuperarOTP(EntidadBase entidadDto)
+        {
+            var usuario = (Usuario)entidadDto;
+            var sqlOperation = mapper.DeclaracionRecuperarOTP(usuario);
+
+            dao.EjecProcedimientoAlmacenado(sqlOperation);
+        }
+
+
         public override void Eliminar(EntidadBase entidadDto)
         {
             var usuario = (Usuario)entidadDto;
@@ -51,7 +76,7 @@ namespace DataAccess.Crud
 
             var listResult = dao.EjecProcedimientoAlmacenadoConConsulta(mapper.DeclaracionRecuperarTodos());
 
-            var dicc = new Dictionary<string, object>();
+            
 
             if (listResult.Count > 0)
             {
@@ -67,7 +92,43 @@ namespace DataAccess.Crud
 
         public override T ListarPorID<T>(int id)
         {
-            throw new NotImplementedException();
+    
+
+            var listResult = dao.EjecProcedimientoAlmacenadoConConsulta(mapper.DeclaracionRecuperarPorId(id));
+
+            var dicc = new Dictionary<string, object>();
+
+            if (listResult.Count > 0)
+            {
+                dicc = listResult[0];
+                var objsUsuario = mapper.ConstruirObjeto(dicc);
+                return(T)Convert.ChangeType(objsUsuario, typeof(T));
+
+
+            }
+            return default(T);
+          
+
+        }
+
+        public List<T> ListarTodosPorId<T>(int id)
+        {
+            var list = new List<T>();
+
+            var listResult = dao.EjecProcedimientoAlmacenadoConConsulta(mapper.DeclaracionRecuperarTodosporId(id));
+
+
+
+            if (listResult.Count > 0)
+            {
+                var objsUsuario = mapper.ConstruirObjetos(listResult);
+
+                foreach (var c in objsUsuario)
+                {
+                    list.Add((T)Convert.ChangeType(c, typeof(T)));
+                }
+            }
+            return list;
         }
 
         /*
@@ -76,14 +137,17 @@ namespace DataAccess.Crud
         La operacion sql se ingresa como parametro al metodo de dao para ejectuar el procedimiento almacenado de login y se guarda la respuesta en la variable resultado. 
         Se devuelve la variable resultado que en este caso, contiene el id del usuario en caso de ser encontrado y 0 si no es encontrado 
          */
-        public int Login(Usuario oUsuario)
+        public Usuario Login(Usuario oUsuario)
         {
-            oUsuario.Clave = ConvertirSha256(oUsuario.Clave);
+            //oUsuario.Clave = ConvertirSha256(oUsuario.Clave);
             var correo = oUsuario.Correo;
             var resultado = dao.ExectuteStoreProcedureWithQueryLogin(mapper.Login(oUsuario));
             //var objUsuario = new Usuario();
             //idUsuario = Mapper.BuildObjectLogin(resultado);
-            return resultado;
+            Usuario usuarioRespuesta;
+            usuarioRespuesta = (Usuario)mapper.ConstruirObjeto(resultado);
+
+            return usuarioRespuesta;
         }
 
 

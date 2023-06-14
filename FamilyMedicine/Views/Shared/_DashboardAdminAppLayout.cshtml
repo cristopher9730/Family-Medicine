@@ -4,6 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Family Medicine</title>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.12.1/b-2.2.3/datatables.min.js"></script>
+    <script src="~/Scripts/Views/ControlAcciones.js"></script>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <link rel="shortcut icon" href="~/Content/imgs/logos/logoConColor.png" />
@@ -14,60 +17,14 @@
     <script src="https://kit.fontawesome.com/e77fc0ae51.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-        <div class="container">
-
-            <a href="@Url.Action("Index", "Home")" title="Widget View" class="links">
-                <img width="100px" alt="Widget View" src="@Url.Content("~/Content/imgs/logos/lgoBlanco.png")">
-            </a>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarColor01">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a> @Html.ActionLink("Laboratorios", "Busqueda", "Home", new { area = "" }, new { @class = "nav-link" })</a>
-                    </li>
-                    <li class="nav-item">
-                        <a> @Html.ActionLink("Exámenes", "BusquedaExamen", "Home", new { area = "" }, new { @class = "nav-link" })</a>
-                    </li>
-                </ul>
-                <div class="d-flex">
-                    <ul class="navbar-nav me-auto">
-                        <li>
-                            <form class="d-flex w-auto">
-                                <input class="form-control me-sm-2" type="text" placeholder="Buscar Exámen">
-
-                                <a href="@Url.Action("BusquedaExamen", "Home")" class="btn btn-secondary my-2 my-sm-0" style="width:35%">
-                                    Buscar
-                                </a>
-                            </form>
-                        </li>
-                        <li class="nav-item">
-                            @if (Session["usuario"] != null)
-                            {
-                                <a> @Html.ActionLink("Mi Cuenta", "Login", "Home", new { area = "" }, new { @class = "nav-link" }) </a>
-                            }
-                            else
-                            {
-                                <a> @Html.ActionLink("Iniciar Sesión", "Login", "Home", new { area = "" }, new { @class = "nav-link" }) </a>
-                            }
-
-                        </li>
-                        <li class="nav-item">
-                            <a href="@Url.Action("CarritoDeCompras", "Home")" class="nav-link" style="font-size:20px">
-                                <i class="fa-solid fa-cart-shopping"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </nav>
+    
     <div class="container body-content">
         <section class="ContenedorDeDashboard">
-            <section class="contenedorDeNav" style="width:160px">
+            <section class="contenedorDeNav">
+                <div class="mb-2 contenedorDeOpcionesDelNav A6 gap-1" style="width:100%">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <a> @Html.ActionLink("Inicio", "Index", "Home", new { area = "" }, new { @class = "ContenedorDeNombre text-decoration-none" }) </a>
+                </div>
                 <div class="mb-2 contenedorDeOpcionesDelNav A1 gap-1" style="width:100%">
                     <i class="fa-solid fa-flask-vial"></i>
                     <a> @Html.ActionLink("Laboratorios", "LaboratoriosRegistrados", "DashboardAdminApp", new { area = "" }, new { @class = "ContenedorDeNombre text-decoration-none" }) </a>
@@ -80,9 +37,13 @@
                     <i class="fa-solid fa-calendar-days"></i>
                     <a> @Html.ActionLink("Actividades", "Actividades", "DashboardAdminApp", new { area = "" }, new { @class = "ContenedorDeNombre text-decoration-none" }) </a>
                 </div>
+                <div class="mb-2 contenedorDeOpcionesDelNav A4 gap-1" style="width:100%">
+                    <i class="fa-solid fa-flask-vial"></i>
+                    <a> @Html.ActionLink("Registrar Laboratorio", "RegistrarLaboratorio", "DashboardAdminApp", new { area = "" }, new { @class = "ContenedorDeNombre text-decoration-none" })</a>
+                </div>
                 <div class="mb-2 contenedorDeOpcionesDelNav gap-1" style="width:100%">
                     <i class="fa-solid fa-right-from-bracket"></i>
-                    <a> @Html.ActionLink("Cerrar Sesión", "Logout", "Home", new { area = "" }, new { @class = "ContenedorDeNombre text-decoration-none" }) </a>
+                    <a> @Html.ActionLink("Cerrar Sesión", "Logout", "IniciarSesion", new { area = "" }, new { @class = "ContenedorDeNombre text-decoration-none" }) </a>
                 </div>
             </section>
 

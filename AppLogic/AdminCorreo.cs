@@ -5,8 +5,6 @@ using System.Linq;
 using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
-using Mandrill;
-using Mandrill.Model;
 using System;
 
 namespace AppLogic
@@ -18,7 +16,23 @@ namespace AppLogic
         public void EviarEmailBienvenida(Usuario usuario)
         {
             string asunto = "Bienvenido a Family Medicine";
-            string contenido = "Confirme su identidad con el siguiente token: " + usuario.Codigo;
+            string contenido = "Confirme su identidad con el siguiente código: " + usuario.Codigo;
+            SendGmail(usuario, asunto, contenido);
+
+        }
+
+        public void EviarEmailRecuperarClave(Usuario usuario)
+        {
+            string asunto = "Family Medicine Recuperar Contraseña";
+            string contenido = "Para cambiar su contraseña utilice esta clave  : " + usuario.Clave;
+            SendGmail(usuario, asunto, contenido);
+
+        }
+
+        public void EviarEmailRecuperarOTP(Usuario usuario)
+        {
+            string asunto = "Family Medicine Recuperar OTP";
+            string contenido = "Para cambiar el OTP  utilice el siguiente código:  : " + usuario.Codigo;
             SendGmail(usuario, asunto, contenido);
 
         }

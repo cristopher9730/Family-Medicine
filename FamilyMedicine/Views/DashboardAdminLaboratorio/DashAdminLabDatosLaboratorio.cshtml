@@ -1,4 +1,4 @@
-﻿
+﻿@model DTO.Laboratorio
 @{
     ViewBag.Title = "DashAdminLabRegistrarCitas";
     Layout = "~/Views/Shared/_DashboardLayout.cshtml";
@@ -9,84 +9,309 @@
 <style>
     /*Este style contien la clase de nav activo las opciones A1, A2, A3... etc estan en el layout*/
     .A9 {
-        background-color: #4d81ba;
+        box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
         text-decoration: none;
+        background-color: #f3f3f363;
     }
 </style>
 
 <link rel="stylesheet" href="~/Content/css/DashboardCss/DashBoardGeneral.css" />
-
 <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+<link rel="stylesheet" href="~/Content/css/DashboardCss/DashboardCliente.css" />
 
-<div class="divContenedorDelDashTres">
-    <h4>Datos del Laboratorio</h4>
-    <form class="form-group mt-2">
-        <div class="form-group row mt-3">
-            <label class="col-form-label" for="inputDefault">Nombre del Laboratorio</label>
 
-            <div class="col-sm-10">
-                <input type="text" class="form-control" placeholder="Laboratorio Paez" id="inputDefault">
+<div class="divContenedorDelDashTab">
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" data-bs-toggle="tab" href="#home" aria-selected="true" role="tab">Informacion</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" data-bs-toggle="tab" href="#profile" aria-selected="false" tabindex="-1" role="tab">Imágenes</a>
+        </li>
+    </ul>
+
+    <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade show active" id="home" role="tabpanel">
+            <div class="ContenedorPequeDeDashboardTabOverFlow">
+                <section class="contenedorUsuario">
+                    <section class="cotenedorDeDatos">
+                        <div class="datoGeneralImagePeque">
+                            <img id="file-ip-1-previewPeque" src="~/Content/imgs/Labs/Lab3.jpg" class="imgDashBoardPeque" />
+                            <button data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="buttonHiddenEditorPeque"><i style="color: #ffffff" class="fa-solid fa-pen-to-square"></i></button>
+                        </div>
+
+                        <div class="datoGeneral">
+                            <h2 class="titleGeneral">Perfil</h2>
+                            <section class="ContenedorDeDashboardFleROW" style="gap: 1px">
+                                <p class="tituloGeneralDos">Número de laboratorio: </p>
+                                <span class="textoGeneralUSO">@Model.LaboratorioId</span>
+                            </section>
+
+                            <section class="ContenedorDeDashboardFleROW" style="gap: 1px">
+                                <p class="tituloGeneralDos">Nombre: </p>
+                                <span class="textoGeneralUSO">@Model.NombreLaboratorio</span>
+                            </section>
+
+                            <section class="ContenedorDeDashboardFleROW" style="gap: 1px">
+                                <p class="tituloGeneralDos">Correo</p>
+                                <span class="textoGeneralUSO">@Model.CorreoLaboratorio</span>
+                            </section>
+
+                            <section class="ContenedorDeDashboardFleROW" style="gap: 1px">
+                                <p class="tituloGeneralDos">Teléfono: </p>
+                                <span class="textoGeneralUSO">@Model.Telefono</span>
+                            </section>
+
+                            <section class="ContenedorDeDashboardFleROW" style="gap: 1px">
+                                <p class="tituloGeneralDos">Cédula jurídica: </p>
+                                <span class="textoGeneralUSO">@Model.CedulaJuridica</span>
+                            </section>
+
+                            <section class="ContenedorDeDashboardFleROW" style="gap: 1px">
+                                <p class="tituloGeneralDos">Página web: </p>
+                                <span class="textoGeneralUSO">@Model.PaginaWeb</span>
+                            </section>
+
+                            <section class="ContenedorDeDashboardFleROW" style="gap: 1px">
+                                <p class="tituloGeneralDos">Razón social: </p>
+                                <span class="textoGeneralUSO">@Model.RazonSocial</span>
+                            </section>
+
+                            <section class="ContenedorDeDashboardFleROW" style="gap: 1px">
+                                <p class="tituloGeneralDos">Red social: </p>
+                                <span class="textoGeneralUSO">@Model.RedSocial</span>
+                            </section>
+
+                            <button data-bs-toggle="modal" data-bs-target="#form" style="padding-top: 10px;" type="button" class="btn btn-primary mt-1">Editar</button>
+                        </div>
+                    </section>
+                </section>
             </div>
         </div>
 
-        <div class="form-group row mt-3">
+        <div class="tab-pane fade" id="profile" role="tabpanel">
+            <div class="ContenedorPequeDeDashboardTabOverFlow">
+                <section class="ContenedorDeDashboardFleROW" style="gap: 10px 10px; margin: 10px auto;">
+                    <div class="datoGeneralImage">
+                        <img id="labImg1" src="~/Content/imgs/Labs/cicloLab/CL1.jpg" class="imgDashBoard" />
+                        <button data-bs-toggle="modal" data-bs-target="#staticBackdropLab1" class="buttonHiddenEditor"><i style="color: #ffffff" class="fa-solid fa-pen-to-square"></i></button>
+                    </div>
 
-            <label class="col-form-label" for="inputDefault">Nombre comercial</label>
+                    <div class="datoGeneralImage">
+                        <img id="labImg2" src="~/Content/imgs/Labs/cicloLab/CL2.jpg" class="imgDashBoard" />
+                        <button data-bs-toggle="modal" data-bs-target="#staticBackdropLab2" class="buttonHiddenEditor"><i style="color: #ffffff" class="fa-solid fa-pen-to-square"></i></button>
+                    </div>
+                </section>
 
-            <div class="col-sm-10">
-                <input type="text" class="form-control" placeholder="Hermanos Paez S.A." id="inputDefault">
+                <section class="ContenedorDeDashboardFleROW" style="gap: 10px 10px; margin: 10px auto;">
+                    <div class="datoGeneralImage">
+                        <img id="labImg3" src="~/Content/imgs/Labs/cicloLab/CL3.jpg" class="imgDashBoard" />
+                        <button data-bs-toggle="modal" data-bs-target="#staticBackdropLab3" class="buttonHiddenEditor"><i style="color: #ffffff" class="fa-solid fa-pen-to-square"></i></button>
+                    </div>
+
+                    <div class="datoGeneralImage">
+                        <img id="labImg4" src="~/Content/imgs/Labs/cicloLab/CL4.png" class="imgDashBoard" />
+                        <button data-bs-toggle="modal" data-bs-target="#staticBackdropLab4" class="buttonHiddenEditor"><i style="color: #ffffff" class="fa-solid fa-pen-to-square"></i></button>
+                    </div>
+                </section>
             </div>
         </div>
-
-        <div class="form-group row mt-3">
-
-            <label class="col-form-label" for="inputDefault">Correo electronico</label>
-
-            <div class="col-sm-10">
-                <input type="text" class="form-control" placeholder="laboratorios@paez.com" id="inputDefault">
-            </div>
-        </div>
-
-        <div class="form-group row mt-3">
-
-            <label class="col-form-label" for="inputDefault">Telefono</label>
-
-            <div class="col-sm-10">
-                <input type="text" class="form-control" required placeholder="2224-2224" id="inputDefault">
-            </div>
-        </div>
-
-        <div class="form-group row mt-3">
-
-            <label class="col-form-label" for="inputDefault">Cedula juridica</label>
-
-            <div class="col-sm-10">
-                <input type="text" class="form-control" placeholder="213181313065030520 Juridica" id="inputDefault">
-            </div>
-        </div>
-        <div class="form-group row mt-3">
-
-            <label class="col-form-label" for="inputDefault">Pagina web</label>
-
-            <div class="col-sm-10">
-                <input type="text" class="form-control" placeholder="www.laboratoriospaez.com" id="inputDefault">
-            </div>
-        </div>
-        <div class="form-group row mt-3">
-
-            <label class="col-form-label" for="inputDefault">Redes sociales</label>
-
-            <div class="col-sm-10">
-                <input type="text" class="form-control" placeholder="instagram/laboratoriospaez" id="inputDefault">
-            </div>
-        </div>
-        <button onclick="myfuncionGeneral()" type="submit" class="btn btn-primary mt-3">Guardar Cambios</button>
-    </form>
-
-
+    </div>
 </div>
 
 
+
+
+<section class="contenedorUsuario">
+    <!--====================================FORMULARIOS POPUS===================================-->
+    <!---------------------------------------FORM PARA EL CAMBIO DE IMAGEN---------------------------------->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Cambiar foto de perfil</h5>
+                </div>
+                <form>
+                    <div class="modal-body">
+                        <label for="formFileMultiple" class="form-label">Elija la foto</label>
+                        <input type="file" id="file-ip-1" required class="form-control" accept="image/*" onchange="showPreview(event);">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Enviar</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!---------------------------------------FORM PARA EL CAMBIO DE IMAGEN lab------------------------------------>
+    <div class="modal fade" id="staticBackdropLab1" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Cambiar foto de laboratorio 1</h5>
+                </div>
+                <form>
+                    <div class="modal-body">
+                        <label for="formFileMultiple" class="form-label">Elija la foto</label>
+                        <input type="file" id="file-ip-1" required class="form-control" accept="image/*" onclick="showPreviewLab1(event);">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Enviar</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="staticBackdropLab2" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Cambiar foto de laboratorio 2</h5>
+                </div>
+                <form>
+                    <div class="modal-body">
+                        <label for="formFileMultiple" class="form-label">Elija la foto</label>
+                        <input type="file" id="file-ip-1" required class="form-control" accept="image/*" onchange="showPreviewLab2(event);">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Enviar</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="staticBackdropLab3" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Cambiar foto de laboratorio 3</h5>
+                </div>
+                <form>
+                    <div class="modal-body">
+                        <label for="formFileMultiple" class="form-label">Elija la foto</label>
+                        <input type="file" id="file-ip-1" required class="form-control" accept="image/*" onchange="showPreviewLab3(event);">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Enviar</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="staticBackdropLab4" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Cambiar foto de laboratorio 4</h5>
+                </div>
+                <form>
+                    <div class="modal-body">
+                        <label for="formFileMultiple" class="form-label">Elije tu foto</label>
+                        <input type="file" id="file-ip-1" required class="form-control" accept="image/*"  onchange="showPreviewLab4(event);">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Enviar</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!---------------------------------FORMULARIO PARA EDITAR EL PERFIL-------------------------------------->
+    <div class="modal fade" id="form" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form data-aos="fade-up" class="was-validated mb-1 mt-1 formContenedorId" id="formContenedorId" method="post">
+
+
+
+                    <div>
+                        <label for="staticEmail" class=" tituloGeneralTres">Nombre laboratorio</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="NombreLaboratorio" class="form-control formPupUp" id="txtNombreLaboratorio" value=@Model.NombreLaboratorio>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="staticEmail" class=" tituloGeneralTres">Correo</label>
+                        <div class="col-sm-10">
+                            <input type="email" name="CorreoLaboratorio" pattern="^[a-zA-Z0-9._+-]+@("@")[a-zA-Z0-9.-]+\.[a-zA-Z]{2,9}$" class="form-control formPupUp" id="txtCorreoLaboratorio" value=@Model.CorreoLaboratorio>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="staticEmail" class=" tituloGeneralTres">Telefono</label>
+                        <div class="col-sm-10">
+                            <input type="tel" name="Telefono" class="form-control formPupUp" id="txtTelefono" value=@Model.Telefono>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="staticEmail" class=" tituloGeneralTres">Cedula juridica</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="CedulaJuridica" class="form-control formPupUp" id="txtCedulaJuridica" value=@Model.CedulaJuridica>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="staticEmail" class=" tituloGeneralTres">Razón social</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="RazonSocial" class="form-control formPupUp" id="txtRazonSocial" value=@Model.RazonSocial>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="staticEmail" class=" tituloGeneralTres">Pagina web</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="PaginaWeb" class="form-control formPupUp" id="txtPaginaWeb" value=@Model.PaginaWeb>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="staticEmail" class=" tituloGeneralTres">Red social</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="RedSocial" class="form-control formPupUp" id="txtRedSocial" value=@Model.RazonSocial>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="staticEmail" class=" tituloGeneralTres">Direccion</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="Direccion" class="form-control formPupUp" id="txtRedSocial" value=@Model.Direccion>
+                        </div>
+                    </div>
+                    @{
+                        
+                    <div style="display:none">
+
+
+                        <input id="sessionLabId" value=@Model.LaboratorioId name="LaboratorioId" />
+                        <input id="sessionLabId" value=@Model.Estado name="Estado" />
+
+                    </div>
+                    }
+                    <div class="modal-footer">
+                        <button id="btnActualizarCliente" type="submit" class="btn btn-primary" mt-1">Guardar</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
 <script src="~/Scripts/Views/dashboardUsuario/DashboardValidacion.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://kit.fontawesome.com/e77fc0ae51.js" crossorigin="anonymous"></script>

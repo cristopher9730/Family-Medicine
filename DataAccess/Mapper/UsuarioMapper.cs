@@ -22,19 +22,19 @@ namespace DataAccess.Mapper
             var usuario =(Usuario)entidadDTO;
 
             operacion.AddVarcharParam("Nombre", usuario.Nombre);
+            operacion.AddVarcharParam("Primer_Apellido", usuario.PrimerApellido);
+            operacion.AddVarcharParam("Segundo_Apellido", usuario.SegundoApellido);
             operacion.AddVarcharParam("Correo", usuario.Correo);
             operacion.AddVarcharParam("Telefono", usuario.Telefono);
             operacion.AddVarcharParam("Clave", usuario.Clave);
             operacion.AddVarcharParam("Foto", usuario.Foto);
             operacion.AddVarcharParam("Estado", usuario.Estado);
-            operacion.AddIntergerParam("RolId", usuario.RolId);
             operacion.AddIntergerParam("LaboratorioId", usuario.LaboratorioId);
-            operacion.AddIntergerParam("MemebresiaId", usuario.MembresiaId);
+            operacion.AddIntergerParam("MembresiaId", usuario.MembresiaId);
+            operacion.AddIntergerParam("RolId", usuario.RolId);
             operacion.AddVarcharParam("Codigo", usuario.Codigo);
 
-
             return operacion;
-
         }
 
         public SqlOperation DeclaracionActualizar(EntidadBase entidadDTO)
@@ -46,8 +46,87 @@ namespace DataAccess.Mapper
 
             var usuario = (Usuario)entidadDTO;
 
+            operacion.AddVarcharParam("Nombre", usuario.Nombre);
+            operacion.AddVarcharParam("Primer_Apellido", usuario.PrimerApellido);
+            operacion.AddVarcharParam("Segundo_Apellido", usuario.SegundoApellido);
+            operacion.AddVarcharParam("Correo", usuario.Correo);
+            operacion.AddVarcharParam("Telefono", usuario.Telefono);
+            operacion.AddVarcharParam("Clave", usuario.Clave);
+            operacion.AddVarcharParam("Foto", usuario.Foto);
+            operacion.AddVarcharParam("Estado", usuario.Estado);
+            operacion.AddIntergerParam("LaboratorioId", usuario.LaboratorioId);
+            operacion.AddIntergerParam("MembresiaId", usuario.MembresiaId);
+            operacion.AddIntergerParam("RolId", usuario.RolId);
+            operacion.AddVarcharParam("Codigo", usuario.Codigo);
+
+            return operacion;
+        }
+
+        //Este es para actualizar los datos personales para el usuario
+        public SqlOperation DeclaracionActualizarCliente(EntidadBase entidadDTO)
+        {
+            var operacion = new SqlOperation()
+            {
+                NombreProcedimiento = "SP_ActualizarUsuarioCliente"
+            };
+
+            var usuario = (Usuario)entidadDTO;
+
             operacion.AddIntergerParam("UsuarioId", usuario.UsuarioId);
             operacion.AddVarcharParam("Nombre", usuario.Nombre);
+            operacion.AddVarcharParam("Primer_Apellido", usuario.PrimerApellido);
+            operacion.AddVarcharParam("Segundo_Apellido", usuario.SegundoApellido);
+            operacion.AddVarcharParam("Correo", usuario.Correo);
+            operacion.AddVarcharParam("Telefono", usuario.Telefono);
+            operacion.AddVarcharParam("Clave", usuario.Clave);
+            operacion.AddVarcharParam("Foto", "urlFoto");      
+
+            return operacion;
+        }
+
+        public SqlOperation DeclaracionRecuperarClave(EntidadBase entidadDTO)
+        {
+            var operacion = new SqlOperation()
+            {
+                NombreProcedimiento = "SP_RecuperarContrasenia"
+            };
+
+            var usuario = (Usuario)entidadDTO;
+
+            operacion.AddVarcharParam("Correo", usuario.Correo);
+            operacion.AddVarcharParam("token", usuario.Clave);
+
+            return operacion;
+        }
+
+        public SqlOperation DeclaracionRecuperarOTP(EntidadBase entidadDTO)
+        {
+            var operacion = new SqlOperation()
+            {
+                NombreProcedimiento = "SP_RecuperarOTP"
+            };
+
+            var usuario = (Usuario)entidadDTO;
+
+            operacion.AddIntergerParam("UsuarioId", usuario.UsuarioId);
+            operacion.AddVarcharParam("token", usuario.Codigo);
+
+            return operacion;
+        }
+
+        public SqlOperation DeclaracionBorrar(EntidadBase entidadDTO)
+        {
+            var operacion = new SqlOperation()
+            {
+                NombreProcedimiento = "SP_BorrarrUsuario"
+            };
+
+            var usuario = (Usuario)entidadDTO;
+
+            operacion.AddIntergerParam("UsuarioId", usuario.UsuarioId);
+            operacion.AddVarcharParam("Nombre", usuario.Nombre);
+            operacion.AddVarcharParam("Primer_Apellido", usuario.PrimerApellido);
+            operacion.AddVarcharParam("Segundo_Apellido", usuario.SegundoApellido);
             operacion.AddVarcharParam("Correo", usuario.Correo);
             operacion.AddVarcharParam("Telefono", usuario.Telefono);
             operacion.AddVarcharParam("Clave", usuario.Clave);
@@ -55,20 +134,19 @@ namespace DataAccess.Mapper
             operacion.AddVarcharParam("Estado", usuario.Estado);
             operacion.AddIntergerParam("RolId", usuario.RolId);
             operacion.AddIntergerParam("LaboratorioId", usuario.LaboratorioId);
-            operacion.AddIntergerParam("MemebresiaId", usuario.MembresiaId);
+            operacion.AddIntergerParam("MembresiaId", usuario.MembresiaId);
             operacion.AddVarcharParam("Codigo", usuario.Codigo);
 
             return operacion;
         }
 
-        public SqlOperation DeclaracionBorrar(EntidadBase entidadDTO)
-        {
-            throw new NotImplementedException();
-        }
-
         public SqlOperation DeclaracionRecuperarPorId(int id)
         {
-            throw new NotImplementedException();
+            var operacion = new SqlOperation()
+            {
+                NombreProcedimiento = "SP_DevolverUnUsuario"
+            };
+            return operacion;
         }
 
         public SqlOperation DeclaracionRecuperarTodos()
@@ -80,26 +158,47 @@ namespace DataAccess.Mapper
             return operacion;
         }
 
+        public SqlOperation DeclaracionRecuperarTodosporId(int id)
+        {
+            var operacion = new SqlOperation()
+            {
+                NombreProcedimiento = "SP_DevolverTodosUsuariosPorId"
+            };
+            operacion.AddIntergerParam("LaboratorioId", id);
+            return operacion;
+        }
+
         #endregion
 
         #region Metodos de IObjectMapper
         public EntidadBase ConstruirObjeto(Dictionary<string, object> row)
         {
-            var usuario = new Usuario()
+            try
             {
-                UsuarioId = int.Parse(row["UsuarioId"].ToString()),
-                Nombre = row["Nombre"].ToString(),
-                Correo = row["Correo"].ToString(),
-                Telefono = row["Telefono"].ToString(),
-                Clave = row["Clave"].ToString(),
-                Foto = row["Foto"].ToString(),
-                Estado = row["Estado"].ToString(),
-                RolId = int.Parse(row["RolId"].ToString()),
-                LaboratorioId = int.Parse(row["LaboratorioId"].ToString()),
-                MembresiaId = int.Parse(row["MemebresiaId"].ToString()),
-                Codigo = row["Codigo"].ToString(),
-            };
-            return usuario;
+                var usuario = new Usuario()
+                {
+                    UsuarioId = int.Parse(row["UsuarioId"].ToString()),
+                    Nombre = row["Nombre"].ToString(),
+                    PrimerApellido = row["Primer_Apellido"].ToString(),
+                    SegundoApellido = row["Segundo_Apellido"].ToString(),
+                    Correo = row["Correo"].ToString(),
+                    Telefono = row["Telefono"].ToString(),
+                    Clave = row["Clave"].ToString(),
+                    Foto = row["Foto"].ToString(),
+                    Estado = row["Estado"].ToString(),
+                    LaboratorioId = int.Parse(row["LaboratorioId"].ToString()),
+                    MembresiaId = int.Parse(row["MembresiaId"].ToString()),
+                    RolId = int.Parse(row["RolId"].ToString()),
+                    Codigo = row["Codigo"].ToString(),
+                };
+                return usuario;
+            }
+            catch
+            {
+                Usuario usuario = new Usuario();
+                usuario.UsuarioId = 0;
+                return usuario;
+            }
         }
 
         public List<EntidadBase> ConstruirObjetos(List<Dictionary<string, object>> lstRows)

@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "recuperarOTP";
+}
+
+<link rel="stylesheet" href="~/Content/css/forgotPassword.css" />
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://kit.fontawesome.com/e77fc0ae51.js" crossorigin="anonymous"></script>
+
+<section class="sectionForgotPasword">
+    <div class="contenedorForgotPassword">
+        <div class="card text-center">
+            <div class="card-header h5 text-white bg-primary" style="max-width: 25rem">Recuperar OTP</div>
+            <div class="card-body px-5">
+                <p class="card-text py-2">
+                    Solicitar un código nuevo que se enviará por correo.
+                </p>
+                <form method="post"></form>
+                @{var correo = Session["UsuarioId"]; <input type="email" name="CreacionUsuario" value=@correo readonly>}
+                <button type="submit" class="btn btn-primary">Solicitar</button>
+            </div>
+        </div>
+    </div>
+</section>
+

@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "LaboratoriosRegistrados";
     Layout = "~/Views/Shared/_DashboardAdminAppLayout.cshtml";
 }
@@ -7,8 +6,9 @@
 <style>
     /*Este style contien la clase de nav activo las opciones A1, A2, A3... etc estan en el layout*/
     .A1 {
-        background-color: #4d81ba;
+        box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
         text-decoration: none;
+        background-color: #f3f3f363;
     }
 </style>
 
@@ -30,7 +30,7 @@
                 <input type="number" class="form-control me-2" placeholder="100">
             </div>
             <div>
-                <button onclick="myfuncionGeneral()" class="btn btn-primary">Modificar</button>
+                <button class="btn btn-primary">Modificar</button>
             </div>
         </div>
     </div>
@@ -47,7 +47,7 @@
                 <input type="number" class="form-control me-2" placeholder="13">
             </div>
             <div>
-                <button onclick="myfuncionGeneral()" class="btn btn-primary">Modificar</button>
+                <button class="btn btn-primary">Modificar</button>
             </div>
         </div>
     </div>
@@ -62,41 +62,18 @@
         </div>
     </div>
 
-    <table class="table table-hover">
+    <table id="datos" class="table table-hover">
         <thead>
             <tr>
                 <th scope="col">Nombre</th>
-                <th scope="col">Cedula Jurídica</th>
+                <th scope="col">Cédula jurídica</th>
                 <th scope="col">Página web</th>
-                <th scope="col">Télefono</th>
-                <th scope="col">Correo Electrónico</th>
-
+                <th scope="col">Teléfono</th>
+                <th scope="col">Correo electrónico</th>
+                <th scope="col"></th>
             </tr>
         </thead>
-        <tbody>
-            <tr>
-                <th scope="row">Ciclo Lab</th>
-                <td>3-101-342687</td>
-                <td>ciclolab.com</td>
-                <td>24468762</td>
-                <td>ciclolab@gmail.com</td>
-            </tr>
-            <tr>
-                <th scope="row">Alchemy Lab</th>
-                <td>3-101-568725</td>
-                <td>alchemylab.com</td>
-                <td>24464587</td>
-                <td>alchemylab@gmail.com</td>
-            </tr>
-            <tr>
-                <th scope="row">The Lab</th>
-                <td>3-101-597428</td>
-                <td>thelab.com</td>
-                <td>24462156</td>
-                <td>thelab@gmail.com</td>
-            </tr>
-        </tbody>
     </table>
 
 </div>
-
+<script src="~/Scripts/Views/DashboardAdminApp/Laboratorio.js"></script>

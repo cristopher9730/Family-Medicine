@@ -1,0 +1,46 @@
+﻿@model DTO.OTP
+@{
+    ViewBag.Title = "OTP";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm("OTP", "OTP", FormMethod.Get))
+{
+    <div style="height:40vw">
+        <div class="row align-items-center h-100">
+            <div class="col-6 mx-auto">
+                <div class="jumbotron">
+                    <div class="card text-white bg-primary mt-4 mx-auto" style="max-width: 25rem;">
+                        <div class="card-header">Por favor ingrese su codigo de 6 digitos</div>
+                        <div class="card-body">
+                            <h2>Validar OTP</h2>
+                            <table>
+                                <tr>
+                                    <td>@Html.LabelFor(a => a.CreacionUsuario)</td>
+                                    <td>@{var correo = Session["Correo"]; <input type="email" name="CreacionUsuario" value=@correo readonly>}</td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelFor(a => a.CodigoOTP)</td>
+                                    <td>@Html.TextBoxFor(a => a.CodigoOTP)</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="submit" class="btn btn-primary" value="Verificar" />
+
+                                    </td>
+                                    <div class="d-flex flex-row mb-3">
+                                        <a> @Html.ActionLink("Recuperar OTP", "recuperarOTP", "IniciarSesion", new { area = "" }, new { @class = "colorGeneral" }) </a>
+                                    </div>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+}
+
+

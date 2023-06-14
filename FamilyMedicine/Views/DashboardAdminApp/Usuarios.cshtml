@@ -4,55 +4,157 @@
     Layout = "~/Views/Shared/_DashboardAdminAppLayout.cshtml";
 }
 
+
+<link rel="stylesheet" href="~/Content/css/DashboardCss/DashboardCliente.css" />
+<link rel="stylesheet" href="~/Content/css/DashboardCss/DashboardCitas.css" />
+<link rel="stylesheet" href="~/Content/css/DashboardCss/DashboardCliente.css" />
 <style>
     /*Este style contien la clase de nav activo las opciones A1, A2, A3... etc estan en el layout*/
     .A2 {
-        background-color: #4d81ba;
+        box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
         text-decoration: none;
+        background-color: #f3f3f363;
+    }
+
+    .contentInput{
+        width: 200px !important;
+    }
+
+    .ContenedorDeDashboardFleROW {
+        display: flex;
+        flex-direction: row;
+        gap: 10px 10px;
+        align-items: flex-start;
+        justify-content: center;
     }
 </style>
 
-<link rel="stylesheet" href="~/Content/css/DashboardCss/DashboardCitas.css" />
 
 <div class="divContenedorDelDashUno">
 
-    <h3 class="mb-3">Usuarios</h3>
+    
+    <button data-bs-toggle="modal" data-bs-target="#form" class="btn btn-outline-primary">Registrar usuario</button>
+  
+    <div class="ContenedorDeDashboardTabOverFlow">
+        <table id="datosUsuarios" class="table table-hover" style=" min-width: 82vw; border-radius: 10px;">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Primer apellido</th>
+                    <th>Segundo apellido</th>
+                    <th>Telefono</th>
+                    <th>Correo</th>
+                    <th>Estado</th>
+                    <th></th>
+                </tr>
+            </thead>
+        </table>
+    </div>
 
-    <table class="table table-hover">
-        <thead>
-            <tr>
-                <th scope="col">Nombre</th>
-                <th scope="col">Cedula</th>
-                <th scope="col">Télefono</th>
-                <th scope="col">Correo Electrónico</th>
-                <th scope="col">Estado</th>
+    <!--FORMULARIO PARA EDITAR EL PERFIL-->
+    <div class="modal fade" id="form" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
 
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row">Roberto Solano Vargas</th>
-                <td>105670854</td>
-                <td>88265471</td>
-                <td>rsolano@gmail.com</td>
-                <td>Activo</td>
-            </tr>
-            <tr>
-                <th scope="row">Hugo Valerio Campos</th>
-                <td>204560852</td>
-                <td>85642158</td>
-                <td>hvalerio@gmail.com</td>
-                <td>Activo</td>
-            </tr>
-            <tr>
-                <th scope="row">Carolina Barrantes Soto</th>
-                <td>308710689</td>
-                <td>64265187</td>
-                <td>carobarrantes@gmail.com</td>
-                <td>Activo</td>
-            </tr>
-        </tbody>
-    </table>
+                <div class="modal-headr">
+                    <h1> Registrar usuario</h1>
+                </div>
+                <form data-aos="fade-up" class="was-validated mb-1 mt-1 formContenedorId" id="formContenedorId">
 
+                    <section class="ContenedorDeDashboardFleROW" style="gap:6px 6px">
+                        <div class="mb-3 w-100 contenedorDeInputs">
+                            <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
+                                <label class="form-label" for="txtNombre" id="inputGroupPrepend">Nombre</label>
+                                <input type="text" class="form-control w-100 contentInput" id="txtNombre" aria-describedby="inputGroupPrepend" required>
+                                <div class="invalid-feedback">
+                                    Por favor, ingresa el nombre
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 w-100">
+                            <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
+                                <label class="form-label" for="txtPrimerApellido" id="inputGroupPrepend">Primer apellido</label>
+                                <input type="text" class="form-control w-100 contentInput" id="txtPrimerApellido" aria-describedby="inputGroupPrepend" required>
+                                <div class="invalid-feedback">
+                                    Por favor, ingrese el primer apellido
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="ContenedorDeDashboardFleROW" style="gap:6px 6px">
+                        <div class="mb-3 w-100">
+                            <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
+                                <label class="form-label" for="txtSegundoApellido" id="inputGroupPrepend">Segundo apellido</label>
+                                <input type="text" class="form-control w-100 contentInput" id="txtSegundoApellido" aria-describedby="inputGroupPrepend" required>
+                                <div class="invalid-feedback">
+                                    Por favor, ingrese el segundo apellido
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="mb-3 w-100">
+                            <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
+                                <label class="form-label " for="txtCorreo" id="inputGroupPrepend">Correo electrónico</label>
+                                <input type="email" pattern="^[a-zA-Z0-9._+-]+@("@")[a-zA-Z0-9.-]+\.[a-zA-Z]{2,9}$" class="contentInput form-control w-100" id="txtCorreo" aria-describedby="inputGroupPrepend" required>
+                                <div class="invalid-feedback">
+                                    Por favor, ingrese el correo electrónico
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="ContenedorDeDashboardFleROW" style="gap:6px 6px">
+                        <div class="mb-3 w-100">
+                            <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
+                                <label class="form-label" for="txtTelefono" id="inputGroupPrepend">Teléfono</label>
+                                <input type="text" class="form-control w-100 contentInput" id="txtTelefono" aria-describedby="inputGroupPrepend" required>
+                                <div class="invalid-feedback">
+                                    Por favor, ingrese el teléfono
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 w-100 contenedorDeInputs">
+                            <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
+                                <label class="form-label" for="txtClave" id="inputGroupPrepend">Contraseña</label>
+                                <input type="password" class="form-control w-100 contentInput" id="txtClave" aria-describedby="inputGroupPrepend" required>
+                                <div class="invalid-feedback">
+                                    Por favor, ingrese la contraseña temporal
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <div class="mb-3 w-100">
+                        <div class="form-group has-validation w-100 d-flex flex-column align-items-center">
+                            <label class="form-label" for="slt_rol" id="inputGroupPrepend">Rol</label>
+                            <select class="form-control w-100" id="slt_rol" aria-describedby="inputGroupPrepend">
+                                <option>Seleccione un rol</option>
+                                <option value="4">Administrador Aplicación</option>
+                                <option value="3">Técnico</option>
+                                <option value="2">Administrador Laboratorio</option>
+                                <option value="1">Paciente</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="formFileMultiple" class="form-label">Ingrese la foto</label>
+                        <input type="file" id="" required class="form-control">
+                    </div>
+
+
+                    <div class="modal-footer">
+                        <button id="btnRegistrar" type="submit" class="btn btn-primary" modal" mt-1">Guardar</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 
+<script src="~/Scripts/Views/DashboardAdminApp/Usuarios.js"></script>
+<script src="~/Scripts/Views/dashboardUsuario/DashboardCitasResultado.js"></script>

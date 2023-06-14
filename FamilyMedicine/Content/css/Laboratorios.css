@@ -168,3 +168,20 @@
     text-decoration:underline;
     cursor: pointer;
 }
+
+/*Laboratorio busque==============================*/
+
+.contentDivsBusqueda{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.contentExamen {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px !important;
+}

@@ -8,7 +8,6 @@
     @Scripts.Render("~/bundles/modernizr")
     <link rel="shortcut icon" href="~/Content/imgs/logos/logoConColor.png" />
 
-
     <script src="https://kit.fontawesome.com/e77fc0ae51.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -24,37 +23,48 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarColor01">
                 <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a> @Html.ActionLink("Laboratorios", "Busqueda", "Home", new { area = "" }, new { @class = "nav-link" })</a>
-                    </li>
-                    <li class="nav-item">
-                        <a> @Html.ActionLink("Exámenes", "BusquedaExamen", "Home", new { area = "" }, new { @class = "nav-link" })</a>
-                    </li>
+                    @if (Session["dashboard"] == null)
+                    {
+                        <li class="nav-item">
+                            <a> @Html.ActionLink("Laboratorios", "Busqueda", "Busquedas", new { area = "" }, new { @class = "nav-link" })</a>
+                        </li>
+                        <li class="nav-item">
+                            <a> @Html.ActionLink("Exámenes", "BusquedaExamen", "Busquedas", new { area = "" }, new { @class = "nav-link" })</a>
+                        </li>
+                    }
+
                 </ul>
                 <div class="d-flex">
                     <ul class="navbar-nav me-auto">
                         <li>
-                            <form class="d-flex">
-                                <input class="form-control me-sm-2" type="text" placeholder="Buscar Exámen">
-                                <a> @Html.ActionLink("Buscar", "BusquedaExamen", "Home", new { area = "" }, new { @class = "btn btn-secondary my-2 my-sm-0" })</a>
-                            </form>
+                            @if (Session["dashboard"] == null)
+                            {
+                                <form class="d-flex">
+                                    <input class="form-control me-sm-2" type="text" placeholder="Buscar Examen">
+                                    <a> @Html.ActionLink("Buscar", "BusquedaExamen", "Busquedas", new { area = "" }, new { @class = "btn btn-secondary my-2 my-sm-0" })</a>
+                                </form>
+                            }
+
                         </li>
                         <li class="nav-item">
                             @if (Session["usuario"] != null)
                             {
-                                <a> @Html.ActionLink("Mi Cuenta", "Login", "Home", new { area = "" }, new { @class = "nav-link" }) </a>
+                                <a> @Html.ActionLink("Mi Cuenta", "Login", "IniciarSesion", new { area = "" }, new { @class = "nav-link" }) </a>
                             }
                             else
                             {
-                                <a> @Html.ActionLink("Iniciar Sesión", "Login", "Home", new { area = "" }, new { @class = "nav-link" }) </a>
+                                <a> @Html.ActionLink("Iniciar Sesión", "Login", "IniciarSesion", new { area = "" }, new { @class = "nav-link" }) </a>
                             }
+                        </li>
+                        @if (Session["dashboard"] == null)
+                        {
+                            <li class="nav-item">
+                                <a href="@Url.Action("CarritoDeCompras", "CarritoDeCompras")" class="nav-link" style="font-size:20px">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </a>
+                            </li>
+                        } 
 
-                        </li>
-                        <li class="nav-item">            
-                            <a href="@Url.Action("CarritoDeCompras", "Home")" class="nav-link" style="font-size:20px">
-                                <i class="fa-solid fa-cart-shopping"></i>
-                            </a>
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -70,6 +80,8 @@
         </footer>
     </div>
 
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

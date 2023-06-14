@@ -1,103 +1,91 @@
-﻿
+﻿@model List<DTO.Usuario>
 @{
     ViewBag.Title = "Cupones";
     Layout = "~/Views/Shared/_DashboardLayout.cshtml";
 }
 
+<script src="~/Scripts/Views/DashboardAdminLaboratorio/Cupones.js"></script>
+
 <style>
     /*Este style contien la clase de nav activo las opciones A1, A2, A3... etc estan en el layout*/
     .A10 {
-        background-color: #4d81ba;
+        box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
         text-decoration: none;
+        background-color: #f3f3f363;
     }
 </style>
 
-<link rel="stylesheet" href="~/Content/css/DashBoard.css" />
+<link rel="stylesheet" href="~/Content/css/DashboardCss/DashBoardExamenes.css" />
+<link rel="stylesheet" href="~/Content/css/DashboardCss/DashBoardGeneral.css" />
 <link rel="stylesheet" href="~/Content/css/DashboardCss/DashboardCitas.css" />
 <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 
 
 <div class="divContenedorDelDashUno">
-    <div class="card mb-3" style="width: 30%; float:left">
 
-        <h3 class="card-header">Agregar Cupón</h3>
+    <section class="ContenedorDeDashboardFleROWEXAMEN" style="gap: 1px">
+        <form class="was-validated formularioContenedorDeDashboard">
+            <div class="mb-3 w-100">
+                <div class="form-group has-validation w-100 d-flex flex-column">
+                    <label class="form-label" for="txtNombre" id="inputGroupPrepend">Nombre del Cúpon</label>
+                    <input type="text" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" style="min-width:318px" required>
+                    <div class="invalid-feedback">
+                        Por favor, ingrese el nombre del cúpon
+                    </div>
+                </div>
+            </div>
 
-        <div class="card-body">
-            
-            <form class="was-validated">
-                <div class="mb-3 w-100">
-                    <div class="form-group has-validation w-100 d-flex flex-column">
-                        <label class="form-label" for="txtNombre" id="inputGroupPrepend">Nombre del Cúpon</label>
-                        <input type="text" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" style="min-width:318px" required>
+            <div class="mb-3 w-100">
+                <div class="form-group has-validation w-100 d-flex flex-column">
+                    <label class="form-label" for="txtNombre" id="inputGroupPrepend">Fecha de Vencimiento</label>
+                    <input type="date" class="form-control w-100" id="txtFecha" aria-describedby="inputGroupPrepend" style="min-width:318px" required>
+                    <div class="invalid-feedback">
+                        Por favor, seleccione una fecha
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3 w-100">
+                <div class="form-group has-validation w-100 d-flex flex-column">
+                    <label class="form-label" for="txtPorcentaje" id="inputGroupPrepend">Ingrese el Descuento</label>
+                    <div class="input-group">
+                        <span class="input-group-text">%</span>
+                        <input type="number" class="form-control w-100" id="txtPorcentaje" aria-describedby="inputGroupPrepend" required>
                         <div class="invalid-feedback">
-                            Por favor, ingrese el nombre del cúpon
+                            Por favor, ingrese el porcentaje de descuento
                         </div>
                     </div>
                 </div>
-
-                <div class="mb-3 w-100">
-                    <div class="form-group has-validation w-100 d-flex flex-column">
-                        <label class="form-label" for="txtNombre" id="inputGroupPrepend">Fecha de Vencimiento</label>
-                        <input type="date" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" style="min-width:318px" required>
-                        <div class="invalid-feedback">
-                            Por favor, seleccione una fecha
-                        </div>
-                    </div>
+            </div>
+            @{
+                DTO.Usuario id = (DTO.Usuario)(Session["usuario"]);
+                <div style="display:none">
+                    <input id="session" value=@id.UsuarioId />
                 </div>
-
-                <div class="mb-3 w-100">
-                    <div class="form-group has-validation w-100 d-flex flex-column">
-                        <label class="form-label" for="txtPorcentaje" id="inputGroupPrepend">Ingrese el Descuento</label>
-                        <div class="input-group">
-                            <span class="input-group-text">%</span>
-                            <input type="number" class="form-control w-100" id="txtPorcentaje" aria-describedby="inputGroupPrepend" required>
-                            <div class="invalid-feedback">
-                                Por favor, ingrese el porcentaje de descuento
-                            </div>
-                        </div>
-                    </div>
+                <div style="display:none">
+                    <input id="sessionLabId" value=@id.LaboratorioId />
+                    <input id="sessionUsuarioId" value=@id.UsuarioId />
                 </div>
+            }
 
-                <button type="submit" class="btn btn-primary mt-3 ">Registrar</button>
-            </form>
-        </div>
-    </div>
+            <button type="button" class="btn btn-primary mt-3 " id="btnRegistrar">Registrar</button>
 
-    <div class="card mb-3" style="width: 69%; float:right">
+        </form>
 
-        <h3 class="card-header">Cupones Registrado</h3>
-
-        <div class="card-body">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Código</th>
-                        <th scope="col">% Descuento</th>
-                        <th scope="col"># Usos</th>
-                        <th scope="col">Fecha de Vencimiento</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">Black November</th>
-                        <td>265746</td>
-                        <td>30</td>
-                        <td>3</td>
-                        <td>01/12/2022</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Super Descuento</th>
-                        <td>268468</td>
-                        <td>50</td>
-                        <td>12</td>
-                        <td>20/11/2022</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
+        <table class="table table-hover" id="datos" style="width: 70vw;">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Código</th>
+                    <th scope="col">% Descuento</th>
+                    <th scope="col"># Usos</th>
+                    <th scope="col">Fecha de Vencimiento</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+        </table>
+    </section>
 </div>
 
 
-    <script src="https://kit.fontawesome.com/e77fc0ae51.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/e77fc0ae51.js" crossorigin="anonymous"></script>

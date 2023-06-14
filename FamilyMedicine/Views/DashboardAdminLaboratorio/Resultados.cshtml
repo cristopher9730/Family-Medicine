@@ -1,0 +1,100 @@
+﻿
+@{
+    ViewBag.Title = "Resultados";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<style>
+    /*Este style contien la clase de nav activo las opciones A1, A2, A3... etc estan en el layout*/
+    .A12 {
+        box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+        text-decoration: none;
+        background-color: #f3f3f363;
+    }
+</style>
+
+<link rel="stylesheet" href="~/Content/css/DashboardCss/DashboardCitas.css" />
+<link rel="stylesheet" href="~/Content/css/Login.css" />
+<link rel="stylesheet" href="~/Content/css/DashboardCss/DashBoardGeneral.css" />
+<link rel="stylesheet" href="~/Content/css/DashboardCss/DashBoardExamenes.css" />
+
+<div class="divContenedorDelDashUno">
+    <section class="ContenedorDeDashboardFleROWEXAMEN" style="gap: 1px">
+        <form class="was-validated formularioContenedorDeDashboard">
+            <div class="input-group mb-3">
+                <select class="form-select" id="examenesId">
+                    <option value="" disabled selected hidden>Busca codigo de cita</option>
+                    <option value=""></option>
+                </select>
+            </div>
+            <div class="mb-3 w-100">
+                <div class="form-group has-validation w-100 d-flex flex-column">
+                    <label class="form-label" for="txtDescripción" id="inputGroupPrepend">Descripción del Examen</label>
+                    <textarea type="text" class="form-control w-100" id="txtDescripcion" aria-describedby="inputGroupPrepend" rows="3" required></textarea>
+                    <div class="invalid-feedback">
+                        Por favor, ingrese la descripción del examen
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3 w-100">
+                <select class="form-select" id="citaEstado">
+                    <option value="" disabled selected hidden>Estado de la cita</option>
+                    <option>PENDIENTE</option>
+                    <option>COMPLETADO</option>
+                    <option>NO ASISTIO</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary mt-2">Guardar Cambios</button>
+            </div>
+        </form>
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre Paciente</th>
+                    <th scope="col">Correo</th>
+                    <th scope="col">Descripción Resultados</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Fecha publicación</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Jacinto</th>
+                    <td>jacinto@labpaez.com</td>
+                    <td>
+                        <p>Examen: Hemoglobina</p>
+                        <p>Resultado: Hb = 13,5</p>
+                    </td>
+                    <td>Completado</td>
+                    <td>11/10/2022</td>
+                </tr>
+                <tr>
+                    <th scope="row">Jacinto</th>
+                    <td>jacinto@labpaez.com</td>
+                    <td>
+                        <p>Examen: Hemoglobina</p>
+                        <p>Resultado: Hb = 13,5</p>
+                    </td>
+                    <td>Completado</td>
+                    <td>11/10/2022</td>
+                </tr>
+                <tr>
+                    <th scope="row">Jacinto</th>
+                    <td>jacinto@labpaez.com</td>
+                    <td>
+                        <p>Examen: Hemoglobina</p>
+                        <p>Resultado: Hb = 13,5</p>
+                    </td>
+                    <td>Completado</td>
+                    <td>11/10/2022</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+
+</div>
+
+

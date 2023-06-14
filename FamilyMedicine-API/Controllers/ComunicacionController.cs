@@ -4,7 +4,6 @@ using DTO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
 namespace FamilyMedicine_API.Controllers
@@ -28,18 +27,18 @@ namespace FamilyMedicine_API.Controllers
 
         }
 
-        public IHttpActionResult EnviarSMS(Usuario usuario)
-        {
-            try
-            {
-                AdminSMS sms = new AdminSMS();
-                sms.EnviarSMS(usuario);
-                return Ok();
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
+        //public IHttpActionResult EnviarSMS(Usuario usuario)
+        //{
+        //    try
+        //    {
+        //        AdminSMS sms = new AdminSMS();
+        //        sms.EnviarSMS(usuario);
+        //        return Ok();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return BadRequest(ex.Message);
+        //    }
+        //}
     }
 }

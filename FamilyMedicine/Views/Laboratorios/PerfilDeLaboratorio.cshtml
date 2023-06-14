@@ -1,0 +1,117 @@
+﻿@model DTO.Laboratorio
+@{
+    ViewBag.Title = " ";
+}
+
+<link rel="stylesheet" href="~/Content/css/sweetalert.css" />
+<link rel="stylesheet" href="~/Content/css/Laboratorios.css" />
+<link rel="stylesheet" href="~/Content/css/DashboardCss/DashboardCitas.css" />
+
+<section style="height: 100vh;">
+    <div class="slider">
+        <ul>
+            <li>
+                <img class="imageSlider" src="~/Content/imgs/Labs/cicloLab/CL1.jpg" alt="">
+            </li>
+            <li>
+                <img class="imageSlider" src="~/Content/imgs/Labs/cicloLab/CL2.jpg" alt="">
+            </li>
+            <li>
+                <img class="imageSlider" src="~/Content/imgs/Labs/cicloLab/CL3.jpg" alt="">
+            </li>
+            <li>
+                <img class="imageSlider" src="~/Content/imgs/Labs/cicloLab/CL4.png" alt="">
+            </li>
+        </ul>
+        <div class="divDifumador"></div>
+        <div class="divContenederDeInformacion">
+            <section class="ContenederDeInformacion">
+                <img class="imgLaboratorio" src="~/Content/imgs/Labs/Lab1Blanco.png" />
+                <h1 class="tituloLaboratorio">@Model.NombreLaboratorio</h1>
+                <p class="parrafoDescripcionDeLab">
+                    @Model.RazonSocial
+                </p>
+            </section>
+        </div>
+    </div>
+</section>
+
+<section class="contenedorDeTablasDeExamen">
+
+    <h3 class="tituloGeneralDeExamens">Nuestros examenes</h3>
+
+    <table class="table table-hover" style=" min-width: 60vw; border-radius: 10px;">
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Descripccion</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Dias de examen</th>
+                <th scope="col">Comprar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Examen de sangre</td>
+                <td>El análisis de sangre es el hemograma completo.</td>
+                <td id="precio">₡12000</td>
+                <td>Lunes-Martes-Miercoles</td>
+                <td class="irAExamen" onclick="myfuncionGeneralCarrito()"> Agregar al carrito </td>
+            </tr>
+            <tr>
+                <td>Examen de sangre</td>
+                <td>El análisis de sangre es el hemograma completo.</td>
+                <td id="precio">₡12000</td>
+                <td>Lunes-Martes-Miercoles</td>
+                <td onclick="myfuncionGeneralCarrito()" class="irAExamen">Agregar al carrito</td>
+            </tr>
+            <tr>
+                <td>Examen de sangre</td>
+                <td>El análisis de sangre es el hemograma completo.</td>
+                <td id="precio">₡12000</td>
+                <td>Lunes-Martes-Miercoles</td>
+                <td onclick="myfuncionGeneralCarrito()" class="irAExamen">Agregar al carrito</td>
+            </tr>
+            <tr>
+                <td>Examen de sangre</td>
+                <td>El análisis de sangre es el hemograma completo.</td>
+                <td id="precio">₡12000</td>
+                <td>Lunes-Martes-Miercoles</td>
+                <td onclick="myfuncionGeneralCarrito()" class="irAExamen">Agregar al carrito</td>
+            </tr>
+            <tr>
+                <td>Examen de sangre</td>
+                <td>El análisis de sangre es el hemograma completo.</td>
+                <td id="precio">₡12000</td>
+                <td>Lunes-Martes-Miercoles</td>
+                <td class="irAExamen">Agregar al carrito</td>
+            </tr>
+            <tr>
+                <td>Examen de sangre</td>
+                <td>El análisis de sangre es el hemograma completo.</td>
+                <td id="precio">₡12000</td>
+                <td>Lunes-Martes-Miercoles</td>
+                <td class="irAExamen">Agregar al carrito</td>
+            </tr>
+            <tr>
+                <td>Examen de sangre</td>
+                <td>El análisis de sangre es el hemograma completo.</td>
+                <td id="precio">₡12000</td>
+                <td>Lunes-Martes-Miercoles</td>
+                <td class="irAExamen">Agregar al carrito</td>
+            </tr>
+            <tr>
+                <td>Examen de sangre</td>
+                <td>El análisis de sangre es el hemograma completo.</td>
+                <td id="precio">₡12000</td>
+                <td>Lunes-Martes-Miercoles</td>
+                <td class="irAExamen">Agregar al carrito</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+
+<script src="~/Scripts/Views/dashboardUsuario/DashboardValidacion.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

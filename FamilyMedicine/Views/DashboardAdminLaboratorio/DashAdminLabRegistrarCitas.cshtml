@@ -6,12 +6,13 @@
 <style>
     /*Este style contien la clase de nav activo las opciones A1, A2, A3... etc estan en el layout*/
     .A6 {
-        background-color: #4d81ba;
+        box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
         text-decoration: none;
+        background-color: #f3f3f363;
     }
 </style>
 
-<link rel="stylesheet" href="~/Content/css/DashBoard.css" />
+<link rel="stylesheet" href="~/Content/css/DashboardCss/DashBoardGeneral.css" />
 <link rel="stylesheet" href="~/Content/css/DashboardCss/DashboardCitas.css" />
 <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 
@@ -26,32 +27,31 @@
                     <div class="form-group mb-1">
                         <label for="exampleSelect2" class="form-label">Escoja el Examen para la Cita</label>
                         <select class="form-select" id="examenesId">
-                            <option>Leucocitos</option>
-                            <option>Hemoglobina</option>
-                            <option>Orina</option>
-                            <option>Heces</option>
-                            <option>Tiroides T1</option>
-                            <option>Colonoscopia</option>
-                            <option>Doping</option>
+                            <option value="" disabled selected hidden>Seleccione un Examen para la Cita</option>
+                            @foreach (var u in Model)
+                            {
+                                <option value="@u.Nombre">@u.Nombre</option>
+                            }
                         </select>
                     </div>
 
                     <div class="form-group ">
                         <label for="exampleSelect2" class="form-label">Dias de la cita</label>
                         <select multiple="" class="form-select" id="exampleSelect2" style="min-height:150px">
-                            <option>Lunes</option>
-                            <option>Martes</option>
-                            <option>Miercoles</option>
-                            <option>Jueves</option>
-                            <option>Viernes</option>
-                            <option>Sabado</option>
-                            <option>Domingo</option>
+                            <option value="" disabled selected hidden>Seleccione el dia para la Cita</option>
+                            <option value="Lunes">Lunes</option>
+                            <option value="Martes">Martes</option>
+                            <option value="Miercoles">Miércoles</option>
+                            <option value="Jueves">Jueves</option>
+                            <option value="Viernes">Viernes</option>
+                            <option value="Sabado">Sábado</option>
+                            <option value="Domingo">Domingo</option>
                         </select>
                     </div>
 
                     <div class="form-group mt-2">
                         <label for="hora">Hora de la Cita:</label>
-                        <input id="hora" class="form-control" type="time" />
+                        <input id="hora" class="form-control" type="time" required />
                     </div>
 
                     <div class="form-group">
@@ -65,7 +65,7 @@
                     </div>
 
                     <div class="mt-1">
-                        <button type="submit" class="btn btn-primary">Registrar</button>
+                        <button id="btnRegistrar" type="submit" class="btn btn-primary">Registrar</button>
                     </div>
 
                 </form>
@@ -74,7 +74,6 @@
 
         <div class="card mb-3" style="width: 69%; float:right">
             <h3 class="card-header">Citas Registradas</h3>
-            
             <div class="card-body">
                 <table class="table table-hover">
                     <thead>
@@ -121,3 +120,4 @@
 </div>
 
 <script src="https://kit.fontawesome.com/e77fc0ae51.js" crossorigin="anonymous"></script>
+<script src="~/Scripts/Views/DashboardAdminLaboratorio/DashAdminLabRegistrarCitas.js"></script>

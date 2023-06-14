@@ -1,0 +1,102 @@
+﻿@model List<DTO.Examen>
+@{
+    ViewBag.Title = "Componentes";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+
+<style>
+    /*Este style contien la clase de nav activo las opciones A1, A2, A3... etc estan en el layout*/
+    .A5 {
+        box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+        text-decoration: none;
+        background-color: #f3f3f363;
+    }
+</style>
+
+<link rel="stylesheet" href="~/Content/css/DashboardCss/DashboardCitas.css" />
+<link rel="stylesheet" href="~/Content/css/Login.css" />
+<link rel="stylesheet" href="~/Content/css/DashboardCss/DashBoardGeneral.css" />
+<link rel="stylesheet" href="~/Content/css/DashboardCss/DashBoardExamenes.css" />
+
+<div class="divContenedorDelDashUno">
+
+    <section class="ContenedorDeDashboardFleROWEXAMEN" style="gap: 1px">
+        <form class="was-validated formularioContenedorDeDashboard" method="post">
+            <div class="mb-3 w-100 contenedorDeInputs">
+                <div class="form-group has-validation w-100 d-flex flex-column">
+                    <label class="form-label" for="txtNombre" id="inputGroupPrepend">Nombre del componente</label>
+                    <input type="text" class="form-control w-100" name="NombreComponente" id="txtNombre" aria-describedby="inputGroupPrepend" required>
+                    <div class="invalid-feedback">
+                        Por favor, ingrese el nombre del componente
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3 w-100 contenedorDeInputs">
+                <div class="form-group has-validation w-100 d-flex flex-column">
+                    <label class="form-label" for="txtNombre" id="inputGroupPrepend">Símbolo de medida</label>
+                    <input type="text" class="form-control w-100" name="SimboloMedida" id="txtNombre" aria-describedby="inputGroupPrepend" required>
+                    <div class="invalid-feedback">
+                        Por favor, ingrese el símbolo de medida
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3 w-100 contenedorDeInputs">
+                <div class="form-group has-validation w-100 d-flex flex-column">
+                    <label class="form-label" for="txtNombre" id="inputGroupPrepend">Medida de referencia</label>
+                    <input type="number" class="form-control w-100" name="MedidaReferencia" id="txtNombre" aria-describedby="inputGroupPrepend" required>
+                    <div class="invalid-feedback">
+                        Ingrese la medida de referencia
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3 w-100 contenedorDeInputs">
+                <div class="form-group has-validation w-100 d-flex flex-column">
+                    <label class="form-label" for="txtNombre" id="inputGroupPrepend">ID</label>
+                    @*<input type="number" class="form-control w-100" id="txtNombre" aria-describedby="inputGroupPrepend" required>*@
+                    <select class="form-select" id="exampleSelect1" name="ExamenId">
+                        <option value="" disabled selected hidden>Seleccione un Examen para la Cita</option>
+                        @foreach (var u in Model)
+                        {
+                            <option value="@u.ExamenId">@u.NombreInterno</option>
+                        }
+                    </select>
+                    <div class="invalid-feedback">
+                        Por favor, ingrese la ID de examen
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Registrar</button>
+            @{
+                DTO.Usuario id = (DTO.Usuario)(Session["usuario"]);
+                <div style="display:none">
+                    <input id="session" value=@id.LaboratorioId />
+                </div>
+
+            }
+        </form>
+
+        <div>
+
+            <div class="ContenedorDeDashboardTabOverFlow">
+                <table id="datosComponente" class="table table-hover" style=" min-width: 55vw; border-radius: 10px;">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nombre del componente</th>
+                            <th scope="col">Símbolo de medida</th>
+                            <th scope="col">Medida de referencia</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="~/Scripts/Views/DashboardAdminLaboratorio/Componente.js"></script>
+<script src="https://kit.fontawesome.com/e77fc0ae51.js" crossorigin="anonymous"></script>

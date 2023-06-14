@@ -1,0 +1,99 @@
+﻿@model List<DTO.Laboratorio>
+@{
+    ViewBag.Title = "Busqueda";
+    Layout = "~/Views/Shared/_LayoutBusqueda.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/css/sweetalert.css" />
+<link rel="stylesheet" href="~/Content/css/Laboratorios.css" />
+
+<div class="container mt-5">
+    <form class="d-flex justify-content-center">
+        <input class="form-control me-sm-2 w-50" type="text" placeholder="Buscar Laboratorio" style="max-width:none !important">
+        <button class="btn btn-primary my-2 my-sm-0" type="submit">Buscar</button>
+    </form>
+</div>
+
+<div class="contentDivsBusqueda">
+
+    @foreach (var u in Model)
+    {
+        <div class="card border-light m-3 contentExamen shadow-sm h-100" style="max-width: 20rem;">
+            <div class="card-header text-center">
+                <h5><strong>@u.NombreLaboratorio</strong></h5>
+            </div>
+            <div class="card-body">
+                <div class="text-center mb-2" style="max-height:10rem">
+                    <img loading="lazy" src="~/Content/imgs/Labs/Lab2.jpg" class="w-100" alt="..." style="border-radius: 5px; max-height: 190px">
+                </div>
+                <div class="container" style="min-height:5rem">
+                    <p class="card-text">@u.RazonSocial</p>
+                </div>
+                
+                <form method="post" action="@Url.Action("verPerfilLaboratorio", "Busquedas")">
+                    @{
+                        <div style="display:none">
+                            <input value=@u.NombreLaboratorio name="NombreLaboratorio" />
+                            <input value=@u.RazonSocial name="RazonSocial" />
+                        </div>
+                    }
+                    <button class="btn btn-outline-primary" type="submit">
+                        Ver mas
+                    </button>
+                </form>
+            </div>
+        </div>
+    }
+</div>
+
+
+
+
+@*<div class="card border-light m-3 shadow-sm h-100" style="max-width: 20rem;">
+        <div class="card-header text-center">
+            <h5><strong>Ciclo Lab</strong></h5>
+        </div>
+        <div class="card-body">
+            <div class="text-center mb-2" style="max-height:10rem">
+                <img loading="lazy" src="~/Content/imgs/Labs/Lab1.jpg" class="w-100" alt="..." style="border-radius: 5px; max-height: 190px">
+            </div>
+            <div class="container" style="min-height:5rem">
+                <p class="card-text">Más de 30 años realizando diferentes exámenes con los mejores precios del mercado.</p>
+            </div>
+
+            <a class="btn btn-outline-primary" href="">Ver más</a>
+        </div>
+    </div>
+
+    <div class="card border-light m-3 shadow-sm h-100" style="max-width: 20rem;">
+        <div class="card-header text-center">
+            <h5><strong>Alchemy Labs</strong></h5>
+        </div>
+        <div class="card-body">
+            <div class="text-center mb-2" style="max-height:10rem">
+                <img loading="lazy" src="~/Content/imgs/Labs/Lab2.jpg" class="w-100" alt="..." style="border-radius: 5px; max-height: 190px">
+            </div>
+            <div class="container" style="min-height:5rem">
+                <p class="card-text">El mejor laboratorio del mercado con diferentes sedes por todo el país.</p>
+            </div>
+
+            <a class="btn btn-outline-primary" href="">Ver más</a>
+        </div>
+    </div>
+
+    <div class="card border-light m-3 shadow-sm h-100" style="max-width: 20rem;">
+        <div class="card-header text-center">
+            <h5><strong>The Lab</strong></h5>
+        </div>
+        <div class="card-body">
+            <div class="text-center mb-2" style="max-height:10rem">
+                <img loading="lazy" src="~/Content/imgs/Labs/Lab3.jpg" class="w-100" alt="..." style="border-radius: 5px; max-height: 190px">
+            </div>
+            <div class="container" style="min-height:5rem">
+                <p class="card-text">Desde 1988 ofreciendo el mejor servicio del mercado.</p>
+            </div>
+
+            <a> @Html.ActionLink("Ver más", "CicloLab", "Laboratorios", new { area = "" }, new { @class = "text-decoration-none btn btn-outline-primary" })</a>
+        </div>
+    </div>*@
+

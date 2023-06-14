@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "Login";
+}
+
+<link rel="stylesheet" href="~/Content/css/Login.css" />
+<script src="https://kit.fontawesome.com/e77fc0ae51.js" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+<section class="loginSectionContenedor">
+
+    <form action="@Url.Action("Login","IniciarSesion")" method="post" id="formContenedorId" class="was-validated" data-aos="fade-up" data-aos-duration="3000">
+        <div class="mb-3 mt-3">
+            <div class="input-group has-validation">
+                <span class="input-group-text" id="inputGroupPrepend"><i class="fa-solid faColor fa-user"></i></span>
+                <input type="email" name="Correo" pattern="^[a-zA-Z0-9._+-]+@("@")[a-zA-Z0-9.-]+\.[a-zA-Z]{2,9}$" class="form-control" placeholder="Correo electrónico" id="validacionDeUsuario" aria-describedby="inputGroupPrepend" required>
+                <div class="invalid-feedback">
+                    Por favor, ingrese su correo electrónico
+                </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <div class="input-group has-validation">
+                <span class="input-group-text" id="inputGroupPrepend"><i class="fa-solid  faColor fa-lock"></i></span>
+                <input type="password" name="Clave" class="form-control" placeholder="Contraseña" id="validacionDePassword" aria-describedby="inputGroupPrepend" required>
+                <div class="invalid-feedback">
+                    Por favor, ingrese su contraseña
+                </div>
+            </div>
+        </div>
+
+        @if (ViewData["Mensaje"] != null)
+        {
+            <div class="alert alert-warning" role="alert">
+                @ViewData["Mensaje"]
+            </div>
+        }
+
+        <div class="d-flex flex-row">
+            <p>
+                ¿Aún no se encuentra registrado?
+            </p>
+            <a> @Html.ActionLink("Crear cuenta", "RegistrarUsuario", "Registros", new { area = "" }, new { @class = "nav-link text-primary" }) </a>
+        </div>
+        <div class="d-flex flex-row mb-3">
+            <a> @Html.ActionLink("Recuperar Contraseña", "recuperarContrasenna", "IniciarSesion", new { area = "" }, new { @class = "nav-link text-primary" }) </a>
+        </div>
+        <button type="submit" class="btn btn-primary login_btn">Iniciar sesión</button>
+    </form>
+
+
+    <img loading="lazy" data-aos="fade-down"
+         data-aos-duration="3000" class="imagenLogin" src="~/Content/imgs/otros/clientes/medicos.png" alt="Imagen Login Family medice" />
+
+</section>
+
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+<script>
+    AOS.init({
+        once: true,
+    });
+</script>

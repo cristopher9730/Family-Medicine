@@ -45,9 +45,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MailChimp.Net, Version=5.3.1.0, Culture=neutral, PublicKeyToken=37d26d538413c581, processorArchitecture=MSIL">
-      <HintPath>packages\MailChimp.Net.V3.5.3.1\lib\net472\MailChimp.Net.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.1.1.1\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
@@ -188,16 +185,25 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AgendarCitasController.cs" />
+    <Compile Include="Controllers\BusquedasController.cs" />
+    <Compile Include="Controllers\CarritoDeComprasController.cs" />
     <Compile Include="Controllers\DashboardAdminAppController.cs" />
     <Compile Include="Controllers\AccesoController.cs" />
     <Compile Include="Controllers\DashboardUsuarioController.cs" />
     <Compile Include="Controllers\DashboardAdminLaboratorioController.cs" />
     <Compile Include="Controllers\FooterController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IniciarSesionController.cs" />
     <Compile Include="Controllers\LaboratoriosController.cs" />
+    <Compile Include="Controllers\OTPController.cs" />
+    <Compile Include="Controllers\RegistrosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ExamenModel.cs" />
+    <Compile Include="Models\LaboratorioModel.cs" />
+    <Compile Include="Models\Ping.cs" />
     <Compile Include="Permisos\ValidarSesionAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -208,6 +214,7 @@
     <Content Include="Content\css\carritoDeCompras.css" />
     <Content Include="Content\css\DashboardCss\DashboardCitas.css" />
     <Content Include="Content\css\DashboardCss\DashboardCliente.css" />
+    <Content Include="Content\css\DashboardCss\DashBoardExamenes.css" />
     <Content Include="Content\css\DashboardCss\DashBoardGeneral.css" />
     <Content Include="Content\css\forgotPassword.css" />
     <Content Include="Content\css\Laboratorios.css" />
@@ -217,6 +224,8 @@
     <Content Include="Content\imgs\Labs\cicloLab\CL2.jpg" />
     <Content Include="Content\imgs\Labs\cicloLab\CL3.jpg" />
     <Content Include="Content\imgs\Labs\cicloLab\CL4.png" />
+    <Content Include="Content\imgs\logos\medicos.png" />
+    <Content Include="Content\imgs\otros\clientes\medicos.png" />
     <Content Include="Content\imgs\vectoriales\items.png" />
     <Content Include="Content\imgs\Labs\Lab1.jpg" />
     <Content Include="Content\imgs\Labs\Lab1Blanco.png" />
@@ -258,13 +267,28 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\Views\AgendarCitas\AgendarCitas.js" />
+    <Content Include="Scripts\Views\busqueda\busquedaLab.js" />
     <Content Include="Scripts\Views\carritoDeComprasjs.js" />
+    <Content Include="Scripts\Views\ConsumoApi\ApiCarrito.js" />
+    <Content Include="Scripts\Views\ControlAcciones.js" />
+    <Content Include="Scripts\Views\DashboardAdminApp\Laboratorio.js" />
+    <Content Include="Scripts\Views\DashboardAdminApp\Usuarios.js" />
+    <Content Include="Scripts\Views\DashboardAdminLaboratorio\DashboardLaboratorio.js" />
+    <Content Include="Scripts\Views\DashboardAdminLaboratorio\Componente.js" />
+    <Content Include="Scripts\Views\DashboardAdminLaboratorio\Cupones.js" />
+    <Content Include="Scripts\Views\DashboardAdminLaboratorio\DashAdminLabRegistrarCitas.js" />
+    <Content Include="Scripts\Views\DashboardAdminLaboratorio\Examen.js" />
+    <Content Include="Scripts\Views\DashboardAdminLaboratorio\registarLaboratorio.js" />
+    <Content Include="Scripts\Views\DashboardAdminLaboratorio\personal.js" />
+    <Content Include="Scripts\Views\DashboardAdminLaboratorio\Ventas.js" />
+    <Content Include="Scripts\Views\dashboardUsuario\DashboardCliente.js" />
     <Content Include="Scripts\Views\dashboardUsuario\DashboardValidacion.js" />
     <Content Include="Scripts\Views\recuperarPass.js" />
-    <Content Include="Scripts\Views\Usuarios.js" />
+    <Content Include="Scripts\Views\RegistarUsuarios.js" />
     <Content Include="Scripts\Views\dashboardUsuario\DashboardCitasFechas.js" />
-    <Content Include="Scripts\Views\dashboardUsuario\DashboardCitasQR.js" />
     <Content Include="Scripts\Views\dashboardUsuario\DashboardCitasResultado.js" />
+    <Content Include="Scripts\Views\ValidacionGeneralParaLasPaginas.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -276,41 +300,48 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\Login.cshtml" />
-    <Content Include="Views\Home\RegistrarCita.cshtml" />
-    <Content Include="Views\Home\RegistrarUsuario.cshtml" />
-    <Content Include="Views\Home\OTP.cshtml" />
     <Content Include="Views\Shared\_LayoutBusqueda.cshtml" />
-    <Content Include="Views\Home\Busqueda.cshtml" />
     <Content Include="Views\DashboardUsuario\DashBoardCitas.cshtml" />
     <Content Include="Views\Shared\_DashboardLayout.cshtml" />
     <Content Include="Views\DashboardAdminLaboratorio\DashAdminLabDatosLaboratorio.cshtml" />
     <Content Include="Views\DashboardAdminLaboratorio\DashAdminLabHistorialVentas.cshtml" />
-    <Content Include="Views\DashboardAdminLaboratorio\DashAdminLabRegistrarCitas.cshtml" />
-    <Content Include="Views\DashboardAdminLaboratorio\DashAdminLabRegistrarExamen.cshtml" />
+    <Content Include="Views\DashboardAdminLaboratorio\Componentes.cshtml" />
     <Content Include="Views\DashboardAdminLaboratorio\DashAdminLabRegistrarPersonal.cshtml" />
     <Content Include="Views\Shared\_DashboardAdminAppLayout.cshtml" />
     <Content Include="Views\DashboardAdminApp\LaboratoriosRegistrados.cshtml" />
     <Content Include="Views\DashboardAdminApp\Usuarios.cshtml" />
     <Content Include="Views\DashboardAdminApp\Actividades.cshtml" />
     <Content Include="Views\DashboardUsuario\DashboardUsuario.cshtml" />
-    <Content Include="Views\DashboardUsuario\RegistrarLaboratorio.cshtml" />
+    <Content Include="Views\DashboardAdminLaboratorio\RegistrarLaboratorio.cshtml" />
     <Content Include="Views\Footer\Contactenos.cshtml" />
     <Content Include="Views\Footer\TerminosCondiciones.cshtml" />
     <Content Include="Views\Footer\PreguntasFrecuentes.cshtml" />
-    <Content Include="Views\Home\forgotPassword.cshtml" />
-    <Content Include="Views\Home\CarritoDeCompras.cshtml" />
-    <Content Include="Views\Laboratorios\CicloLab.cshtml" />
-    <Content Include="Views\Home\LandingPage.cshtml" />
-    <Content Include="Views\Home\BusquedaExamen.cshtml" />
+    <Content Include="Views\Laboratorios\PerfilDeLaboratorio.cshtml" />
     <Content Include="Views\DashboardAdminLaboratorio\Cupones.cshtml" />
+    <Content Include="Views\CarritoDeCompras\CarritoDeCompras.cshtml" />
+    <Content Include="Views\Busquedas\Busqueda.cshtml" />
+    <Content Include="Views\Busquedas\BusquedaExamen.cshtml" />
+    <Content Include="Views\AgendarCitas\AgendarCitas.cshtml" />
+    <Content Include="Views\IniciarSesion\Login.cshtml" />
+    <Content Include="Views\IniciarSesion\OTP.cshtml" />
+    <Content Include="Views\IniciarSesion\recuperarContrasenna.cshtml" />
+    <Content Include="Views\Registros\RegistrarCita.cshtml" />
+    <Content Include="Views\Registros\RegistrarUsuario.cshtml" />
+    <Content Include="Scripts\Views\ConsumoApi\jsconfig.json" />
+    <Content Include="Views\DashboardAdminApp\RegistrarLaboratorio.cshtml" />
+    <Content Include="Views\IniciarSesion\OTPValidacion.cshtml" />
+    <Content Include="Views\IniciarSesion\recuperarOTP.cshtml" />
+    <Content Include="Views\DashboardAdminLaboratorio\Examen.cshtml" />
+    <Content Include="Views\DashboardAdminLaboratorio\Horarios.cshtml" />
+    <Content Include="Views\DashboardAdminLaboratorio\Resultados.cshtml" />
+    <Content Include="Views\Home\LandingViejo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="Views\Acceso\" />
+    <Folder Include="Views\OTP\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

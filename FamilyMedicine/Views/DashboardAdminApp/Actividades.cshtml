@@ -7,8 +7,9 @@
 <style>
     /*Este style contien la clase de nav activo las opciones A1, A2, A3... etc estan en el layout*/
     .A3 {
-        background-color: #4d81ba;
+        box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
         text-decoration: none;
+        background-color: #f3f3f363;
     }
 </style>
 
@@ -18,7 +19,14 @@
 
     <h3 class="mb-3">Actividades recientes</h3>
 
-    <table class="table table-hover">
+    <div>
+        <form class="d-flex" style="padding: 10px">
+            <input class="form-control me-sm-2" type="text" id="searchTerm" onkeyup="doSearch()" placeholder="Buscar información">
+        </form>
+        <p class='noSearch hide'></p>
+    </div>
+
+    <table id="datos" class="table table-hover">
         <thead>
             <tr>
                 <th scope="col">Tipo</th>
@@ -29,25 +37,25 @@
         </thead>
         <tbody>
             <tr>
-                <th scope="row">Compro Exámen</th>
+                <td scope="row">Compro Exámen</td>
                 <td>Carolina Barrantes Soto</td>
                 <td>08/11/2022</td>
 
             </tr>
             <tr>
-                <th scope="row">Registro Usuario</th>
+                <td scope="row">Registro Usuario</td>
                 <td>Carolina Barrantes Soto</td>
                 <td>02/11/2022</td>
 
             </tr>
             <tr>
-                <th scope="row">Registro Laboratorio</th>
+                <td scope="row">Registro Laboratorio</td>
                 <td>Roberto Solano Vargas</td>
                 <td>05/11/2022</td>
 
             </tr>
             <tr>
-                <th scope="row">Registro Usuario</th>
+                <td scope="row">Registro Usuario</td>
                 <td>Roberto Solano Vargas</td>
                 <td>02/11/2022</td>
 
@@ -60,3 +68,4 @@
 
 </div>
 
+<script src="~/Scripts/Views/DashboardAdminApp/BusquedaEnTabla.js"></script>

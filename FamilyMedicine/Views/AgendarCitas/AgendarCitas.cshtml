@@ -1,0 +1,107 @@
+﻿
+@{ ViewBag.Title = "DashBoardCitas";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml"; }
+
+<link rel="stylesheet" href="~/Content/css/DashboardCss/DashboardCitas.css" />
+
+<style>
+    .A2 {
+        box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+        text-decoration: none;
+        background-color: #f3f3f363;
+    }
+</style>
+
+<div class="divContenedorDelDashUno">
+
+    <section class="contenedorDeCitasDisponibles">
+
+        <h2 class="titleGeneral" style="text-align: center; font-weight: bold;">Agende el dia de la cita</h2>
+        <div class="ContenedorDeDashboardTabOverFlow" style=" max-height: 90vh;">
+            <table class="table table-hover" style=" min-width: 72vw; border-radius: 10px; border-top-right-radius: 0px;">
+                <thead>
+                    <tr>
+                        <th scope="col">Sede de laboratorio</th>
+                        <th scope="col">Dias de examen</th>
+                        <th scope="col">Horas disponibles</th>
+                        <th scope="col">Cupos disponibles</th>
+                        <th scope="col">Agendar cita</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th><div class="d-flex align-content-md-center"><p class="contenedorDeInformacion">San Jose</p></div></th>
+                        <td><div class="d-flex align-content-md-center"><p class="contenedorDeInformacion">Lunes 28 de noviembre</p></div></td>
+                        <td><div class="d-flex align-content-md-center"><p class="contenedorDeInformacion">9:00 a.m - 10:00 a.m</p></div></td>
+                        <td><div class="d-flex align-content-md-center"><p class="contenedorDeInformacion">7</p></div></td>
+                        <td><button type="button" onclick="validarRequired()" id="buttonAgendar" class="buttonCita colorButton">Agendar</button></td>
+                    </tr>
+                    <tr>
+                        <th><div class="d-flex align-content-md-center"><p class="contenedorDeInformacion">San Jose</p></div></th>
+                        <td><div class="d-flex align-content-md-center"><p class="contenedorDeInformacion">Jueves 1 de diciembre</p></div></td>
+                        <td><div class="d-flex align-content-md-center"><p class="contenedorDeInformacion">9:00 a.m - 10:00 a.m</p></div></td>
+                        <td><div class="d-flex align-content-md-center"><p class="contenedorDeInformacion">7</p></div></td>
+                        <td><button type="button" onclick="validarRequired()" id="buttonAgendar" class="buttonCita colorButton">Agendar</button></td>
+                    </tr>
+                    <tr>
+                        <th><div class="d-flex align-content-md-center"><p class="contenedorDeInformacion">San Jose</p></div></th>
+                        <td><div class="d-flex align-content-md-center"><p class="contenedorDeInformacion">Lunes 5 de diciembre</p></div></td>
+                        <td><div class="d-flex align-content-md-center"><p class="contenedorDeInformacion">9:00 a.m - 10:00 a.m</p></div></td>
+                        <td><div class="d-flex align-content-md-center"><p class="contenedorDeInformacion">7</p></div></td>
+                        <td><button type="button" onclick="validarRequired()" id="buttonAgendar" class="buttonCita colorButton">Agendar</button></td>
+                    </tr>
+                    <tr>
+                        <th><div class="d-flex align-content-md-center"><p class="contenedorDeInformacion">San Jose</p></div></th>
+                        <td><div class="d-flex align-content-md-center"><p class="contenedorDeInformacion">Jueves 8 de diciembre</p></div></td>
+                        <td><div class="d-flex align-content-md-center"><p class="contenedorDeInformacion">9:00 a.m - 10:00 a.m</p></div></td>
+                        <td><div class="d-flex align-content-md-center"><p class="contenedorDeInformacion">7</p></div></td>
+                        <td><button type="button" onclick="validarRequired()" id="buttonAgendar" class="buttonCita colorButton">Agendar</button></td>
+                    </tr>
+                    <tr>
+                        <th><div class="d-flex align-content-md-center"><p class="contenedorDeInformacion">San Jose</p></div></th>
+                        <td><div class="d-flex align-content-md-center"><p class="contenedorDeInformacion">Lunes 12 de diciembre</p></div></td>
+                        <td><div class="d-flex align-content-md-center"><p class="contenedorDeInformacion">9:00 a.m - 10:00 a.m</p></div></td>
+                        <td><div class="d-flex align-content-md-center"><p class="contenedorDeInformacion">7</p></div></td>
+                        <td><button type="button" onclick="validarRequired()" id="buttonAgendar" class="buttonCita colorButton">Agendar</button></td>
+                    </tr>
+                    <tr>
+                        <th><div class="d-flex align-content-md-center"><p class="contenedorDeInformacion">San Jose</p></div></th>
+                        <td><div class="d-flex align-content-md-center"><p class="contenedorDeInformacion">Jueves 15 de diciembre</p></div></td>
+                        <td><div class="d-flex align-content-md-center"><p class="contenedorDeInformacion">9:00 a.m - 10:00 a.m</p></div></td>
+                        <td><div class="d-flex align-content-md-center"><p class="contenedorDeInformacion">7</p></div></td>
+                        <td><button type="button" onclick="validarRequired()" id="buttonAgendar" class="buttonCita colorButton">Agendar</button></td>
+                    </tr>
+                    <tr>
+                        <th><div class="d-flex align-content-md-center"><p class="contenedorDeInformacion">San Jose</p></div></th>
+                        <td><div class="d-flex align-content-md-center"><p class="contenedorDeInformacion">Lunes 19 de diciembre</p></div></td>
+                        <td><div class="d-flex align-content-md-center"><p class="contenedorDeInformacion">9:00 a.m - 10:00 a.m</p></div></td>
+                        <td><div class="d-flex align-content-md-center"><p class="contenedorDeInformacion">7</p></div></td>
+                        <td><button type="button" onclick="validarRequired()" id="buttonAgendar" class="buttonCita colorButton">Agendar</button></td>
+                    </tr>
+                    <tr>
+                        <th><div class="d-flex align-content-md-center"><p class="contenedorDeInformacion">San Jose</p></div></th>
+                        <td><div class="d-flex align-content-md-center"><p class="contenedorDeInformacion">Jueves 22 de diciembre</p></div></td>
+                        <td><div class="d-flex align-content-md-center"><p class="contenedorDeInformacion">9:00 a.m - 10:00 a.m</p></div></td>
+                        <td><div class="d-flex align-content-md-center"><p class="contenedorDeInformacion">7</p></div></td>
+                        <td><button type="button" onclick="validarRequired()" id="buttonAgendar" class="buttonCita colorButton">Agendar</button></td>
+                    </tr>
+                    <tr>
+                        <th><div class="d-flex align-content-md-center"><p class="contenedorDeInformacion">San Jose</p></div></th>
+                        <td><div class="d-flex align-content-md-center"><p class="contenedorDeInformacion">Lunes 26 de diciembre</p></div></td>
+                        <td><div class="d-flex align-content-md-center"><p class="contenedorDeInformacion">9:00 a.m - 10:00 a.m</p></div></td>
+                        <td><div class="d-flex align-content-md-center"><p class="contenedorDeInformacion">7</p></div></td>
+                        <td><button type="button" onclick="validarRequired()" id="buttonAgendar" class="buttonCita colorButton">Agendar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</div>
+
+
+<script src="~/Scripts/Views/AgendarCitas/AgendarCitas.js"></script>
+<script src="~/Scripts/Views/dashboardUsuario/DashboardCitasResultado.js"></script>
+<script src="~/Scripts/Views/dashboardUsuario/DashboardCitasFechas.js"></script>
+<script src="~/Scripts/Views/dashboardUsuario/DashboardCitasQR.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://kit.fontawesome.com/e77fc0ae51.js" crossorigin="anonymous"></script>

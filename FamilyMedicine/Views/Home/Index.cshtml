@@ -1,109 +1,157 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿
+@{
+    ViewBag.Title = "Index";
 }
 
-<script src="https://kit.fontawesome.com/8ce25482e7.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="~/Content/css/landingPage.css" />
+<script src="https://kit.fontawesome.com/e77fc0ae51.js" crossorigin="anonymous"></script>
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+<link href="https://fonts.cdnfonts.com/css/lemonmilk" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-<div class="carousel mb-4">
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="~/img/laboratorio.jpg" class="d-block w-100" style="opacity:0.80 !important; border-radius: 5px" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <h1 class="text-black"><strong>Family Medicine</strong></h1>
-                <h2 class="text-black text-center"><strong>Los mejores laboratorios en un solo lugar</strong></h2>
-            </div> 
-        </div>
-    </div>  
-</div>
+<section class="contentBannerPrincipal">
+    <div class="contenedorInfoPrincipal" data-aos="fade-down" data-aos-duration="3000">
+        <h1 class="seoTitleB1">FAMILY <br /> MEDICINE</h1>
+        <p class="discripccionBanner1" style=" font-weight: 600;">
+            Somos una página donde puede contactar diferentes clínicas de todo el país de forma segura y rápida para la compra de diferentes exámenes. Estos los encontrará a precios increíbles además de encontrar diferentes ofertas y descuentos en los mismos.
+        </p>
+    </div>
 
-<div class="container shadow mb-5" style="border-radius: 5px">
-    <div class="row align-items-center justify-content-center">
-        <div class="col-3 col-sm-2 text-center">
-            <img src="~/img/laboratorio-icon.png" class="w-75 p-2" alt="...">
-        </div>
-        <div class="col-5">
-            <h2>
-                Laboratorios
-            </h2>
-            <p>
-                En Family Medicine te ofrecemos diferentes opciones de laboratorios, para que puedas seleccionar el que más se ajuste a tus necesidades.
+    <div class="contenidoImg" data-aos="fade-up" data-aos-duration="3000">
+        <div class="backgroundBanner"></div>
+        <img loading="lazy"  class="imgBanner1" src="~/Content/imgs/otros/dclinico2.png" />
+    </div>
+</section>
+
+<section class="contentBannerPrincipal" style="height: 70vh">
+
+
+    <div class="contenedorInfoPrincipal" style="width: 600px;">
+        <h1 class="seoTitleB1" style="font-size: 40px;">Nuestro servicios</h1>
+        <p class="discripccionBanner1" data-aos="fade-up">
+            Compara los precios del estudio en diferentes centros clinicos
+        </p>
+        <hgroup class="contenedorServicios" data-aos="fade-left" data-aos-duration="3000">
+            <i class="fa-solid fa-syringe faSolidIcono"></i>
+            <p class="discripccionBanner1" style=" font-weight: 600;">
+                Examanenes clinicos generales
             </p>
-        </div>
-        <div class="col-3 text-center">
-            <a> @Html.ActionLink("Ver todos", "Busqueda", "Home", new { area = "" }, new { @class = "btn btn-primary" })</a>
-        </div>
-    </div>
-</div>
+        </hgroup>
 
-<div class="container shadow mb-5" style="border-radius: 5px">
-    <div class="row align-items-center justify-content-center">
-        <div class="col-3 col-sm-2 text-center">
-            <img src="~/img/tubo-icon.png" class="w-75 p-2" alt="...">
-        </div>
-        <div class="col-5">
-            <h2>
-                Exámenes
-            </h2>
-            <p>
-                En Family Medicine te ofrecemos múltiples  opciones de análisis de laboratorio, para garantizarte un estudio completo de tu salud.
+        <hgroup class="contenedorServicios" data-aos="fade-left" data-aos-duration="2500">
+            <i class="fa-solid fa-vial-virus faSolidIcono"></i>
+            <p class="discripccionBanner1" style=" font-weight: 600;">
+                Farmaceutica, farmacologia para cuidar tu salud en diferentes clinicas
             </p>
-        </div>
-        <div class="col-3 text-center">
-            <a> @Html.ActionLink("Ver todos", "BusquedaExamen", "Home", new { area = "" }, new { @class = "btn btn-primary" })</a>
-        </div>
+        </hgroup>
+
+        <hgroup class="contenedorServicios" data-aos="fade-left" data-aos-duration="2000">
+            <i class="fa-solid fa-vial-circle-check faSolidIcono"></i>
+            <p class="discripccionBanner1" style=" font-weight: 600;">
+                Protegemos tu saludos
+            </p>
+        </hgroup>
     </div>
+
+    <img loading="lazy" width="380px" src="~/Content/imgs/otros/doctorB2.png" />
+</section>
+
+<section class="contentBannerPrincipal" style="height: 70vh">
+
+    <div class="contenedorInfoPrincipal" style="width: 600px;">
+        <h1 class="seoTitleB1" style="font-size: 30px; letter-spacing:3px;">
+            Información necesaria sobre el estudio en un solo lugar
+        </h1>
+
+        <hgroup class="contenedorServicios" data-aos="fade-left" data-aos-duration="2000">
+            <i class="fa-solid fa-check faSolidIconoTipo2"></i>
+            <p class="discripccionBanner1">
+                Procedimiento del estudio
+            </p>
+        </hgroup>
+
+        <hgroup class="contenedorServicios" data-aos="fade-left" data-aos-duration="2000">
+            <i class="fa-solid fa-check faSolidIconoTipo2"></i>
+            <p class="discripccionBanner1">
+                Clinicacas generales completas
+            </p>
+        </hgroup>
+
+        <hgroup class="contenedorServicios" data-aos="fade-left" data-aos-duration="2000">
+            <i class="fa-solid fa-check faSolidIconoTipo2"></i>
+            <p class="discripccionBanner1">
+                Los mejores precios del pais
+            </p>
+        </hgroup>
+
+        <a class="botonPrincipal">Ver laboratorios</a>
+    </div>
+
+    <img loading="lazy" width="380px" src="~/Content/imgs/otros/doctores-medicos.png" />
+</section>
+
+<div>
+    <h1 class="seoTitleB1" style="font-size: 30px; letter-spacing:3px; text-align: center;">
+        ALGUNAS DE NUESTRAS MEJORES CLINICAS
+    </h1>
+
+    <section class="contentBannerPrincipal" style="height: 60vh">
+        <div class="imgDoctor" data-aos="fade-up" data-aos-duration="2000">
+            <img loading="lazy" width="250px" src="~/Content/imgs/otros/clinica/c4.jpg" />
+            <p class="textoNombre">LHS Clinica</p>
+        </div>
+        <div class="imgDoctor" data-aos="fade-down" data-aos-duration="3000">
+            <img loading="lazy" width="250px" src="~/Content/imgs/otros/clinica/cl.jpg" />
+            <p class="textoNombre">LHS Center</p>
+        </div>
+        <div class="imgDoctor" data-aos="fade-up" data-aos-duration="2000">
+            <img loading="lazy" width="250px" src="~/Content/imgs/otros/clinica/cl2.jpg" />
+            <p class="textoNombre">Medica Integral</p>
+        </div>
+        <div class="imgDoctor" data-aos="fade-down" data-aos-duration="3000">
+            <img loading="lazy" width="250px" src="~/Content/imgs/otros/clinica/cl3.jpg" />
+            <p class="textoNombre">Sin Fronteras</p>
+        </div>
+    </section>
 </div>
 
-<div class="container mb-5">
-    <div class="row align-items-center justify-content-center">
-        <div class="col-4 text-center border-bottom" style="border-bottom-width: thick !important; border-bottom-color: #325d88 !important; ">
-            <h2>¿Porqué Family Medicine?</h2>
-        </div>
-    </div>
-</div>
 
 
-<div class="row align-items-center justify-content-center mb-5">
-    <div class="col-auto">
-        <div class="card border-light m-0 shadow-sm" style="max-width: 20rem;">
-            <div class="card-header text-center">
-                <h5><strong>Compra de pruebas en línea</strong></h5>
-            </div>
-            <div class="card-body" style="min-height:326px">
-                <div class="text-center mb-2">
-                    <img src="~/img/compra.jpg" class="w-100" alt="..." style="border-radius: 5px; max-height: 190px">
-                </div>
-                <p class="card-text">Ahora podés adquirir las pruebas de laboratorio que necesités, de forma rápida y segura, desde donde estés.</p>
-            </div>
-        </div>
+<section class="contentBannerPrincipal" style="height: 70vh">
+
+
+    <div class="contenedorInfoPrincipal" style="width: 600px;">
+        <h1 class="seoTitleB1" style="font-size: 40px;">CLINICAS AFILIADAS</h1>
+        <p class="discripccionBanner1">
+            Puedes verder tus examanes como afiliado clinico
+        </p>
+        <hgroup class="contenedorServicios" data-aos="fade-left" data-aos-duration="3000">
+            <i class="fa-solid fa-hospital faSolidIcono"></i>
+            <p class="discripccionBanner1" style=" font-weight: 600;">
+                Puedes dar servicios de examanenes clinicos generales
+            </p>
+        </hgroup>
+
+        <hgroup class="contenedorServicios" data-aos="fade-left" data-aos-duration="2000">
+            <i class="fa-solid fa-hospital faSolidIcono"></i>
+            <p class="discripccionBanner1" style=" font-weight: 600;">
+                Puedes dar servicios de farmaceutica, farmacologia
+            </p>
+        </hgroup>
+
+        <hgroup class="contenedorServicios" data-aos="fade-left" data-aos-duration="2000">
+            <i class="fa-solid fa-dollar-sign faSolidIcono"></i>
+            <p class="discripccionBanner1" style=" font-weight: 600;">
+                Paga por ser afiliado por 100$ por mes
+            </p>
+        </hgroup>
+
+
+        <a class="botonPrincipal" style="font-size: 18px;">Unete por 100$ por mes</a>
     </div>
-    <div class="col-auto">
-        <div class="card border-light m-0 shadow-sm" style="max-width: 20rem;">
-            <div class="card-header text-center">
-                <h5><strong>Expediente electrónico</strong></h5>
-            </div>
-            <div class="card-body" style="min-height:326px">
-                <div class="text-center mb-2">
-                    <img src="~/img/expediente.jpg" class="w-100" alt="..." style="border-radius: 5px; max-height: 190px">
-                </div>
-                <p class="card-text">Consultá tu historial de resultados, de forma segura y confidencial, en cualquier momento.</p>
-            </div>
-        </div>
-    </div>
-    <div class="col-auto">
-        <div class="card border-light m-0 shadow-sm" style="max-width: 20rem;">
-            <div class="card-header text-center">
-                <h5><strong>Variedad de opciones</strong></h5>
-            </div>
-            <div class="card-body" style="min-height:326px">
-                <div class="text-center mb-2">
-                    <img src="~/img/microscopio.jpg" class="w-100" alt="..." style="border-radius: 5px; max-height: 190px">
-                </div>
-                <p class="card-text">Podés acceder a una gran variedad de laboratorios ubicados por todo el país y escoger el que más se ajuste a tus necesidades.</p>
-            </div>
-        </div>
-    </div>
-</div>
+
+    <img loading="lazy" width="380px" src="~/Content/imgs/vectoriales/items.png" />
+</section>
 
 <div class="container border-top" style="border-top-width: thick !important; border-top-color: #325d88 !important; ">
     <div class="row align-items-center justify-content-center">
@@ -149,7 +197,7 @@
                             <h4 class="text-primary m-0"><i class="fa-solid fa-users"></i></h4>
                         </div>
                         <div class="col-5 p-0">
-                            <a> @Html.ActionLink("Sobre Nosotros", "LandingPage", "Home", new { area = "" }, new { @class = "text-black text-decoration-none m-0 p-0 h5" })</a>
+                            <a> @Html.ActionLink("Sobre Nosotros", "Index", "Home", new { area = "" }, new { @class = "text-black text-decoration-none m-0 p-0 h5" })</a>
                         </div>
                     </div>
                 </div>
@@ -201,3 +249,14 @@
         </div>
     </div>
 </div>
+
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+<script>
+    AOS.init({
+        once: true,
+    });
+</script>

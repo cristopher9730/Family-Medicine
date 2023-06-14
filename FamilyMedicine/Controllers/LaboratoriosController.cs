@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,9 +10,11 @@ namespace FamilyMedicine.Controllers
     public class LaboratoriosController : Controller
     {
         // GET: Laboratorios
-        public ActionResult CicloLab()
+        public ActionResult PerfilDeLaboratorio(Laboratorio laboratorio)
         {
-            return View();
+
+
+            return View(laboratorio);
         }
     }
 }
